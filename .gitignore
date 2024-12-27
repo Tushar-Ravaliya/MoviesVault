@@ -1,1 +1,3 @@
+# Other ignore patterns
 node_modules
+src
