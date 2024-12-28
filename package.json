@@ -1,5 +1,9 @@
 {
   "devDependencies": {
     "tailwindcss": "^3.4.17"
+  },
+  "dependencies": {
+    "pagedone": "^1.2.2",
+    "preline": "^2.6.0"
   }
 }
