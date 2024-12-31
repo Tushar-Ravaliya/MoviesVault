@@ -85,7 +85,7 @@
         </button>
         <button
             type="button"
-            class="lg:hidden hidden fixed top-4 left-4 z-50 rounded-md p-2 bg-neutral-800 text-neutral-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+            class="lg:hidden  fixed top-16 left-4 z-50 rounded-md p-2 bg-neutral-800 text-neutral-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
             aria-controls="mobile-menu"
             id="hamburger-close">
             <svg
@@ -103,12 +103,7 @@
     <script>
         $(document).ready(function() {
             $("#hamburger-open").click(function() {
-                // $("#ham-menu").show();
-                $("#ham-menu").animate({
-                    opacity: '0.5',
-                    height: '150px',
-                    width: '150px'
-                });
+                $("#ham-menu").show();
                 $("#hamburger-open").hide();
                 $("#hamburger-close").show();
 
