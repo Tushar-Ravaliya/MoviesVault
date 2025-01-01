@@ -1,3 +1,6 @@
+<?php
+ error_reporting(0);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,12 +35,14 @@
 <body class="">
      <?php
      session_start();
-          echo  $_SESSION["email"];
+     $_SESSION["email"] = $_POST['email'];
+     $_SESSION["password"] = $_POST['password'];
      ?>
      <div class="container">
-           <?php
+          <?php
+         
            include("Nevigation.php")
-           ?>    
+           ?>
           <!-- baground image start -->
           <div class="block justify-center items-center animates">
                <div class="bg-red-600 w-full bg-cover z-0 absolute min-h-1/3" style="height:80vh;">
@@ -117,9 +122,9 @@
                               <span class="text-gray-400">Action / Adventure / fantasy</span>
                          </div>
                     </div>
-                    
-                    
-                    
+
+
+
                </div>
 
           </div>

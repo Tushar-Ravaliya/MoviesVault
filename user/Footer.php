@@ -8,7 +8,7 @@
 <body>
      <!-- footer start-->
      <div id="root">
-               <footer id="footer" class="bg-white text-black">
+               <footer id="footer" class="bg-zinc-100 text-black">
                     <div class="max-w-7xl mx-auto px-4 py-12">
                          <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                               <div class="space-y-4">
