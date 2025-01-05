@@ -4,6 +4,7 @@
   },
   "dependencies": {
     "@preline/overlay": "^2.6.0",
+    "@preline/theme-switch": "^2.5.2",
     "pagedone": "^1.2.2",
     "preline": "^2.6.0"
   }

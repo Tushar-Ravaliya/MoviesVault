@@ -5,15 +5,15 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Document</title>
-     <link href="../src/output.css" rel="stylesheet">
+     <link href="../../public/output.css" rel="stylesheet">
 </head>
 
 <body class="font-inter overflow-hidden">
      <section class="flex justify-center relative">
-          <img src="../src/Images/login_img.png" alt="gradient background image"
+          <img src="../../public/Images/login_img.png" alt="gradient background image"
                class="w-full h-full object-cover fixed  border-none backdrop-blur-sm">
           <div class="mx-auto max-w-lg px-6 lg:px-8 absolute py-20">
-               <img src="../src/Images/logo-white.png" alt="pagedone logo" class="mx-auto lg:mb-11 mb-8 object-cover">
+               <img src="../../public/Images/logo-white.png" alt="pagedone logo" class="mx-auto lg:mb-11 mb-8 object-cover">
 
                <div class="rounded-2xl bg-gray-200/20 backdrop-blur-sm shadow-xl z-10">
                     <form action="index.php" method="POST" class="lg:p-11 p-7 mx-auto">
@@ -45,10 +45,11 @@
           </div>
      </section>
 </body>
+
 </html>
 
 <?php
 
-     $_SESSION["email"] = $_POST['email'];
-     $_SESSION["password"] = $_POST['password'];
+$_SESSION["email"] = $_POST['email'];
+$_SESSION["password"] = $_POST['password'];
 ?>
