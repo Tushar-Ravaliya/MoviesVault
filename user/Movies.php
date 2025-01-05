@@ -13,7 +13,7 @@
            ?>
      <div class="w-full flex-col justify-center relative z-20 items-center animates">
           <div class="p-10 font-serif font-semibold text-3xl text-red-500">
-               <span >Runnig Movies</span>
+               <span >Now Playing</span>
           </div>
           <div class="flex bg-white px-10 flex-wrap justify-center">
                <div class="h-1/4 w-auto my-5 mx-10  rounded-lg animate ">

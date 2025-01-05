@@ -73,14 +73,16 @@
                </div>
                <div class="flex bg-white px-10 flex-wrap justify-center">
                     <div class="h-1/4 w-auto my-5 mx-10  rounded-lg animate ">
-                         <div class="h-1/4 w-auto bg-red-500 overflow-hidden">
-                              <img src="../src/Images/Pushpa2.jpg" alt=""
-                                   class="h-96 min-h-80 hover:scale-110 hover:transition hover:ease-in-out hover:delay-150 transition">
-                         </div>
-                         <div class="font-medium">
-                              <span>Pushpa 2: The Rule</span><br>
-                              <span class="text-gray-400">Action / Thtiller</span>
-                         </div>
+                         <a href="Movies_details.php">
+                              <div class="h-1/4 w-auto bg-red-500 overflow-hidden">
+                                   <img src="../src/Images/Pushpa2.jpg" alt=""
+                                        class="h-96 min-h-80 hover:scale-110 hover:transition hover:ease-in-out hover:delay-150 transition">
+                              </div>
+                              <div class="font-medium">
+                                   <span>Pushpa 2: The Rule</span><br>
+                                   <span class="text-gray-400">Action / Thtiller</span>
+                              </div>
+                         </a>
                     </div>
                     <div class="h-1/4 w-auto my-5 mx-10  rounded-lg animate ">
                          <div class="h-1/4 w-auto bg-red-500 overflow-hidden">

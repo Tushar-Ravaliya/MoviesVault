@@ -23,10 +23,11 @@
                               <p class="text-gray-200 text-center text-base font-medium leading-6">Unlock endless
                                    entertainment with MoviesVault</p>
                          </div>
-                         <input type="text"
+                         
+                         <input type="email"
                               class="w-full h-10 text-gray-900 placeholder:text-gray-400 text-lg font-normal leading-7 rounded-full border-gray-300 border shadow-sm focus:outline-none px-4 mb-6"
                               placeholder="Email" name="email">
-                         <input type="text"
+                         <input type="password"
                               class="w-full h-10 text-gray-900 placeholder:text-gray-400 text-lg font-normal leading-7 rounded-full border-gray-300 border shadow-sm focus:outline-none px-4 mb-1"
                               placeholder="Password" name="password">
                          <a href="javascript:;" class="flex justify-end mb-6">
@@ -36,7 +37,7 @@
                          <input
                               class="w-full h-12 text-white text-center text-base font-semibold leading-6 rounded-full hover:bg-red-600 transition-all duration-700 bg-red-600/70 shadow-sm mb-11"
                               type="submit" value="Log in">
-                         <a href="javascript:;"
+                         <a href="Register.php"
                               class="flex justify-center text-gray-200 text-base font-medium leading-6"> Don't have an
                               account? <span class="text-indigo-600 font-semibold pl-3"> Sign Up</span>
                          </a>
