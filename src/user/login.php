@@ -16,7 +16,7 @@
                <img src="../../public/Images/logo-white.png" alt="pagedone logo" class="mx-auto lg:mb-11 mb-8 object-cover">
 
                <div class="rounded-2xl bg-gray-200/20 backdrop-blur-sm shadow-xl z-10">
-                    <form action="index.php" method="POST" class="lg:p-11 p-7 mx-auto">
+                    <form action="../../app/controller/signin.php" method="POST" class="lg:p-11 p-7 mx-auto">
                          <div class="mb-11">
                               <h1 class="text-white text-center font-manrope text-3xl font-bold leading-10 mb-2">Welcome
                                    Back</h1>
@@ -36,7 +36,7 @@
                          </a>
                          <input
                               class="w-full h-12 text-white text-center text-base font-semibold leading-6 rounded-full hover:bg-red-600 transition-all duration-700 bg-red-600/70 shadow-sm mb-11"
-                              type="submit" value="Log in">
+                              type="submit" name="signin" value="Log in">
                          <a href="Register.php"
                               class="flex justify-center text-gray-200 text-base font-medium leading-6"> Don't have an
                               account? <span class="text-indigo-600 font-semibold pl-3"> Sign Up</span>

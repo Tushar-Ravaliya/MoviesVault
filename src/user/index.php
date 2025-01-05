@@ -30,10 +30,6 @@
 </head>
 
 <body class="">
-     <?php
-     session_start();
-     echo  $_SESSION["email"];
-     ?>
      <div class="container">
           <?php
           include("Nevigation.php")
