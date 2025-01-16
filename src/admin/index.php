@@ -13,6 +13,8 @@
     <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" as="style">
 
+    <!-- {headerScripts} -->
+
     <!-- Core CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -404,1330 +406,1358 @@
         <!-- Content will be injected here -->
     </main>
 
+    <!-- {bodyScripts} -->
+
 </body>
 
 </html>
 <htmlCode>
-    <!-- Root container -->
-    <div id="root" class="font-sans bg-neutral-900 text-white">
-        <!-- Main container with flexbox -->
-        <div class="flex">
-            <!-- Sidebar Navigation -->
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <style>
+            [x-cloak] {
+                display: none !important;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            .active-link {
+                @apply bg-blue-100 text-blue-800 border-r-4 border-blue-600;
+            }
+
+            .menu-link {
+                @apply flex items-center px-6 py-3 text-gray-600 hover:bg-blue-50 transition-all duration-300;
+            }
+        </style>
+    </head>
+
+    <body class="bg-[#E5E7EB]">
+        <div id="root" class="flex">
             <div x-data="{ isOpen: false }" class="relative">
-                <!-- Desktop Sidebar -->
-                <nav class="hidden lg:flex flex-col w-64 h-screen sticky top-0 bg-neutral-800 border-r border-neutral-700">
-                    <!-- Logo Section -->
-                    <div class="p-4 border-b border-neutral-700">
-                        <span class="text-2xl font-bold">CineAdmin</span>
-                    </div>
-
-                    <!-- Navigation Links -->
-                    <div class="flex-1 py-4">
-                        <a href="#dashboard" class="flex items-center px-6 py-3 text-neutral-300 hover:bg-neutral-700 hover:text-white transition-all duration-300 active">
-                            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-                            </svg>
-                            Dashboard
-                        </a>
-                        <a href="#movies" class="flex items-center px-6 py-3 text-neutral-300 hover:bg-neutral-700 hover:text-white transition-all duration-300">
-                            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"></path>
-                            </svg>
-                            Movies
-                        </a>
-                        <a href="#screens" class="flex items-center px-6 py-3 text-neutral-300 hover:bg-neutral-700 hover:text-white transition-all duration-300">
-                            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                            </svg>
-                            Screens
-                        </a>
-                        <a href="#shows" class="flex items-center px-6 py-3 text-neutral-300 hover:bg-neutral-700 hover:text-white transition-all duration-300">
-                            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
-                            Shows
-                        </a>
-                        <a href="#bookings" class="flex items-center px-6 py-3 text-neutral-300 hover:bg-neutral-700 hover:text-white transition-all duration-300">
-                            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 4v12l-4-2-4 2V4M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                            </svg>
-                            Bookings
-                        </a>
-                    </div>
-
-                    <!-- User Profile Section -->
-                    <div class="p-4 border-t border-neutral-700">
-                        <div class="flex items-center">
-                            <img src="https://avatar.iran.liara.run/public" alt="User" class="w-8 h-8 rounded-full">
-                            <div class="ml-3">
-                                <p class="text-sm font-medium">Admin User</p>
-                                <p class="text-xs text-neutral-400">admin@cinema.com</p>
-                            </div>
-                        </div>
-                    </div>
-                </nav>
-
                 <!-- Mobile Menu Button -->
                 <button type="button"
-                    class="lg:hidden fixed top-4 left-4 z-50 rounded-md p-2 bg-neutral-800 text-neutral-400 hover:text-white hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                     @click="isOpen = !isOpen"
-                    aria-controls="mobile-menu"
-                    :aria-expanded="isOpen">
-                    <!-- Open Menu Icon -->
-                    <svg x-show="!isOpen" class="h-6 w-6" x-cloak fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    class="lg:hidden fixed top-4 left-4 z-50 p-2 rounded-lg bg-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <svg x-show="!isOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
-                    <!-- Close Menu Icon -->
-                    <svg x-show="isOpen" class="h-6 w-6" x-cloak fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg x-show="isOpen" x-cloak class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
 
-                <!-- Mobile Menu -->
-                <div x-show="isOpen"
-                    x-cloak
-                    class="lg:hidden fixed inset-0 z-40 bg-neutral-800/80 backdrop-blur-lg"
-                    @click.away="isOpen = false"
-                    @resize.window="if (window.innerWidth > 1024) isOpen = false"
-                    x-transition:enter="transition ease-out duration-100 transform"
-                    x-transition:enter-start="opacity-0 scale-95"
-                    x-transition:enter-end="opacity-100 scale-100"
-                    x-transition:leave="transition ease-in duration-75 transform"
-                    x-transition:leave-start="opacity-100 scale-100"
-                    x-transition:leave-end="opacity-0 scale-95">
-                    <div class="fixed inset-y-0 left-0 w-64 bg-neutral-800">
-                        <!-- Mobile menu content (mirror of desktop navigation) -->
-                        <div class="p-4 border-b border-neutral-700">
-                            <span class="text-2xl font-bold">CineAdmin</span>
+                <!-- Sidebar -->
+                <nav class="fixed h-screen w-64 bg-white hidden lg:block border-r border-gray-200"
+                    x-show="isOpen || window.innerWidth >= 1024"
+                    @click.away="if(window.innerWidth < 1024) isOpen = false"
+                    @resize.window="if(window.innerWidth > 1024) isOpen = true"
+                    x-cloak>
+                    <div class="flex items-center justify-center h-16 border-b border-gray-200">
+                        <h1 class="text-xl font-bold text-blue-600">MovieAdmin</h1>
+                    </div>
+                    <div class="py-4">
+                        <a href="#dashboard" class="menu-link active-link">
+                            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                            Dashboard
+                        </a>
+                        <a href="#movies" class="menu-link">
+                            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" />
+                            </svg>
+                            Movies
+                        </a>
+                        <a href="#theaters" class="menu-link">
+                            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                            </svg>
+                            Theaters
+                        </a>
+                        <a href="#bookings" class="menu-link">
+                            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 4v12l-4-2-4 2V4M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            Bookings
+                        </a>
+                        <a href="#customers" class="menu-link">
+                            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                            Customers
+                        </a>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-gray-200">
+                        <div class="flex items-center">
+                            <img src="https://avatar.iran.liara.run/public" alt="Admin" class="w-8 h-8 rounded-full">
+                            <div class="ml-3">
+                                <p class="text-sm font-medium text-gray-700">Admin User</p>
+                                <p class="text-xs text-gray-500">admin@movies.com</p>
+                            </div>
                         </div>
-                        <!-- Same navigation links as desktop -->
-                        <div class="py-4">
-                            <!-- Mirror the desktop navigation links here -->
-                            <a href="#dashboard" class="flex items-center px-6 py-3 text-neutral-300 hover:bg-neutral-700 hover:text-white transition-all duration-300">
-                                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-                                </svg>
-                                Dashboard
-                            </a>
-                            <!-- Repeat other navigation items -->
+                    </div>
+                </nav>
+            </div>
+
+            <main class="flex-1 ml-0 lg:ml-64">
+                <div class="sticky top-0 z-10 bg-white border-b border-gray-200">
+                    <div class="px-4 sm:px-6 lg:px-8 py-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex-1">
+                                <div class="relative">
+                                    <input type="text" placeholder="Search..." class="w-full sm:w-64 pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                        <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <button class="p-2 rounded-lg hover:bg-gray-100">
+                                    <svg class="h-6 w-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                                    </svg>
+                                </button>
+                                <button class="p-2 rounded-lg hover:bg-gray-100">
+                                    <img src="https://avatar.iran.liara.run/public" alt="Profile" class="h-8 w-8 rounded-full">
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Main Content Area -->
-            <main class="flex-1 h-screen overflow-y-auto bg-neutral-900">
-                <!-- Header -->
-                <header class="sticky top-0 z-30 bg-neutral-800 border-b border-neutral-700">
-                    <div class="px-6 py-4 flex items-center justify-between">
-                        <h1 class="text-xl font-semibold">Dashboard</h1>
-                        <div class="flex items-center space-x-4">
-                            <button class="p-2 text-neutral-400 hover:text-white">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
-                                </svg>
-                            </button>
-                            <button class="p-2 text-neutral-400 hover:text-white">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                </header>
-
-                <!-- Mount Point for Sections -->
                 <MountPoint>
 
-</htmlCode>
-<htmlCode>
-    <section id="Authentication" class="min-h-screen bg-neutral-900 flex items-center justify-center p-4">
-        <div x-data="{ isLogin: true }" class="w-full max-w-md">
-            <!-- Auth Card -->
-            <div class="bg-neutral-800 border border-neutral-700 rounded-lg p-8">
-                <!-- Logo -->
-                <div class="text-center mb-8">
-                    <h1 class="text-3xl font-bold text-white">CineAdmin</h1>
-                    <p class="text-neutral-400 mt-2">Theater Management System</p>
-                </div>
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            // Active link handling
+                            const links = document.querySelectorAll('.menu-link');
+                            links.forEach(link => {
+                                link.addEventListener('click', function() {
+                                    links.forEach(l => l.classList.remove('active-link'));
+                                    this.classList.add('active-link');
+                                });
+                            });
 
-                <!-- Login Form -->
-                <div x-show="isLogin" x-cloak>
-                    <h2 class="text-2xl font-bold text-white mb-6">Sign In</h2>
-                    <form class="space-y-4">
-                        <div>
-                            <label class="block text-sm font-medium text-neutral-300 mb-1">Email Address</label>
-                            <input type="email" class="w-full px-4 py-2 rounded-md bg-neutral-700 border border-neutral-600 text-white focus:outline-none focus:border-blue-500 transition duration-200" placeholder="admin@example.com" required>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-neutral-300 mb-1">Password</label>
-                            <input type="password" class="w-full px-4 py-2 rounded-md bg-neutral-700 border border-neutral-600 text-white focus:outline-none focus:border-blue-500 transition duration-200" placeholder="••••••••" required>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <label class="flex items-center">
-                                <input type="checkbox" class="w-4 h-4 rounded bg-neutral-700 border-neutral-600 text-blue-500 focus:ring-blue-500">
-                                <span class="ml-2 text-sm text-neutral-300">Remember me</span>
-                            </label>
-                            <a href="#" class="text-sm text-blue-500 hover:text-blue-400">Forgot password?</a>
-                        </div>
-                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition duration-200">
-                            Sign In
-                        </button>
-                    </form>
-                </div>
+                            // Set active link based on current hash
+                            function setActiveLink() {
+                                const hash = window.location.hash || '#dashboard';
+                                links.forEach(link => {
+                                    if (link.getAttribute('href') === hash) {
+                                        link.classList.add('active-link');
+                                    } else {
+                                        link.classList.remove('active-link');
+                                    }
+                                });
+                            }
 
-                <!-- Register Form -->
-                <div x-show="!isLogin" x-cloak>
-                    <h2 class="text-2xl font-bold text-white mb-6">Create Account</h2>
-                    <form class="space-y-4">
-                        <div>
-                            <label class="block text-sm font-medium text-neutral-300 mb-1">Full Name</label>
-                            <input type="text" class="w-full px-4 py-2 rounded-md bg-neutral-700 border border-neutral-600 text-white focus:outline-none focus:border-blue-500 transition duration-200" placeholder="John Doe" required>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-neutral-300 mb-1">Email Address</label>
-                            <input type="email" class="w-full px-4 py-2 rounded-md bg-neutral-700 border border-neutral-600 text-white focus:outline-none focus:border-blue-500 transition duration-200" placeholder="admin@example.com" required>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-neutral-300 mb-1">Password</label>
-                            <input type="password" class="w-full px-4 py-2 rounded-md bg-neutral-700 border border-neutral-600 text-white focus:outline-none focus:border-blue-500 transition duration-200" placeholder="••••••••" required>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-neutral-300 mb-1">Confirm Password</label>
-                            <input type="password" class="w-full px-4 py-2 rounded-md bg-neutral-700 border border-neutral-600 text-white focus:outline-none focus:border-blue-500 transition duration-200" placeholder="••••••••" required>
-                        </div>
-                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition duration-200">
-                            Create Account
-                        </button>
-                    </form>
-                </div>
-
-                <!-- Toggle Form -->
-                <div class="mt-6 text-center">
-                    <button @click="isLogin = !isLogin" class="text-sm text-neutral-400 hover:text-white transition duration-200">
-                        <span x-text="isLogin ? 'Need an account? Register' : 'Already have an account? Sign in'"></span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-</htmlCode>
-<htmlCode>
-    <section id="Dashboard" class="p-6 space-y-6 bg-neutral-900">
-        <!-- Stats Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- Total Revenue -->
-            <div class="p-6 bg-neutral-800 border border-neutral-700 rounded-lg">
-                <div class="flex justify-between items-center">
-                    <div>
-                        <p class="text-neutral-400 text-sm">Total Revenue</p>
-                        <h3 class="text-2xl font-bold text-white mt-1">$24,563</h3>
-                        <span class="text-green-500 text-sm">+15% from last month</span>
-                    </div>
-                    <div class="p-3 bg-neutral-700/50 rounded-lg">
-                        <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Total Bookings -->
-            <div class="p-6 bg-neutral-800 border border-neutral-700 rounded-lg">
-                <div class="flex justify-between items-center">
-                    <div>
-                        <p class="text-neutral-400 text-sm">Total Bookings</p>
-                        <h3 class="text-2xl font-bold text-white mt-1">1,432</h3>
-                        <span class="text-green-500 text-sm">+8% from last month</span>
-                    </div>
-                    <div class="p-3 bg-neutral-700/50 rounded-lg">
-                        <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"></path>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Active Shows -->
-            <div class="p-6 bg-neutral-800 border border-neutral-700 rounded-lg">
-                <div class="flex justify-between items-center">
-                    <div>
-                        <p class="text-neutral-400 text-sm">Active Shows</p>
-                        <h3 class="text-2xl font-bold text-white mt-1">12</h3>
-                        <span class="text-yellow-500 text-sm">Same as last month</span>
-                    </div>
-                    <div class="p-3 bg-neutral-700/50 rounded-lg">
-                        <svg class="w-6 h-6 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"></path>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Occupancy Rate -->
-            <div class="p-6 bg-neutral-800 border border-neutral-700 rounded-lg">
-                <div class="flex justify-between items-center">
-                    <div>
-                        <p class="text-neutral-400 text-sm">Occupancy Rate</p>
-                        <h3 class="text-2xl font-bold text-white mt-1">76%</h3>
-                        <span class="text-red-500 text-sm">-3% from last month</span>
-                    </div>
-                    <div class="p-3 bg-neutral-700/50 rounded-lg">
-                        <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Recent Bookings & Active Shows -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <!-- Recent Bookings -->
-            <div class="bg-neutral-800 border border-neutral-700 rounded-lg overflow-hidden">
-                <div class="p-6 border-b border-neutral-700">
-                    <h2 class="text-xl font-semibold text-white">Recent Bookings</h2>
-                </div>
-                <div class="p-6">
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between p-4 bg-neutral-700/20 rounded-lg">
-                            <div class="flex items-center space-x-4">
-                                <div class="flex-shrink-0">
-                                    <img src="https://avatar.iran.liara.run/public" alt="User" class="w-10 h-10 rounded-full">
+                            window.addEventListener('hashchange', setActiveLink);
+                            setActiveLink();
+                        });
+                    </script>
+                    <htmlCode>
+                        <div id="dashboard" class="p-6 bg-gray-50">
+                            <!-- Stats Grid -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+                                <!-- Total Bookings -->
+                                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                                    <div class="flex justify-between items-center">
+                                        <div>
+                                            <p class="text-sm text-gray-500">Total Bookings</p>
+                                            <h3 class="text-2xl font-bold text-gray-900">1,284</h3>
+                                        </div>
+                                        <div class="p-3 bg-blue-50 rounded-full">
+                                            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 4v12l-4-2-4 2V4M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <p class="mt-2 text-sm text-green-600">+12.5% from last month</p>
                                 </div>
-                                <div>
-                                    <p class="text-white font-medium">John Doe</p>
-                                    <p class="text-neutral-400 text-sm">Avengers: Endgame</p>
+
+                                <!-- Revenue -->
+                                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                                    <div class="flex justify-between items-center">
+                                        <div>
+                                            <p class="text-sm text-gray-500">Total Revenue</p>
+                                            <h3 class="text-2xl font-bold text-gray-900">$52,389</h3>
+                                        </div>
+                                        <div class="p-3 bg-blue-50 rounded-full">
+                                            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <p class="mt-2 text-sm text-green-600">+8.2% from last month</p>
+                                </div>
+
+                                <!-- Active Users -->
+                                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                                    <div class="flex justify-between items-center">
+                                        <div>
+                                            <p class="text-sm text-gray-500">Active Users</p>
+                                            <h3 class="text-2xl font-bold text-gray-900">3,427</h3>
+                                        </div>
+                                        <div class="p-3 bg-blue-50 rounded-full">
+                                            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <p class="mt-2 text-sm text-green-600">+22.4% from last month</p>
+                                </div>
+
+                                <!-- Upcoming Movies -->
+                                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                                    <div class="flex justify-between items-center">
+                                        <div>
+                                            <p class="text-sm text-gray-500">Upcoming Movies</p>
+                                            <h3 class="text-2xl font-bold text-gray-900">12</h3>
+                                        </div>
+                                        <div class="p-3 bg-blue-50 rounded-full">
+                                            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <p class="mt-2 text-sm text-blue-600">View schedule</p>
                                 </div>
                             </div>
-                            <div class="text-right">
-                                <p class="text-white font-medium">$24</p>
-                                <p class="text-neutral-400 text-sm">2 tickets</p>
-                            </div>
-                        </div>
 
-                        <div class="flex items-center justify-between p-4 bg-neutral-700/20 rounded-lg">
-                            <div class="flex items-center space-x-4">
-                                <div class="flex-shrink-0">
-                                    <img src="https://avatar.iran.liara.run/public" alt="User" class="w-10 h-10 rounded-full">
-                                </div>
-                                <div>
-                                    <p class="text-white font-medium">Jane Smith</p>
-                                    <p class="text-neutral-400 text-sm">Inception</p>
-                                </div>
-                            </div>
-                            <div class="text-right">
-                                <p class="text-white font-medium">$36</p>
-                                <p class="text-neutral-400 text-sm">3 tickets</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center justify-between p-4 bg-neutral-700/20 rounded-lg">
-                            <div class="flex items-center space-x-4">
-                                <div class="flex-shrink-0">
-                                    <img src="https://avatar.iran.liara.run/public" alt="User" class="w-10 h-10 rounded-full">
-                                </div>
-                                <div>
-                                    <p class="text-white font-medium">Mike Johnson</p>
-                                    <p class="text-neutral-400 text-sm">Interstellar</p>
-                                </div>
-                            </div>
-                            <div class="text-right">
-                                <p class="text-white font-medium">$12</p>
-                                <p class="text-neutral-400 text-sm">1 ticket</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Active Shows -->
-            <div class="bg-neutral-800 border border-neutral-700 rounded-lg overflow-hidden">
-                <div class="p-6 border-b border-neutral-700">
-                    <h2 class="text-xl font-semibold text-white">Active Shows</h2>
-                </div>
-                <div class="p-6">
-                    <div class="space-y-4">
-                        <div class="p-4 bg-neutral-700/20 rounded-lg">
-                            <div class="flex justify-between items-center">
-                                <div>
-                                    <h3 class="text-white font-medium">Avengers: Endgame</h3>
-                                    <p class="text-neutral-400 text-sm">Screen 1 • 7:30 PM</p>
-                                </div>
-                                <span class="px-3 py-1 text-xs font-medium bg-green-500/20 text-green-500 rounded-full">Running</span>
-                            </div>
-                            <div class="mt-3">
-                                <div class="w-full bg-neutral-700 rounded-full h-2">
-                                    <div class="bg-green-500 h-2 rounded-full" style="width: 75%"></div>
-                                </div>
-                                <p class="text-neutral-400 text-sm mt-2">75% seats filled</p>
-                            </div>
-                        </div>
-
-                        <div class="p-4 bg-neutral-700/20 rounded-lg">
-                            <div class="flex justify-between items-center">
-                                <div>
-                                    <h3 class="text-white font-medium">Inception</h3>
-                                    <p class="text-neutral-400 text-sm">Screen 2 • 8:00 PM</p>
-                                </div>
-                                <span class="px-3 py-1 text-xs font-medium bg-yellow-500/20 text-yellow-500 rounded-full">Starting Soon</span>
-                            </div>
-                            <div class="mt-3">
-                                <div class="w-full bg-neutral-700 rounded-full h-2">
-                                    <div class="bg-yellow-500 h-2 rounded-full" style="width: 45%"></div>
-                                </div>
-                                <p class="text-neutral-400 text-sm mt-2">45% seats filled</p>
-                            </div>
-                        </div>
-
-                        <div class="p-4 bg-neutral-700/20 rounded-lg">
-                            <div class="flex justify-between items-center">
-                                <div>
-                                    <h3 class="text-white font-medium">Interstellar</h3>
-                                    <p class="text-neutral-400 text-sm">Screen 3 • 9:00 PM</p>
-                                </div>
-                                <span class="px-3 py-1 text-xs font-medium bg-blue-500/20 text-blue-500 rounded-full">Booking Open</span>
-                            </div>
-                            <div class="mt-3">
-                                <div class="w-full bg-neutral-700 rounded-full h-2">
-                                    <div class="bg-blue-500 h-2 rounded-full" style="width: 25%"></div>
-                                </div>
-                                <p class="text-neutral-400 text-sm mt-2">25% seats filled</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</htmlCode>
-<htmlCode>
-    <section id="MovieManagement" class="p-6 bg-neutral-900">
-        <!-- Header with Add Movie Button -->
-        <div class="flex justify-between items-center mb-6">
-            <h2 class="text-2xl font-bold text-white">Movie Management</h2>
-            <button @click="document.getElementById('addMovieModal').classList.remove('hidden')" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-200 flex items-center">
-                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-                </svg>
-                Add New Movie
-            </button>
-        </div>
-
-        <!-- Search and Filter Bar -->
-        <div class="mb-6 grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div class="relative">
-                <input type="text" placeholder="Search movies..." class="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-blue-500">
-                <svg class="w-5 h-5 text-neutral-400 absolute right-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                </svg>
-            </div>
-            <select class="px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-blue-500">
-                <option>All Genres</option>
-                <option>Action</option>
-                <option>Drama</option>
-                <option>Comedy</option>
-                <option>Thriller</option>
-            </select>
-            <select class="px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-blue-500">
-                <option>Status</option>
-                <option>Now Showing</option>
-                <option>Coming Soon</option>
-                <option>Archived</option>
-            </select>
-        </div>
-
-        <!-- Movies Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            <!-- Movie Card -->
-            <div class="bg-neutral-800 border border-neutral-700 rounded-lg overflow-hidden">
-                <img src="https://placehold.co/600x400?text=Movie+Poster" alt="Movie Poster" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-lg font-semibold text-white">Avengers: Endgame</h3>
-                        <span class="px-2 py-1 text-xs bg-green-500/20 text-green-500 rounded-full">Now Showing</span>
-                    </div>
-                    <p class="text-neutral-400 text-sm mb-4">Action, Adventure • 3h 2m</p>
-                    <div class="flex justify-between items-center">
-                        <span class="text-neutral-300">12 shows today</span>
-                        <button class="text-neutral-400 hover:text-white" @click="showMovieOptions">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Repeat Movie Cards -->
-        </div>
-
-        <!-- Add Movie Modal -->
-        <div id="addMovieModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
-            <div class="bg-neutral-800 rounded-lg p-6 w-full max-w-2xl">
-                <div class="flex justify-between items-center mb-6">
-                    <h3 class="text-xl font-bold text-white">Add New Movie</h3>
-                    <button @click="document.getElementById('addMovieModal').classList.add('hidden')" class="text-neutral-400 hover:text-white">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
-                    </button>
-                </div>
-                <form class="space-y-4">
-                    <div>
-                        <label class="block text-sm font-medium text-neutral-300 mb-1">Movie Title</label>
-                        <input type="text" class="w-full px-4 py-2 bg-neutral-700 border border-neutral-600 rounded-lg text-white focus:outline-none focus:border-blue-500">
-                    </div>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-sm font-medium text-neutral-300 mb-1">Genre</label>
-                            <select class="w-full px-4 py-2 bg-neutral-700 border border-neutral-600 rounded-lg text-white focus:outline-none focus:border-blue-500">
-                                <option>Action</option>
-                                <option>Drama</option>
-                                <option>Comedy</option>
-                                <option>Thriller</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-neutral-300 mb-1">Duration (minutes)</label>
-                            <input type="number" class="w-full px-4 py-2 bg-neutral-700 border border-neutral-600 rounded-lg text-white focus:outline-none focus:border-blue-500">
-                        </div>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-neutral-300 mb-1">Release Date</label>
-                        <input type="date" class="w-full px-4 py-2 bg-neutral-700 border border-neutral-600 rounded-lg text-white focus:outline-none focus:border-blue-500">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-neutral-300 mb-1">Description</label>
-                        <textarea rows="4" class="w-full px-4 py-2 bg-neutral-700 border border-neutral-600 rounded-lg text-white focus:outline-none focus:border-blue-500"></textarea>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-neutral-300 mb-1">Poster Image</label>
-                        <div class="border-2 border-dashed border-neutral-600 rounded-lg p-4 text-center">
-                            <svg class="mx-auto h-12 w-12 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-                            </svg>
-                            <p class="mt-1 text-sm text-neutral-400">Drag and drop or click to upload</p>
-                        </div>
-                    </div>
-                    <div class="flex justify-end space-x-4 mt-6">
-                        <button type="button" @click="document.getElementById('addMovieModal').classList.add('hidden')" class="px-4 py-2 text-neutral-400 hover:text-white transition duration-200">Cancel</button>
-                        <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-200">Add Movie</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
-</htmlCode>
-<htmlCode>
-    <section id="ScreenManagement" class="p-6 bg-neutral-900">
-        <!-- Header with Add Screen Button -->
-        <div class="flex justify-between items-center mb-6">
-            <h2 class="text-2xl font-bold text-white">Screen Management</h2>
-            <button @click="document.getElementById('addScreenModal').classList.remove('hidden')" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-200 flex items-center">
-                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-                </svg>
-                Add New Screen
-            </button>
-        </div>
-
-        <!-- Screens Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
-            <!-- Screen Card 1 -->
-            <div class="bg-neutral-800 border border-neutral-700 rounded-lg overflow-hidden">
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <div>
-                            <h3 class="text-xl font-semibold text-white">Screen 1</h3>
-                            <p class="text-neutral-400 mt-1">Premium Theater</p>
-                        </div>
-                        <span class="px-3 py-1 text-sm bg-green-500/20 text-green-500 rounded-full">Active</span>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="flex justify-between text-sm">
-                            <span class="text-neutral-400">Seating Capacity</span>
-                            <span class="text-white">120 seats</span>
-                        </div>
-                        <div class="flex justify-between text-sm">
-                            <span class="text-neutral-400">Screen Type</span>
-                            <span class="text-white">IMAX</span>
-                        </div>
-                        <div class="flex justify-between text-sm">
-                            <span class="text-neutral-400">Sound System</span>
-                            <span class="text-white">Dolby Atmos</span>
-                        </div>
-                    </div>
-                    <div class="mt-6 grid grid-cols-2 gap-4">
-                        <button class="px-4 py-2 bg-neutral-700 text-white rounded-lg hover:bg-neutral-600 transition duration-200">Edit Screen</button>
-                        <button class="px-4 py-2 bg-neutral-700 text-white rounded-lg hover:bg-neutral-600 transition duration-200">View Layout</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Screen Card 2 -->
-            <div class="bg-neutral-800 border border-neutral-700 rounded-lg overflow-hidden">
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <div>
-                            <h3 class="text-xl font-semibold text-white">Screen 2</h3>
-                            <p class="text-neutral-400 mt-1">Standard Theater</p>
-                        </div>
-                        <span class="px-3 py-1 text-sm bg-green-500/20 text-green-500 rounded-full">Active</span>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="flex justify-between text-sm">
-                            <span class="text-neutral-400">Seating Capacity</span>
-                            <span class="text-white">80 seats</span>
-                        </div>
-                        <div class="flex justify-between text-sm">
-                            <span class="text-neutral-400">Screen Type</span>
-                            <span class="text-white">2D/3D</span>
-                        </div>
-                        <div class="flex justify-between text-sm">
-                            <span class="text-neutral-400">Sound System</span>
-                            <span class="text-white">7.1 Surround</span>
-                        </div>
-                    </div>
-                    <div class="mt-6 grid grid-cols-2 gap-4">
-                        <button class="px-4 py-2 bg-neutral-700 text-white rounded-lg hover:bg-neutral-600 transition duration-200">Edit Screen</button>
-                        <button class="px-4 py-2 bg-neutral-700 text-white rounded-lg hover:bg-neutral-600 transition duration-200">View Layout</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Add Screen Modal -->
-        <div id="addScreenModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
-            <div class="bg-neutral-800 rounded-lg p-6 w-full max-w-2xl">
-                <div class="flex justify-between items-center mb-6">
-                    <h3 class="text-xl font-bold text-white">Add New Screen</h3>
-                    <button @click="document.getElementById('addScreenModal').classList.add('hidden')" class="text-neutral-400 hover:text-white">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
-                    </button>
-                </div>
-                <form class="space-y-4">
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-sm font-medium text-neutral-300 mb-1">Screen Name</label>
-                            <input type="text" class="w-full px-4 py-2 bg-neutral-700 border border-neutral-600 rounded-lg text-white focus:outline-none focus:border-blue-500">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-neutral-300 mb-1">Theater Type</label>
-                            <select class="w-full px-4 py-2 bg-neutral-700 border border-neutral-600 rounded-lg text-white focus:outline-none focus:border-blue-500">
-                                <option>Standard</option>
-                                <option>Premium</option>
-                                <option>IMAX</option>
-                                <option>VIP</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-sm font-medium text-neutral-300 mb-1">Seating Capacity</label>
-                            <input type="number" class="w-full px-4 py-2 bg-neutral-700 border border-neutral-600 rounded-lg text-white focus:outline-none focus:border-blue-500">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-neutral-300 mb-1">Screen Type</label>
-                            <select class="w-full px-4 py-2 bg-neutral-700 border border-neutral-600 rounded-lg text-white focus:outline-none focus:border-blue-500">
-                                <option>2D</option>
-                                <option>3D</option>
-                                <option>4DX</option>
-                                <option>IMAX</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-neutral-300 mb-1">Sound System</label>
-                        <select class="w-full px-4 py-2 bg-neutral-700 border border-neutral-600 rounded-lg text-white focus:outline-none focus:border-blue-500">
-                            <option>Dolby Digital</option>
-                            <option>Dolby Atmos</option>
-                            <option>7.1 Surround</option>
-                            <option>IMAX Sound</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-neutral-300 mb-1">Screen Layout</label>
-                        <div class="border-2 border-dashed border-neutral-600 rounded-lg p-8 text-center">
-                            <div class="flex flex-col items-center">
-                                <svg class="w-12 h-12 text-neutral-400 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                </svg>
-                                <p class="text-neutral-400 mb-2">Upload Screen Layout</p>
-                                <p class="text-sm text-neutral-500">Drag and drop or click to upload</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex justify-end space-x-4 mt-6">
-                        <button type="button" @click="document.getElementById('addScreenModal').classList.add('hidden')" class="px-4 py-2 text-neutral-400 hover:text-white transition duration-200">Cancel</button>
-                        <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-200">Add Screen</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
-</htmlCode>
-<htmlCode>
-    <section id="ShowScheduler" class="p-6 bg-neutral-900">
-        <!-- Header with Add Show Button -->
-        <div class="flex justify-between items-center mb-6">
-            <h2 class="text-2xl font-bold text-white">Show Scheduler</h2>
-            <button @click="document.getElementById('addShowModal').classList.remove('hidden')" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-200 flex items-center">
-                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-                </svg>
-                Schedule New Show
-            </button>
-        </div>
-
-        <!-- Date Navigation -->
-        <div class="flex space-x-4 mb-6 overflow-x-auto pb-2">
-            <button class="min-w-[100px] px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white hover:bg-neutral-700">Today</button>
-            <button class="min-w-[100px] px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white hover:bg-neutral-700">Tomorrow</button>
-            <button class="min-w-[100px] px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white hover:bg-neutral-700">Wed, 20 Mar</button>
-            <button class="min-w-[100px] px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white hover:bg-neutral-700">Thu, 21 Mar</button>
-            <button class="min-w-[100px] px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white hover:bg-neutral-700">Fri, 22 Mar</button>
-        </div>
-
-        <!-- Schedule Grid -->
-        <div class="space-y-6">
-            <!-- Screen 1 Schedule -->
-            <div class="bg-neutral-800 border border-neutral-700 rounded-lg p-6">
-                <div class="flex justify-between items-center mb-4">
-                    <div>
-                        <h3 class="text-xl font-semibold text-white">Screen 1</h3>
-                        <p class="text-neutral-400">IMAX Theater</p>
-                    </div>
-                    <div class="flex space-x-2">
-                        <button class="p-2 text-neutral-400 hover:text-white">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                    <div class="bg-neutral-700/50 p-4 rounded-lg">
-                        <div class="flex justify-between items-start mb-2">
-                            <span class="text-white font-medium">10:00 AM</span>
-                            <span class="px-2 py-1 text-xs bg-green-500/20 text-green-500 rounded-full">Available</span>
-                        </div>
-                        <h4 class="text-white mb-1">Avengers: Endgame</h4>
-                        <p class="text-neutral-400 text-sm">3h 2m • PG-13</p>
-                    </div>
-                    <div class="bg-neutral-700/50 p-4 rounded-lg">
-                        <div class="flex justify-between items-start mb-2">
-                            <span class="text-white font-medium">2:00 PM</span>
-                            <span class="px-2 py-1 text-xs bg-yellow-500/20 text-yellow-500 rounded-full">Filling Fast</span>
-                        </div>
-                        <h4 class="text-white mb-1">Inception</h4>
-                        <p class="text-neutral-400 text-sm">2h 28m • PG-13</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Screen 2 Schedule -->
-            <div class="bg-neutral-800 border border-neutral-700 rounded-lg p-6">
-                <div class="flex justify-between items-center mb-4">
-                    <div>
-                        <h3 class="text-xl font-semibold text-white">Screen 2</h3>
-                        <p class="text-neutral-400">Standard Theater</p>
-                    </div>
-                    <div class="flex space-x-2">
-                        <button class="p-2 text-neutral-400 hover:text-white">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                    <div class="bg-neutral-700/50 p-4 rounded-lg">
-                        <div class="flex justify-between items-start mb-2">
-                            <span class="text-white font-medium">11:30 AM</span>
-                            <span class="px-2 py-1 text-xs bg-red-500/20 text-red-500 rounded-full">Almost Full</span>
-                        </div>
-                        <h4 class="text-white mb-1">Interstellar</h4>
-                        <p class="text-neutral-400 text-sm">2h 49m • PG-13</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Add Show Modal -->
-        <div id="addShowModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
-            <div class="bg-neutral-800 rounded-lg p-6 w-full max-w-2xl">
-                <div class="flex justify-between items-center mb-6">
-                    <h3 class="text-xl font-bold text-white">Schedule New Show</h3>
-                    <button @click="document.getElementById('addShowModal').classList.add('hidden')" class="text-neutral-400 hover:text-white">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
-                    </button>
-                </div>
-                <form class="space-y-4">
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-sm font-medium text-neutral-300 mb-1">Select Screen</label>
-                            <select class="w-full px-4 py-2 bg-neutral-700 border border-neutral-600 rounded-lg text-white focus:outline-none focus:border-blue-500">
-                                <option>Screen 1 - IMAX</option>
-                                <option>Screen 2 - Standard</option>
-                                <option>Screen 3 - Premium</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-neutral-300 mb-1">Select Movie</label>
-                            <select class="w-full px-4 py-2 bg-neutral-700 border border-neutral-600 rounded-lg text-white focus:outline-none focus:border-blue-500">
-                                <option>Avengers: Endgame</option>
-                                <option>Inception</option>
-                                <option>Interstellar</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-sm font-medium text-neutral-300 mb-1">Show Date</label>
-                            <input type="date" class="w-full px-4 py-2 bg-neutral-700 border border-neutral-600 rounded-lg text-white focus:outline-none focus:border-blue-500">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-neutral-300 mb-1">Show Time</label>
-                            <input type="time" class="w-full px-4 py-2 bg-neutral-700 border border-neutral-600 rounded-lg text-white focus:outline-none focus:border-blue-500">
-                        </div>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-neutral-300 mb-1">Pricing</label>
-                        <div class="grid grid-cols-2 gap-4">
-                            <input type="number" placeholder="Standard Price" class="px-4 py-2 bg-neutral-700 border border-neutral-600 rounded-lg text-white focus:outline-none focus:border-blue-500">
-                            <input type="number" placeholder="Premium Price" class="px-4 py-2 bg-neutral-700 border border-neutral-600 rounded-lg text-white focus:outline-none focus:border-blue-500">
-                        </div>
-                    </div>
-                    <div class="flex justify-end space-x-4 mt-6">
-                        <button type="button" @click="document.getElementById('addShowModal').classList.add('hidden')" class="px-4 py-2 text-neutral-400 hover:text-white transition duration-200">Cancel</button>
-                        <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-200">Schedule Show</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
-</htmlCode>
-<htmlCode>
-    <section id="BookingManagement" class="p-6 bg-neutral-900">
-        <!-- Header with Filters -->
-        <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 mb-6">
-            <h2 class="text-2xl font-bold text-white">Booking Management</h2>
-            <div class="flex flex-wrap gap-4 items-center">
-                <input type="text" placeholder="Search booking ID or customer" class="px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-blue-500">
-                <select class="px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-blue-500">
-                    <option>All Shows</option>
-                    <option>Avengers: Endgame</option>
-                    <option>Inception</option>
-                    <option>Interstellar</option>
-                </select>
-                <select class="px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-blue-500">
-                    <option>All Statuses</option>
-                    <option>Confirmed</option>
-                    <option>Pending</option>
-                    <option>Cancelled</option>
-                </select>
-            </div>
-        </div>
-
-        <!-- Bookings Table -->
-        <div class="bg-neutral-800 border border-neutral-700 rounded-lg overflow-hidden">
-            <div class="overflow-x-auto">
-                <table class="min-w-full">
-                    <thead>
-                        <tr class="border-b border-neutral-700 bg-neutral-800">
-                            <th class="px-6 py-4 text-left text-sm font-semibold text-white">Booking ID</th>
-                            <th class="px-6 py-4 text-left text-sm font-semibold text-white">Customer</th>
-                            <th class="px-6 py-4 text-left text-sm font-semibold text-white">Movie</th>
-                            <th class="px-6 py-4 text-left text-sm font-semibold text-white">Show Time</th>
-                            <th class="px-6 py-4 text-left text-sm font-semibold text-white">Seats</th>
-                            <th class="px-6 py-4 text-left text-sm font-semibold text-white">Amount</th>
-                            <th class="px-6 py-4 text-left text-sm font-semibold text-white">Status</th>
-                            <th class="px-6 py-4 text-left text-sm font-semibold text-white">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-neutral-700">
-                        <tr class="hover:bg-neutral-700/50 transition duration-200">
-                            <td class="px-6 py-4 text-sm text-white">#BK1234</td>
-                            <td class="px-6 py-4">
-                                <div class="flex items-center">
-                                    <img src="https://avatar.iran.liara.run/public" alt="User" class="w-8 h-8 rounded-full">
-                                    <div class="ml-3">
-                                        <p class="text-sm text-white">John Doe</p>
-                                        <p class="text-xs text-neutral-400">john@example.com</p>
+                            <!-- Charts Section -->
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                                <!-- Sales Trend -->
+                                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Ticket Sales Trend</h3>
+                                    <div class="h-64 flex items-center justify-center">
+                                        <p class="text-gray-500">Chart will be rendered here</p>
                                     </div>
                                 </div>
-                            </td>
-                            <td class="px-6 py-4 text-sm text-white">Avengers: Endgame</td>
-                            <td class="px-6 py-4 text-sm text-white">Today, 7:00 PM</td>
-                            <td class="px-6 py-4 text-sm text-white">A1, A2, A3</td>
-                            <td class="px-6 py-4 text-sm text-white">$45.00</td>
-                            <td class="px-6 py-4">
-                                <span class="px-3 py-1 text-xs font-medium bg-green-500/20 text-green-500 rounded-full">Confirmed</span>
-                            </td>
-                            <td class="px-6 py-4">
-                                <button class="text-neutral-400 hover:text-white" @click="showBookingDetails">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+
+                                <!-- Revenue Distribution -->
+                                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Revenue Distribution</h3>
+                                    <div class="h-64 flex items-center justify-center">
+                                        <p class="text-gray-500">Chart will be rendered here</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Recent Activity -->
+                            <div class="bg-white rounded-lg border border-gray-200">
+                                <div class="p-6">
+                                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Recent Activity</h3>
+                                    <div class="overflow-x-auto">
+                                        <table class="min-w-full divide-y divide-gray-200">
+                                            <thead>
+                                                <tr>
+                                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Time</th>
+                                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Movie</th>
+                                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Customer</th>
+                                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Amount</th>
+                                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="divide-y divide-gray-200">
+                                                <tr>
+                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2 minutes ago</td>
+                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Inception</td>
+                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">John Doe</td>
+                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">$24.00</td>
+                                                    <td class="px-6 py-4 whitespace-nowrap">
+                                                        <span class="px-2 py-1 text-xs font-semibold text-green-800 bg-green-100 rounded-full">Completed</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">15 minutes ago</td>
+                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">The Dark Knight</td>
+                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Jane Smith</td>
+                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">$32.00</td>
+                                                    <td class="px-6 py-4 whitespace-nowrap">
+                                                        <span class="px-2 py-1 text-xs font-semibold text-green-800 bg-green-100 rounded-full">Completed</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1 hour ago</td>
+                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Interstellar</td>
+                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Mike Johnson</td>
+                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">$28.00</td>
+                                                    <td class="px-6 py-4 whitespace-nowrap">
+                                                        <span class="px-2 py-1 text-xs font-semibold text-yellow-800 bg-yellow-100 rounded-full">Pending</span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </htmlCode>
+                    <htmlCode>
+                        <div id="movies" class="p-6 bg-gray-50">
+                            <div class="flex justify-between items-center mb-6">
+                                <h2 class="text-2xl font-bold text-gray-900">Movie Management</h2>
+                                <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 flex items-center">
+                                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
                                     </svg>
+                                    Add New Movie
                                 </button>
-                            </td>
-                        </tr>
+                            </div>
 
-                        <tr class="hover:bg-neutral-700/50 transition duration-200">
-                            <td class="px-6 py-4 text-sm text-white">#BK1235</td>
-                            <td class="px-6 py-4">
-                                <div class="flex items-center">
-                                    <img src="https://avatar.iran.liara.run/public" alt="User" class="w-8 h-8 rounded-full">
-                                    <div class="ml-3">
-                                        <p class="text-sm text-white">Jane Smith</p>
-                                        <p class="text-xs text-neutral-400">jane@example.com</p>
+                            <!-- Filter Section -->
+                            <div class="bg-white p-4 rounded-lg border border-gray-200 mb-6">
+                                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Search Movies</label>
+                                        <input type="text" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Search by title...">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Genre</label>
+                                        <select class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                            <option>All Genres</option>
+                                            <option>Action</option>
+                                            <option>Comedy</option>
+                                            <option>Drama</option>
+                                            <option>Horror</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Status</label>
+                                        <select class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                            <option>All Status</option>
+                                            <option>Now Showing</option>
+                                            <option>Coming Soon</option>
+                                            <option>Archived</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Sort By</label>
+                                        <select class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                            <option>Release Date</option>
+                                            <option>Title</option>
+                                            <option>Revenue</option>
+                                            <option>Popularity</option>
+                                        </select>
                                     </div>
                                 </div>
-                            </td>
-                            <td class="px-6 py-4 text-sm text-white">Inception</td>
-                            <td class="px-6 py-4 text-sm text-white">Tomorrow, 4:30 PM</td>
-                            <td class="px-6 py-4 text-sm text-white">B4, B5</td>
-                            <td class="px-6 py-4 text-sm text-white">$30.00</td>
-                            <td class="px-6 py-4">
-                                <span class="px-3 py-1 text-xs font-medium bg-yellow-500/20 text-yellow-500 rounded-full">Pending</span>
-                            </td>
-                            <td class="px-6 py-4">
-                                <button class="text-neutral-400 hover:text-white" @click="showBookingDetails">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                            </div>
+
+                            <!-- Movies Grid -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                                <!-- Movie Card -->
+                                <div class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+                                    <div class="relative pb-[150%]">
+                                        <img src="https://placehold.co/600x900?text=Movie+Poster" alt="Movie Poster" class="absolute inset-0 w-full h-full object-cover">
+                                    </div>
+                                    <div class="p-4">
+                                        <div class="flex justify-between items-start mb-2">
+                                            <h3 class="text-lg font-semibold text-gray-900">The Dark Knight</h3>
+                                            <span class="px-2 py-1 text-xs font-semibold text-green-800 bg-green-100 rounded-full">Now Showing</span>
+                                        </div>
+                                        <p class="text-sm text-gray-600 mb-4">Action, Crime, Drama • 2h 32m</p>
+                                        <div class="flex justify-between items-center">
+                                            <button class="text-blue-600 hover:text-blue-700 font-medium text-sm">Edit Details</button>
+                                            <button class="text-blue-600 hover:text-blue-700 font-medium text-sm">Manage Shows</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Movie Card -->
+                                <div class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+                                    <div class="relative pb-[150%]">
+                                        <img src="https://placehold.co/600x900?text=Movie+Poster" alt="Movie Poster" class="absolute inset-0 w-full h-full object-cover">
+                                    </div>
+                                    <div class="p-4">
+                                        <div class="flex justify-between items-start mb-2">
+                                            <h3 class="text-lg font-semibold text-gray-900">Inception</h3>
+                                            <span class="px-2 py-1 text-xs font-semibold text-yellow-800 bg-yellow-100 rounded-full">Coming Soon</span>
+                                        </div>
+                                        <p class="text-sm text-gray-600 mb-4">Sci-Fi, Action • 2h 28m</p>
+                                        <div class="flex justify-between items-center">
+                                            <button class="text-blue-600 hover:text-blue-700 font-medium text-sm">Edit Details</button>
+                                            <button class="text-blue-600 hover:text-blue-700 font-medium text-sm">Manage Shows</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Movie Card -->
+                                <div class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+                                    <div class="relative pb-[150%]">
+                                        <img src="https://placehold.co/600x900?text=Movie+Poster" alt="Movie Poster" class="absolute inset-0 w-full h-full object-cover">
+                                    </div>
+                                    <div class="p-4">
+                                        <div class="flex justify-between items-start mb-2">
+                                            <h3 class="text-lg font-semibold text-gray-900">Interstellar</h3>
+                                            <span class="px-2 py-1 text-xs font-semibold text-gray-800 bg-gray-100 rounded-full">Archived</span>
+                                        </div>
+                                        <p class="text-sm text-gray-600 mb-4">Sci-Fi, Drama • 2h 49m</p>
+                                        <div class="flex justify-between items-center">
+                                            <button class="text-blue-600 hover:text-blue-700 font-medium text-sm">Edit Details</button>
+                                            <button class="text-blue-600 hover:text-blue-700 font-medium text-sm">Manage Shows</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Pagination -->
+                            <div class="flex items-center justify-between mt-6">
+                                <div class="flex-1 flex justify-between sm:hidden">
+                                    <button class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">Previous</button>
+                                    <button class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">Next</button>
+                                </div>
+                                <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+                                    <div>
+                                        <p class="text-sm text-gray-700">
+                                            Showing <span class="font-medium">1</span> to <span class="font-medium">10</span> of <span class="font-medium">97</span> results
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+                                            <button class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                                <span class="sr-only">Previous</span>
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                                </svg>
+                                            </button>
+                                            <button class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">1</button>
+                                            <button class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">2</button>
+                                            <button class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">3</button>
+                                            <button class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                                <span class="sr-only">Next</span>
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                                                </svg>
+                                            </button>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </htmlCode>
+                    <htmlCode>
+                        <div id="theaters" class="p-6 bg-gray-50">
+                            <div class="flex justify-between items-center mb-6">
+                                <h2 class="text-2xl font-bold text-gray-900">Theater Management</h2>
+                                <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 flex items-center">
+                                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
                                     </svg>
+                                    Add New Theater
                                 </button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- Pagination -->
-            <div class="px-6 py-4 border-t border-neutral-700 flex items-center justify-between">
-                <p class="text-sm text-neutral-400">Showing 1 to 10 of 50 entries</p>
-                <div class="flex space-x-2">
-                    <button class="px-3 py-1 bg-neutral-700 text-white rounded hover:bg-neutral-600 transition duration-200">Previous</button>
-                    <button class="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition duration-200">1</button>
-                    <button class="px-3 py-1 bg-neutral-700 text-white rounded hover:bg-neutral-600 transition duration-200">2</button>
-                    <button class="px-3 py-1 bg-neutral-700 text-white rounded hover:bg-neutral-600 transition duration-200">3</button>
-                    <button class="px-3 py-1 bg-neutral-700 text-white rounded hover:bg-neutral-600 transition duration-200">Next</button>
-                </div>
-            </div>
-        </div>
-    </section>
-</htmlCode>
-<htmlCode>
-    <section id="Reports" class="p-6 bg-neutral-900">
-        <!-- Header with Date Range Selector -->
-        <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 mb-6">
-            <h2 class="text-2xl font-bold text-white">Analytics & Reports</h2>
-            <div class="flex flex-wrap gap-4">
-                <select class="px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-blue-500">
-                    <option>Last 7 Days</option>
-                    <option>Last 30 Days</option>
-                    <option>Last 3 Months</option>
-                    <option>Last Year</option>
-                    <option>Custom Range</option>
-                </select>
-                <button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-200">
-                    Export Report
-                </button>
-            </div>
-        </div>
-
-        <!-- Key Metrics Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
-            <!-- Total Revenue -->
-            <div class="bg-neutral-800 border border-neutral-700 rounded-lg p-6">
-                <div class="flex items-center justify-between mb-4">
-                    <h3 class="text-neutral-400">Total Revenue</h3>
-                    <span class="text-green-500 text-sm">+12.5%</span>
-                </div>
-                <p class="text-2xl font-bold text-white mb-2">$124,563.00</p>
-                <p class="text-sm text-neutral-400">Compared to $110,725 last period</p>
-            </div>
-
-            <!-- Total Bookings -->
-            <div class="bg-neutral-800 border border-neutral-700 rounded-lg p-6">
-                <div class="flex items-center justify-between mb-4">
-                    <h3 class="text-neutral-400">Total Bookings</h3>
-                    <span class="text-green-500 text-sm">+8.2%</span>
-                </div>
-                <p class="text-2xl font-bold text-white mb-2">5,732</p>
-                <p class="text-sm text-neutral-400">Compared to 5,297 last period</p>
-            </div>
-
-            <!-- Average Occupancy -->
-            <div class="bg-neutral-800 border border-neutral-700 rounded-lg p-6">
-                <div class="flex items-center justify-between mb-4">
-                    <h3 class="text-neutral-400">Average Occupancy</h3>
-                    <span class="text-red-500 text-sm">-2.4%</span>
-                </div>
-                <p class="text-2xl font-bold text-white mb-2">76.3%</p>
-                <p class="text-sm text-neutral-400">Compared to 78.7% last period</p>
-            </div>
-
-            <!-- Cancelled Bookings -->
-            <div class="bg-neutral-800 border border-neutral-700 rounded-lg p-6">
-                <div class="flex items-center justify-between mb-4">
-                    <h3 class="text-neutral-400">Cancelled Bookings</h3>
-                    <span class="text-green-500 text-sm">-5.1%</span>
-                </div>
-                <p class="text-2xl font-bold text-white mb-2">142</p>
-                <p class="text-sm text-neutral-400">Compared to 149 last period</p>
-            </div>
-        </div>
-
-        <!-- Charts Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-            <!-- Revenue Trend -->
-            <div class="bg-neutral-800 border border-neutral-700 rounded-lg p-6">
-                <h3 class="text-lg font-semibold text-white mb-6">Revenue Trend</h3>
-                <div class="h-80 bg-neutral-700/20 rounded-lg flex items-center justify-center">
-                    <p class="text-neutral-400">Revenue Chart Placeholder</p>
-                </div>
-            </div>
-
-            <!-- Popular Movies -->
-            <div class="bg-neutral-800 border border-neutral-700 rounded-lg p-6">
-                <h3 class="text-lg font-semibold text-white mb-6">Popular Movies</h3>
-                <div class="space-y-4">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center">
-                            <div class="w-12 h-16 bg-neutral-700 rounded"></div>
-                            <div class="ml-4">
-                                <p class="text-white font-medium">Avengers: Endgame</p>
-                                <p class="text-neutral-400 text-sm">1,245 bookings</p>
                             </div>
-                        </div>
-                        <div class="text-right">
-                            <p class="text-white font-medium">$24,563</p>
-                            <p class="text-green-500 text-sm">+15.2%</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center">
-                            <div class="w-12 h-16 bg-neutral-700 rounded"></div>
-                            <div class="ml-4">
-                                <p class="text-white font-medium">Inception</p>
-                                <p class="text-neutral-400 text-sm">982 bookings</p>
-                            </div>
-                        </div>
-                        <div class="text-right">
-                            <p class="text-white font-medium">$18,742</p>
-                            <p class="text-green-500 text-sm">+8.7%</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Screen Performance -->
-        <div class="bg-neutral-800 border border-neutral-700 rounded-lg p-6">
-            <h3 class="text-lg font-semibold text-white mb-6">Screen Performance</h3>
-            <div class="overflow-x-auto">
-                <table class="min-w-full">
-                    <thead>
-                        <tr class="border-b border-neutral-700">
-                            <th class="px-6 py-3 text-left text-sm font-semibold text-white">Screen</th>
-                            <th class="px-6 py-3 text-left text-sm font-semibold text-white">Total Shows</th>
-                            <th class="px-6 py-3 text-left text-sm font-semibold text-white">Total Bookings</th>
-                            <th class="px-6 py-3 text-left text-sm font-semibold text-white">Average Occupancy</th>
-                            <th class="px-6 py-3 text-left text-sm font-semibold text-white">Revenue</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-neutral-700">
-                        <tr>
-                            <td class="px-6 py-4 text-sm text-white">Screen 1 (IMAX)</td>
-                            <td class="px-6 py-4 text-sm text-white">245</td>
-                            <td class="px-6 py-4 text-sm text-white">2,156</td>
-                            <td class="px-6 py-4 text-sm text-white">82%</td>
-                            <td class="px-6 py-4 text-sm text-white">$45,632</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 text-sm text-white">Screen 2</td>
-                            <td class="px-6 py-4 text-sm text-white">198</td>
-                            <td class="px-6 py-4 text-sm text-white">1,845</td>
-                            <td class="px-6 py-4 text-sm text-white">75%</td>
-                            <td class="px-6 py-4 text-sm text-white">$32,845</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-</htmlCode>
-<htmlCode>
-    <section id="UserManagement" class="p-6 bg-neutral-900">
-        <!-- Header with Add User Button -->
-        <div class="flex justify-between items-center mb-6">
-            <h2 class="text-2xl font-bold text-white">User Management</h2>
-            <button @click="document.getElementById('addUserModal').classList.remove('hidden')" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-200 flex items-center">
-                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-                </svg>
-                Add New User
-            </button>
-        </div>
+                            <!-- Theater List -->
+                            <div class="grid gap-6">
+                                <!-- Theater Card 1 -->
+                                <div class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+                                    <div class="p-6">
+                                        <div class="flex justify-between items-start">
+                                            <div>
+                                                <h3 class="text-xl font-semibold text-gray-900">Cineplex Downtown</h3>
+                                                <p class="text-sm text-gray-600 mt-1">123 Main Street, City Center</p>
+                                            </div>
+                                            <span class="px-3 py-1 text-sm font-semibold text-green-800 bg-green-100 rounded-full">Active</span>
+                                        </div>
 
-        <!-- Filters -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-            <input type="text" placeholder="Search users..." class="px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-blue-500">
-            <select class="px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-blue-500">
-                <option>All Roles</option>
-                <option>Admin</option>
-                <option>Manager</option>
-                <option>Staff</option>
-            </select>
-            <select class="px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-white focus:outline-none focus:border-blue-500">
-                <option>All Status</option>
-                <option>Active</option>
-                <option>Inactive</option>
-                <option>Suspended</option>
-            </select>
-        </div>
+                                        <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+                                            <div class="p-4 bg-gray-50 rounded-lg">
+                                                <p class="text-sm text-gray-600">Total Screens</p>
+                                                <p class="text-xl font-semibold text-gray-900">6</p>
+                                            </div>
+                                            <div class="p-4 bg-gray-50 rounded-lg">
+                                                <p class="text-sm text-gray-600">Total Seats</p>
+                                                <p class="text-xl font-semibold text-gray-900">1,200</p>
+                                            </div>
+                                            <div class="p-4 bg-gray-50 rounded-lg">
+                                                <p class="text-sm text-gray-600">Today's Shows</p>
+                                                <p class="text-xl font-semibold text-gray-900">24</p>
+                                            </div>
+                                        </div>
 
-        <!-- Users Table -->
-        <div class="bg-neutral-800 border border-neutral-700 rounded-lg overflow-hidden">
-            <div class="overflow-x-auto">
-                <table class="min-w-full">
-                    <thead>
-                        <tr class="border-b border-neutral-700 bg-neutral-800">
-                            <th class="px-6 py-4 text-left text-sm font-semibold text-white">User</th>
-                            <th class="px-6 py-4 text-left text-sm font-semibold text-white">Role</th>
-                            <th class="px-6 py-4 text-left text-sm font-semibold text-white">Email</th>
-                            <th class="px-6 py-4 text-left text-sm font-semibold text-white">Status</th>
-                            <th class="px-6 py-4 text-left text-sm font-semibold text-white">Last Login</th>
-                            <th class="px-6 py-4 text-left text-sm font-semibold text-white">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-neutral-700">
-                        <tr class="hover:bg-neutral-700/50 transition duration-200">
-                            <td class="px-6 py-4">
-                                <div class="flex items-center">
-                                    <img src="https://avatar.iran.liara.run/public" alt="User" class="w-8 h-8 rounded-full">
-                                    <div class="ml-3">
-                                        <p class="text-sm text-white font-medium">John Doe</p>
-                                        <p class="text-xs text-neutral-400">Created 2 months ago</p>
+                                        <div class="mt-6 flex flex-wrap gap-2">
+                                            <button class="inline-flex items-center px-3 py-2 border border-blue-600 text-sm font-medium rounded-md text-blue-600 hover:bg-blue-50">
+                                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                                </svg>
+                                                Edit Details
+                                            </button>
+                                            <button class="inline-flex items-center px-3 py-2 border border-blue-600 text-sm font-medium rounded-md text-blue-600 hover:bg-blue-50">
+                                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                                </svg>
+                                                Manage Screens
+                                            </button>
+                                            <button class="inline-flex items-center px-3 py-2 border border-blue-600 text-sm font-medium rounded-md text-blue-600 hover:bg-blue-50">
+                                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                                </svg>
+                                                View Schedule
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
-                            </td>
-                            <td class="px-6 py-4">
-                                <span class="px-3 py-1 text-xs font-medium bg-blue-500/20 text-blue-500 rounded-full">Admin</span>
-                            </td>
-                            <td class="px-6 py-4 text-sm text-white">john@example.com</td>
-                            <td class="px-6 py-4">
-                                <span class="px-3 py-1 text-xs font-medium bg-green-500/20 text-green-500 rounded-full">Active</span>
-                            </td>
-                            <td class="px-6 py-4 text-sm text-neutral-400">2 hours ago</td>
-                            <td class="px-6 py-4">
-                                <div class="flex space-x-3">
-                                    <button class="text-neutral-400 hover:text-white transition duration-200">
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
-                                        </svg>
+
+                                <!-- Theater Card 2 -->
+                                <div class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+                                    <div class="p-6">
+                                        <div class="flex justify-between items-start">
+                                            <div>
+                                                <h3 class="text-xl font-semibold text-gray-900">Multiplex West End</h3>
+                                                <p class="text-sm text-gray-600 mt-1">456 West Avenue, Shopping District</p>
+                                            </div>
+                                            <span class="px-3 py-1 text-sm font-semibold text-green-800 bg-green-100 rounded-full">Active</span>
+                                        </div>
+
+                                        <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+                                            <div class="p-4 bg-gray-50 rounded-lg">
+                                                <p class="text-sm text-gray-600">Total Screens</p>
+                                                <p class="text-xl font-semibold text-gray-900">8</p>
+                                            </div>
+                                            <div class="p-4 bg-gray-50 rounded-lg">
+                                                <p class="text-sm text-gray-600">Total Seats</p>
+                                                <p class="text-xl font-semibold text-gray-900">1,600</p>
+                                            </div>
+                                            <div class="p-4 bg-gray-50 rounded-lg">
+                                                <p class="text-sm text-gray-600">Today's Shows</p>
+                                                <p class="text-xl font-semibold text-gray-900">32</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-6 flex flex-wrap gap-2">
+                                            <button class="inline-flex items-center px-3 py-2 border border-blue-600 text-sm font-medium rounded-md text-blue-600 hover:bg-blue-50">
+                                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                                </svg>
+                                                Edit Details
+                                            </button>
+                                            <button class="inline-flex items-center px-3 py-2 border border-blue-600 text-sm font-medium rounded-md text-blue-600 hover:bg-blue-50">
+                                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                                </svg>
+                                                Manage Screens
+                                            </button>
+                                            <button class="inline-flex items-center px-3 py-2 border border-blue-600 text-sm font-medium rounded-md text-blue-600 hover:bg-blue-50">
+                                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                                </svg>
+                                                View Schedule
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Pagination -->
+                            <div class="mt-6 flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm text-gray-700">
+                                        Showing <span class="font-medium">1</span> to <span class="font-medium">2</span> of <span class="font-medium">8</span> theaters
+                                    </p>
+                                </div>
+                                <div class="flex gap-2">
+                                    <button class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                                        Previous
                                     </button>
-                                    <button class="text-neutral-400 hover:text-red-500 transition duration-200">
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
-                                        </svg>
+                                    <button class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                                        Next
                                     </button>
                                 </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- Pagination -->
-            <div class="px-6 py-4 border-t border-neutral-700 flex items-center justify-between">
-                <p class="text-sm text-neutral-400">Showing 1 to 10 of 45 users</p>
-                <div class="flex space-x-2">
-                    <button class="px-3 py-1 bg-neutral-700 text-white rounded hover:bg-neutral-600 transition duration-200">Previous</button>
-                    <button class="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition duration-200">1</button>
-                    <button class="px-3 py-1 bg-neutral-700 text-white rounded hover:bg-neutral-600 transition duration-200">2</button>
-                    <button class="px-3 py-1 bg-neutral-700 text-white rounded hover:bg-neutral-600 transition duration-200">3</button>
-                    <button class="px-3 py-1 bg-neutral-700 text-white rounded hover:bg-neutral-600 transition duration-200">Next</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Add User Modal -->
-        <div id="addUserModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
-            <div class="bg-neutral-800 rounded-lg p-6 w-full max-w-md">
-                <div class="flex justify-between items-center mb-6">
-                    <h3 class="text-xl font-bold text-white">Add New User</h3>
-                    <button @click="document.getElementById('addUserModal').classList.add('hidden')" class="text-neutral-400 hover:text-white">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
-                    </button>
-                </div>
-                <form class="space-y-4">
-                    <div>
-                        <label class="block text-sm font-medium text-neutral-300 mb-1">Full Name</label>
-                        <input type="text" class="w-full px-4 py-2 bg-neutral-700 border border-neutral-600 rounded-lg text-white focus:outline-none focus:border-blue-500">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-neutral-300 mb-1">Email</label>
-                        <input type="email" class="w-full px-4 py-2 bg-neutral-700 border border-neutral-600 rounded-lg text-white focus:outline-none focus:border-blue-500">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-neutral-300 mb-1">Role</label>
-                        <select class="w-full px-4 py-2 bg-neutral-700 border border-neutral-600 rounded-lg text-white focus:outline-none focus:border-blue-500">
-                            <option>Admin</option>
-                            <option>Manager</option>
-                            <option>Staff</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-neutral-300 mb-1">Password</label>
-                        <input type="password" class="w-full px-4 py-2 bg-neutral-700 border border-neutral-600 rounded-lg text-white focus:outline-none focus:border-blue-500">
-                    </div>
-                    <div class="flex justify-end space-x-4 mt-6">
-                        <button type="button" @click="document.getElementById('addUserModal').classList.add('hidden')" class="px-4 py-2 text-neutral-400 hover:text-white transition duration-200">Cancel</button>
-                        <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-200">Add User</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
-</htmlCode>
-<htmlCode>
-    <section id="Settings" class="p-6 bg-neutral-900">
-        <h2 class="text-2xl font-bold text-white mb-6">Settings</h2>
-
-        <!-- Settings Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Main Settings Panel -->
-            <div class="md:col-span-2 space-y-6">
-                <!-- Theater Information -->
-                <div class="bg-neutral-800 border border-neutral-700 rounded-lg p-6">
-                    <h3 class="text-lg font-semibold text-white mb-4">Theater Information</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <label class="block text-sm font-medium text-neutral-300 mb-1">Theater Name</label>
-                            <input type="text" value="CineMax Theaters" class="w-full px-4 py-2 bg-neutral-700 border border-neutral-600 rounded-lg text-white focus:outline-none focus:border-blue-500">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-neutral-300 mb-1">Address</label>
-                            <textarea rows="3" class="w-full px-4 py-2 bg-neutral-700 border border-neutral-600 rounded-lg text-white focus:outline-none focus:border-blue-500"></textarea>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-neutral-300 mb-1">Contact Email</label>
-                            <input type="email" value="contact@cinemax.com" class="w-full px-4 py-2 bg-neutral-700 border border-neutral-600 rounded-lg text-white focus:outline-none focus:border-blue-500">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-neutral-300 mb-1">Phone Number</label>
-                            <input type="tel" class="w-full px-4 py-2 bg-neutral-700 border border-neutral-600 rounded-lg text-white focus:outline-none focus:border-blue-500">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Booking Settings -->
-                <div class="bg-neutral-800 border border-neutral-700 rounded-lg p-6">
-                    <h3 class="text-lg font-semibold text-white mb-4">Booking Settings</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <p class="text-white font-medium">Advanced Booking Window</p>
-                                <p class="text-sm text-neutral-400">Allow bookings up to x days in advance</p>
                             </div>
-                            <input type="number" value="7" class="w-24 px-4 py-2 bg-neutral-700 border border-neutral-600 rounded-lg text-white focus:outline-none focus:border-blue-500">
                         </div>
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <p class="text-white font-medium">Cancellation Window</p>
-                                <p class="text-sm text-neutral-400">Allow cancellation up to x hours before show</p>
+                    </htmlCode>
+                    <htmlCode>
+                        <div id="bookings" class="p-6 bg-gray-50">
+                            <div class="flex justify-between items-center mb-6">
+                                <h2 class="text-2xl font-bold text-gray-900">Booking Management</h2>
+                                <div class="flex gap-2">
+                                    <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 flex items-center">
+                                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                        </svg>
+                                        Export Data
+                                    </button>
+                                </div>
                             </div>
-                            <input type="number" value="4" class="w-24 px-4 py-2 bg-neutral-700 border border-neutral-600 rounded-lg text-white focus:outline-none focus:border-blue-500">
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <p class="text-white font-medium">Maximum Tickets per Booking</p>
-                                <p class="text-sm text-neutral-400">Limit number of tickets per transaction</p>
-                            </div>
-                            <input type="number" value="10" class="w-24 px-4 py-2 bg-neutral-700 border border-neutral-600 rounded-lg text-white focus:outline-none focus:border-blue-500">
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Email Notifications -->
-                <div class="bg-neutral-800 border border-neutral-700 rounded-lg p-6">
-                    <h3 class="text-lg font-semibold text-white mb-4">Email Notifications</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <p class="text-white font-medium">Booking Confirmation</p>
-                                <p class="text-sm text-neutral-400">Send email after successful booking</p>
+                            <!-- Filters -->
+                            <div class="bg-white p-4 rounded-lg border border-gray-200 mb-6">
+                                <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Date Range</label>
+                                        <input type="date" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Movie</label>
+                                        <select class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                            <option>All Movies</option>
+                                            <option>Inception</option>
+                                            <option>The Dark Knight</option>
+                                            <option>Interstellar</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Theater</label>
+                                        <select class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                            <option>All Theaters</option>
+                                            <option>Cineplex Downtown</option>
+                                            <option>Multiplex West End</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Status</label>
+                                        <select class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                            <option>All Status</option>
+                                            <option>Confirmed</option>
+                                            <option>Pending</option>
+                                            <option>Cancelled</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Search</label>
+                                        <input type="text" placeholder="Search booking ID or customer..." class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    </div>
+                                </div>
                             </div>
-                            <label class="relative inline-flex items-center cursor-pointer">
-                                <input type="checkbox" checked class="sr-only peer">
-                                <div class="w-11 h-6 bg-neutral-700 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-800 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
-                            </label>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <p class="text-white font-medium">Cancellation Notification</p>
-                                <p class="text-sm text-neutral-400">Send email for booking cancellations</p>
+
+                            <!-- Bookings Table -->
+                            <div class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+                                <div class="overflow-x-auto">
+                                    <table class="min-w-full divide-y divide-gray-200">
+                                        <thead class="bg-gray-50">
+                                            <tr>
+                                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Booking ID</th>
+                                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Customer</th>
+                                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Movie</th>
+                                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Theater</th>
+                                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Show Time</th>
+                                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Amount</th>
+                                                <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="bg-white divide-y divide-gray-200">
+                                            <tr>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">#BK1234</td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="flex items-center">
+                                                        <img class="h-8 w-8 rounded-full" src="https://avatar.iran.liara.run/public" alt="">
+                                                        <div class="ml-4">
+                                                            <div class="text-sm font-medium text-gray-900">John Doe</div>
+                                                            <div class="text-sm text-gray-500">john@example.com</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Inception</td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Cineplex Downtown</td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Today, 7:00 PM</td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <span class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Confirmed</span>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">$32.00</td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                    <button class="text-blue-600 hover:text-blue-900 mr-4">View</button>
+                                                    <button class="text-red-600 hover:text-red-900">Cancel</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">#BK1235</td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="flex items-center">
+                                                        <img class="h-8 w-8 rounded-full" src="https://avatar.iran.liara.run/public" alt="">
+                                                        <div class="ml-4">
+                                                            <div class="text-sm font-medium text-gray-900">Jane Smith</div>
+                                                            <div class="text-sm text-gray-500">jane@example.com</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">The Dark Knight</td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Multiplex West End</td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Tomorrow, 4:30 PM</td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <span class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">Pending</span>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">$28.00</td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                    <button class="text-blue-600 hover:text-blue-900 mr-4">View</button>
+                                                    <button class="text-red-600 hover:text-red-900">Cancel</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
-                            <label class="relative inline-flex items-center cursor-pointer">
-                                <input type="checkbox" checked class="sr-only peer">
-                                <div class="w-11 h-6 bg-neutral-700 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-800 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
-                            </label>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <p class="text-white font-medium">Show Reminders</p>
-                                <p class="text-sm text-neutral-400">Send reminder before show time</p>
+
+                            <!-- Pagination -->
+                            <div class="mt-6 flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm text-gray-700">
+                                        Showing <span class="font-medium">1</span> to <span class="font-medium">10</span> of <span class="font-medium">97</span> bookings
+                                    </p>
+                                </div>
+                                <div class="flex gap-2">
+                                    <button class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">Previous</button>
+                                    <button class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">Next</button>
+                                </div>
                             </div>
-                            <label class="relative inline-flex items-center cursor-pointer">
-                                <input type="checkbox" class="sr-only peer">
-                                <div class="w-11 h-6 bg-neutral-700 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-800 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
-                            </label>
                         </div>
-                    </div>
-                </div>
-            </div>
+                    </htmlCode>
+                    <htmlCode>
+                        <div id="customers" class="p-6 bg-gray-50">
+                            <div class="flex justify-between items-center mb-6">
+                                <h2 class="text-2xl font-bold text-gray-900">Customer Management</h2>
+                                <div class="flex gap-2">
+                                    <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 flex items-center">
+                                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                        </svg>
+                                        Export Customer Data
+                                    </button>
+                                </div>
+                            </div>
 
-            <!-- Side Panel -->
-            <div class="space-y-6">
-                <!-- System Theme -->
-                <div class="bg-neutral-800 border border-neutral-700 rounded-lg p-6">
-                    <h3 class="text-lg font-semibold text-white mb-4">System Theme</h3>
-                    <div class="space-y-4">
-                        <button class="w-full px-4 py-2 bg-neutral-700 text-white rounded-lg hover:bg-neutral-600 transition duration-200 flex items-center justify-between">
-                            <span>Dark Mode</span>
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
+                            <!-- Filters -->
+                            <div class="bg-white p-4 rounded-lg border border-gray-200 mb-6">
+                                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Search Customers</label>
+                                        <input type="text" placeholder="Name, email or phone..." class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Membership Status</label>
+                                        <select class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                            <option>All Members</option>
+                                            <option>Premium</option>
+                                            <option>Regular</option>
+                                            <option>New</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Join Date</label>
+                                        <input type="date" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Sort By</label>
+                                        <select class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                            <option>Most Recent</option>
+                                            <option>Most Bookings</option>
+                                            <option>Alphabetical</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
 
-                <!-- Security Settings -->
-                <div class="bg-neutral-800 border border-neutral-700 rounded-lg p-6">
-                    <h3 class="text-lg font-semibold text-white mb-4">Security</h3>
-                    <div class="space-y-4">
-                        <button class="w-full px-4 py-2 bg-neutral-700 text-white rounded-lg hover:bg-neutral-600 transition duration-200">Change Password</button>
-                        <button class="w-full px-4 py-2 bg-neutral-700 text-white rounded-lg hover:bg-neutral-600 transition duration-200">Enable 2FA</button>
-                    </div>
-                </div>
+                            <!-- Customer List -->
+                            <div class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+                                <div class="overflow-x-auto">
+                                    <table class="min-w-full divide-y divide-gray-200">
+                                        <thead class="bg-gray-50">
+                                            <tr>
+                                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Customer</th>
+                                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Contact</th>
+                                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total Bookings</th>
+                                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total Spent</th>
+                                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Last Activity</th>
+                                                <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-gray-200">
+                                            <tr>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="flex items-center">
+                                                        <img class="h-10 w-10 rounded-full" src="https://avatar.iran.liara.run/public" alt="">
+                                                        <div class="ml-4">
+                                                            <div class="text-sm font-medium text-gray-900">John Doe</div>
+                                                            <div class="text-xs text-gray-500">Member since Jan 2023</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="text-sm text-gray-900">john@example.com</div>
+                                                    <div class="text-sm text-gray-500">+1 234 567 8900</div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">24</td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">$648.00</td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <span class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Premium</span>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2 hours ago</td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                    <button class="text-blue-600 hover:text-blue-900 mr-3">View Profile</button>
+                                                    <button class="text-blue-600 hover:text-blue-900">Support History</button>
+                                                </td>
+                                            </tr>
 
-                <!-- Save Changes -->
-                <div class="bg-neutral-800 border border-neutral-700 rounded-lg p-6">
-                    <button class="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-200">Save Changes</button>
-                </div>
-            </div>
-        </div>
-    </section>
-</htmlCode>
+                                            <tr>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="flex items-center">
+                                                        <img class="h-10 w-10 rounded-full" src="https://avatar.iran.liara.run/public" alt="">
+                                                        <div class="ml-4">
+                                                            <div class="text-sm font-medium text-gray-900">Jane Smith</div>
+                                                            <div class="text-xs text-gray-500">Member since Mar 2023</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="text-sm text-gray-900">jane@example.com</div>
+                                                    <div class="text-sm text-gray-500">+1 234 567 8901</div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">12</td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">$324.00</td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <span class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">Regular</span>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1 day ago</td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                    <button class="text-blue-600 hover:text-blue-900 mr-3">View Profile</button>
+                                                    <button class="text-blue-600 hover:text-blue-900">Support History</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- Pagination -->
+                            <div class="mt-6 flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm text-gray-700">
+                                        Showing <span class="font-medium">1</span> to <span class="font-medium">10</span> of <span class="font-medium">245</span> customers
+                                    </p>
+                                </div>
+                                <div class="flex gap-2">
+                                    <button class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">Previous</button>
+                                    <button class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">Next</button>
+                                </div>
+                            </div>
+                        </div>
+                    </htmlCode>
+                    <htmlCode>
+                        <div id="promotions" class="p-6 bg-gray-50">
+                            <div class="flex justify-between items-center mb-6">
+                                <h2 class="text-2xl font-bold text-gray-900">Promotions & Discounts</h2>
+                                <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 flex items-center">
+                                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                                    </svg>
+                                    Create New Promotion
+                                </button>
+                            </div>
+
+                            <!-- Active Promotions -->
+                            <div class="bg-white rounded-lg border border-gray-200 mb-6">
+                                <div class="p-4 border-b border-gray-200">
+                                    <h3 class="text-lg font-semibold text-gray-900">Active Promotions</h3>
+                                </div>
+                                <div class="p-4">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                                        <!-- Promotion Card 1 -->
+                                        <div class="border border-gray-200 rounded-lg p-4">
+                                            <div class="flex justify-between items-start mb-3">
+                                                <div>
+                                                    <span class="inline-block px-2 py-1 text-xs font-semibold bg-green-100 text-green-800 rounded-full">Active</span>
+                                                    <h4 class="text-lg font-semibold text-gray-900 mt-2">First Time Movie</h4>
+                                                </div>
+                                                <div class="text-2xl font-bold text-blue-600">20% OFF</div>
+                                            </div>
+                                            <p class="text-sm text-gray-600 mb-3">First-time customers get 20% off on their first booking</p>
+                                            <div class="flex justify-between items-center text-sm text-gray-500">
+                                                <div>Code: <span class="font-mono bg-gray-100 px-2 py-1 rounded">FIRST20</span></div>
+                                                <div>Used: 234 times</div>
+                                            </div>
+                                            <div class="mt-4 flex items-center justify-between">
+                                                <div class="text-sm text-gray-500">Expires: Dec 31, 2023</div>
+                                                <div class="flex gap-2">
+                                                    <button class="text-blue-600 hover:text-blue-800">Edit</button>
+                                                    <button class="text-red-600 hover:text-red-800">Deactivate</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Promotion Card 2 -->
+                                        <div class="border border-gray-200 rounded-lg p-4">
+                                            <div class="flex justify-between items-start mb-3">
+                                                <div>
+                                                    <span class="inline-block px-2 py-1 text-xs font-semibold bg-green-100 text-green-800 rounded-full">Active</span>
+                                                    <h4 class="text-lg font-semibold text-gray-900 mt-2">Weekend Special</h4>
+                                                </div>
+                                                <div class="text-2xl font-bold text-blue-600">15% OFF</div>
+                                            </div>
+                                            <p class="text-sm text-gray-600 mb-3">Special discount for weekend shows</p>
+                                            <div class="flex justify-between items-center text-sm text-gray-500">
+                                                <div>Code: <span class="font-mono bg-gray-100 px-2 py-1 rounded">WEEKEND15</span></div>
+                                                <div>Used: 456 times</div>
+                                            </div>
+                                            <div class="mt-4 flex items-center justify-between">
+                                                <div class="text-sm text-gray-500">Expires: Nov 30, 2023</div>
+                                                <div class="flex gap-2">
+                                                    <button class="text-blue-600 hover:text-blue-800">Edit</button>
+                                                    <button class="text-red-600 hover:text-red-800">Deactivate</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Promotion Performance -->
+                            <div class="bg-white rounded-lg border border-gray-200 mb-6">
+                                <div class="p-4 border-b border-gray-200">
+                                    <h3 class="text-lg font-semibold text-gray-900">Promotion Performance</h3>
+                                </div>
+                                <div class="p-4">
+                                    <div class="overflow-x-auto">
+                                        <table class="min-w-full divide-y divide-gray-200">
+                                            <thead class="bg-gray-50">
+                                                <tr>
+                                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Promotion Code</th>
+                                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total Uses</th>
+                                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total Revenue</th>
+                                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Discount Given</th>
+                                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Conversion Rate</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="bg-white divide-y divide-gray-200">
+                                                <tr>
+                                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">FIRST20</td>
+                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">234</td>
+                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">$4,680.00</td>
+                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">$1,170.00</td>
+                                                    <td class="px-6 py-4 whitespace-nowrap">
+                                                        <span class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Active</span>
+                                                    </td>
+                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">68%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">WEEKEND15</td>
+                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">456</td>
+                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">$9,120.00</td>
+                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">$1,368.00</td>
+                                                    <td class="px-6 py-4 whitespace-nowrap">
+                                                        <span class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Active</span>
+                                                    </td>
+                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">75%</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Export Section -->
+                            <div class="flex justify-end">
+                                <button class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                    </svg>
+                                    Export Performance Report
+                                </button>
+                            </div>
+                        </div>
+                    </htmlCode>
+                    <htmlCode>
+                        <div id="reports" class="p-6 bg-gray-50">
+                            <div class="flex justify-between items-center mb-6">
+                                <h2 class="text-2xl font-bold text-gray-900">Reports & Analytics</h2>
+                                <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 flex items-center">
+                                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                    </svg>
+                                    Export All Reports
+                                </button>
+                            </div>
+
+                            <!-- Report Filters -->
+                            <div class="bg-white p-4 rounded-lg border border-gray-200 mb-6">
+                                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Date Range</label>
+                                        <select class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                            <option>Last 7 days</option>
+                                            <option>Last 30 days</option>
+                                            <option>Last 90 days</option>
+                                            <option>Custom Range</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Report Type</label>
+                                        <select class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                            <option>All Reports</option>
+                                            <option>Revenue Reports</option>
+                                            <option>Booking Reports</option>
+                                            <option>Customer Reports</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Theatre</label>
+                                        <select class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                            <option>All Theatres</option>
+                                            <option>Cineplex Downtown</option>
+                                            <option>Multiplex West End</option>
+                                        </select>
+                                    </div>
+                                    <div class="flex items-end">
+                                        <button class="w-full bg-blue-50 text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-100 transition-colors duration-200">
+                                            Generate Report
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Revenue Overview -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Revenue Overview</h3>
+                                    <div class="h-64 flex items-center justify-center bg-gray-50 rounded-lg">
+                                        <p class="text-gray-500">Revenue Chart will be rendered here</p>
+                                    </div>
+                                </div>
+                                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Booking Trends</h3>
+                                    <div class="h-64 flex items-center justify-center bg-gray-50 rounded-lg">
+                                        <p class="text-gray-500">Booking Trend Chart will be rendered here</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Key Metrics -->
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
+                                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <h4 class="text-sm font-medium text-gray-500">Total Revenue</h4>
+                                        <span class="text-green-600 text-sm">+12.5%</span>
+                                    </div>
+                                    <p class="text-2xl font-bold text-gray-900">$124,563.00</p>
+                                </div>
+                                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <h4 class="text-sm font-medium text-gray-500">Total Bookings</h4>
+                                        <span class="text-green-600 text-sm">+8.2%</span>
+                                    </div>
+                                    <p class="text-2xl font-bold text-gray-900">3,456</p>
+                                </div>
+                                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <h4 class="text-sm font-medium text-gray-500">Average Booking Value</h4>
+                                        <span class="text-green-600 text-sm">+5.3%</span>
+                                    </div>
+                                    <p class="text-2xl font-bold text-gray-900">$36.04</p>
+                                </div>
+                                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <h4 class="text-sm font-medium text-gray-500">New Customers</h4>
+                                        <span class="text-green-600 text-sm">+15.8%</span>
+                                    </div>
+                                    <p class="text-2xl font-bold text-gray-900">245</p>
+                                </div>
+                            </div>
+
+                            <!-- Recent Reports -->
+                            <div class="bg-white rounded-lg border border-gray-200">
+                                <div class="p-4 border-b border-gray-200">
+                                    <h3 class="text-lg font-semibold text-gray-900">Recent Reports</h3>
+                                </div>
+                                <div class="overflow-x-auto">
+                                    <table class="min-w-full divide-y divide-gray-200">
+                                        <thead class="bg-gray-50">
+                                            <tr>
+                                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Report Name</th>
+                                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Generated On</th>
+                                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
+                                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Period</th>
+                                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Generated By</th>
+                                                <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="bg-white divide-y divide-gray-200">
+                                            <tr>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Monthly Revenue Report</td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Oct 31, 2023</td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <span class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">Revenue</span>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Oct 2023</td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Admin User</td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                    <button class="text-blue-600 hover:text-blue-900">Download</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Customer Activity Report</td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Oct 30, 2023</td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <span class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Customer</span>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Q3 2023</td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Admin User</td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                    <button class="text-blue-600 hover:text-blue-900">Download</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </htmlCode>
+                    <htmlCode>
+                        <div id="settings" class="p-6 bg-gray-50">
+                            <div class="mb-6">
+                                <h2 class="text-2xl font-bold text-gray-900">System Settings</h2>
+                                <p class="mt-1 text-sm text-gray-500">Manage your application settings and configurations</p>
+                            </div>
+
+                            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                                <!-- Main Settings Column -->
+                                <div class="lg:col-span-2 space-y-6">
+                                    <!-- General Settings -->
+                                    <div class="bg-white rounded-lg border border-gray-200">
+                                        <div class="p-4 border-b border-gray-200">
+                                            <h3 class="text-lg font-semibold text-gray-900">General Settings</h3>
+                                        </div>
+                                        <div class="p-6">
+                                            <form class="space-y-6">
+                                                <div>
+                                                    <label class="block text-sm font-medium text-gray-700">Company Name</label>
+                                                    <input type="text" class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" value="MovieTime Cinemas">
+                                                </div>
+                                                <div>
+                                                    <label class="block text-sm font-medium text-gray-700">Contact Email</label>
+                                                    <input type="email" class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" value="support@movietime.com">
+                                                </div>
+                                                <div>
+                                                    <label class="block text-sm font-medium text-gray-700">Contact Phone</label>
+                                                    <input type="tel" class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" value="+1 234 567 8900">
+                                                </div>
+                                                <div>
+                                                    <label class="block text-sm font-medium text-gray-700">Address</label>
+                                                    <textarea class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" rows="3">123 Movie Street, Cinema City, ST 12345</textarea>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <!-- Email Settings -->
+                                    <div class="bg-white rounded-lg border border-gray-200">
+                                        <div class="p-4 border-b border-gray-200">
+                                            <h3 class="text-lg font-semibold text-gray-900">Email Settings</h3>
+                                        </div>
+                                        <div class="p-6">
+                                            <form class="space-y-6">
+                                                <div>
+                                                    <label class="block text-sm font-medium text-gray-700">SMTP Server</label>
+                                                    <input type="text" class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" value="smtp.mailserver.com">
+                                                </div>
+                                                <div>
+                                                    <label class="block text-sm font-medium text-gray-700">SMTP Port</label>
+                                                    <input type="text" class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" value="587">
+                                                </div>
+                                                <div>
+                                                    <label class="block text-sm font-medium text-gray-700">Email Username</label>
+                                                    <input type="text" class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" value="notifications@movietime.com">
+                                                </div>
+                                                <div>
+                                                    <label class="block text-sm font-medium text-gray-700">Email Password</label>
+                                                    <input type="password" class="mt-1 block w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" value="********">
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Side Settings Column -->
+                                <div class="space-y-6">
+                                    <!-- Admin Users -->
+                                    <div class="bg-white rounded-lg border border-gray-200">
+                                        <div class="p-4 border-b border-gray-200">
+                                            <h3 class="text-lg font-semibold text-gray-900">Admin Users</h3>
+                                        </div>
+                                        <div class="p-4">
+                                            <div class="space-y-4">
+                                                <div class="flex items-center justify-between">
+                                                    <div class="flex items-center">
+                                                        <img src="https://avatar.iran.liara.run/public" alt="Admin" class="w-8 h-8 rounded-full">
+                                                        <div class="ml-3">
+                                                            <p class="text-sm font-medium text-gray-900">John Admin</p>
+                                                            <p class="text-xs text-gray-500">Super Admin</p>
+                                                        </div>
+                                                    </div>
+                                                    <button class="text-blue-600 text-sm hover:text-blue-800">Edit</button>
+                                                </div>
+                                                <div class="flex items-center justify-between">
+                                                    <div class="flex items-center">
+                                                        <img src="https://avatar.iran.liara.run/public" alt="Admin" class="w-8 h-8 rounded-full">
+                                                        <div class="ml-3">
+                                                            <p class="text-sm font-medium text-gray-900">Jane Manager</p>
+                                                            <p class="text-xs text-gray-500">Manager</p>
+                                                        </div>
+                                                    </div>
+                                                    <button class="text-blue-600 text-sm hover:text-blue-800">Edit</button>
+                                                </div>
+                                            </div>
+                                            <button class="mt-4 w-full bg-blue-50 text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-100 transition-colors duration-200">
+                                                Add New Admin User
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- System Maintenance -->
+                                    <div class="bg-white rounded-lg border border-gray-200">
+                                        <div class="p-4 border-b border-gray-200">
+                                            <h3 class="text-lg font-semibold text-gray-900">System Maintenance</h3>
+                                        </div>
+                                        <div class="p-4 space-y-4">
+                                            <button class="w-full bg-blue-50 text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-100 transition-colors duration-200">
+                                                Clear Cache
+                                            </button>
+                                            <button class="w-full bg-blue-50 text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-100 transition-colors duration-200">
+                                                Backup Database
+                                            </button>
+                                            <button class="w-full bg-red-50 text-red-600 px-4 py-2 rounded-lg hover:bg-red-100 transition-colors duration-200">
+                                                System Maintenance Mode
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Save Changes -->
+                            <div class="mt-6 flex justify-end">
+                                <button class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200">
+                                    Save Changes
+                                </button>
+                            </div>
+                        </div>
+                    </htmlCode>
+                    <htmlCode>
+                        <div id="root">
+                            <section id="notifications" class="page-section min-h-screen bg-white p-6">
+                                <div class="max-w-7xl mx-auto">
+                                    <!-- Header -->
+                                    <div class="mb-8">
+                                        <h2 class="text-2xl font-bold text-gray-800">Notifications</h2>
+                                        <p class="text-gray-600">Manage system notifications and alerts</p>
+                                    </div>
+
+                                    <!-- Notification Controls -->
+                                    <div class="flex justify-between items-center mb-6">
+                                        <div class="flex space-x-4">
+                                            <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                                                Create New Notification
+                                            </button>
+                                            <button class="border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-50">
+                                                Mark All as Read
+                                            </button>
+                                        </div>
+                                        <div class="flex items-center space-x-4">
+                                            <select class="border border-gray-300 rounded-lg px-4 py-2">
+                                                <option>All Types</option>
+                                                <option>System Alerts</option>
+                                                <option>User Notifications</option>
+                                                <option>Promotions</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!-- Notifications List -->
+                                    <div class="bg-white rounded-lg shadow">
+                                        <!-- Notification Item -->
+                                        <div class="border-b border-gray-200 p-4 hover:bg-gray-50">
+                                            <div class="flex items-start justify-between">
+                                                <div class="flex items-start space-x-4">
+                                                    <div class="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center">
+                                                        <svg class="h-4 w-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="flex-1">
+                                                        <p class="font-semibold text-gray-900">New Movie Release Alert</p>
+                                                        <p class="text-sm text-gray-600">Avatar 2 is now available for booking</p>
+                                                        <p class="text-xs text-gray-500 mt-1">2 hours ago</p>
+                                                    </div>
+                                                </div>
+                                                <button class="text-gray-400 hover:text-gray-500">
+                                                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                                                        <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"></path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <!-- Notification Item -->
+                                        <div class="border-b border-gray-200 p-4 hover:bg-gray-50">
+                                            <div class="flex items-start justify-between">
+                                                <div class="flex items-start space-x-4">
+                                                    <div class="h-8 w-8 rounded-full bg-green-100 flex items-center justify-center">
+                                                        <svg class="h-4 w-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="flex-1">
+                                                        <p class="font-semibold text-gray-900">Promotion Created Successfully</p>
+                                                        <p class="text-sm text-gray-600">Summer Special 20% discount is now active</p>
+                                                        <p class="text-xs text-gray-500 mt-1">5 hours ago</p>
+                                                    </div>
+                                                </div>
+                                                <button class="text-gray-400 hover:text-gray-500">
+                                                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                                                        <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"></path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <!-- Notification Item -->
+                                        <div class="border-b border-gray-200 p-4 hover:bg-gray-50">
+                                            <div class="flex items-start justify-between">
+                                                <div class="flex items-start space-x-4">
+                                                    <div class="h-8 w-8 rounded-full bg-red-100 flex items-center justify-center">
+                                                        <svg class="h-4 w-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="flex-1">
+                                                        <p class="font-semibold text-gray-900">System Alert</p>
+                                                        <p class="text-sm text-gray-600">Database backup completed successfully</p>
+                                                        <p class="text-xs text-gray-500 mt-1">1 day ago</p>
+                                                    </div>
+                                                </div>
+                                                <button class="text-gray-400 hover:text-gray-500">
+                                                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                                                        <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"></path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Pagination -->
+                                    <div class="mt-6 flex items-center justify-between">
+                                        <div class="text-sm text-gray-600">
+                                            Showing 1 to 3 of 50 notifications
+                                        </div>
+                                        <div class="flex space-x-2">
+                                            <button class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50">
+                                                Previous
+                                            </button>
+                                            <button class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50">
+                                                Next
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </htmlCode>
