@@ -13,183 +13,11 @@
     <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" as="style">
 
+    <!-- {headerScripts} -->
+
     <!-- Core CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: {
-                            50: '#f8f8f8',
-                            100: '#e8e8e8',
-                            200: '#d3d3d3',
-                            300: '#a3a3a3',
-                            400: '#737373',
-                            500: '#525252',
-                            600: '#404040',
-                            700: '#262626',
-                            800: '#171717',
-                            900: '#0a0a0a',
-                            950: '#030303',
-                        },
-                        secondary: {
-                            50: '#f8f8f8',
-                            100: '#e8e8e8',
-                            200: '#d3d3d3',
-                            300: '#a3a3a3',
-                            400: '#737373',
-                            500: '#525252',
-                            600: '#404040',
-                            700: '#262626',
-                            800: '#171717',
-                            900: '#0a0a0a',
-                            950: '#030303',
-                        },
-                        accent: {
-                            50: '#f8f8f8',
-                            100: '#e8e8e8',
-                            200: '#d3d3d3',
-                            300: '#a3a3a3',
-                            400: '#737373',
-                            500: '#525252',
-                            600: '#404040',
-                            700: '#262626',
-                            800: '#171717',
-                            900: '#0a0a0a',
-                            950: '#030303',
-                        },
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
-                        heading: ['Montserrat', 'Inter', 'system-ui', 'sans-serif'],
-                    },
-                    spacing: {
-                        '18': '4.5rem',
-                        '22': '5.5rem',
-                        '30': '7.5rem',
-                    },
-                    maxWidth: {
-                        '8xl': '88rem',
-                        '9xl': '96rem',
-                    },
-                    animation: {
-                        'fade-in': 'fadeIn 0.5s ease-in',
-                        'fade-out': 'fadeOut 0.5s ease-out',
-                        'slide-up': 'slideUp 0.5s ease-out',
-                        'slide-down': 'slideDown 0.5s ease-out',
-                        'slide-left': 'slideLeft 0.5s ease-out',
-                        'slide-right': 'slideRight 0.5s ease-out',
-                        'scale-in': 'scaleIn 0.5s ease-out',
-                        'scale-out': 'scaleOut 0.5s ease-out',
-                        'spin-slow': 'spin 3s linear infinite',
-                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'bounce-slow': 'bounce 3s infinite',
-                        'float': 'float 3s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': {
-                                opacity: '0'
-                            },
-                            '100%': {
-                                opacity: '1'
-                            },
-                        },
-                        fadeOut: {
-                            '0%': {
-                                opacity: '1'
-                            },
-                            '100%': {
-                                opacity: '0'
-                            },
-                        },
-                        slideUp: {
-                            '0%': {
-                                transform: 'translateY(20px)',
-                                opacity: '0'
-                            },
-                            '100%': {
-                                transform: 'translateY(0)',
-                                opacity: '1'
-                            },
-                        },
-                        slideDown: {
-                            '0%': {
-                                transform: 'translateY(-20px)',
-                                opacity: '0'
-                            },
-                            '100%': {
-                                transform: 'translateY(0)',
-                                opacity: '1'
-                            },
-                        },
-                        slideLeft: {
-                            '0%': {
-                                transform: 'translateX(20px)',
-                                opacity: '0'
-                            },
-                            '100%': {
-                                transform: 'translateX(0)',
-                                opacity: '1'
-                            },
-                        },
-                        slideRight: {
-                            '0%': {
-                                transform: 'translateX(-20px)',
-                                opacity: '0'
-                            },
-                            '100%': {
-                                transform: 'translateX(0)',
-                                opacity: '1'
-                            },
-                        },
-                        scaleIn: {
-                            '0%': {
-                                transform: 'scale(0.9)',
-                                opacity: '0'
-                            },
-                            '100%': {
-                                transform: 'scale(1)',
-                                opacity: '1'
-                            },
-                        },
-                        scaleOut: {
-                            '0%': {
-                                transform: 'scale(1.1)',
-                                opacity: '0'
-                            },
-                            '100%': {
-                                transform: 'scale(1)',
-                                opacity: '1'
-                            },
-                        },
-                        float: {
-                            '0%, 100%': {
-                                transform: 'translateY(0)'
-                            },
-                            '50%': {
-                                transform: 'translateY(-10px)'
-                            },
-                        },
-                    },
-                    aspectRatio: {
-                        'portrait': '3/4',
-                        'landscape': '4/3',
-                        'ultrawide': '21/9',
-                    },
-                },
-            },
-            variants: {
-                extend: {
-                    opacity: ['disabled'],
-                    cursor: ['disabled'],
-                    backgroundColor: ['active', 'disabled'],
-                    textColor: ['active', 'disabled'],
-                },
-            },
-        }
-    </script>
+
 
     <!-- Utilities and Components -->
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js"></script>
@@ -404,80 +232,58 @@
         <!-- Content will be injected here -->
     </main>
 
+    <!-- {bodyScripts} -->
+
 </body>
 
 </html>
 <htmlCode>
-    <div id="root" class="bg-[#E5E7EB]">
+    <div id="root" class="bg-[#E5E7EB] min-h-screen">
         <div class="flex">
-            <!-- Navigation Sidebar -->
-            <nav class="fixed h-screen w-64 bg-white border-r border-neutral-200/20 transition-all duration-300 lg:block hidden" id="sidebar">
+            <nav class="fixed h-screen w-64 bg-white border-r border-neutral-200/20 hidden lg:block">
                 <div class="flex flex-col h-full">
                     <!-- Logo -->
                     <div class="p-6 border-b border-neutral-200/20">
-                        <span class="text-2xl font-bold text-neutral-800">CineAdmin</span>
+                        <span class="text-2xl font-bold text-[#3498db]">Theater Hub</span>
                     </div>
 
                     <!-- Navigation Links -->
                     <div class="flex-1 py-6">
-                        <a href="#dashboard" class="flex items-center px-6 py-3 text-neutral-600 hover:bg-neutral-100 transition-colors duration-200 active">
+                        <a href="#dashboard" class="flex items-center px-6 py-3 text-[#212121] hover:bg-neutral-100 active group">
                             <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                             </svg>
                             Dashboard
                         </a>
-                        <a href="#movies" class="flex items-center px-6 py-3 text-neutral-600 hover:bg-neutral-100 transition-colors duration-200">
+                        <a href="#theaters" class="flex items-center px-6 py-3 text-[#212121] hover:bg-neutral-100">
                             <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                             </svg>
-                            Movies
+                            Theaters
                         </a>
-                        <a href="#showtimes" class="flex items-center px-6 py-3 text-neutral-600 hover:bg-neutral-100 transition-colors duration-200">
+                        <a href="#screens" class="flex items-center px-6 py-3 text-[#212121] hover:bg-neutral-100">
                             <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                             </svg>
-                            Showtimes
+                            Screens
                         </a>
-                        <a href="#bookings" class="flex items-center px-6 py-3 text-neutral-600 hover:bg-neutral-100 transition-colors duration-200">
+                        <a href="#reports" class="flex items-center px-6 py-3 text-[#212121] hover:bg-neutral-100">
                             <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
-                            </svg>
-                            Bookings
-                        </a>
-                        <a href="#concessions" class="flex items-center px-6 py-3 text-neutral-600 hover:bg-neutral-100 transition-colors duration-200">
-                            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
-                            </svg>
-                            Concessions
-                        </a>
-                        <a href="#staff" class="flex items-center px-6 py-3 text-neutral-600 hover:bg-neutral-100 transition-colors duration-200">
-                            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                            </svg>
-                            Staff
-                        </a>
-                        <a href="#reports" class="flex items-center px-6 py-3 text-neutral-600 hover:bg-neutral-100 transition-colors duration-200">
-                            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                             </svg>
                             Reports
                         </a>
-                        <a href="#settings" class="flex items-center px-6 py-3 text-neutral-600 hover:bg-neutral-100 transition-colors duration-200">
-                            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                            </svg>
-                            Settings
-                        </a>
                     </div>
 
-                    <!-- User Profile -->
+                    <!-- Footer -->
                     <div class="p-6 border-t border-neutral-200/20">
-                        <div class="flex items-center">
-                            <img src="https://avatar.iran.liara.run/public" alt="User" class="w-8 h-8 rounded-full">
+                        <div class="flex items-center cursor-pointer" id="profileTrigger">
+                            <div class="w-10 h-10 rounded-full bg-[#3498db] flex items-center justify-center text-white">
+                                JD
+                            </div>
                             <div class="ml-3">
-                                <p class="text-sm font-medium text-neutral-700">Admin User</p>
-                                <p class="text-xs text-neutral-500">admin@cinema.com</p>
+                                <p class="text-sm font-medium text-[#212121]">John Doe</p>
+                                <p class="text-xs text-neutral-500">john@example.com</p>
                             </div>
                         </div>
                     </div>
@@ -485,73 +291,72 @@
             </nav>
 
             <!-- Mobile Menu Button -->
-            <div x-data="{ isOpen: false }" class="lg:hidden fixed top-4 left-4 z-50">
-                <button type="button"
-                    @click="isOpen = !isOpen"
-                    class="bg-white rounded-lg p-2 text-neutral-600 hover:text-neutral-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-neutral-500">
-                    <svg x-show="!isOpen" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            <div class="lg:hidden fixed top-4 left-4 z-50">
+                <button type="button" class="p-2 rounded-lg bg-white border border-neutral-200/20" id="menuButton">
+                    <svg class="w-6 h-6 menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
-                    <svg x-show="isOpen" x-cloak class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    <svg class="w-6 h-6 close-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
+            </div>
 
-                <!-- Mobile Menu Panel -->
-                <div x-show="isOpen"
-                    x-cloak
-                    @click.away="isOpen = false"
-                    @resize.window="if (window.innerWidth > 1024) isOpen = false"
-                    class="fixed inset-0 bg-neutral-800/80 backdrop-blur-lg lg:hidden"
-                    x-transition:enter="transition ease-out duration-100 transform"
-                    x-transition:enter-start="opacity-0 scale-95"
-                    x-transition:enter-end="opacity-100 scale-100"
-                    x-transition:leave="transition ease-in duration-75 transform"
-                    x-transition:leave-start="opacity-100 scale-100"
-                    x-transition:leave-end="opacity-0 scale-95">
-                    <div class="fixed inset-y-0 left-0 w-full max-w-xs bg-white">
-                        <!-- Mobile menu content (copy of desktop navigation) -->
-                        <div class="h-full overflow-y-auto">
-                            <!-- Copy the navigation content here -->
-                        </div>
-                    </div>
+            <!-- Mobile Menu -->
+            <div class="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-40 hidden" id="mobileMenu">
+                <div class="fixed inset-y-0 left-0 w-64 bg-white shadow-xl transform transition-transform duration-300 translate-x-0">
+                    <!-- Mobile menu content (copy of desktop nav) -->
                 </div>
             </div>
 
-            <!-- Main Content Area -->
-            <main class="flex-1 ml-64 lg:ml-64 overflow-y-auto">
-                <!-- Header -->
-                <header class="sticky top-0 z-10 bg-white border-b border-neutral-200/20 h-16">
-                    <div class="flex items-center justify-between px-6 h-full">
-                        <h1 class="text-xl font-semibold text-neutral-800">Dashboard</h1>
-                        <div class="flex items-center space-x-4">
-                            <div class="relative">
-                                <input type="search" placeholder="Search..." class="w-64 px-4 py-2 rounded-lg bg-neutral-100 border-none focus:ring-2 focus:ring-neutral-300">
+            <main class="flex-1 ml-0 lg:ml-64">
+                <header class="fixed top-0 right-0 left-0 lg:left-64 bg-white border-b border-neutral-200/20 z-30">
+                    <div class="flex items-center justify-between px-6 h-16">
+                        <div class="flex items-center flex-1">
+                            <h1 class="text-xl font-semibold text-[#212121]">Dashboard</h1>
+                            <div class="ml-8 hidden lg:block flex-1 max-w-md">
+                                <div class="relative">
+                                    <input type="search" placeholder="Search..." class="w-full pl-10 pr-4 py-2 rounded-lg border border-neutral-200/20 focus:outline-none focus:ring-2 focus:ring-[#3498db]">
+                                    <svg class="w-5 h-5 absolute left-3 top-2.5 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                    </svg>
+                                </div>
                             </div>
-                            <button class="p-2 text-neutral-600 hover:text-neutral-900">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <button class="p-2 rounded-lg hover:bg-neutral-100">
+                                <svg class="w-6 h-6 text-[#212121]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
                                 </svg>
                             </button>
                         </div>
                     </div>
                 </header>
-
-                <!-- Mount Point for Sections -->
                 <MountPoint>
 
                     <script>
-                        // Active link handling
                         document.addEventListener('DOMContentLoaded', function() {
-                            const links = document.querySelectorAll('nav a');
+                            // Mobile menu functionality
+                            const menuButton = document.getElementById('menuButton');
+                            const mobileMenu = document.getElementById('mobileMenu');
+                            const menuIcon = document.querySelector('.menu-icon');
+                            const closeIcon = document.querySelector('.close-icon');
+
+                            menuButton.addEventListener('click', function() {
+                                mobileMenu.classList.toggle('hidden');
+                                menuIcon.classList.toggle('hidden');
+                                closeIcon.classList.toggle('hidden');
+                            });
+
+                            // Navigation active state
+                            const navLinks = document.querySelectorAll('nav a');
 
                             function setActiveLink() {
                                 const hash = window.location.hash || '#dashboard';
-                                links.forEach(link => {
+                                navLinks.forEach(link => {
+                                    link.classList.remove('active', 'bg-neutral-100');
                                     if (link.getAttribute('href') === hash) {
-                                        link.classList.add('bg-neutral-100', 'text-neutral-900');
-                                    } else {
-                                        link.classList.remove('bg-neutral-100', 'text-neutral-900');
+                                        link.classList.add('active', 'bg-neutral-100');
                                     }
                                 });
                             }
@@ -559,1470 +364,1205 @@
                             window.addEventListener('hashchange', setActiveLink);
                             setActiveLink();
                         });
-
-                        // Smooth scroll behavior
-                        document.documentElement.style.scrollBehavior = 'smooth';
                     </script>
+
+                    <style>
+                        html {
+                            scroll-behavior: smooth;
+                        }
+
+                        .active {
+                            color: #3498db;
+                            background-color: #f3f4f6;
+                        }
+
+                        /* Transition for menu button */
+                        .menu-icon,
+                        .close-icon {
+                            transition: opacity 0.3s ease-in-out;
+                        }
+                    </style>
                     <htmlCode>
-                        <div id="dashboard" class="p-6 space-y-6">
-                            <!-- Stats Overview -->
-                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                                <div class="bg-white p-6 rounded-lg border border-neutral-200/30">
-                                    <div class="flex justify-between items-start">
-                                        <div>
-                                            <p class="text-sm font-medium text-neutral-600">Today's Revenue</p>
-                                            <h3 class="text-2xl font-bold text-neutral-900 mt-1">$12,426</h3>
-                                        </div>
-                                        <span class="text-green-500 text-sm">+15.3%</span>
+                        <div id="dashboard_home" class="pt-20 px-6 pb-6">
+                            <!-- Hero Section -->
+                            <div class="mb-8 bg-white rounded-lg border border-neutral-200/20 p-6">
+                                <div class="flex flex-col lg:flex-row justify-between items-center">
+                                    <div class="mb-6 lg:mb-0">
+                                        <h2 class="text-2xl font-bold text-[#212121] mb-2">Welcome to Theater Management</h2>
+                                        <p class="text-neutral-600">Manage your theaters, screens, and revenue all in one place</p>
                                     </div>
-                                    <div class="mt-4">
-                                        <div class="h-2 bg-neutral-100 rounded">
-                                            <div class="h-2 bg-green-500 rounded" style="width: 75%"></div>
+                                    <a href="#add_theater" class="bg-[#3498db] text-white px-6 py-3 rounded-lg hover:bg-[#2980b9] transition-colors duration-300">
+                                        Add New Theater
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Stats Grid -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                                <div class="bg-white p-6 rounded-lg border border-neutral-200/20">
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <p class="text-sm text-neutral-500">Total Theaters</p>
+                                            <h3 class="text-2xl font-bold text-[#212121]">12</h3>
+                                        </div>
+                                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                            <svg class="w-6 h-6 text-[#3498db]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                            </svg>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="bg-white p-6 rounded-lg border border-neutral-200/30">
-                                    <div class="flex justify-between items-start">
+                                <div class="bg-white p-6 rounded-lg border border-neutral-200/20">
+                                    <div class="flex items-center justify-between">
                                         <div>
-                                            <p class="text-sm font-medium text-neutral-600">Tickets Sold</p>
-                                            <h3 class="text-2xl font-bold text-neutral-900 mt-1">1,247</h3>
+                                            <p class="text-sm text-neutral-500">Total Screens</p>
+                                            <h3 class="text-2xl font-bold text-[#212121]">48</h3>
                                         </div>
-                                        <span class="text-green-500 text-sm">+8.4%</span>
-                                    </div>
-                                    <div class="mt-4">
-                                        <div class="h-2 bg-neutral-100 rounded">
-                                            <div class="h-2 bg-blue-500 rounded" style="width: 65%"></div>
+                                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                            </svg>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="bg-white p-6 rounded-lg border border-neutral-200/30">
-                                    <div class="flex justify-between items-start">
+                                <div class="bg-white p-6 rounded-lg border border-neutral-200/20">
+                                    <div class="flex items-center justify-between">
                                         <div>
-                                            <p class="text-sm font-medium text-neutral-600">Concession Sales</p>
-                                            <h3 class="text-2xl font-bold text-neutral-900 mt-1">$3,842</h3>
+                                            <p class="text-sm text-neutral-500">Total Seats</p>
+                                            <h3 class="text-2xl font-bold text-[#212121]">9,648</h3>
                                         </div>
-                                        <span class="text-red-500 text-sm">-2.7%</span>
-                                    </div>
-                                    <div class="mt-4">
-                                        <div class="h-2 bg-neutral-100 rounded">
-                                            <div class="h-2 bg-yellow-500 rounded" style="width: 45%"></div>
+                                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                                            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                                            </svg>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="bg-white p-6 rounded-lg border border-neutral-200/30">
-                                    <div class="flex justify-between items-start">
+                                <div class="bg-white p-6 rounded-lg border border-neutral-200/20">
+                                    <div class="flex items-center justify-between">
                                         <div>
-                                            <p class="text-sm font-medium text-neutral-600">Active Shows</p>
-                                            <h3 class="text-2xl font-bold text-neutral-900 mt-1">8</h3>
+                                            <p class="text-sm text-neutral-500">Monthly Revenue</p>
+                                            <h3 class="text-2xl font-bold text-[#212121]">$142,384</h3>
                                         </div>
-                                        <span class="text-neutral-500 text-sm">No change</span>
-                                    </div>
-                                    <div class="mt-4">
-                                        <div class="h-2 bg-neutral-100 rounded">
-                                            <div class="h-2 bg-purple-500 rounded" style="width: 85%"></div>
+                                        <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center">
+                                            <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Movies Performance -->
+                            <!-- Recent Activity -->
                             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                                <!-- Top Movies -->
-                                <div class="bg-white p-6 rounded-lg border border-neutral-200/30">
-                                    <h2 class="text-lg font-semibold text-neutral-900 mb-4">Top Performing Movies</h2>
-                                    <div class="space-y-4">
-                                        <div class="flex items-center">
-                                            <img src="https://placehold.co/100x150" alt="Movie Poster" class="w-12 h-16 object-cover rounded">
-                                            <div class="ml-4 flex-1">
-                                                <div class="flex justify-between items-start">
-                                                    <h3 class="font-medium text-neutral-900">The Dark Knight</h3>
-                                                    <span class="text-green-500">$8,245</span>
-                                                </div>
-                                                <div class="mt-1">
-                                                    <div class="h-2 bg-neutral-100 rounded">
-                                                        <div class="h-2 bg-blue-500 rounded" style="width: 92%"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="flex items-center">
-                                            <img src="https://placehold.co/100x150" alt="Movie Poster" class="w-12 h-16 object-cover rounded">
-                                            <div class="ml-4 flex-1">
-                                                <div class="flex justify-between items-start">
-                                                    <h3 class="font-medium text-neutral-900">Inception</h3>
-                                                    <span class="text-green-500">$6,128</span>
-                                                </div>
-                                                <div class="mt-1">
-                                                    <div class="h-2 bg-neutral-100 rounded">
-                                                        <div class="h-2 bg-blue-500 rounded" style="width: 78%"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="flex items-center">
-                                            <img src="https://placehold.co/100x150" alt="Movie Poster" class="w-12 h-16 object-cover rounded">
-                                            <div class="ml-4 flex-1">
-                                                <div class="flex justify-between items-start">
-                                                    <h3 class="font-medium text-neutral-900">Interstellar</h3>
-                                                    <span class="text-green-500">$5,847</span>
-                                                </div>
-                                                <div class="mt-1">
-                                                    <div class="h-2 bg-neutral-100 rounded">
-                                                        <div class="h-2 bg-blue-500 rounded" style="width: 65%"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Recent Bookings -->
-                                <div class="bg-white p-6 rounded-lg border border-neutral-200/30">
-                                    <h2 class="text-lg font-semibold text-neutral-900 mb-4">Recent Bookings</h2>
+                                <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                                    <h3 class="text-lg font-semibold text-[#212121] mb-4">Recent Theater Activity</h3>
                                     <div class="space-y-4">
                                         <div class="flex items-center justify-between p-4 bg-neutral-50 rounded-lg">
                                             <div class="flex items-center">
-                                                <img src="https://avatar.iran.liara.run/public" alt="User" class="w-10 h-10 rounded-full">
-                                                <div class="ml-3">
-                                                    <p class="font-medium text-neutral-900">John Doe</p>
-                                                    <p class="text-sm text-neutral-500">The Dark Knight - 7:30 PM</p>
+                                                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                                                    <svg class="w-5 h-5 text-[#3498db]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                                    </svg>
+                                                </div>
+                                                <div>
+                                                    <p class="font-medium text-[#212121]">New Screen Added</p>
+                                                    <p class="text-sm text-neutral-500">Screen 3 added to Grand Theater</p>
                                                 </div>
                                             </div>
-                                            <span class="text-green-500">$24</span>
+                                            <span class="text-sm text-neutral-500">2h ago</span>
                                         </div>
 
                                         <div class="flex items-center justify-between p-4 bg-neutral-50 rounded-lg">
                                             <div class="flex items-center">
-                                                <img src="https://avatar.iran.liara.run/public" alt="User" class="w-10 h-10 rounded-full">
-                                                <div class="ml-3">
-                                                    <p class="font-medium text-neutral-900">Jane Smith</p>
-                                                    <p class="text-sm text-neutral-500">Inception - 9:00 PM</p>
+                                                <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-4">
+                                                    <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                </div>
+                                                <div>
+                                                    <p class="font-medium text-[#212121]">Seat Configuration Updated</p>
+                                                    <p class="text-sm text-neutral-500">City Cinema - Screen 2</p>
                                                 </div>
                                             </div>
-                                            <span class="text-green-500">$36</span>
+                                            <span class="text-sm text-neutral-500">5h ago</span>
                                         </div>
 
                                         <div class="flex items-center justify-between p-4 bg-neutral-50 rounded-lg">
                                             <div class="flex items-center">
-                                                <img src="https://avatar.iran.liara.run/public" alt="User" class="w-10 h-10 rounded-full">
-                                                <div class="ml-3">
-                                                    <p class="font-medium text-neutral-900">Mike Johnson</p>
-                                                    <p class="text-sm text-neutral-500">Interstellar - 6:15 PM</p>
+                                                <div class="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center mr-4">
+                                                    <svg class="w-5 h-5 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                                    </svg>
+                                                </div>
+                                                <div>
+                                                    <p class="font-medium text-[#212121]">Theater Details Modified</p>
+                                                    <p class="text-sm text-neutral-500">Star Cinemas - Contact Updated</p>
                                                 </div>
                                             </div>
-                                            <span class="text-green-500">$48</span>
+                                            <span class="text-sm text-neutral-500">1d ago</span>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <!-- Upcoming Shows -->
-                            <div class="bg-white p-6 rounded-lg border border-neutral-200/30">
-                                <h2 class="text-lg font-semibold text-neutral-900 mb-4">Upcoming Shows</h2>
-                                <div class="overflow-x-auto">
-                                    <table class="w-full">
-                                        <thead>
-                                            <tr class="text-left border-b border-neutral-200">
-                                                <th class="pb-3 font-semibold text-neutral-600">Movie</th>
-                                                <th class="pb-3 font-semibold text-neutral-600">Time</th>
-                                                <th class="pb-3 font-semibold text-neutral-600">Theater</th>
-                                                <th class="pb-3 font-semibold text-neutral-600">Available Seats</th>
-                                                <th class="pb-3 font-semibold text-neutral-600">Status</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr class="border-b border-neutral-200">
-                                                <td class="py-4">The Dark Knight</td>
-                                                <td class="py-4">7:30 PM</td>
-                                                <td class="py-4">Theater 1</td>
-                                                <td class="py-4">45</td>
-                                                <td class="py-4"><span class="px-2 py-1 text-sm text-green-600 bg-green-100 rounded-full">On Time</span></td>
-                                            </tr>
-                                            <tr class="border-b border-neutral-200">
-                                                <td class="py-4">Inception</td>
-                                                <td class="py-4">9:00 PM</td>
-                                                <td class="py-4">Theater 2</td>
-                                                <td class="py-4">28</td>
-                                                <td class="py-4"><span class="px-2 py-1 text-sm text-yellow-600 bg-yellow-100 rounded-full">Filling Fast</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="py-4">Interstellar</td>
-                                                <td class="py-4">6:15 PM</td>
-                                                <td class="py-4">Theater 3</td>
-                                                <td class="py-4">12</td>
-                                                <td class="py-4"><span class="px-2 py-1 text-sm text-red-600 bg-red-100 rounded-full">Almost Full</span></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                                    <h3 class="text-lg font-semibold text-[#212121] mb-4">Revenue Overview</h3>
+                                    <div class="h-64 flex items-center justify-center">
+                                        <div class="w-full h-full flex items-end justify-around space-x-2">
+                                            <div class="h-[60%] w-8 bg-[#3498db] rounded-t-lg"></div>
+                                            <div class="h-[75%] w-8 bg-[#3498db] rounded-t-lg"></div>
+                                            <div class="h-[45%] w-8 bg-[#3498db] rounded-t-lg"></div>
+                                            <div class="h-[90%] w-8 bg-[#3498db] rounded-t-lg"></div>
+                                            <div class="h-[65%] w-8 bg-[#3498db] rounded-t-lg"></div>
+                                            <div class="h-[80%] w-8 bg-[#3498db] rounded-t-lg"></div>
+                                            <div class="h-[70%] w-8 bg-[#3498db] rounded-t-lg"></div>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between mt-4 text-sm text-neutral-500">
+                                        <span>Mon</span>
+                                        <span>Tue</span>
+                                        <span>Wed</span>
+                                        <span>Thu</span>
+                                        <span>Fri</span>
+                                        <span>Sat</span>
+                                        <span>Sun</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </htmlCode>
                     <htmlCode>
-                        <div id="movies" class="p-6 space-y-6">
-                            <!-- Header Actions -->
-                            <div class="flex justify-between items-center">
-                                <h2 class="text-xl font-semibold text-neutral-900">Movie Management</h2>
-                                <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center">
+                        <div id="theaters_list" class="pt-20 px-6 pb-6">
+                            <!-- Header with Actions -->
+                            <div class="mb-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                                <div>
+                                    <h2 class="text-2xl font-bold text-[#212121]">Theaters</h2>
+                                    <p class="text-neutral-600">Manage and view all theater locations</p>
+                                </div>
+                                <a href="#add_theater" class="bg-[#3498db] text-white px-6 py-3 rounded-lg hover:bg-[#2980b9] transition-colors duration-300 flex items-center">
                                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
                                     </svg>
-                                    Add New Movie
+                                    Add New Theater
+                                </a>
+                            </div>
+
+                            <!-- Filters and Search -->
+                            <div class="mb-6 bg-white rounded-lg border border-neutral-200/20 p-4">
+                                <div class="flex flex-col md:flex-row gap-4 items-stretch md:items-center">
+                                    <div class="flex-1">
+                                        <div class="relative">
+                                            <input type="search" placeholder="Search theaters..." class="w-full pl-10 pr-4 py-2 rounded-lg border border-neutral-200/20 focus:outline-none focus:ring-2 focus:ring-[#3498db]">
+                                            <svg class="w-5 h-5 absolute left-3 top-2.5 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-4">
+                                        <select class="px-4 py-2 rounded-lg border border-neutral-200/20 focus:outline-none focus:ring-2 focus:ring-[#3498db]">
+                                            <option value="">Filter by City</option>
+                                            <option value="new-york">New York</option>
+                                            <option value="los-angeles">Los Angeles</option>
+                                            <option value="chicago">Chicago</option>
+                                        </select>
+                                        <select class="px-4 py-2 rounded-lg border border-neutral-200/20 focus:outline-none focus:ring-2 focus:ring-[#3498db]">
+                                            <option value="">Sort by</option>
+                                            <option value="name">Name</option>
+                                            <option value="screens">Screens</option>
+                                            <option value="revenue">Revenue</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Theaters Grid -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                                <!-- Theater Card 1 -->
+                                <div class="bg-white rounded-lg border border-neutral-200/20 hover:border-[#3498db]/30 transition-colors duration-300">
+                                    <div class="p-6">
+                                        <div class="flex justify-between items-start mb-4">
+                                            <div>
+                                                <h3 class="text-lg font-semibold text-[#212121]">Grand Theater</h3>
+                                                <p class="text-neutral-600 text-sm">New York, NY</p>
+                                            </div>
+                                            <div class="flex gap-2">
+                                                <button class="p-2 hover:bg-neutral-100 rounded-lg transition-colors duration-300">
+                                                    <svg class="w-5 h-5 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                                    </svg>
+                                                </button>
+                                                <button class="p-2 hover:bg-red-50 rounded-lg transition-colors duration-300">
+                                                    <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="grid grid-cols-3 gap-4 mb-4">
+                                            <div class="text-center p-3 bg-neutral-50 rounded-lg">
+                                                <p class="text-sm text-neutral-600">Screens</p>
+                                                <p class="text-lg font-semibold text-[#212121]">4</p>
+                                            </div>
+                                            <div class="text-center p-3 bg-neutral-50 rounded-lg">
+                                                <p class="text-sm text-neutral-600">Seats</p>
+                                                <p class="text-lg font-semibold text-[#212121]">840</p>
+                                            </div>
+                                            <div class="text-center p-3 bg-neutral-50 rounded-lg">
+                                                <p class="text-sm text-neutral-600">Shows</p>
+                                                <p class="text-lg font-semibold text-[#212121]">12</p>
+                                            </div>
+                                        </div>
+                                        <button class="w-full py-2 text-[#3498db] hover:bg-blue-50 rounded-lg transition-colors duration-300">View Details</button>
+                                    </div>
+                                </div>
+
+                                <!-- Theater Card 2 -->
+                                <div class="bg-white rounded-lg border border-neutral-200/20 hover:border-[#3498db]/30 transition-colors duration-300">
+                                    <div class="p-6">
+                                        <div class="flex justify-between items-start mb-4">
+                                            <div>
+                                                <h3 class="text-lg font-semibold text-[#212121]">City Cinema</h3>
+                                                <p class="text-neutral-600 text-sm">Los Angeles, CA</p>
+                                            </div>
+                                            <div class="flex gap-2">
+                                                <button class="p-2 hover:bg-neutral-100 rounded-lg transition-colors duration-300">
+                                                    <svg class="w-5 h-5 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                                    </svg>
+                                                </button>
+                                                <button class="p-2 hover:bg-red-50 rounded-lg transition-colors duration-300">
+                                                    <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="grid grid-cols-3 gap-4 mb-4">
+                                            <div class="text-center p-3 bg-neutral-50 rounded-lg">
+                                                <p class="text-sm text-neutral-600">Screens</p>
+                                                <p class="text-lg font-semibold text-[#212121]">6</p>
+                                            </div>
+                                            <div class="text-center p-3 bg-neutral-50 rounded-lg">
+                                                <p class="text-sm text-neutral-600">Seats</p>
+                                                <p class="text-lg font-semibold text-[#212121]">1200</p>
+                                            </div>
+                                            <div class="text-center p-3 bg-neutral-50 rounded-lg">
+                                                <p class="text-sm text-neutral-600">Shows</p>
+                                                <p class="text-lg font-semibold text-[#212121]">18</p>
+                                            </div>
+                                        </div>
+                                        <button class="w-full py-2 text-[#3498db] hover:bg-blue-50 rounded-lg transition-colors duration-300">View Details</button>
+                                    </div>
+                                </div>
+
+                                <!-- Theater Card 3 -->
+                                <div class="bg-white rounded-lg border border-neutral-200/20 hover:border-[#3498db]/30 transition-colors duration-300">
+                                    <div class="p-6">
+                                        <div class="flex justify-between items-start mb-4">
+                                            <div>
+                                                <h3 class="text-lg font-semibold text-[#212121]">Star Cinemas</h3>
+                                                <p class="text-neutral-600 text-sm">Chicago, IL</p>
+                                            </div>
+                                            <div class="flex gap-2">
+                                                <button class="p-2 hover:bg-neutral-100 rounded-lg transition-colors duration-300">
+                                                    <svg class="w-5 h-5 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                                    </svg>
+                                                </button>
+                                                <button class="p-2 hover:bg-red-50 rounded-lg transition-colors duration-300">
+                                                    <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="grid grid-cols-3 gap-4 mb-4">
+                                            <div class="text-center p-3 bg-neutral-50 rounded-lg">
+                                                <p class="text-sm text-neutral-600">Screens</p>
+                                                <p class="text-lg font-semibold text-[#212121]">5</p>
+                                            </div>
+                                            <div class="text-center p-3 bg-neutral-50 rounded-lg">
+                                                <p class="text-sm text-neutral-600">Seats</p>
+                                                <p class="text-lg font-semibold text-[#212121]">960</p>
+                                            </div>
+                                            <div class="text-center p-3 bg-neutral-50 rounded-lg">
+                                                <p class="text-sm text-neutral-600">Shows</p>
+                                                <p class="text-lg font-semibold text-[#212121]">15</p>
+                                            </div>
+                                        </div>
+                                        <button class="w-full py-2 text-[#3498db] hover:bg-blue-50 rounded-lg transition-colors duration-300">View Details</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </htmlCode>
+                    <htmlCode>
+                        <div id="add_theater" class="pt-20 px-6 pb-6" x-data="{ step: 1, screens: [], showConfirmation: false }">
+                            <!-- Header -->
+                            <div class="mb-6">
+                                <h2 class="text-2xl font-bold text-[#212121]">Add New Theater</h2>
+                                <p class="text-neutral-600">Complete the form below to add a new theater</p>
+                            </div>
+
+                            <!-- Progress Bar -->
+                            <div class="mb-8">
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-sm" :class="step >= 1 ? 'text-[#3498db]' : 'text-neutral-400'">Theater Details</span>
+                                    <span class="text-sm" :class="step >= 2 ? 'text-[#3498db]' : 'text-neutral-400'">Screen Details</span>
+                                    <span class="text-sm" :class="step >= 3 ? 'text-[#3498db]' : 'text-neutral-400'">Seat Configuration</span>
+                                </div>
+                                <div class="h-2 bg-neutral-200 rounded-full">
+                                    <div class="h-2 bg-[#3498db] rounded-full transition-all duration-300"
+                                        :style="'width: ' + ((step - 1) * 50) + '%'"></div>
+                                </div>
+                            </div>
+
+                            <!-- Form Steps -->
+                            <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                                <!-- Step 1: Theater Details -->
+                                <div x-show="step === 1" class="space-y-6">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div>
+                                            <label class="block text-sm font-medium text-[#212121] mb-2">Theater Name</label>
+                                            <input type="text" class="w-full px-4 py-2 rounded-lg border border-neutral-200/20 focus:outline-none focus:ring-2 focus:ring-[#3498db]" placeholder="Enter theater name">
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm font-medium text-[#212121] mb-2">Contact Number</label>
+                                            <input type="tel" class="w-full px-4 py-2 rounded-lg border border-neutral-200/20 focus:outline-none focus:ring-2 focus:ring-[#3498db]" placeholder="Enter contact number">
+                                        </div>
+                                        <div class="md:col-span-2">
+                                            <label class="block text-sm font-medium text-[#212121] mb-2">Email Address</label>
+                                            <input type="email" class="w-full px-4 py-2 rounded-lg border border-neutral-200/20 focus:outline-none focus:ring-2 focus:ring-[#3498db]" placeholder="Enter email address">
+                                        </div>
+                                        <div class="md:col-span-2">
+                                            <label class="block text-sm font-medium text-[#212121] mb-2">Address</label>
+                                            <textarea class="w-full px-4 py-2 rounded-lg border border-neutral-200/20 focus:outline-none focus:ring-2 focus:ring-[#3498db]" rows="3" placeholder="Enter complete address"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Step 2: Screen Details -->
+                                <div x-show="step === 2" class="space-y-6">
+                                    <template x-for="(screen, index) in screens" :key="index">
+                                        <div class="p-4 bg-neutral-50 rounded-lg space-y-4">
+                                            <div class="flex justify-between items-center">
+                                                <h4 class="text-lg font-medium text-[#212121]" x-text="'Screen ' + (index + 1)"></h4>
+                                                <button class="text-red-600 hover:text-red-700" @click="screens.splice(index, 1)">
+                                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                                <input type="text" class="px-4 py-2 rounded-lg border border-neutral-200/20 focus:outline-none focus:ring-2 focus:ring-[#3498db]" placeholder="Screen name">
+                                                <select class="px-4 py-2 rounded-lg border border-neutral-200/20 focus:outline-none focus:ring-2 focus:ring-[#3498db]">
+                                                    <option value="">Select screen type</option>
+                                                    <option value="2d">2D</option>
+                                                    <option value="3d">3D</option>
+                                                    <option value="imax">IMAX</option>
+                                                </select>
+                                                <select class="px-4 py-2 rounded-lg border border-neutral-200/20 focus:outline-none focus:ring-2 focus:ring-[#3498db]">
+                                                    <option value="">Select format</option>
+                                                    <option value="standard">Standard</option>
+                                                    <option value="wide">Wide Screen</option>
+                                                    <option value="ultra">Ultra Wide</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </template>
+                                    <button @click="screens.push({})" class="w-full py-3 border-2 border-dashed border-neutral-300 rounded-lg text-neutral-600 hover:border-[#3498db] hover:text-[#3498db] transition-colors duration-300">
+                                        + Add New Screen
+                                    </button>
+                                </div>
+
+                                <!-- Step 3: Seat Configuration -->
+                                <div x-show="step === 3" class="space-y-6">
+                                    <div class="border border-neutral-200/20 rounded-lg p-4">
+                                        <div class="grid grid-cols-10 gap-2 mb-4">
+                                            <template x-for="i in 50">
+                                                <button class="aspect-square rounded bg-neutral-100 hover:bg-[#3498db] hover:text-white transition-colors duration-300"></button>
+                                            </template>
+                                        </div>
+                                        <div class="flex gap-4 mt-4">
+                                            <div class="flex items-center gap-2">
+                                                <div class="w-4 h-4 bg-neutral-100 rounded"></div>
+                                                <span class="text-sm text-neutral-600">Regular</span>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <div class="w-4 h-4 bg-[#3498db] rounded"></div>
+                                                <span class="text-sm text-neutral-600">Premium</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <label class="block text-sm font-medium text-[#212121] mb-2">Regular Seat Price</label>
+                                            <input type="number" class="w-full px-4 py-2 rounded-lg border border-neutral-200/20 focus:outline-none focus:ring-2 focus:ring-[#3498db]" placeholder="Enter price">
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm font-medium text-[#212121] mb-2">Premium Seat Price</label>
+                                            <input type="number" class="w-full px-4 py-2 rounded-lg border border-neutral-200/20 focus:outline-none focus:ring-2 focus:ring-[#3498db]" placeholder="Enter price">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Navigation Buttons -->
+                                <div class="flex justify-between mt-8">
+                                    <button x-show="step > 1" @click="step--" class="px-6 py-2 text-[#3498db] hover:bg-blue-50 rounded-lg transition-colors duration-300">
+                                        Previous
+                                    </button>
+                                    <button x-show="step < 3" @click="step++" class="ml-auto px-6 py-2 bg-[#3498db] text-white rounded-lg hover:bg-[#2980b9] transition-colors duration-300">
+                                        Continue
+                                    </button>
+                                    <button x-show="step === 3" @click="showConfirmation = true" class="ml-auto px-6 py-2 bg-[#3498db] text-white rounded-lg hover:bg-[#2980b9] transition-colors duration-300">
+                                        Review & Save
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Confirmation Dialog -->
+                            <div x-show="showConfirmation" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                                <div class="bg-white rounded-lg p-6 max-w-md w-full mx-4">
+                                    <h3 class="text-xl font-bold text-[#212121] mb-4">Confirm Theater Details</h3>
+                                    <div class="space-y-4">
+                                        <div>
+                                            <h4 class="font-medium text-[#212121]">Theater Information</h4>
+                                            <p class="text-neutral-600">Grand Theater</p>
+                                            <p class="text-neutral-600">123 Main St, New York, NY</p>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium text-[#212121]">Screens</h4>
+                                            <p class="text-neutral-600">Total Screens: 3</p>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium text-[#212121]">Seating</h4>
+                                            <p class="text-neutral-600">Total Capacity: 450 seats</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-4 mt-6">
+                                        <button @click="showConfirmation = false" class="flex-1 px-6 py-2 text-[#3498db] hover:bg-blue-50 rounded-lg transition-colors duration-300">
+                                            Edit
+                                        </button>
+                                        <button class="flex-1 px-6 py-2 bg-[#3498db] text-white rounded-lg hover:bg-[#2980b9] transition-colors duration-300">
+                                            Confirm & Save
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <script>
+                            document.addEventListener('alpine:init', () => {
+                                Alpine.data('add_theater', () => ({
+                                    step: 1,
+                                    screens: [],
+                                    showConfirmation: false
+                                }))
+                            })
+                        </script>
+                    </htmlCode>
+                    <htmlCode>
+                        <div id="screen_management" class="pt-20 px-6 pb-6">
+                            <!-- Header with Actions -->
+                            <div class="mb-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                                <div>
+                                    <h2 class="text-2xl font-bold text-[#212121]">Screen Management</h2>
+                                    <p class="text-neutral-600">Manage all theater screens and configurations</p>
+                                </div>
+                                <button class="bg-[#3498db] text-white px-6 py-3 rounded-lg hover:bg-[#2980b9] transition-colors duration-300 flex items-center">
+                                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                                    </svg>
+                                    Add New Screen
                                 </button>
                             </div>
 
-                            <!-- Filters -->
-                            <div class="bg-white p-4 rounded-lg border border-neutral-200/30 flex flex-wrap gap-4">
-                                <div class="flex-1 min-w-[200px]">
-                                    <label class="block text-sm font-medium text-neutral-600 mb-1">Search Movies</label>
-                                    <input type="text" placeholder="Search by title, genre, or cast..." class="w-full px-3 py-2 border border-neutral-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                                </div>
-                                <div class="w-48">
-                                    <label class="block text-sm font-medium text-neutral-600 mb-1">Genre</label>
-                                    <select class="w-full px-3 py-2 border border-neutral-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                                        <option value="">All Genres</option>
-                                        <option>Action</option>
-                                        <option>Drama</option>
-                                        <option>Comedy</option>
-                                        <option>Sci-Fi</option>
-                                    </select>
-                                </div>
-                                <div class="w-48">
-                                    <label class="block text-sm font-medium text-neutral-600 mb-1">Status</label>
-                                    <select class="w-full px-3 py-2 border border-neutral-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                                        <option value="">All Status</option>
-                                        <option>Now Showing</option>
-                                        <option>Coming Soon</option>
-                                        <option>Ended</option>
-                                    </select>
+                            <!-- Filters and Search -->
+                            <div class="mb-6 bg-white rounded-lg border border-neutral-200/20 p-4">
+                                <div class="flex flex-col md:flex-row gap-4">
+                                    <div class="flex-1">
+                                        <div class="relative">
+                                            <input type="search" placeholder="Search screens..." class="w-full pl-10 pr-4 py-2 rounded-lg border border-neutral-200/20 focus:outline-none focus:ring-2 focus:ring-[#3498db]">
+                                            <svg class="w-5 h-5 absolute left-3 top-2.5 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-4">
+                                        <select class="px-4 py-2 rounded-lg border border-neutral-200/20 focus:outline-none focus:ring-2 focus:ring-[#3498db]">
+                                            <option value="">Filter by Type</option>
+                                            <option value="2d">2D</option>
+                                            <option value="3d">3D</option>
+                                            <option value="imax">IMAX</option>
+                                        </select>
+                                        <select class="px-4 py-2 rounded-lg border border-neutral-200/20 focus:outline-none focus:ring-2 focus:ring-[#3498db]">
+                                            <option value="">Sort by</option>
+                                            <option value="name">Screen Name</option>
+                                            <option value="capacity">Capacity</option>
+                                            <option value="revenue">Revenue</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
 
-                            <!-- Movies Grid -->
-                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                                <!-- Movie Card 1 -->
-                                <div class="bg-white rounded-lg border border-neutral-200/30 overflow-hidden">
-                                    <img src="https://placehold.co/300x450" alt="Movie Poster" class="w-full h-64 object-cover">
-                                    <div class="p-4">
-                                        <div class="flex justify-between items-start mb-2">
-                                            <h3 class="font-semibold text-neutral-900">The Dark Knight</h3>
-                                            <span class="px-2 py-1 text-xs bg-green-100 text-green-600 rounded-full">Now Showing</span>
-                                        </div>
-                                        <p class="text-sm text-neutral-600 mb-3">Action, Drama</p>
-                                        <div class="flex items-center justify-between text-sm mb-3">
-                                            <span class="text-neutral-600">Duration: 2h 32m</span>
-                                            <span class="text-neutral-600">Rating: PG-13</span>
-                                        </div>
-                                        <div class="flex space-x-2">
-                                            <button class="flex-1 px-3 py-2 text-sm bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors">Edit</button>
-                                            <button class="flex-1 px-3 py-2 text-sm bg-red-50 text-red-600 rounded-lg hover:bg-red-100 transition-colors">Remove</button>
-                                        </div>
-                                    </div>
-                                </div>
+                            <!-- Screens Table -->
+                            <div class="bg-white rounded-lg border border-neutral-200/20 overflow-hidden">
+                                <table class="w-full">
+                                    <thead class="bg-neutral-50 border-b border-neutral-200/20">
+                                        <tr>
+                                            <th class="text-left py-4 px-6 text-sm font-semibold text-[#212121]">Screen ID</th>
+                                            <th class="text-left py-4 px-6 text-sm font-semibold text-[#212121]">Screen Name</th>
+                                            <th class="text-left py-4 px-6 text-sm font-semibold text-[#212121]">Theater</th>
+                                            <th class="text-left py-4 px-6 text-sm font-semibold text-[#212121]">Type</th>
+                                            <th class="text-left py-4 px-6 text-sm font-semibold text-[#212121]">Capacity</th>
+                                            <th class="text-left py-4 px-6 text-sm font-semibold text-[#212121]">Status</th>
+                                            <th class="text-left py-4 px-6 text-sm font-semibold text-[#212121]">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-neutral-200/20">
+                                        <tr class="hover:bg-neutral-50 transition-colors duration-200">
+                                            <td class="py-4 px-6 text-sm text-[#212121]">SCR001</td>
+                                            <td class="py-4 px-6 text-sm text-[#212121]">Main Screen</td>
+                                            <td class="py-4 px-6 text-sm text-[#212121]">Grand Theater</td>
+                                            <td class="py-4 px-6 text-sm text-[#212121]">IMAX</td>
+                                            <td class="py-4 px-6 text-sm text-[#212121]">280</td>
+                                            <td class="py-4 px-6">
+                                                <span class="px-3 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">Active</span>
+                                            </td>
+                                            <td class="py-4 px-6">
+                                                <div class="flex gap-2">
+                                                    <button class="p-2 hover:bg-neutral-100 rounded-lg transition-colors duration-300">
+                                                        <svg class="w-5 h-5 text-[#3498db]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                                        </svg>
+                                                    </button>
+                                                    <button class="p-2 hover:bg-neutral-100 rounded-lg transition-colors duration-300">
+                                                        <svg class="w-5 h-5 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
 
-                                <!-- Movie Card 2 -->
-                                <div class="bg-white rounded-lg border border-neutral-200/30 overflow-hidden">
-                                    <img src="https://placehold.co/300x450" alt="Movie Poster" class="w-full h-64 object-cover">
-                                    <div class="p-4">
-                                        <div class="flex justify-between items-start mb-2">
-                                            <h3 class="font-semibold text-neutral-900">Inception</h3>
-                                            <span class="px-2 py-1 text-xs bg-yellow-100 text-yellow-600 rounded-full">Coming Soon</span>
-                                        </div>
-                                        <p class="text-sm text-neutral-600 mb-3">Sci-Fi, Action</p>
-                                        <div class="flex items-center justify-between text-sm mb-3">
-                                            <span class="text-neutral-600">Duration: 2h 28m</span>
-                                            <span class="text-neutral-600">Rating: PG-13</span>
-                                        </div>
-                                        <div class="flex space-x-2">
-                                            <button class="flex-1 px-3 py-2 text-sm bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors">Edit</button>
-                                            <button class="flex-1 px-3 py-2 text-sm bg-red-50 text-red-600 rounded-lg hover:bg-red-100 transition-colors">Remove</button>
-                                        </div>
-                                    </div>
-                                </div>
+                                        <tr class="hover:bg-neutral-50 transition-colors duration-200">
+                                            <td class="py-4 px-6 text-sm text-[#212121]">SCR002</td>
+                                            <td class="py-4 px-6 text-sm text-[#212121]">Premium Screen</td>
+                                            <td class="py-4 px-6 text-sm text-[#212121]">City Cinema</td>
+                                            <td class="py-4 px-6 text-sm text-[#212121]">3D</td>
+                                            <td class="py-4 px-6 text-sm text-[#212121]">180</td>
+                                            <td class="py-4 px-6">
+                                                <span class="px-3 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">Active</span>
+                                            </td>
+                                            <td class="py-4 px-6">
+                                                <div class="flex gap-2">
+                                                    <button class="p-2 hover:bg-neutral-100 rounded-lg transition-colors duration-300">
+                                                        <svg class="w-5 h-5 text-[#3498db]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                                        </svg>
+                                                    </button>
+                                                    <button class="p-2 hover:bg-neutral-100 rounded-lg transition-colors duration-300">
+                                                        <svg class="w-5 h-5 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
 
-                                <!-- Movie Card 3 -->
-                                <div class="bg-white rounded-lg border border-neutral-200/30 overflow-hidden">
-                                    <img src="https://placehold.co/300x450" alt="Movie Poster" class="w-full h-64 object-cover">
-                                    <div class="p-4">
-                                        <div class="flex justify-between items-start mb-2">
-                                            <h3 class="font-semibold text-neutral-900">Interstellar</h3>
-                                            <span class="px-2 py-1 text-xs bg-green-100 text-green-600 rounded-full">Now Showing</span>
-                                        </div>
-                                        <p class="text-sm text-neutral-600 mb-3">Sci-Fi, Drama</p>
-                                        <div class="flex items-center justify-between text-sm mb-3">
-                                            <span class="text-neutral-600">Duration: 2h 49m</span>
-                                            <span class="text-neutral-600">Rating: PG-13</span>
-                                        </div>
-                                        <div class="flex space-x-2">
-                                            <button class="flex-1 px-3 py-2 text-sm bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors">Edit</button>
-                                            <button class="flex-1 px-3 py-2 text-sm bg-red-50 text-red-600 rounded-lg hover:bg-red-100 transition-colors">Remove</button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Movie Card 4 -->
-                                <div class="bg-white rounded-lg border border-neutral-200/30 overflow-hidden">
-                                    <img src="https://placehold.co/300x450" alt="Movie Poster" class="w-full h-64 object-cover">
-                                    <div class="p-4">
-                                        <div class="flex justify-between items-start mb-2">
-                                            <h3 class="font-semibold text-neutral-900">The Matrix</h3>
-                                            <span class="px-2 py-1 text-xs bg-neutral-100 text-neutral-600 rounded-full">Ended</span>
-                                        </div>
-                                        <p class="text-sm text-neutral-600 mb-3">Sci-Fi, Action</p>
-                                        <div class="flex items-center justify-between text-sm mb-3">
-                                            <span class="text-neutral-600">Duration: 2h 16m</span>
-                                            <span class="text-neutral-600">Rating: R</span>
-                                        </div>
-                                        <div class="flex space-x-2">
-                                            <button class="flex-1 px-3 py-2 text-sm bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors">Edit</button>
-                                            <button class="flex-1 px-3 py-2 text-sm bg-red-50 text-red-600 rounded-lg hover:bg-red-100 transition-colors">Remove</button>
-                                        </div>
-                                    </div>
-                                </div>
+                                        <tr class="hover:bg-neutral-50 transition-colors duration-200">
+                                            <td class="py-4 px-6 text-sm text-[#212121]">SCR003</td>
+                                            <td class="py-4 px-6 text-sm text-[#212121]">Standard Screen</td>
+                                            <td class="py-4 px-6 text-sm text-[#212121]">Star Cinemas</td>
+                                            <td class="py-4 px-6 text-sm text-[#212121]">2D</td>
+                                            <td class="py-4 px-6 text-sm text-[#212121]">150</td>
+                                            <td class="py-4 px-6">
+                                                <span class="px-3 py-1 text-xs font-medium bg-yellow-100 text-yellow-800 rounded-full">Maintenance</span>
+                                            </td>
+                                            <td class="py-4 px-6">
+                                                <div class="flex gap-2">
+                                                    <button class="p-2 hover:bg-neutral-100 rounded-lg transition-colors duration-300">
+                                                        <svg class="w-5 h-5 text-[#3498db]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                                        </svg>
+                                                    </button>
+                                                    <button class="p-2 hover:bg-neutral-100 rounded-lg transition-colors duration-300">
+                                                        <svg class="w-5 h-5 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
 
                             <!-- Pagination -->
-                            <div class="flex justify-between items-center bg-white p-4 rounded-lg border border-neutral-200/30">
-                                <button class="px-4 py-2 text-neutral-600 hover:text-neutral-900 disabled:opacity-50 disabled:cursor-not-allowed">
-                                    Previous
-                                </button>
-                                <div class="flex space-x-1">
-                                    <button class="px-4 py-2 bg-blue-50 text-blue-600 rounded">1</button>
-                                    <button class="px-4 py-2 text-neutral-600 hover:bg-neutral-50 rounded">2</button>
-                                    <button class="px-4 py-2 text-neutral-600 hover:bg-neutral-50 rounded">3</button>
-                                    <span class="px-4 py-2">...</span>
-                                    <button class="px-4 py-2 text-neutral-600 hover:bg-neutral-50 rounded">8</button>
-                                </div>
-                                <button class="px-4 py-2 text-neutral-600 hover:text-neutral-900">
-                                    Next
-                                </button>
-                            </div>
-                        </div>
-                    </htmlCode>
-                    <htmlCode>
-                        <div id="showtimes" class="p-6 space-y-6">
-                            <!-- Header Actions -->
-                            <div class="flex justify-between items-center">
-                                <h2 class="text-xl font-semibold text-neutral-900">Showtime Management</h2>
-                                <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center">
-                                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-                                    </svg>
-                                    Add New Showtime
-                                </button>
-                            </div>
-
-                            <!-- Filters and Date Selection -->
-                            <div class="bg-white p-4 rounded-lg border border-neutral-200/30 space-y-4">
-                                <div class="flex flex-wrap gap-4">
-                                    <div class="flex-1 min-w-[200px]">
-                                        <label class="block text-sm font-medium text-neutral-600 mb-1">Select Theater</label>
-                                        <select class="w-full px-3 py-2 border border-neutral-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                                            <option value="">All Theaters</option>
-                                            <option>Theater 1</option>
-                                            <option>Theater 2</option>
-                                            <option>Theater 3</option>
-                                            <option>Theater 4</option>
-                                        </select>
-                                    </div>
-                                    <div class="flex-1 min-w-[200px]">
-                                        <label class="block text-sm font-medium text-neutral-600 mb-1">Select Movie</label>
-                                        <select class="w-full px-3 py-2 border border-neutral-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                                            <option value="">All Movies</option>
-                                            <option>The Dark Knight</option>
-                                            <option>Inception</option>
-                                            <option>Interstellar</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <!-- Date Navigation -->
-                                <div class="flex items-center space-x-4 overflow-x-auto py-2">
-                                    <button class="flex flex-col items-center min-w-[100px] p-3 rounded-lg bg-blue-50 text-blue-600">
-                                        <span class="text-sm font-medium">Today</span>
-                                        <span class="text-lg font-semibold">Mar 15</span>
-                                    </button>
-                                    <button class="flex flex-col items-center min-w-[100px] p-3 rounded-lg hover:bg-neutral-50">
-                                        <span class="text-sm font-medium">Tomorrow</span>
-                                        <span class="text-lg font-semibold">Mar 16</span>
-                                    </button>
-                                    <button class="flex flex-col items-center min-w-[100px] p-3 rounded-lg hover:bg-neutral-50">
-                                        <span class="text-sm font-medium">Sunday</span>
-                                        <span class="text-lg font-semibold">Mar 17</span>
-                                    </button>
-                                    <button class="flex flex-col items-center min-w-[100px] p-3 rounded-lg hover:bg-neutral-50">
-                                        <span class="text-sm font-medium">Monday</span>
-                                        <span class="text-lg font-semibold">Mar 18</span>
-                                    </button>
-                                    <button class="flex flex-col items-center min-w-[100px] p-3 rounded-lg hover:bg-neutral-50">
-                                        <span class="text-sm font-medium">Tuesday</span>
-                                        <span class="text-lg font-semibold">Mar 19</span>
-                                    </button>
-                                </div>
-                            </div>
-
-                            <!-- Showtimes Grid -->
-                            <div class="space-y-6">
-                                <!-- Theater 1 -->
-                                <div class="bg-white rounded-lg border border-neutral-200/30">
-                                    <div class="p-4 border-b border-neutral-200/30">
-                                        <h3 class="font-semibold text-lg text-neutral-900">Theater 1 - IMAX</h3>
-                                        <p class="text-sm text-neutral-600">Capacity: 250 seats</p>
-                                    </div>
-                                    <div class="p-4 space-y-4">
-                                        <div class="flex items-start p-4 bg-neutral-50 rounded-lg">
-                                            <img src="https://placehold.co/300x450" alt="Movie Poster" class="w-16 h-24 rounded object-cover">
-                                            <div class="ml-4 flex-1">
-                                                <div class="flex justify-between items-start">
-                                                    <div>
-                                                        <h4 class="font-semibold text-neutral-900">The Dark Knight</h4>
-                                                        <p class="text-sm text-neutral-600">2h 32m • PG-13</p>
-                                                    </div>
-                                                    <div class="flex space-x-2">
-                                                        <button class="px-3 py-1 text-sm bg-blue-50 text-blue-600 rounded hover:bg-blue-100">Edit</button>
-                                                        <button class="px-3 py-1 text-sm bg-red-50 text-red-600 rounded hover:bg-red-100">Cancel</button>
-                                                    </div>
-                                                </div>
-                                                <div class="mt-3 flex flex-wrap gap-2">
-                                                    <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm">10:00 AM (182/250)</span>
-                                                    <span class="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-sm">2:30 PM (98/250)</span>
-                                                    <span class="px-3 py-1 bg-red-100 text-red-600 rounded-full text-sm">7:00 PM (243/250)</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Theater 2 -->
-                                <div class="bg-white rounded-lg border border-neutral-200/30">
-                                    <div class="p-4 border-b border-neutral-200/30">
-                                        <h3 class="font-semibold text-lg text-neutral-900">Theater 2 - Dolby Atmos</h3>
-                                        <p class="text-sm text-neutral-600">Capacity: 180 seats</p>
-                                    </div>
-                                    <div class="p-4 space-y-4">
-                                        <div class="flex items-start p-4 bg-neutral-50 rounded-lg">
-                                            <img src="https://placehold.co/300x450" alt="Movie Poster" class="w-16 h-24 rounded object-cover">
-                                            <div class="ml-4 flex-1">
-                                                <div class="flex justify-between items-start">
-                                                    <div>
-                                                        <h4 class="font-semibold text-neutral-900">Inception</h4>
-                                                        <p class="text-sm text-neutral-600">2h 28m • PG-13</p>
-                                                    </div>
-                                                    <div class="flex space-x-2">
-                                                        <button class="px-3 py-1 text-sm bg-blue-50 text-blue-600 rounded hover:bg-blue-100">Edit</button>
-                                                        <button class="px-3 py-1 text-sm bg-red-50 text-red-600 rounded hover:bg-red-100">Cancel</button>
-                                                    </div>
-                                                </div>
-                                                <div class="mt-3 flex flex-wrap gap-2">
-                                                    <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm">11:30 AM (85/180)</span>
-                                                    <span class="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-sm">4:00 PM (120/180)</span>
-                                                    <span class="px-3 py-1 bg-red-100 text-red-600 rounded-full text-sm">8:30 PM (175/180)</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Theater 3 -->
-                                <div class="bg-white rounded-lg border border-neutral-200/30">
-                                    <div class="p-4 border-b border-neutral-200/30">
-                                        <h3 class="font-semibold text-lg text-neutral-900">Theater 3 - Standard</h3>
-                                        <p class="text-sm text-neutral-600">Capacity: 150 seats</p>
-                                    </div>
-                                    <div class="p-4 space-y-4">
-                                        <div class="flex items-start p-4 bg-neutral-50 rounded-lg">
-                                            <img src="https://placehold.co/300x450" alt="Movie Poster" class="w-16 h-24 rounded object-cover">
-                                            <div class="ml-4 flex-1">
-                                                <div class="flex justify-between items-start">
-                                                    <div>
-                                                        <h4 class="font-semibold text-neutral-900">Interstellar</h4>
-                                                        <p class="text-sm text-neutral-600">2h 49m • PG-13</p>
-                                                    </div>
-                                                    <div class="flex space-x-2">
-                                                        <button class="px-3 py-1 text-sm bg-blue-50 text-blue-600 rounded hover:bg-blue-100">Edit</button>
-                                                        <button class="px-3 py-1 text-sm bg-red-50 text-red-600 rounded hover:bg-red-100">Cancel</button>
-                                                    </div>
-                                                </div>
-                                                <div class="mt-3 flex flex-wrap gap-2">
-                                                    <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm">1:00 PM (65/150)</span>
-                                                    <span class="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-sm">5:30 PM (110/150)</span>
-                                                    <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm">9:00 PM (45/150)</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <div class="mt-6 flex justify-between items-center">
+                                <p class="text-sm text-neutral-600">Showing 1 to 3 of 12 entries</p>
+                                <div class="flex gap-2">
+                                    <button class="px-4 py-2 border border-neutral-200/20 rounded-lg text-neutral-600 hover:bg-neutral-50 transition-colors duration-300">Previous</button>
+                                    <button class="px-4 py-2 bg-[#3498db] text-white rounded-lg hover:bg-[#2980b9] transition-colors duration-300">1</button>
+                                    <button class="px-4 py-2 border border-neutral-200/20 rounded-lg text-neutral-600 hover:bg-neutral-50 transition-colors duration-300">2</button>
+                                    <button class="px-4 py-2 border border-neutral-200/20 rounded-lg text-neutral-600 hover:bg-neutral-50 transition-colors duration-300">3</button>
+                                    <button class="px-4 py-2 border border-neutral-200/20 rounded-lg text-neutral-600 hover:bg-neutral-50 transition-colors duration-300">Next</button>
                                 </div>
                             </div>
                         </div>
                     </htmlCode>
                     <htmlCode>
-                        <div id="bookings" class="p-6 space-y-6">
-                            <!-- Header Actions -->
-                            <div class="flex justify-between items-center">
-                                <h2 class="text-xl font-semibold text-neutral-900">Booking Management</h2>
-                                <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center">
-                                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-                                    </svg>
-                                    Create New Booking
-                                </button>
+                        <div id="reports_analytics" class="pt-20 px-6 pb-6">
+                            <!-- Header -->
+                            <div class="mb-6">
+                                <h2 class="text-2xl font-bold text-[#212121]">Reports & Analytics</h2>
+                                <p class="text-neutral-600">View detailed analytics and performance metrics</p>
                             </div>
 
-                            <!-- Filters -->
-                            <div class="bg-white p-4 rounded-lg border border-neutral-200/30 flex flex-wrap gap-4">
-                                <div class="flex-1 min-w-[200px]">
-                                    <label class="block text-sm font-medium text-neutral-600 mb-1">Search Bookings</label>
-                                    <input type="text" placeholder="Search by booking ID, customer, or movie..." class="w-full px-3 py-2 border border-neutral-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                                </div>
-                                <div class="w-48">
-                                    <label class="block text-sm font-medium text-neutral-600 mb-1">Status</label>
-                                    <select class="w-full px-3 py-2 border border-neutral-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                                        <option value="">All Status</option>
-                                        <option>Confirmed</option>
-                                        <option>Pending</option>
-                                        <option>Cancelled</option>
-                                        <option>Completed</option>
-                                    </select>
-                                </div>
-                                <div class="w-48">
-                                    <label class="block text-sm font-medium text-neutral-600 mb-1">Date Range</label>
-                                    <select class="w-full px-3 py-2 border border-neutral-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                                        <option>Today</option>
-                                        <option>This Week</option>
-                                        <option>This Month</option>
-                                        <option>Custom Range</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <!-- Bookings Table -->
-                            <div class="bg-white rounded-lg border border-neutral-200/30 overflow-hidden">
-                                <div class="overflow-x-auto">
-                                    <table class="w-full">
-                                        <thead>
-                                            <tr class="bg-neutral-50 border-b border-neutral-200/30">
-                                                <th class="text-left p-4 font-semibold text-neutral-600">Booking ID</th>
-                                                <th class="text-left p-4 font-semibold text-neutral-600">Customer</th>
-                                                <th class="text-left p-4 font-semibold text-neutral-600">Movie</th>
-                                                <th class="text-left p-4 font-semibold text-neutral-600">Show Time</th>
-                                                <th class="text-left p-4 font-semibold text-neutral-600">Seats</th>
-                                                <th class="text-left p-4 font-semibold text-neutral-600">Amount</th>
-                                                <th class="text-left p-4 font-semibold text-neutral-600">Status</th>
-                                                <th class="text-left p-4 font-semibold text-neutral-600">Actions</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <!-- Booking Row 1 -->
-                                            <tr class="border-b border-neutral-200/30">
-                                                <td class="p-4">
-                                                    <span class="font-medium">#BK001</span>
-                                                </td>
-                                                <td class="p-4">
-                                                    <div class="flex items-center">
-                                                        <img src="https://avatar.iran.liara.run/public" alt="Customer" class="w-8 h-8 rounded-full">
-                                                        <div class="ml-3">
-                                                            <div class="font-medium text-neutral-900">John Doe</div>
-                                                            <div class="text-sm text-neutral-500">john@example.com</div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td class="p-4">The Dark Knight</td>
-                                                <td class="p-4">
-                                                    <div class="text-neutral-900">Today, 7:30 PM</div>
-                                                    <div class="text-sm text-neutral-500">Theater 1</div>
-                                                </td>
-                                                <td class="p-4">
-                                                    <div class="text-neutral-900">3 Seats</div>
-                                                    <div class="text-sm text-neutral-500">A12, A13, A14</div>
-                                                </td>
-                                                <td class="p-4">$45.00</td>
-                                                <td class="p-4">
-                                                    <span class="px-2 py-1 text-sm bg-green-100 text-green-600 rounded-full">Confirmed</span>
-                                                </td>
-                                                <td class="p-4">
-                                                    <div class="flex space-x-2">
-                                                        <button class="p-2 text-blue-600 hover:bg-blue-50 rounded-lg">
-                                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-                                                            </svg>
-                                                        </button>
-                                                        <button class="p-2 text-red-600 hover:bg-red-50 rounded-lg">
-                                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
-                                                            </svg>
-                                                        </button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-
-                                            <!-- Booking Row 2 -->
-                                            <tr class="border-b border-neutral-200/30">
-                                                <td class="p-4">
-                                                    <span class="font-medium">#BK002</span>
-                                                </td>
-                                                <td class="p-4">
-                                                    <div class="flex items-center">
-                                                        <img src="https://avatar.iran.liara.run/public" alt="Customer" class="w-8 h-8 rounded-full">
-                                                        <div class="ml-3">
-                                                            <div class="font-medium text-neutral-900">Jane Smith</div>
-                                                            <div class="text-sm text-neutral-500">jane@example.com</div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td class="p-4">Inception</td>
-                                                <td class="p-4">
-                                                    <div class="text-neutral-900">Today, 9:00 PM</div>
-                                                    <div class="text-sm text-neutral-500">Theater 2</div>
-                                                </td>
-                                                <td class="p-4">
-                                                    <div class="text-neutral-900">2 Seats</div>
-                                                    <div class="text-sm text-neutral-500">B15, B16</div>
-                                                </td>
-                                                <td class="p-4">$30.00</td>
-                                                <td class="p-4">
-                                                    <span class="px-2 py-1 text-sm bg-yellow-100 text-yellow-600 rounded-full">Pending</span>
-                                                </td>
-                                                <td class="p-4">
-                                                    <div class="flex space-x-2">
-                                                        <button class="p-2 text-blue-600 hover:bg-blue-50 rounded-lg">
-                                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-                                                            </svg>
-                                                        </button>
-                                                        <button class="p-2 text-red-600 hover:bg-red-50 rounded-lg">
-                                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
-                                                            </svg>
-                                                        </button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-
-                                            <!-- Booking Row 3 -->
-                                            <tr>
-                                                <td class="p-4">
-                                                    <span class="font-medium">#BK003</span>
-                                                </td>
-                                                <td class="p-4">
-                                                    <div class="flex items-center">
-                                                        <img src="https://avatar.iran.liara.run/public" alt="Customer" class="w-8 h-8 rounded-full">
-                                                        <div class="ml-3">
-                                                            <div class="font-medium text-neutral-900">Mike Johnson</div>
-                                                            <div class="text-sm text-neutral-500">mike@example.com</div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td class="p-4">Interstellar</td>
-                                                <td class="p-4">
-                                                    <div class="text-neutral-900">Tomorrow, 6:15 PM</div>
-                                                    <div class="text-sm text-neutral-500">Theater 3</div>
-                                                </td>
-                                                <td class="p-4">
-                                                    <div class="text-neutral-900">4 Seats</div>
-                                                    <div class="text-sm text-neutral-500">C1, C2, C3, C4</div>
-                                                </td>
-                                                <td class="p-4">$60.00</td>
-                                                <td class="p-4">
-                                                    <span class="px-2 py-1 text-sm bg-red-100 text-red-600 rounded-full">Cancelled</span>
-                                                </td>
-                                                <td class="p-4">
-                                                    <div class="flex space-x-2">
-                                                        <button class="p-2 text-blue-600 hover:bg-blue-50 rounded-lg">
-                                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-                                                            </svg>
-                                                        </button>
-                                                        <button class="p-2 text-red-600 hover:bg-red-50 rounded-lg">
-                                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
-                                                            </svg>
-                                                        </button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-
-                            <!-- Pagination -->
-                            <div class="flex justify-between items-center bg-white p-4 rounded-lg border border-neutral-200/30">
-                                <button class="px-4 py-2 text-neutral-600 hover:text-neutral-900 disabled:opacity-50 disabled:cursor-not-allowed">
-                                    Previous
-                                </button>
-                                <div class="flex space-x-1">
-                                    <button class="px-4 py-2 bg-blue-50 text-blue-600 rounded">1</button>
-                                    <button class="px-4 py-2 text-neutral-600 hover:bg-neutral-50 rounded">2</button>
-                                    <button class="px-4 py-2 text-neutral-600 hover:bg-neutral-50 rounded">3</button>
-                                    <span class="px-4 py-2">...</span>
-                                    <button class="px-4 py-2 text-neutral-600 hover:bg-neutral-50 rounded">8</button>
-                                </div>
-                                <button class="px-4 py-2 text-neutral-600 hover:text-neutral-900">
-                                    Next
-                                </button>
-                            </div>
-                        </div>
-                    </htmlCode>
-                    <htmlCode>
-                        <div id="concessions" class="p-6 space-y-6">
-                            <!-- Header Actions -->
-                            <div class="flex justify-between items-center">
-                                <h2 class="text-xl font-semibold text-neutral-900">Concession Management</h2>
-                                <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center">
-                                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-                                    </svg>
-                                    Add New Item
-                                </button>
-                            </div>
-
-                            <!-- Stats Overview -->
-                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                                <div class="bg-white p-6 rounded-lg border border-neutral-200/30">
-                                    <div class="flex justify-between items-start">
-                                        <div>
-                                            <p class="text-sm font-medium text-neutral-600">Today's Sales</p>
-                                            <h3 class="text-2xl font-bold text-neutral-900 mt-1">$2,846</h3>
-                                        </div>
-                                        <span class="text-green-500 text-sm">+12.5%</span>
+                            <!-- Date Range Filter -->
+                            <div class="mb-6 bg-white rounded-lg border border-neutral-200/20 p-4">
+                                <div class="flex flex-col md:flex-row gap-4">
+                                    <div class="flex-1 flex gap-4">
+                                        <input type="date" class="px-4 py-2 rounded-lg border border-neutral-200/20 focus:outline-none focus:ring-2 focus:ring-[#3498db]">
+                                        <input type="date" class="px-4 py-2 rounded-lg border border-neutral-200/20 focus:outline-none focus:ring-2 focus:ring-[#3498db]">
                                     </div>
-                                </div>
-
-                                <div class="bg-white p-6 rounded-lg border border-neutral-200/30">
-                                    <div class="flex justify-between items-start">
-                                        <div>
-                                            <p class="text-sm font-medium text-neutral-600">Items Sold</p>
-                                            <h3 class="text-2xl font-bold text-neutral-900 mt-1">437</h3>
-                                        </div>
-                                        <span class="text-green-500 text-sm">+8.2%</span>
-                                    </div>
-                                </div>
-
-                                <div class="bg-white p-6 rounded-lg border border-neutral-200/30">
-                                    <div class="flex justify-between items-start">
-                                        <div>
-                                            <p class="text-sm font-medium text-neutral-600">Average Order</p>
-                                            <h3 class="text-2xl font-bold text-neutral-900 mt-1">$16.50</h3>
-                                        </div>
-                                        <span class="text-red-500 text-sm">-2.1%</span>
-                                    </div>
-                                </div>
-
-                                <div class="bg-white p-6 rounded-lg border border-neutral-200/30">
-                                    <div class="flex justify-between items-start">
-                                        <div>
-                                            <p class="text-sm font-medium text-neutral-600">Low Stock Items</p>
-                                            <h3 class="text-2xl font-bold text-neutral-900 mt-1">5</h3>
-                                        </div>
-                                        <span class="text-yellow-500 text-sm">Warning</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Inventory Grid -->
-                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                                <!-- Popcorn -->
-                                <div class="bg-white rounded-lg border border-neutral-200/30 overflow-hidden">
-                                    <div class="p-4 border-b border-neutral-200/30">
-                                        <div class="flex justify-between items-start">
-                                            <h3 class="font-semibold text-lg text-neutral-900">Popcorn</h3>
-                                            <span class="px-2 py-1 text-xs bg-green-100 text-green-600 rounded-full">In Stock</span>
-                                        </div>
-                                    </div>
-                                    <div class="p-4">
-                                        <div class="space-y-3">
-                                            <div class="flex justify-between text-sm">
-                                                <span class="text-neutral-600">Small</span>
-                                                <span class="font-medium text-neutral-900">$4.99</span>
-                                            </div>
-                                            <div class="flex justify-between text-sm">
-                                                <span class="text-neutral-600">Medium</span>
-                                                <span class="font-medium text-neutral-900">$5.99</span>
-                                            </div>
-                                            <div class="flex justify-between text-sm">
-                                                <span class="text-neutral-600">Large</span>
-                                                <span class="font-medium text-neutral-900">$6.99</span>
-                                            </div>
-                                        </div>
-                                        <div class="mt-4">
-                                            <div class="text-sm text-neutral-600">Stock Level</div>
-                                            <div class="mt-1 h-2 bg-neutral-100 rounded">
-                                                <div class="h-2 bg-green-500 rounded" style="width: 75%"></div>
-                                            </div>
-                                        </div>
-                                        <div class="mt-4 flex space-x-2">
-                                            <button class="flex-1 px-3 py-2 text-sm bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100">Edit</button>
-                                            <button class="flex-1 px-3 py-2 text-sm bg-neutral-50 text-neutral-600 rounded-lg hover:bg-neutral-100">Restock</button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Soft Drinks -->
-                                <div class="bg-white rounded-lg border border-neutral-200/30 overflow-hidden">
-                                    <div class="p-4 border-b border-neutral-200/30">
-                                        <div class="flex justify-between items-start">
-                                            <h3 class="font-semibold text-lg text-neutral-900">Soft Drinks</h3>
-                                            <span class="px-2 py-1 text-xs bg-yellow-100 text-yellow-600 rounded-full">Low Stock</span>
-                                        </div>
-                                    </div>
-                                    <div class="p-4">
-                                        <div class="space-y-3">
-                                            <div class="flex justify-between text-sm">
-                                                <span class="text-neutral-600">Small</span>
-                                                <span class="font-medium text-neutral-900">$3.99</span>
-                                            </div>
-                                            <div class="flex justify-between text-sm">
-                                                <span class="text-neutral-600">Medium</span>
-                                                <span class="font-medium text-neutral-900">$4.99</span>
-                                            </div>
-                                            <div class="flex justify-between text-sm">
-                                                <span class="text-neutral-600">Large</span>
-                                                <span class="font-medium text-neutral-900">$5.99</span>
-                                            </div>
-                                        </div>
-                                        <div class="mt-4">
-                                            <div class="text-sm text-neutral-600">Stock Level</div>
-                                            <div class="mt-1 h-2 bg-neutral-100 rounded">
-                                                <div class="h-2 bg-yellow-500 rounded" style="width: 25%"></div>
-                                            </div>
-                                        </div>
-                                        <div class="mt-4 flex space-x-2">
-                                            <button class="flex-1 px-3 py-2 text-sm bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100">Edit</button>
-                                            <button class="flex-1 px-3 py-2 text-sm bg-neutral-50 text-neutral-600 rounded-lg hover:bg-neutral-100">Restock</button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Nachos -->
-                                <div class="bg-white rounded-lg border border-neutral-200/30 overflow-hidden">
-                                    <div class="p-4 border-b border-neutral-200/30">
-                                        <div class="flex justify-between items-start">
-                                            <h3 class="font-semibold text-lg text-neutral-900">Nachos</h3>
-                                            <span class="px-2 py-1 text-xs bg-green-100 text-green-600 rounded-full">In Stock</span>
-                                        </div>
-                                    </div>
-                                    <div class="p-4">
-                                        <div class="space-y-3">
-                                            <div class="flex justify-between text-sm">
-                                                <span class="text-neutral-600">Regular</span>
-                                                <span class="font-medium text-neutral-900">$5.99</span>
-                                            </div>
-                                            <div class="flex justify-between text-sm">
-                                                <span class="text-neutral-600">Large</span>
-                                                <span class="font-medium text-neutral-900">$7.99</span>
-                                            </div>
-                                        </div>
-                                        <div class="mt-4">
-                                            <div class="text-sm text-neutral-600">Stock Level</div>
-                                            <div class="mt-1 h-2 bg-neutral-100 rounded">
-                                                <div class="h-2 bg-green-500 rounded" style="width: 60%"></div>
-                                            </div>
-                                        </div>
-                                        <div class="mt-4 flex space-x-2">
-                                            <button class="flex-1 px-3 py-2 text-sm bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100">Edit</button>
-                                            <button class="flex-1 px-3 py-2 text-sm bg-neutral-50 text-neutral-600 rounded-lg hover:bg-neutral-100">Restock</button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Candy -->
-                                <div class="bg-white rounded-lg border border-neutral-200/30 overflow-hidden">
-                                    <div class="p-4 border-b border-neutral-200/30">
-                                        <div class="flex justify-between items-start">
-                                            <h3 class="font-semibold text-lg text-neutral-900">Candy</h3>
-                                            <span class="px-2 py-1 text-xs bg-red-100 text-red-600 rounded-full">Out of Stock</span>
-                                        </div>
-                                    </div>
-                                    <div class="p-4">
-                                        <div class="space-y-3">
-                                            <div class="flex justify-between text-sm">
-                                                <span class="text-neutral-600">Small Box</span>
-                                                <span class="font-medium text-neutral-900">$3.99</span>
-                                            </div>
-                                            <div class="flex justify-between text-sm">
-                                                <span class="text-neutral-600">Large Box</span>
-                                                <span class="font-medium text-neutral-900">$5.99</span>
-                                            </div>
-                                        </div>
-                                        <div class="mt-4">
-                                            <div class="text-sm text-neutral-600">Stock Level</div>
-                                            <div class="mt-1 h-2 bg-neutral-100 rounded">
-                                                <div class="h-2 bg-red-500 rounded" style="width: 5%"></div>
-                                            </div>
-                                        </div>
-                                        <div class="mt-4 flex space-x-2">
-                                            <button class="flex-1 px-3 py-2 text-sm bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100">Edit</button>
-                                            <button class="flex-1 px-3 py-2 text-sm bg-red-50 text-red-600 rounded-lg hover:bg-red-100">Restock Now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Recent Orders -->
-                            <div class="bg-white rounded-lg border border-neutral-200/30 overflow-hidden">
-                                <div class="p-4 border-b border-neutral-200/30">
-                                    <h3 class="font-semibold text-lg text-neutral-900">Recent Orders</h3>
-                                </div>
-                                <div class="p-4">
-                                    <table class="w-full">
-                                        <thead>
-                                            <tr class="text-left border-b border-neutral-200">
-                                                <th class="pb-3 font-semibold text-neutral-600">Order ID</th>
-                                                <th class="pb-3 font-semibold text-neutral-600">Items</th>
-                                                <th class="pb-3 font-semibold text-neutral-600">Total</th>
-                                                <th class="pb-3 font-semibold text-neutral-600">Time</th>
-                                                <th class="pb-3 font-semibold text-neutral-600">Status</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr class="border-b border-neutral-200">
-                                                <td class="py-3">#CO001</td>
-                                                <td class="py-3">2x Large Popcorn, 2x Medium Drinks</td>
-                                                <td class="py-3">$21.96</td>
-                                                <td class="py-3">5 mins ago</td>
-                                                <td class="py-3"><span class="px-2 py-1 text-sm bg-green-100 text-green-600 rounded-full">Completed</span></td>
-                                            </tr>
-                                            <tr class="border-b border-neutral-200">
-                                                <td class="py-3">#CO002</td>
-                                                <td class="py-3">1x Nachos, 1x Large Drink</td>
-                                                <td class="py-3">$13.98</td>
-                                                <td class="py-3">12 mins ago</td>
-                                                <td class="py-3"><span class="px-2 py-1 text-sm bg-yellow-100 text-yellow-600 rounded-full">Preparing</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="py-3">#CO003</td>
-                                                <td class="py-3">3x Small Popcorn, 3x Candy</td>
-                                                <td class="py-3">$26.94</td>
-                                                <td class="py-3">18 mins ago</td>
-                                                <td class="py-3"><span class="px-2 py-1 text-sm bg-green-100 text-green-600 rounded-full">Completed</span></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </htmlCode>
-                    <htmlCode>
-                        <div id="staff" class="p-6 space-y-6">
-                            <!-- Header Actions -->
-                            <div class="flex justify-between items-center">
-                                <h2 class="text-xl font-semibold text-neutral-900">Staff Management</h2>
-                                <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center">
-                                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-                                    </svg>
-                                    Add New Staff
-                                </button>
-                            </div>
-
-                            <!-- Stats Overview -->
-                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                                <div class="bg-white p-6 rounded-lg border border-neutral-200/30">
-                                    <div class="flex justify-between items-start">
-                                        <div>
-                                            <p class="text-sm font-medium text-neutral-600">Total Staff</p>
-                                            <h3 class="text-2xl font-bold text-neutral-900 mt-1">24</h3>
-                                        </div>
-                                        <span class="text-green-500 text-sm">Active</span>
-                                    </div>
-                                </div>
-
-                                <div class="bg-white p-6 rounded-lg border border-neutral-200/30">
-                                    <div class="flex justify-between items-start">
-                                        <div>
-                                            <p class="text-sm font-medium text-neutral-600">On Duty Today</p>
-                                            <h3 class="text-2xl font-bold text-neutral-900 mt-1">12</h3>
-                                        </div>
-                                        <span class="text-blue-500 text-sm">Working</span>
-                                    </div>
-                                </div>
-
-                                <div class="bg-white p-6 rounded-lg border border-neutral-200/30">
-                                    <div class="flex justify-between items-start">
-                                        <div>
-                                            <p class="text-sm font-medium text-neutral-600">On Leave</p>
-                                            <h3 class="text-2xl font-bold text-neutral-900 mt-1">3</h3>
-                                        </div>
-                                        <span class="text-yellow-500 text-sm">Away</span>
-                                    </div>
-                                </div>
-
-                                <div class="bg-white p-6 rounded-lg border border-neutral-200/30">
-                                    <div class="flex justify-between items-start">
-                                        <div>
-                                            <p class="text-sm font-medium text-neutral-600">New Requests</p>
-                                            <h3 class="text-2xl font-bold text-neutral-900 mt-1">5</h3>
-                                        </div>
-                                        <span class="text-red-500 text-sm">Pending</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Staff List -->
-                            <div class="bg-white rounded-lg border border-neutral-200/30 overflow-hidden">
-                                <div class="p-4 border-b border-neutral-200/30 flex justify-between items-center">
-                                    <h3 class="font-semibold text-lg text-neutral-900">Staff Directory</h3>
-                                    <div class="flex space-x-2">
-                                        <input type="text" placeholder="Search staff..." class="px-3 py-1 border border-neutral-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                                        <select class="px-3 py-1 border border-neutral-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                                            <option>All Departments</option>
-                                            <option>Box Office</option>
-                                            <option>Concessions</option>
-                                            <option>Maintenance</option>
-                                            <option>Management</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
-                                    <!-- Staff Card 1 -->
-                                    <div class="flex items-start space-x-4 p-4 bg-neutral-50 rounded-lg">
-                                        <img src="https://avatar.iran.liara.run/public" alt="Staff" class="w-16 h-16 rounded-full">
-                                        <div class="flex-1">
-                                            <h4 class="font-semibold text-neutral-900">John Doe</h4>
-                                            <p class="text-sm text-neutral-600">Box Office Manager</p>
-                                            <div class="mt-2 flex items-center space-x-2">
-                                                <span class="px-2 py-1 text-xs bg-green-100 text-green-600 rounded-full">On Duty</span>
-                                                <span class="text-sm text-neutral-500">ID: #ST001</span>
-                                            </div>
-                                            <div class="mt-3 flex space-x-2">
-                                                <button class="px-3 py-1 text-sm text-blue-600 hover:bg-blue-50 rounded-lg">Edit</button>
-                                                <button class="px-3 py-1 text-sm text-neutral-600 hover:bg-neutral-100 rounded-lg">Schedule</button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Staff Card 2 -->
-                                    <div class="flex items-start space-x-4 p-4 bg-neutral-50 rounded-lg">
-                                        <img src="https://avatar.iran.liara.run/public" alt="Staff" class="w-16 h-16 rounded-full">
-                                        <div class="flex-1">
-                                            <h4 class="font-semibold text-neutral-900">Jane Smith</h4>
-                                            <p class="text-sm text-neutral-600">Concessions Lead</p>
-                                            <div class="mt-2 flex items-center space-x-2">
-                                                <span class="px-2 py-1 text-xs bg-yellow-100 text-yellow-600 rounded-full">On Break</span>
-                                                <span class="text-sm text-neutral-500">ID: #ST002</span>
-                                            </div>
-                                            <div class="mt-3 flex space-x-2">
-                                                <button class="px-3 py-1 text-sm text-blue-600 hover:bg-blue-50 rounded-lg">Edit</button>
-                                                <button class="px-3 py-1 text-sm text-neutral-600 hover:bg-neutral-100 rounded-lg">Schedule</button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Staff Card 3 -->
-                                    <div class="flex items-start space-x-4 p-4 bg-neutral-50 rounded-lg">
-                                        <img src="https://avatar.iran.liara.run/public" alt="Staff" class="w-16 h-16 rounded-full">
-                                        <div class="flex-1">
-                                            <h4 class="font-semibold text-neutral-900">Mike Johnson</h4>
-                                            <p class="text-sm text-neutral-600">Maintenance Supervisor</p>
-                                            <div class="mt-2 flex items-center space-x-2">
-                                                <span class="px-2 py-1 text-xs bg-red-100 text-red-600 rounded-full">Off Duty</span>
-                                                <span class="text-sm text-neutral-500">ID: #ST003</span>
-                                            </div>
-                                            <div class="mt-3 flex space-x-2">
-                                                <button class="px-3 py-1 text-sm text-blue-600 hover:bg-blue-50 rounded-lg">Edit</button>
-                                                <button class="px-3 py-1 text-sm text-neutral-600 hover:bg-neutral-100 rounded-lg">Schedule</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Schedule Calendar -->
-                            <div class="bg-white rounded-lg border border-neutral-200/30 overflow-hidden">
-                                <div class="p-4 border-b border-neutral-200/30">
-                                    <h3 class="font-semibold text-lg text-neutral-900">Weekly Schedule</h3>
-                                </div>
-                                <div class="p-4 overflow-x-auto">
-                                    <table class="w-full min-w-[800px]">
-                                        <thead>
-                                            <tr class="text-left border-b border-neutral-200">
-                                                <th class="pb-3 font-semibold text-neutral-600">Staff Member</th>
-                                                <th class="pb-3 font-semibold text-neutral-600">Monday</th>
-                                                <th class="pb-3 font-semibold text-neutral-600">Tuesday</th>
-                                                <th class="pb-3 font-semibold text-neutral-600">Wednesday</th>
-                                                <th class="pb-3 font-semibold text-neutral-600">Thursday</th>
-                                                <th class="pb-3 font-semibold text-neutral-600">Friday</th>
-                                                <th class="pb-3 font-semibold text-neutral-600">Saturday</th>
-                                                <th class="pb-3 font-semibold text-neutral-600">Sunday</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr class="border-b border-neutral-200">
-                                                <td class="py-3 font-medium">John Doe</td>
-                                                <td class="py-3"><span class="text-green-600">9AM-5PM</span></td>
-                                                <td class="py-3"><span class="text-green-600">9AM-5PM</span></td>
-                                                <td class="py-3"><span class="text-red-600">Off</span></td>
-                                                <td class="py-3"><span class="text-green-600">9AM-5PM</span></td>
-                                                <td class="py-3"><span class="text-green-600">9AM-5PM</span></td>
-                                                <td class="py-3"><span class="text-blue-600">2PM-10PM</span></td>
-                                                <td class="py-3"><span class="text-red-600">Off</span></td>
-                                            </tr>
-                                            <tr class="border-b border-neutral-200">
-                                                <td class="py-3 font-medium">Jane Smith</td>
-                                                <td class="py-3"><span class="text-blue-600">2PM-10PM</span></td>
-                                                <td class="py-3"><span class="text-blue-600">2PM-10PM</span></td>
-                                                <td class="py-3"><span class="text-green-600">9AM-5PM</span></td>
-                                                <td class="py-3"><span class="text-red-600">Off</span></td>
-                                                <td class="py-3"><span class="text-green-600">9AM-5PM</span></td>
-                                                <td class="py-3"><span class="text-red-600">Off</span></td>
-                                                <td class="py-3"><span class="text-blue-600">2PM-10PM</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="py-3 font-medium">Mike Johnson</td>
-                                                <td class="py-3"><span class="text-red-600">Off</span></td>
-                                                <td class="py-3"><span class="text-green-600">9AM-5PM</span></td>
-                                                <td class="py-3"><span class="text-blue-600">2PM-10PM</span></td>
-                                                <td class="py-3"><span class="text-blue-600">2PM-10PM</span></td>
-                                                <td class="py-3"><span class="text-red-600">Off</span></td>
-                                                <td class="py-3"><span class="text-green-600">9AM-5PM</span></td>
-                                                <td class="py-3"><span class="text-green-600">9AM-5PM</span></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </htmlCode>
-                    <htmlCode>
-                        <div id="reports" class="p-6 space-y-6">
-                            <!-- Header Actions -->
-                            <div class="flex justify-between items-center">
-                                <h2 class="text-xl font-semibold text-neutral-900">Reports & Analytics</h2>
-                                <div class="flex space-x-3">
-                                    <select class="px-4 py-2 border border-neutral-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                                        <option>Last 7 Days</option>
-                                        <option>Last 30 Days</option>
-                                        <option>Last 3 Months</option>
-                                        <option>Last Year</option>
-                                        <option>Custom Range</option>
-                                    </select>
-                                    <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center">
-                                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
-                                        </svg>
-                                        Export Report
+                                    <button class="px-6 py-2 bg-[#3498db] text-white rounded-lg hover:bg-[#2980b9] transition-colors duration-300">
+                                        Generate Report
                                     </button>
                                 </div>
                             </div>
 
-                            <!-- Summary Cards -->
-                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                                <div class="bg-white p-6 rounded-lg border border-neutral-200/30">
-                                    <div class="flex justify-between items-start">
-                                        <div>
-                                            <p class="text-sm font-medium text-neutral-600">Total Revenue</p>
-                                            <h3 class="text-2xl font-bold text-neutral-900 mt-1">$45,289</h3>
-                                            <p class="text-sm text-green-500 mt-1">+12.5% vs last period</p>
-                                        </div>
-                                        <span class="text-blue-500 bg-blue-50 p-2 rounded-lg">
-                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            <!-- Key Metrics Grid -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+                                <div class="bg-white p-6 rounded-lg border border-neutral-200/20">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <h3 class="text-lg font-semibold text-[#212121]">Total Revenue</h3>
+                                        <span class="text-green-500 flex items-center">
+                                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
                                             </svg>
+                                            12.5%
                                         </span>
                                     </div>
+                                    <p class="text-3xl font-bold text-[#212121]">$542,892</p>
+                                    <p class="text-sm text-neutral-600 mt-2">vs $482,567 last month</p>
                                 </div>
 
-                                <div class="bg-white p-6 rounded-lg border border-neutral-200/30">
-                                    <div class="flex justify-between items-start">
-                                        <div>
-                                            <p class="text-sm font-medium text-neutral-600">Total Tickets</p>
-                                            <h3 class="text-2xl font-bold text-neutral-900 mt-1">3,847</h3>
-                                            <p class="text-sm text-green-500 mt-1">+8.2% vs last period</p>
-                                        </div>
-                                        <span class="text-purple-500 bg-purple-50 p-2 rounded-lg">
-                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"></path>
+                                <div class="bg-white p-6 rounded-lg border border-neutral-200/20">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <h3 class="text-lg font-semibold text-[#212121]">Total Shows</h3>
+                                        <span class="text-green-500 flex items-center">
+                                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
                                             </svg>
+                                            8.3%
                                         </span>
                                     </div>
+                                    <p class="text-3xl font-bold text-[#212121]">1,248</p>
+                                    <p class="text-sm text-neutral-600 mt-2">vs 1,152 last month</p>
                                 </div>
 
-                                <div class="bg-white p-6 rounded-lg border border-neutral-200/30">
-                                    <div class="flex justify-between items-start">
-                                        <div>
-                                            <p class="text-sm font-medium text-neutral-600">Concessions</p>
-                                            <h3 class="text-2xl font-bold text-neutral-900 mt-1">$12,428</h3>
-                                            <p class="text-sm text-red-500 mt-1">-2.4% vs last period</p>
-                                        </div>
-                                        <span class="text-yellow-500 bg-yellow-50 p-2 rounded-lg">
-                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path>
+                                <div class="bg-white p-6 rounded-lg border border-neutral-200/20">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <h3 class="text-lg font-semibold text-[#212121]">Occupancy Rate</h3>
+                                        <span class="text-red-500 flex items-center">
+                                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                                             </svg>
+                                            2.1%
                                         </span>
                                     </div>
+                                    <p class="text-3xl font-bold text-[#212121]">76.5%</p>
+                                    <p class="text-sm text-neutral-600 mt-2">vs 78.6% last month</p>
                                 </div>
 
-                                <div class="bg-white p-6 rounded-lg border border-neutral-200/30">
-                                    <div class="flex justify-between items-start">
-                                        <div>
-                                            <p class="text-sm font-medium text-neutral-600">Occupancy Rate</p>
-                                            <h3 class="text-2xl font-bold text-neutral-900 mt-1">76.3%</h3>
-                                            <p class="text-sm text-green-500 mt-1">+5.1% vs last period</p>
-                                        </div>
-                                        <span class="text-green-500 bg-green-50 p-2 rounded-lg">
-                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                <div class="bg-white p-6 rounded-lg border border-neutral-200/20">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <h3 class="text-lg font-semibold text-[#212121]">Avg. Ticket Price</h3>
+                                        <span class="text-green-500 flex items-center">
+                                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
                                             </svg>
+                                            5.2%
                                         </span>
                                     </div>
+                                    <p class="text-3xl font-bold text-[#212121]">$12.85</p>
+                                    <p class="text-sm text-neutral-600 mt-2">vs $12.21 last month</p>
                                 </div>
                             </div>
 
                             <!-- Revenue Chart -->
-                            <div class="bg-white p-6 rounded-lg border border-neutral-200/30">
-                                <div class="flex justify-between items-center mb-6">
-                                    <h3 class="font-semibold text-lg text-neutral-900">Revenue Breakdown</h3>
-                                    <div class="flex items-center space-x-4">
-                                        <span class="flex items-center">
-                                            <span class="w-3 h-3 bg-blue-500 rounded-full mr-2"></span>
-                                            <span class="text-sm text-neutral-600">Tickets</span>
-                                        </span>
-                                        <span class="flex items-center">
-                                            <span class="w-3 h-3 bg-green-500 rounded-full mr-2"></span>
-                                            <span class="text-sm text-neutral-600">Concessions</span>
-                                        </span>
+                            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                                <div class="lg:col-span-2 bg-white rounded-lg border border-neutral-200/20 p-6">
+                                    <h3 class="text-lg font-semibold text-[#212121] mb-4">Revenue Trend</h3>
+                                    <div class="h-80">
+                                        <div class="w-full h-full flex items-end justify-around space-x-2">
+                                            <div class="h-[60%] w-12 bg-[#3498db] rounded-t-lg"></div>
+                                            <div class="h-[75%] w-12 bg-[#3498db] rounded-t-lg"></div>
+                                            <div class="h-[45%] w-12 bg-[#3498db] rounded-t-lg"></div>
+                                            <div class="h-[90%] w-12 bg-[#3498db] rounded-t-lg"></div>
+                                            <div class="h-[65%] w-12 bg-[#3498db] rounded-t-lg"></div>
+                                            <div class="h-[80%] w-12 bg-[#3498db] rounded-t-lg"></div>
+                                            <div class="h-[70%] w-12 bg-[#3498db] rounded-t-lg"></div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="h-80 bg-neutral-50 rounded-lg border border-neutral-200/30 flex items-center justify-center">
-                                    <p class="text-neutral-600">Revenue Chart Placeholder</p>
-                                </div>
-                            </div>
 
-                            <!-- Top Performing Movies -->
-                            <div class="bg-white rounded-lg border border-neutral-200/30">
-                                <div class="p-4 border-b border-neutral-200/30">
-                                    <h3 class="font-semibold text-lg text-neutral-900">Top Performing Movies</h3>
-                                </div>
-                                <div class="p-4">
+                                <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                                    <h3 class="text-lg font-semibold text-[#212121] mb-4">Top Performing Screens</h3>
                                     <div class="space-y-4">
-                                        <div class="flex items-center">
-                                            <img src="https://placehold.co/300x450" alt="Movie Poster" class="w-12 h-16 rounded object-cover">
-                                            <div class="ml-4 flex-1">
-                                                <div class="flex justify-between items-center">
-                                                    <div>
-                                                        <h4 class="font-medium text-neutral-900">The Dark Knight</h4>
-                                                        <p class="text-sm text-neutral-600">Total Revenue: $15,847</p>
-                                                    </div>
-                                                    <div class="text-right">
-                                                        <p class="font-medium text-green-600">+24.5%</p>
-                                                        <p class="text-sm text-neutral-600">vs Avg.</p>
-                                                    </div>
-                                                </div>
-                                                <div class="mt-2 h-2 bg-neutral-100 rounded">
-                                                    <div class="h-2 bg-blue-500 rounded" style="width: 85%"></div>
-                                                </div>
+                                        <div class="flex items-center justify-between p-3 bg-neutral-50 rounded-lg">
+                                            <div>
+                                                <p class="font-medium text-[#212121]">IMAX Screen 1</p>
+                                                <p class="text-sm text-neutral-600">Grand Theater</p>
                                             </div>
+                                            <p class="font-semibold text-[#3498db]">$125,430</p>
                                         </div>
-
-                                        <div class="flex items-center">
-                                            <img src="https://placehold.co/300x450" alt="Movie Poster" class="w-12 h-16 rounded object-cover">
-                                            <div class="ml-4 flex-1">
-                                                <div class="flex justify-between items-center">
-                                                    <div>
-                                                        <h4 class="font-medium text-neutral-900">Inception</h4>
-                                                        <p class="text-sm text-neutral-600">Total Revenue: $12,932</p>
-                                                    </div>
-                                                    <div class="text-right">
-                                                        <p class="font-medium text-green-600">+18.2%</p>
-                                                        <p class="text-sm text-neutral-600">vs Avg.</p>
-                                                    </div>
-                                                </div>
-                                                <div class="mt-2 h-2 bg-neutral-100 rounded">
-                                                    <div class="h-2 bg-blue-500 rounded" style="width: 72%"></div>
-                                                </div>
+                                        <div class="flex items-center justify-between p-3 bg-neutral-50 rounded-lg">
+                                            <div>
+                                                <p class="font-medium text-[#212121]">Premium Screen 2</p>
+                                                <p class="text-sm text-neutral-600">City Cinema</p>
                                             </div>
+                                            <p class="font-semibold text-[#3498db]">$98,745</p>
                                         </div>
-
-                                        <div class="flex items-center">
-                                            <img src="https://placehold.co/300x450" alt="Movie Poster" class="w-12 h-16 rounded object-cover">
-                                            <div class="ml-4 flex-1">
-                                                <div class="flex justify-between items-center">
-                                                    <div>
-                                                        <h4 class="font-medium text-neutral-900">Interstellar</h4>
-                                                        <p class="text-sm text-neutral-600">Total Revenue: $10,456</p>
-                                                    </div>
-                                                    <div class="text-right">
-                                                        <p class="font-medium text-green-600">+12.8%</p>
-                                                        <p class="text-sm text-neutral-600">vs Avg.</p>
-                                                    </div>
-                                                </div>
-                                                <div class="mt-2 h-2 bg-neutral-100 rounded">
-                                                    <div class="h-2 bg-blue-500 rounded" style="width: 65%"></div>
-                                                </div>
+                                        <div class="flex items-center justify-between p-3 bg-neutral-50 rounded-lg">
+                                            <div>
+                                                <p class="font-medium text-[#212121]">3D Screen 3</p>
+                                                <p class="text-sm text-neutral-600">Star Cinemas</p>
                                             </div>
+                                            <p class="font-semibold text-[#3498db]">$87,652</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Recent Transactions -->
-                            <div class="bg-white rounded-lg border border-neutral-200/30">
-                                <div class="p-4 border-b border-neutral-200/30 flex justify-between items-center">
-                                    <h3 class="font-semibold text-lg text-neutral-900">Recent Transactions</h3>
-                                    <button class="text-blue-600 hover:text-blue-700">View All</button>
+                            <!-- Performance Table -->
+                            <div class="mt-6 bg-white rounded-lg border border-neutral-200/20 overflow-hidden">
+                                <div class="p-6 border-b border-neutral-200/20">
+                                    <h3 class="text-lg font-semibold text-[#212121]">Detailed Performance Metrics</h3>
                                 </div>
-                                <div class="p-4">
+                                <div class="overflow-x-auto">
                                     <table class="w-full">
-                                        <thead>
-                                            <tr class="text-left border-b border-neutral-200">
-                                                <th class="pb-3 font-semibold text-neutral-600">Transaction ID</th>
-                                                <th class="pb-3 font-semibold text-neutral-600">Type</th>
-                                                <th class="pb-3 font-semibold text-neutral-600">Amount</th>
-                                                <th class="pb-3 font-semibold text-neutral-600">Date</th>
-                                                <th class="pb-3 font-semibold text-neutral-600">Status</th>
+                                        <thead class="bg-neutral-50">
+                                            <tr>
+                                                <th class="text-left py-4 px-6 text-sm font-semibold text-[#212121]">Screen Name</th>
+                                                <th class="text-left py-4 px-6 text-sm font-semibold text-[#212121]">Revenue</th>
+                                                <th class="text-left py-4 px-6 text-sm font-semibold text-[#212121]">Shows</th>
+                                                <th class="text-left py-4 px-6 text-sm font-semibold text-[#212121]">Occupancy</th>
+                                                <th class="text-left py-4 px-6 text-sm font-semibold text-[#212121]">Avg. Price</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr class="border-b border-neutral-200">
-                                                <td class="py-3">#TX001</td>
-                                                <td class="py-3">Ticket Sale</td>
-                                                <td class="py-3 font-medium">$24.00</td>
-                                                <td class="py-3">Mar 15, 2024</td>
-                                                <td class="py-3"><span class="px-2 py-1 text-sm bg-green-100 text-green-600 rounded-full">Completed</span></td>
+                                        <tbody class="divide-y divide-neutral-200/20">
+                                            <tr class="hover:bg-neutral-50">
+                                                <td class="py-4 px-6">IMAX Screen 1</td>
+                                                <td class="py-4 px-6">$125,430</td>
+                                                <td class="py-4 px-6">245</td>
+                                                <td class="py-4 px-6">82%</td>
+                                                <td class="py-4 px-6">$15.50</td>
                                             </tr>
-                                            <tr class="border-b border-neutral-200">
-                                                <td class="py-3">#TX002</td>
-                                                <td class="py-3">Concession</td>
-                                                <td class="py-3 font-medium">$15.50</td>
-                                                <td class="py-3">Mar 15, 2024</td>
-                                                <td class="py-3"><span class="px-2 py-1 text-sm bg-green-100 text-green-600 rounded-full">Completed</span></td>
+                                            <tr class="hover:bg-neutral-50">
+                                                <td class="py-4 px-6">Premium Screen 2</td>
+                                                <td class="py-4 px-6">$98,745</td>
+                                                <td class="py-4 px-6">198</td>
+                                                <td class="py-4 px-6">78%</td>
+                                                <td class="py-4 px-6">$13.75</td>
                                             </tr>
-                                            <tr>
-                                                <td class="py-3">#TX003</td>
-                                                <td class="py-3">Ticket Sale</td>
-                                                <td class="py-3 font-medium">$36.00</td>
-                                                <td class="py-3">Mar 14, 2024</td>
-                                                <td class="py-3"><span class="px-2 py-1 text-sm bg-yellow-100 text-yellow-600 rounded-full">Pending</span></td>
+                                            <tr class="hover:bg-neutral-50">
+                                                <td class="py-4 px-6">3D Screen 3</td>
+                                                <td class="py-4 px-6">$87,652</td>
+                                                <td class="py-4 px-6">176</td>
+                                                <td class="py-4 px-6">74%</td>
+                                                <td class="py-4 px-6">$12.25</td>
                                             </tr>
                                         </tbody>
                                     </table>
+                                </div>
+                            </div>
+                        </div>
+                    </htmlCode>
+                    <htmlCode>
+                        <div id="seat_configuration" class="pt-20 px-6 pb-6" x-data="{ selectedSeatType: 'regular' }">
+                            <!-- Header -->
+                            <div class="mb-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                                <div>
+                                    <h2 class="text-2xl font-bold text-[#212121]">Seat Configuration</h2>
+                                    <p class="text-neutral-600">Configure seating layout for Screen 1 - IMAX</p>
+                                </div>
+                                <button class="bg-[#3498db] text-white px-6 py-3 rounded-lg hover:bg-[#2980b9] transition-colors duration-300">
+                                    Save Layout
+                                </button>
+                            </div>
+
+                            <!-- Configuration Tools -->
+                            <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+                                <!-- Seat Controls -->
+                                <div class="lg:col-span-1 space-y-6">
+                                    <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                                        <h3 class="text-lg font-semibold text-[#212121] mb-4">Seat Types</h3>
+                                        <div class="space-y-4">
+                                            <label class="flex items-center p-3 bg-neutral-50 rounded-lg cursor-pointer">
+                                                <input type="radio" name="seatType" value="regular" x-model="selectedSeatType" class="w-4 h-4 text-[#3498db]">
+                                                <span class="ml-3 text-[#212121]">Regular Seat</span>
+                                            </label>
+                                            <label class="flex items-center p-3 bg-neutral-50 rounded-lg cursor-pointer">
+                                                <input type="radio" name="seatType" value="premium" x-model="selectedSeatType" class="w-4 h-4 text-[#3498db]">
+                                                <span class="ml-3 text-[#212121]">Premium Seat</span>
+                                            </label>
+                                            <label class="flex items-center p-3 bg-neutral-50 rounded-lg cursor-pointer">
+                                                <input type="radio" name="seatType" value="disabled" x-model="selectedSeatType" class="w-4 h-4 text-[#3498db]">
+                                                <span class="ml-3 text-[#212121]">Disabled Access</span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                                        <h3 class="text-lg font-semibold text-[#212121] mb-4">Pricing</h3>
+                                        <div class="space-y-4">
+                                            <div>
+                                                <label class="block text-sm text-neutral-600 mb-2">Regular Seat Price</label>
+                                                <input type="number" class="w-full px-4 py-2 rounded-lg border border-neutral-200/20 focus:outline-none focus:ring-2 focus:ring-[#3498db]" value="10">
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm text-neutral-600 mb-2">Premium Seat Price</label>
+                                                <input type="number" class="w-full px-4 py-2 rounded-lg border border-neutral-200/20 focus:outline-none focus:ring-2 focus:ring-[#3498db]" value="15">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                                        <h3 class="text-lg font-semibold text-[#212121] mb-4">Legend</h3>
+                                        <div class="space-y-3">
+                                            <div class="flex items-center">
+                                                <div class="w-8 h-8 bg-neutral-100 rounded-lg"></div>
+                                                <span class="ml-3 text-sm text-neutral-600">Regular Seat</span>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <div class="w-8 h-8 bg-[#3498db] rounded-lg"></div>
+                                                <span class="ml-3 text-sm text-neutral-600">Premium Seat</span>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <div class="w-8 h-8 bg-yellow-400 rounded-lg"></div>
+                                                <span class="ml-3 text-sm text-neutral-600">Disabled Access</span>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <div class="w-8 h-8 bg-red-500 rounded-lg"></div>
+                                                <span class="ml-3 text-sm text-neutral-600">Selected</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Seat Map -->
+                                <div class="lg:col-span-3 bg-white rounded-lg border border-neutral-200/20 p-6">
+                                    <div class="mb-6 text-center p-4 bg-neutral-900 text-white rounded-lg">SCREEN</div>
+                                    <div class="grid grid-cols-15 gap-2 justify-center" style="grid-template-columns: repeat(15, minmax(0, 1fr));">
+                                        <!-- Generate 10 rows of 15 seats each -->
+                                        <template x-for="row in 10">
+                                            <template x-for="seat in 15">
+                                                <button class="aspect-square rounded-lg bg-neutral-100 hover:bg-[#3498db] hover:text-white transition-colors duration-300 flex items-center justify-center text-xs font-medium"
+                                                    x-text="String.fromCharCode(64 + row) + seat"
+                                                    @click="selectedSeatType === 'premium' ? $el.classList.toggle('bg-[#3498db]') : selectedSeatType === 'disabled' ? $el.classList.toggle('bg-yellow-400') : $el.classList.toggle('bg-neutral-100')">
+                                                </button>
+                                            </template>
+                                        </template>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Summary -->
+                            <div class="mt-6 bg-white rounded-lg border border-neutral-200/20 p-6">
+                                <h3 class="text-lg font-semibold text-[#212121] mb-4">Configuration Summary</h3>
+                                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                                    <div class="p-4 bg-neutral-50 rounded-lg text-center">
+                                        <p class="text-sm text-neutral-600">Total Seats</p>
+                                        <p class="text-2xl font-bold text-[#212121]">150</p>
+                                    </div>
+                                    <div class="p-4 bg-neutral-50 rounded-lg text-center">
+                                        <p class="text-sm text-neutral-600">Regular Seats</p>
+                                        <p class="text-2xl font-bold text-[#212121]">120</p>
+                                    </div>
+                                    <div class="p-4 bg-neutral-50 rounded-lg text-center">
+                                        <p class="text-sm text-neutral-600">Premium Seats</p>
+                                        <p class="text-2xl font-bold text-[#212121]">26</p>
+                                    </div>
+                                    <div class="p-4 bg-neutral-50 rounded-lg text-center">
+                                        <p class="text-sm text-neutral-600">Disabled Access</p>
+                                        <p class="text-2xl font-bold text-[#212121]">4</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <script>
+                            document.addEventListener('alpine:init', () => {
+                                Alpine.data('seatConfiguration', () => ({
+                                    selectedSeatType: 'regular',
+                                }))
+                            })
+                        </script> -->
+                    </htmlCode>
+                    <htmlCode>
+                        <div id="settings" class="pt-20 px-6 pb-6">
+                            <!-- Header -->
+                            <div class="mb-6">
+                                <h2 class="text-2xl font-bold text-[#212121]">Settings</h2>
+                                <p class="text-neutral-600">Manage your theater system preferences</p>
+                            </div>
+
+                            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                                <!-- Main Settings -->
+                                <div class="lg:col-span-2 space-y-6">
+                                    <!-- General Settings -->
+                                    <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                                        <h3 class="text-lg font-semibold text-[#212121] mb-4">General Settings</h3>
+                                        <div class="space-y-4">
+                                            <div>
+                                                <label class="block text-sm font-medium text-[#212121] mb-2">Theater Chain Name</label>
+                                                <input type="text" class="w-full px-4 py-2 rounded-lg border border-neutral-200/20 focus:outline-none focus:ring-2 focus:ring-[#3498db]" value="Cinema Group">
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm font-medium text-[#212121] mb-2">Default Currency</label>
+                                                <select class="w-full px-4 py-2 rounded-lg border border-neutral-200/20 focus:outline-none focus:ring-2 focus:ring-[#3498db]">
+                                                    <option value="USD">USD ($)</option>
+                                                    <option value="EUR">EUR (€)</option>
+                                                    <option value="GBP">GBP (£)</option>
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm font-medium text-[#212121] mb-2">Time Zone</label>
+                                                <select class="w-full px-4 py-2 rounded-lg border border-neutral-200/20 focus:outline-none focus:ring-2 focus:ring-[#3498db]">
+                                                    <option value="UTC-5">Eastern Time (ET)</option>
+                                                    <option value="UTC-8">Pacific Time (PT)</option>
+                                                    <option value="UTC">UTC</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Notification Settings -->
+                                    <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                                        <h3 class="text-lg font-semibold text-[#212121] mb-4">Notification Preferences</h3>
+                                        <div class="space-y-4">
+                                            <label class="flex items-center justify-between p-3 bg-neutral-50 rounded-lg">
+                                                <span class="text-[#212121]">Email Notifications</span>
+                                                <label class="relative inline-flex items-center cursor-pointer">
+                                                    <input type="checkbox" class="sr-only peer" checked>
+                                                    <div class="w-11 h-6 bg-neutral-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:bg-[#3498db] after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+                                                </label>
+                                            </label>
+                                            <label class="flex items-center justify-between p-3 bg-neutral-50 rounded-lg">
+                                                <span class="text-[#212121]">System Alerts</span>
+                                                <label class="relative inline-flex items-center cursor-pointer">
+                                                    <input type="checkbox" class="sr-only peer" checked>
+                                                    <div class="w-11 h-6 bg-neutral-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:bg-[#3498db] after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+                                                </label>
+                                            </label>
+                                            <label class="flex items-center justify-between p-3 bg-neutral-50 rounded-lg">
+                                                <span class="text-[#212121]">Marketing Updates</span>
+                                                <label class="relative inline-flex items-center cursor-pointer">
+                                                    <input type="checkbox" class="sr-only peer">
+                                                    <div class="w-11 h-6 bg-neutral-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:bg-[#3498db] after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+                                                </label>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Security Settings -->
+                                    <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                                        <h3 class="text-lg font-semibold text-[#212121] mb-4">Security Settings</h3>
+                                        <div class="space-y-4">
+                                            <div>
+                                                <label class="block text-sm font-medium text-[#212121] mb-2">Current Password</label>
+                                                <input type="password" class="w-full px-4 py-2 rounded-lg border border-neutral-200/20 focus:outline-none focus:ring-2 focus:ring-[#3498db]" placeholder="Enter current password">
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm font-medium text-[#212121] mb-2">New Password</label>
+                                                <input type="password" class="w-full px-4 py-2 rounded-lg border border-neutral-200/20 focus:outline-none focus:ring-2 focus:ring-[#3498db]" placeholder="Enter new password">
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm font-medium text-[#212121] mb-2">Confirm New Password</label>
+                                                <input type="password" class="w-full px-4 py-2 rounded-lg border border-neutral-200/20 focus:outline-none focus:ring-2 focus:ring-[#3498db]" placeholder="Confirm new password">
+                                            </div>
+                                            <button class="px-6 py-2 bg-[#3498db] text-white rounded-lg hover:bg-[#2980b9] transition-colors duration-300">
+                                                Update Password
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Quick Actions -->
+                                <div class="space-y-6">
+                                    <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                                        <h3 class="text-lg font-semibold text-[#212121] mb-4">Quick Actions</h3>
+                                        <div class="space-y-3">
+                                            <button class="w-full p-3 text-left bg-neutral-50 rounded-lg hover:bg-neutral-100 transition-colors duration-300 flex items-center">
+                                                <svg class="w-5 h-5 mr-3 text-[#3498db]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                                                </svg>
+                                                Export System Data
+                                            </button>
+                                            <button class="w-full p-3 text-left bg-neutral-50 rounded-lg hover:bg-neutral-100 transition-colors duration-300 flex items-center">
+                                                <svg class="w-5 h-5 mr-3 text-[#3498db]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                                                </svg>
+                                                Sync Data
+                                            </button>
+                                            <button class="w-full p-3 text-left bg-neutral-50 rounded-lg hover:bg-neutral-100 transition-colors duration-300 flex items-center">
+                                                <svg class="w-5 h-5 mr-3 text-[#3498db]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                                </svg>
+                                                Clear Cache
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                                        <h3 class="text-lg font-semibold text-[#212121] mb-4">System Information</h3>
+                                        <div class="space-y-3">
+                                            <div class="flex justify-between p-3 bg-neutral-50 rounded-lg">
+                                                <span class="text-sm text-neutral-600">Version</span>
+                                                <span class="text-sm font-medium text-[#212121]">2.1.0</span>
+                                            </div>
+                                            <div class="flex justify-between p-3 bg-neutral-50 rounded-lg">
+                                                <span class="text-sm text-neutral-600">Last Updated</span>
+                                                <span class="text-sm font-medium text-[#212121]">2 days ago</span>
+                                            </div>
+                                            <div class="flex justify-between p-3 bg-neutral-50 rounded-lg">
+                                                <span class="text-sm text-neutral-600">Storage Used</span>
+                                                <span class="text-sm font-medium text-[#212121]">1.2 GB</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </htmlCode>
                     <htmlCode>
                         <div id="root">
-                            <section id="settings" class="min-h-screen bg-neutral-900 text-white p-6">
+                            <section id="profile" class="min-h-screen bg-neutral-900 text-white py-12 px-4 sm:px-6 lg:px-8">
                                 <div class="max-w-7xl mx-auto">
-                                    <h2 class="text-2xl font-bold mb-8">Settings</h2>
-
-                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                        <!-- Profile Settings -->
-                                        <div class="bg-neutral-800 rounded-lg p-6 border border-neutral-700/30">
-                                            <h3 class="text-xl font-semibold mb-6">Profile Settings</h3>
-                                            <div class="space-y-4">
-                                                <div>
-                                                    <label class="block text-sm font-medium text-neutral-300 mb-2">Profile Picture</label>
-                                                    <div class="flex items-center space-x-4">
-                                                        <div class="w-16 h-16 rounded-full overflow-hidden bg-neutral-700">
-                                                            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=admin" alt="Profile" class="w-full h-full object-cover" />
-                                                        </div>
-                                                        <button class="px-4 py-2 bg-neutral-700 hover:bg-neutral-600 rounded-md transition-colors duration-200">
-                                                            Change Photo
-                                                        </button>
-                                                    </div>
-                                                </div>
-
-                                                <div>
-                                                    <label class="block text-sm font-medium text-neutral-300 mb-2">Name</label>
-                                                    <input type="text" class="w-full bg-neutral-700 border border-neutral-600 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your name" />
-                                                </div>
-
-                                                <div>
-                                                    <label class="block text-sm font-medium text-neutral-300 mb-2">Email</label>
-                                                    <input type="email" class="w-full bg-neutral-700 border border-neutral-600 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your email" />
-                                                </div>
+                                    <!-- Profile Header -->
+                                    <div class="bg-neutral-800/50 rounded-lg p-6 backdrop-blur-lg border border-neutral-700/30">
+                                        <div class="flex flex-col lg:flex-row items-center gap-8">
+                                            <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-blue-500/30">
+                                                <img src="https://avatar.iran.liara.run/public" alt="Profile" class="w-full h-full object-cover" />
                                             </div>
-                                        </div>
-
-                                        <!-- Security Settings -->
-                                        <div class="bg-neutral-800 rounded-lg p-6 border border-neutral-700/30">
-                                            <h3 class="text-xl font-semibold mb-6">Security Settings</h3>
-                                            <div class="space-y-4">
-                                                <div>
-                                                    <label class="block text-sm font-medium text-neutral-300 mb-2">Current Password</label>
-                                                    <input type="password" class="w-full bg-neutral-700 border border-neutral-600 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter current password" />
-                                                </div>
-
-                                                <div>
-                                                    <label class="block text-sm font-medium text-neutral-300 mb-2">New Password</label>
-                                                    <input type="password" class="w-full bg-neutral-700 border border-neutral-600 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter new password" />
-                                                </div>
-
-                                                <div>
-                                                    <label class="block text-sm font-medium text-neutral-300 mb-2">Confirm New Password</label>
-                                                    <input type="password" class="w-full bg-neutral-700 border border-neutral-600 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Confirm new password" />
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Notification Settings -->
-                                        <div class="bg-neutral-800 rounded-lg p-6 border border-neutral-700/30">
-                                            <h3 class="text-xl font-semibold mb-6">Notification Settings</h3>
-                                            <div class="space-y-4">
-                                                <div class="flex items-center justify-between">
-                                                    <span class="text-sm font-medium text-neutral-300">Email Notifications</span>
-                                                    <label class="relative inline-flex items-center cursor-pointer">
-                                                        <input type="checkbox" class="sr-only peer">
-                                                        <div class="w-11 h-6 bg-neutral-700 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-800 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
-                                                    </label>
-                                                </div>
-
-                                                <div class="flex items-center justify-between">
-                                                    <span class="text-sm font-medium text-neutral-300">Push Notifications</span>
-                                                    <label class="relative inline-flex items-center cursor-pointer">
-                                                        <input type="checkbox" class="sr-only peer">
-                                                        <div class="w-11 h-6 bg-neutral-700 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-800 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
-                                                    </label>
-                                                </div>
-
-                                                <div class="flex items-center justify-between">
-                                                    <span class="text-sm font-medium text-neutral-300">Marketing Updates</span>
-                                                    <label class="relative inline-flex items-center cursor-pointer">
-                                                        <input type="checkbox" class="sr-only peer">
-                                                        <div class="w-11 h-6 bg-neutral-700 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-800 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Theme Settings -->
-                                        <div class="bg-neutral-800 rounded-lg p-6 border border-neutral-700/30">
-                                            <h3 class="text-xl font-semibold mb-6">Theme Settings</h3>
-                                            <div class="space-y-4">
-                                                <div class="flex items-center justify-between">
-                                                    <span class="text-sm font-medium text-neutral-300">Dark Mode</span>
-                                                    <label class="relative inline-flex items-center cursor-pointer">
-                                                        <input type="checkbox" class="sr-only peer" checked>
-                                                        <div class="w-11 h-6 bg-neutral-700 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-800 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
-                                                    </label>
-                                                </div>
-
-                                                <div>
-                                                    <label class="block text-sm font-medium text-neutral-300 mb-2">Font Size</label>
-                                                    <select class="w-full bg-neutral-700 border border-neutral-600 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                                        <option>Small</option>
-                                                        <option selected>Medium</option>
-                                                        <option>Large</option>
-                                                    </select>
+                                            <div class="flex-1 text-center lg:text-left">
+                                                <h1 class="text-2xl font-bold">Theater Admin Dashboard</h1>
+                                                <p class="text-neutral-400 mt-2">Manage your theater operations efficiently</p>
+                                                <div class="mt-4 flex flex-wrap gap-4 justify-center lg:justify-start">
+                                                    <button class="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-lg transition-colors duration-300 flex items-center gap-2">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                                                        </svg>
+                                                        Add Theater
+                                                    </button>
+                                                    <button class="bg-neutral-700 hover:bg-neutral-600 px-6 py-2 rounded-lg transition-colors duration-300 flex items-center gap-2">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                        </svg>
+                                                        Settings
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="mt-8 flex justify-end">
-                                        <button class="px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded-md transition-colors duration-200">
-                                            Save Changes
-                                        </button>
+                                    <!-- Stats Grid -->
+                                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+                                        <div class="bg-neutral-800/50 backdrop-blur-lg rounded-lg p-6 border border-neutral-700/30">
+                                            <div class="flex items-center justify-between">
+                                                <h3 class="text-neutral-400">Total Theaters</h3>
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                                </svg>
+                                            </div>
+                                            <p class="text-3xl font-bold mt-2">12</p>
+                                            <p class="text-green-500 text-sm mt-2">↑ 8% from last month</p>
+                                        </div>
+
+                                        <div class="bg-neutral-800/50 backdrop-blur-lg rounded-lg p-6 border border-neutral-700/30">
+                                            <div class="flex items-center justify-between">
+                                                <h3 class="text-neutral-400">Total Screens</h3>
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                                </svg>
+                                            </div>
+                                            <p class="text-3xl font-bold mt-2">48</p>
+                                            <p class="text-green-500 text-sm mt-2">↑ 12% from last month</p>
+                                        </div>
+
+                                        <div class="bg-neutral-800/50 backdrop-blur-lg rounded-lg p-6 border border-neutral-700/30">
+                                            <div class="flex items-center justify-between">
+                                                <h3 class="text-neutral-400">Total Seats</h3>
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                                                </svg>
+                                            </div>
+                                            <p class="text-3xl font-bold mt-2">9,600</p>
+                                            <p class="text-green-500 text-sm mt-2">↑ 5% from last month</p>
+                                        </div>
+
+                                        <div class="bg-neutral-800/50 backdrop-blur-lg rounded-lg p-6 border border-neutral-700/30">
+                                            <div class="flex items-center justify-between">
+                                                <h3 class="text-neutral-400">Monthly Revenue</h3>
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                </svg>
+                                            </div>
+                                            <p class="text-3xl font-bold mt-2">$248,000</p>
+                                            <p class="text-green-500 text-sm mt-2">↑ 15% from last month</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Recent Activity -->
+                                    <div class="mt-8 bg-neutral-800/50 backdrop-blur-lg rounded-lg p-6 border border-neutral-700/30">
+                                        <h2 class="text-xl font-bold mb-6">Recent Activity</h2>
+                                        <div class="overflow-x-auto">
+                                            <table class="min-w-full divide-y divide-neutral-700">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="px-6 py-3 text-left text-xs font-medium text-neutral-400 uppercase tracking-wider">Theater</th>
+                                                        <th class="px-6 py-3 text-left text-xs font-medium text-neutral-400 uppercase tracking-wider">Action</th>
+                                                        <th class="px-6 py-3 text-left text-xs font-medium text-neutral-400 uppercase tracking-wider">Date</th>
+                                                        <th class="px-6 py-3 text-left text-xs font-medium text-neutral-400 uppercase tracking-wider">Status</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="divide-y divide-neutral-700">
+                                                    <tr>
+                                                        <td class="px-6 py-4 whitespace-nowrap">Cinema Palace</td>
+                                                        <td class="px-6 py-4 whitespace-nowrap">Screen Added</td>
+                                                        <td class="px-6 py-4 whitespace-nowrap">2024-01-20</td>
+                                                        <td class="px-6 py-4 whitespace-nowrap">
+                                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Completed</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="px-6 py-4 whitespace-nowrap">Star Movies</td>
+                                                        <td class="px-6 py-4 whitespace-nowrap">Seat Configuration Updated</td>
+                                                        <td class="px-6 py-4 whitespace-nowrap">2024-01-19</td>
+                                                        <td class="px-6 py-4 whitespace-nowrap">
+                                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">Pending</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="px-6 py-4 whitespace-nowrap">Mega Cineplex</td>
+                                                        <td class="px-6 py-4 whitespace-nowrap">Theater Added</td>
+                                                        <td class="px-6 py-4 whitespace-nowrap">2024-01-18</td>
+                                                        <td class="px-6 py-4 whitespace-nowrap">
+                                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Completed</span>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                             </section>
