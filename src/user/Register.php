@@ -27,19 +27,20 @@ include("../../config/connection.php");
                                    entertainment with MoviesVault</p>
                          </div>
                          <input type="text"
-                              class="w-full h-10 text-gray-900 placeholder:text-gray-400 text-lg font-normal leading-7 rounded-full border-gray-300 border shadow-sm focus:outline-none px-4 mb-6 placeholder:text-base"
+                              class="w-full h-10 text-gray-900 placeholder:text-gray-400 text-lg font-normal leading-7 rounded-full border-gray-300 border shadow-sm focus:outline-none px-4 mb-4 placeholder:text-base"
                               placeholder="Name" name="name">
+
                          <input type="email"
-                              class="w-full h-10 text-gray-900 placeholder:text-gray-400 text-lg font-normal leading-7 rounded-full border-gray-300 border shadow-sm focus:outline-none px-4 mb-6 placeholder:text-base"
+                              class="w-full h-10 text-gray-900 placeholder:text-gray-400 text-lg font-normal leading-7 rounded-full border-gray-300 border shadow-sm focus:outline-none px-4 mb-4 placeholder:text-base"
                               placeholder="Email" name="email">
                          <input type="number"
-                              class="w-full h-10 text-gray-900 placeholder:text-gray-400 text-lg font-normal leading-7 rounded-full border-gray-300 border shadow-sm focus:outline-none px-4 mb-6 placeholder:text-base"
+                              class="w-full h-10 text-gray-900 placeholder:text-gray-400 text-lg font-normal leading-7 rounded-full border-gray-300 border shadow-sm focus:outline-none px-4 mb-4 placeholder:text-base"
                               placeholder="Mobile Number" name="mobile_no">
                          <input type="password"
-                              class="w-full h-10 text-gray-900 placeholder:text-gray-400 text-lg font-normal leading-7 rounded-full border-gray-300 border shadow-sm focus:outline-none px-4 mb-6 placeholder:text-base"
+                              class="w-full h-10 text-gray-900 placeholder:text-gray-400 text-lg font-normal leading-7 rounded-full border-gray-300 border shadow-sm focus:outline-none px-4 mb-4 placeholder:text-base"
                               placeholder="Password" name="password">
                          <input type="password"
-                              class="w-full h-10 text-gray-900 placeholder:text-gray-400 text-lg font-normal leading-7 rounded-full border-gray-300 border shadow-sm focus:outline-none px-4 mb-6 placeholder:text-base"
+                              class="w-full h-10 text-gray-900 placeholder:text-gray-400 text-lg font-normal leading-7 rounded-full border-gray-300 border shadow-sm focus:outline-none px-4 mb-4 placeholder:text-base"
                               placeholder="Confirm Password" name="confirm_password">
 
                          <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -49,13 +50,14 @@ include("../../config/connection.php");
                               id="multiple_files" name="pic" type="file">
 
 
-                         <a href="javascript:;" class="flex justify-end mb-6">
+                         <a href="javascript:;" class="flex justify-end mb-4">
                               <span class="text-blue-600 text-right text-base font-normal leading-6">Forgot
                                    Password?</span>
                          </a>
                          <input
                               class="w-full h-12 text-white text-center text-base font-semibold leading-6 rounded-full hover:bg-red-600 transition-all duration-700 bg-red-600/70 shadow-sm mb-11" name="signup"
                               type="submit" value="Log in">
+
                          <a href="login.php"
                               class="flex justify-center text-gray-200 text-base font-medium leading-6"> have an
                               account? <span class="text-indigo-600 font-semibold pl-3"> Sign In</span>
@@ -64,59 +66,133 @@ include("../../config/connection.php");
                </div>
           </div>
      </section>
+     <script src="../../node_modules/toastify-js/src/toastify.js"></script>
+     <script>
+          function tostifyCustomClose(el) {
+               const parent = el.closest('.toastify');
+               const close = parent.querySelector('.toast-close');
+               close.click();
+          }
+
+          window.addEventListener('load', () => {
+               const callToast = (message, type = "success") => {
+                    const toastMarkup = `
+               <div class="flex p-4">
+                    <p class="text-sm ${type === "success" ? "text-green-700" : "text-red-700"}">${message}</p>
+                    <div class="ms-auto">
+                         <button onclick="tostifyCustomClose(this)" type="button" class="inline-flex shrink-0 justify-center items-center size-5 rounded-lg text-gray-800 opacity-50 hover:opacity-100 focus:outline-none focus:opacity-100 dark:text-white" aria-label="Close">
+                              <span class="sr-only">Close</span>
+                              <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+                         </button>
+                    </div>
+               </div>`;
+
+                    Toastify({
+                         text: toastMarkup,
+                         className: "hs-toastify-on:opacity-100 opacity-0 fixed -top-[150px] right-[20px] z-[90] transition-all duration-300 w-[320px] bg-white text-sm border rounded-xl shadow-lg [&>.toast-close]:hidden",
+                         duration: 3000,
+                         close: true,
+                         escapeMarkup: false
+                    }).showToast();
+               };
+
+               const form = document.querySelector("form");
+               form.addEventListener("submit", (event) => {
+                    event.preventDefault(); // Prevent form submission
+
+                    // Retrieve form data
+                    const name = form.querySelector("input[name='name']").value.trim();
+                    const email = form.querySelector("input[name='email']").value.trim();
+                    const mobile_no = form.querySelector("input[name='mobile_no']").value.trim();
+                    const password = form.querySelector("input[name='password']").value.trim();
+                    const confirm_password = form.querySelector("input[name='confirm_password']").value.trim();
+
+                    // Validation
+                    if (!name) {
+                         callToast("Name is required.", "error");
+                         return;
+                    }
+                    if (!email.match(/^\S+@\S+\.\S+$/)) {
+                         callToast("Invalid email format.", "error");
+                         return;
+                    }
+                    // if (!mobile_no.match(/^\d{10}$/)) {
+                    //      callToast("Mobile number must be 10 digits.", "error");
+                    //      return;
+                    // }
+                    // if (password.length < 6) {
+                    //      callToast("Password must be at least 6 characters.", "error");
+                    //      return;
+                    // }
+                    // if (password !== confirm_password) {
+                    //      callToast("Passwords do not match.", "error");
+                    //      return;
+                    // }
+
+                    // If all validations pass
+                    callToast("Form validated successfully. Submitting...");
+                    setTimeout(() => {
+                         form.submit(); // Call this after any animations
+                    }, 100);
+               });
+          });
+     </script>
+
 </body>
 
 </html>
 <?php
+echo var_dump($_SERVER['REQUEST_METHOD']);
+var_dump($_POST);
+die();
+// if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signup'])) {
+//      $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+//      $name = $_POST['name'];
+//      $password = $_POST['password'];
+//      $confirm_password = $_POST['confirm_password'];
+//      $mobile_no = filter_var($_POST['mobile_no'], FILTER_SANITIZE_NUMBER_INT);
+//      $pic = $_FILES['pic'];
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signup'])) {
-     $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-     $name = $_POST['name'];
-     $password = $_POST['password'];
-     $confirm_password = $_POST['confirm_password'];
-     $mobile_no = filter_var($_POST['mobile_no'], FILTER_SANITIZE_NUMBER_INT);
-     $pic = $_FILES['pic'];
+//      // Validation
+//      if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+//           die('Invalid email format.');
+//      }
+//      if (strlen($password) < 6) {
+//           die('Password must be at least 6 characters long.');
+//      }
+//      if ($password !== $confirm_password) {
+//           die('Passwords do not match.');
+//      }
 
-     // Validation
-     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-          die('Invalid email format.');
-     }
-     if (strlen($password) < 6) {
-          die('Password must be at least 6 characters long.');
-     }
-     if ($password !== $confirm_password) {
-          die('Passwords do not match.');
-     }
+//      // Handle file upload
+//      $pic_name = "";
+//      if ($pic && $pic['error'] === UPLOAD_ERR_OK) {
+//           $pic_name = time() . '_' . basename($pic['name']);
+//           $target_path = '../../public/profile/' . $pic_name; // Ensure trailing slash for directory
+//           move_uploaded_file($pic['tmp_name'], $target_path);
+//      }
 
-     // Handle file upload
-     $pic_name = "";
-     if ($pic && $pic['error'] === UPLOAD_ERR_OK) {
-          $pic_name = time() . '_' . basename($pic['name']);
-          $target_path = '../../public/profile/' . $pic_name; // Ensure trailing slash for directory
-          move_uploaded_file($pic['tmp_name'], $target_path);
-     }
+//      // Hash the password
+//      $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
-     // Hash the password
-     $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+//      // Insert user into database using prepared statement
+//      $stmt = $conn->prepare("INSERT INTO users (name, email, password, status, role, pic, number) VALUES (?, ?, ?, ?, ?, ?, ?)");
+//      $active_status = 'active'; // Active by default
+//      $role = 'user'; // Default role
 
-     // Insert user into database using prepared statement
-     $stmt = $conn->prepare("INSERT INTO users (name, email, password, status, role, pic, number) VALUES (?, ?, ?, ?, ?, ?, ?)");
-     $active_status = 'active'; // Active by default
-     $role = 'user'; // Default role
+//      if (!$stmt) {
+//           die("Prepared statement failed: " . $conn->error);
+//      }
 
-     if (!$stmt) {
-          die("Prepared statement failed: " . $conn->error);
-     }
+//      $stmt->bind_param('sssssss', $name, $email, $hashed_password, $active_status, $role, $pic_name, $mobile_no);
 
-     $stmt->bind_param('sssssss', $name, $email, $hashed_password, $active_status, $role, $pic_name, $mobile_no);
+//      if ($stmt->execute()) {
+//           echo "Sign-up successful!";
+//      } else {
+//           echo "Error: " . $stmt->error;
+//      }
 
-     if ($stmt->execute()) {
-          echo "Sign-up successful!";
-     } else {
-          echo "Error: " . $stmt->error;
-     }
-
-     $stmt->close();
-} else {
-     echo 'Error: Invalid request method or missing signup parameter.';
-}
+//      $stmt->close();
+// } else {
+//      echo 'Error: Invalid request method or missing signup parameter.';
+// }

@@ -9,6 +9,7 @@
     "datatables.net-dt": "^2.2.1",
     "jquery": "^3.7.1",
     "pagedone": "^1.2.2",
-    "preline": "^2.7.0"
+    "preline": "^2.7.0",
+    "toastify-js": "^1.12.0"
   }
 }

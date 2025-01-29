@@ -35,7 +35,7 @@ bg-white border-e border-gray-200 " role="dialog" tabindex="-1" aria-label="Side
         <div class="relative flex flex-col h-full max-h-full ">
             <!-- Header -->
             <header class="p-4 flex justify-between items-center gap-x-2">
-                <a class="flex-none font-semibold text-xl text-black focus:outline-none focus:opacity-80 " href="#" aria-label="Brand">Brand</a>
+                <a class="flex-none font-semibold text-xl text-black focus:outline-none focus:opacity-80 " href="#" aria-label="MoviesVault">MoviesVault</a>
 
                 <div class="lg:hidden -me-2">
                     <!-- Close Button -->
@@ -65,7 +65,7 @@ bg-white border-e border-gray-200 " role="dialog" tabindex="-1" aria-label="Side
                             </a>
                         </li>
 
-                        <li class="hs-accordion" id="users-accordion">
+                        <!-- <li class="hs-accordion" id="users-accordion">
                             <button type="button" class="hs-accordion-toggle w-full text-start flex items-center gap-x-3 py-2 px-2.5 text-sm text-gray-700 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100" aria-expanded="true" aria-controls="users-accordion-collapse-1">
                                 <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
@@ -155,7 +155,7 @@ bg-white border-e border-gray-200 " role="dialog" tabindex="-1" aria-label="Side
                                     </li>
                                 </ul>
                             </div>
-                        </li>
+                        </li> -->
 
                         <li class="hs-accordion" id="account-accordion">
                             <button type="button" class="hs-accordion-toggle w-full text-start flex items-center gap-x-3 py-2 px-2.5 text-sm text-gray-700 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100    " aria-expanded="true" aria-controls="account-accordion-sub-1-collapse-1">
@@ -172,7 +172,7 @@ bg-white border-e border-gray-200 " role="dialog" tabindex="-1" aria-label="Side
                                     <path d="m14.3 16.6 1-.4" />
                                     <path d="m20.7 13.8 1-.4" />
                                 </svg>
-                                Account
+                                Showtime
 
                                 <svg class="hs-accordion-active:block ms-auto hidden size-4 text-gray-600 group-hover:text-gray-500 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="m18 15-6-6-6 6" />
@@ -186,8 +186,54 @@ bg-white border-e border-gray-200 " role="dialog" tabindex="-1" aria-label="Side
                             <div id="account-accordion-sub-1-collapse-1" class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300 hidden" role="region" aria-labelledby="account-accordion">
                                 <ul class="pt-1 ps-7 space-y-1">
                                     <li>
+                                        <a class="flex items-center gap-x-3 py-2 px-2.5 text-sm text-gray-700 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100    " href="showtime.php">
+                                            showtime
+                                        </a>
+                                    </li>
+                                    <li>
                                         <a class="flex items-center gap-x-3 py-2 px-2.5 text-sm text-gray-700 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100    " href="#">
-                                            Link 1
+                                            Link 2
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="flex items-center gap-x-3 py-2 px-2.5 text-sm text-gray-700 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100    " href="#">
+                                            Link 3
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="hs-accordion" id="account-accordion">
+                            <button type="button" class="hs-accordion-toggle w-full text-start flex items-center gap-x-3 py-2 px-2.5 text-sm text-gray-700 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100    " aria-expanded="true" aria-controls="account-accordion-sub-1-collapse-1">
+                                <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="18" cy="15" r="3" />
+                                    <circle cx="9" cy="7" r="4" />
+                                    <path d="M10 15H6a4 4 0 0 0-4 4v2" />
+                                    <path d="m21.7 16.4-.9-.3" />
+                                    <path d="m15.2 13.9-.9-.3" />
+                                    <path d="m16.6 18.7.3-.9" />
+                                    <path d="m19.1 12.2.3-.9" />
+                                    <path d="m19.6 18.7-.4-1" />
+                                    <path d="m16.8 12.3-.4-1" />
+                                    <path d="m14.3 16.6 1-.4" />
+                                    <path d="m20.7 13.8 1-.4" />
+                                </svg>
+                                Forms
+
+                                <svg class="hs-accordion-active:block ms-auto hidden size-4 text-gray-600 group-hover:text-gray-500 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m18 15-6-6-6 6" />
+                                </svg>
+
+                                <svg class="hs-accordion-active:hidden ms-auto block size-4 text-gray-600 group-hover:text-gray-500 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m6 9 6 6 6-6" />
+                                </svg>
+                            </button>
+
+                            <div id="account-accordion-sub-1-collapse-1" class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300 hidden" role="region" aria-labelledby="account-accordion">
+                                <ul class="pt-1 ps-7 space-y-1">
+                                    <li>
+                                        <a class="flex items-center gap-x-3 py-2 px-2.5 text-sm text-gray-700 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100    " href="addGenre.php">
+                                            add genre
                                         </a>
                                     </li>
                                     <li>
@@ -360,7 +406,7 @@ bg-white border-e border-gray-200 " role="dialog" tabindex="-1" aria-label="Side
                 <div class="hs-dropdown [--strategy:absolute] [--auto-close:inside] relative w-full inline-flex">
                     <button id="hs-sidebar-footer-example-with-dropdown" type="button" class="w-full inline-flex shrink-0 items-center gap-x-2 p-2 text-start text-sm text-gray-800 rounded-md hover:bg-gray-100 focus:outline-none focus:bg-gray-100" aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
                         <img class="shrink-0 size-5 rounded-full" src="https://images.unsplash.com/photo-1734122415415-88cb1d7d5dc0?q=80&w=320&h=320&auto=format&fit=facearea&facepad=3&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Avatar">
-                        Mia Hudson
+                        Admin
                         <svg class="shrink-0 size-3.5 ms-auto" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="m7 15 5 5 5-5" />
                             <path d="m7 9 5-5 5 5" />

@@ -1,7 +1,8 @@
 <?php
 include("../../config/connection.php");
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signup'])) {
+var_dump($_SERVER['REQUEST_METHOD']);
+var_dump($_POST);
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
     $name = $_POST['name'];
     $password = $_POST['password'];
@@ -9,16 +10,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signup'])) {
     $mobile_no = filter_var($_POST['mobile_no'], FILTER_SANITIZE_NUMBER_INT);
     $pic = $_FILES['pic'];
 
-    // Validation
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        die('Invalid email format.');
-    }
-    if (strlen($password) < 6) {
-        die('Password must be at least 6 characters long.');
-    }
-    if ($password !== $confirm_password) {
-        die('Passwords do not match.');
-    }
 
     // Handle file upload
     $pic_name = "";

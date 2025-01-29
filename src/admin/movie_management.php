@@ -6,12 +6,12 @@ ob_start();
     <!-- Header Actions -->
     <div class="flex justify-between items-center">
         <h2 class="text-xl font-semibold text-neutral-900">Movie Management</h2>
-        <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center">
+        <a href="addMovies.php" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center">
             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
             </svg>
             Add New Movie
-        </button>
+        </a>
     </div>
 
     <!-- Filters -->

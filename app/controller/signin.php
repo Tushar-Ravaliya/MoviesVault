@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signin'])) {
                 echo 'Sign-in successful!';
                 // Redirect based on role
                 if ($user['role'] === 'admin') {
-                    header('Location: admin_dashboard.php');
+                    header('Location: http://localhost/moviesvault/src/admin/index.php');
                 } else {
                     header('Location: http://localhost/moviesvault/src/user/index.php');
                 }

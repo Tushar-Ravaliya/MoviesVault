@@ -10,6 +10,6 @@
 .dt-layout-row:has(.dt-paging) {
   display: none !important;
 }
-.dataTables_filter {
+/* .dataTables_filter {
   display: none;
-}
+} */
