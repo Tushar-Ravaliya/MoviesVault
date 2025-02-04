@@ -129,6 +129,7 @@ include("../../config/connection.php");
                     //      return;
                     // }
 
+
                     // If all validations pass
                     callToast("Form validated successfully. Submitting...");
                     setTimeout(() => {
