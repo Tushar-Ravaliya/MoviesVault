@@ -2,52 +2,54 @@
 $page_title = "Add Movie";
 ob_start();
 ?>
+<div class="w-full flex flex-col items-center overflow-y-auto">
+    <div class="mt-8 w-10/12">
+        <h4 class="text-gray-600">
+            Add Categories
+        </h4>
 
-<!-- Card Section -->
-<div class="max-w-4xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-    <!-- Card -->
-    <div class="bg-white rounded-xl shadow p-4 sm:p-7 dark:bg-neutral-900">
-        <form>
-            <!-- Section -->
-            <div class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-neutral-700 dark:first:border-transparent">
-                <div class="sm:col-span-12">
-                    <h2 class="text-lg font-semibold text-gray-800 dark:text-neutral-200">
-                        Submit your application
-                    </h2>
-                </div>
-                <!-- End Col -->
+        <div class="mt-4">
+            <div class="p-6  bg-white rounded-md border border-gray-300 ">
+                <h2 class="text-lg font-semibold text-gray-700 capitalize">
+                    Add Categories
+                </h2>
 
-                <div class="sm:col-span-3">
-                    <label for="af-submit-application-full-name" class="inline-block text-sm font-medium text-gray-500 mt-2.5 dark:text-neutral-500">
-                        Full name
-                    </label>
-                </div>
-                <!-- End Col -->
+                <form method="post" action="">
+
+                    <div class="gap-6 mt-4 sm:grid-cols-2">
+                        <div class="flex justify-between items-center">
+                            <div class="w-full">
+                                <label class="text-gray-700" for="username">Category Name</label>
+                                <input
+                                    v-model="user.username"
+                                    class="w-2/4 mt-2 pl-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
+                                    type="text"
+                                    name="description">
+                            </div>
+                            <input type="submit"
+                                class="px-5 py-2 text-center border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none" value="Add">
+                        </div>
+
+                    </div>
 
 
-
-
-
-                <input id="af-submit-application-current-company" type="text" class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600">
+                </form>
             </div>
-            <!-- End Col -->
+        </div>
+
+        <div class="p-6 mt-10 bg-white rounded-md border border-gray-300">
+            <ul>
+                <li class="inline-block text-lg">Action</li><button type="button" class="py-1 ml-10 px-2 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-blue-600 text-blue-600 hover:border-blue-500 hover:text-blue-500 focus:outline-none focus:border-blue-500 focus:text-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:border-blue-500 dark:text-blue-500 dark:hover:text-blue-400 dark:hover:border-blue-400">
+                    Edit
+                </button>
+                <button type="button" class="py-1 px-2 ml-5 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-red-500 text-red-500 hover:border-red-400 hover:text-red-400 focus:outline-none focus:border-red-400 focus:text-red-400 disabled:opacity-50 disabled:pointer-events-none">
+                    Delete
+                </button>
+
+            </ul>
+        </div>
     </div>
-    <!-- End Section -->
-
-
-
-
-
-
-    <button type="button" class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">
-        Submit application
-    </button>
-    </form>
 </div>
-<!-- End Card -->
-</div>
-<!-- End Card Section -->
-
 <?php
 $content = ob_get_clean();
 include 'admin_layout.php';

@@ -1,12 +1,18 @@
 <?php
 $page_title = "Admin Dashboard";
 ob_start();
-?>
-<?php
-require("../../config/connection.php");
 
-$sql = "SELECT id, name, email, number FROM users";
-$result = $conn->query($sql);
+require_once '../../config/connection.php';
+require_once '../../app/model/Auth.php';
+
+$database = new Database();
+$db = $database->getConnection();
+$user = new User($db);
+$users = $user->readAll();
+
+
+// $sql = "SELECT id, name, email, number FROM users";
+// $result = $conn->query($sql);
 ?>
 
 
@@ -36,10 +42,7 @@ $result = $conn->query($sql);
         "pagingOptions": {
     "pageBtnClasses": "min-w-[40px] flex justify-center items-center text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 py-2.5 text-sm rounded-full disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:focus:bg-neutral-700 dark:hover:bg-neutral-700"
   },
-        "selecting": true,
-        "rowSelectingOptions": {
-          "selectAllSelector": "#hs-table-search-checkbox-all"
-        },
+       
         "language": {
           "zeroRecords": "<div class=\"py-10 px-5 flex flex-col justify-center items-center text-center\"><svg class=\"shrink-0 size-6 text-gray-500 dark:text-neutral-500\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><path d=\"m21 21-4.3-4.3\"/></svg><div class=\"max-w-sm mx-auto\"><p class=\"mt-2 text-sm text-gray-600 dark:text-neutral-400\">No search results</p></div></div>"
         }
@@ -148,40 +151,34 @@ $result = $conn->query($sql);
                 </tr>
             </thead>
             <tbody>
-                <?php if ($result->num_rows > 0): ?>
-                    <?php while ($row = $result->fetch_assoc()): ?>
+                <?php foreach ($users as $row) { ?>
 
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="flex items-center">
-                                    <img class="h-10 w-10 rounded-full" src="../../public/profile/profile-pic.png" alt="">
-                                    <div class="ml-4">
-                                        <div class="text-sm font-medium text-gray-900"><?php echo $row['name']; ?></div>
-                                        <div class="text-xs text-gray-500">Member since Jan 2023</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="text-sm text-gray-900"><?php echo $row['email']; ?></div>
-                                <div class="text-sm text-gray-500"><?php echo $row['number']; ?></div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">24</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">$648.00</td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Premium</span>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2 hours ago</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                <button class="text-blue-600 hover:text-blue-900 mr-3">View Profile</button>
-                                <button class="text-blue-600 hover:text-blue-900">Support History</button>
-                            </td>
-                        </tr>
-                    <?php endwhile; ?>
-                <?php else: ?>
                     <tr>
-                        <td colspan="3" class="border border-gray-300 px-4 py-2 text-center">No records found</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="flex items-center">
+                                <img class="h-10 w-10 rounded-full" src="../../public/profile/profile-pic.png" alt="">
+                                <div class="ml-4">
+                                    <div class="text-sm font-medium text-gray-900"><?php echo htmlspecialchars($row['name']); ?></div>
+                                    <div class="text-xs text-gray-500">Member since Jan 2023</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="text-sm text-gray-900"><?php echo $row['email']; ?></div>
+                            <div class="text-sm text-gray-500"><?php echo $row['number']; ?></div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">24</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">$648.00</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <span class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Premium</span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2 hours ago</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                            <button class="text-blue-600 hover:text-blue-900 mr-3">View Profile</button>
+                            <button class="text-blue-600 hover:text-blue-900">Support History</button>
+                        </td>
                     </tr>
-                <?php endif; ?>
+                <?php } ?>
                 <!-- Add more rows as needed -->
             </tbody>
         </table>

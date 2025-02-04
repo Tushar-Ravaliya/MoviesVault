@@ -19,7 +19,7 @@ include("../../config/connection.php");
                <img src="../../public/Images/logo-white.png" alt="pagedone logo" class="mx-auto lg:mb-11 mb-8 object-cover">
 
                <div class="rounded-2xl bg-gray-200/20 backdrop-blur-sm shadow-xl z-10">
-                    <form action="../../app/controller/signup.php" method="POST" enctype="multipart/form-data" class="lg:p-11 p-7 mx-auto">
+                    <form action="../../app/controller/authController.php" method="POST" enctype="multipart/form-data" class="lg:p-11 p-7 mx-auto">
                          <div class="mb-11">
                               <h1 class="text-white text-center font-manrope text-3xl font-bold leading-10 mb-2">Welcome
                                    Back</h1>
@@ -141,58 +141,3 @@ include("../../config/connection.php");
 </body>
 
 </html>
-<?php
-echo var_dump($_SERVER['REQUEST_METHOD']);
-var_dump($_POST);
-die();
-// if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signup'])) {
-//      $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-//      $name = $_POST['name'];
-//      $password = $_POST['password'];
-//      $confirm_password = $_POST['confirm_password'];
-//      $mobile_no = filter_var($_POST['mobile_no'], FILTER_SANITIZE_NUMBER_INT);
-//      $pic = $_FILES['pic'];
-
-//      // Validation
-//      if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-//           die('Invalid email format.');
-//      }
-//      if (strlen($password) < 6) {
-//           die('Password must be at least 6 characters long.');
-//      }
-//      if ($password !== $confirm_password) {
-//           die('Passwords do not match.');
-//      }
-
-//      // Handle file upload
-//      $pic_name = "";
-//      if ($pic && $pic['error'] === UPLOAD_ERR_OK) {
-//           $pic_name = time() . '_' . basename($pic['name']);
-//           $target_path = '../../public/profile/' . $pic_name; // Ensure trailing slash for directory
-//           move_uploaded_file($pic['tmp_name'], $target_path);
-//      }
-
-//      // Hash the password
-//      $hashed_password = password_hash($password, PASSWORD_BCRYPT);
-
-//      // Insert user into database using prepared statement
-//      $stmt = $conn->prepare("INSERT INTO users (name, email, password, status, role, pic, number) VALUES (?, ?, ?, ?, ?, ?, ?)");
-//      $active_status = 'active'; // Active by default
-//      $role = 'user'; // Default role
-
-//      if (!$stmt) {
-//           die("Prepared statement failed: " . $conn->error);
-//      }
-
-//      $stmt->bind_param('sssssss', $name, $email, $hashed_password, $active_status, $role, $pic_name, $mobile_no);
-
-//      if ($stmt->execute()) {
-//           echo "Sign-up successful!";
-//      } else {
-//           echo "Error: " . $stmt->error;
-//      }
-
-//      $stmt->close();
-// } else {
-//      echo 'Error: Invalid request method or missing signup parameter.';
-// }
