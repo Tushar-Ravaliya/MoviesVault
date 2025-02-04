@@ -19,7 +19,7 @@ include("../../config/connection.php");
                <img src="../../public/Images/logo-white.png" alt="pagedone logo" class="mx-auto lg:mb-11 mb-8 object-cover">
 
                <div class="rounded-2xl bg-gray-200/20 backdrop-blur-sm shadow-xl z-10">
-                    <form action="../../app/controller/authController.php" method="POST" enctype="multipart/form-data" class="lg:p-11 p-7 mx-auto">
+                    <form action="../../app/controller/signup.php" method="POST" enctype="multipart/form-data" class="lg:p-11 p-7 mx-auto">
                          <div class="mb-11">
                               <h1 class="text-white text-center font-manrope text-3xl font-bold leading-10 mb-2">Welcome
                                    Back</h1>
