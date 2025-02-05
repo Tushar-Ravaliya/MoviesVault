@@ -8,23 +8,23 @@
      <link href="../../output.css" rel="stylesheet">
 
      <style>
-          @keyframes appear {
-               form {
-                    opacity: 0;
-                    scale: 0.5;
-               }
-
-               to {
-                    opacity: 1;
-                    scale: 1;
-               }
+     @keyframes appear {
+          form {
+               opacity: 0;
+               scale: 0.5;
           }
 
-          .animates {
-               animation: appear linear;
-               animation-timeline: view();
-               animation-range: entry 0% cover 40%;
+          to {
+               opacity: 1;
+               scale: 1;
           }
+     }
+
+     .animates {
+          animation: appear linear;
+          animation-timeline: view();
+          animation-range: entry 0% cover 40%;
+     }
      </style>
 
 </head>
@@ -64,14 +64,16 @@
                </div>
                <div class="flex bg-white px-10 flex-wrap justify-center">
                     <div class="h-1/4 w-auto my-5 mx-10  rounded-lg animate ">
-                         <div class="h-1/4 w-auto bg-red-500 overflow-hidden">
-                              <img src="../../public/Images/Pushpa2.jpg" alt=""
-                                   class="h-96 min-h-80 hover:scale-110 hover:transition hover:ease-in-out hover:delay-150 transition">
-                         </div>
-                         <div class="font-medium">
-                              <span>Pushpa 2: The Rule</span><br>
-                              <span class="text-gray-400">Action / Thtiller</span>
-                         </div>
+                         <a href="../user/movieDetails.php">
+                              <div class="h-1/4 w-auto bg-red-500 overflow-hidden">
+                                   <img src="../../public/Images/Pushpa2.jpg" alt=""
+                                        class="h-96 min-h-80 hover:scale-110 hover:transition hover:ease-in-out hover:delay-150 transition">
+                              </div>
+                              <div class="font-medium">
+                                   <span>Pushpa 2: The Rule</span><br>
+                                   <span class="text-gray-400">Action / Thtiller</span>
+                              </div>
+                         </a>
                     </div>
                     <div class="h-1/4 w-auto my-5 mx-10  rounded-lg animate ">
                          <div class="h-1/4 w-auto bg-red-500 overflow-hidden">
@@ -113,9 +115,6 @@
                               <span class="text-gray-400">Action / Adventure / fantasy</span>
                          </div>
                     </div>
-
-
-
                </div>
 
           </div>
