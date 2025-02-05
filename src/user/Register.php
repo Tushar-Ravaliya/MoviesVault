@@ -116,18 +116,18 @@ include("../../config/connection.php");
                          callToast("Invalid email format.", "error");
                          return;
                     }
-                    // if (!mobile_no.match(/^\d{10}$/)) {
-                    //      callToast("Mobile number must be 10 digits.", "error");
-                    //      return;
-                    // }
-                    // if (password.length < 6) {
-                    //      callToast("Password must be at least 6 characters.", "error");
-                    //      return;
-                    // }
-                    // if (password !== confirm_password) {
-                    //      callToast("Passwords do not match.", "error");
-                    //      return;
-                    // }
+                    if (!mobile_no.match(/^\d{10}$/)) {
+                         callToast("Mobile number must be 10 digits.", "error");
+                         return;
+                    }
+                    if (password.length < 6) {
+                         callToast("Password must be at least 6 characters.", "error");
+                         return;
+                    }
+                    if (password !== confirm_password) {
+                         callToast("Passwords do not match.", "error");
+                         return;
+                    }
 
 
                     // If all validations pass
