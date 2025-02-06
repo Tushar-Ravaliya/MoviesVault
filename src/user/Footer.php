@@ -50,7 +50,7 @@
                               <div class="space-y-4">
                                    <h4 class="text-lg font-semibold text-black">Support</h4>
                                    <ul class="space-y-2">
-                                        <li><a href="#" class="hover:text-white transition-colors">Contact Us</a>
+                                        <li><a href="contactus.php" class="hover:text-white transition-colors">Contact Us</a>
                                         </li>
                                         <li><a href="#" class="hover:text-white transition-colors">FAQ</a></li>
                                         <li><a href="#" class="hover:text-white transition-colors">Privacy

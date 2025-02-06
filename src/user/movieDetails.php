@@ -40,7 +40,7 @@
                           </p>
 
                           <div class="flex flex-wrap gap-4 mb-8">
-                               <a href="Book_Tickets.php"
+                               <a href="Select_Tickets.php"
                                     class="bg-red-600 text-white px-8 py-3 rounded-lg hover:bg-red-700 transition-colors flex items-center gap-2">
                                     <i class="fa-solid fa-ticket"></i>
                                     Book Tickets

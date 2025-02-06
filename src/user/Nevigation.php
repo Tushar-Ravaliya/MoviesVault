@@ -20,7 +20,7 @@ include("../../config/connection.php");
                          <div class="flex justify-between items-center h-20">
                               <!-- Logo -->
                               <div class="flex items-center">
-                                   <a href="#" class="text-red-600 text-2xl font-bold font-serif">MoviesVault</a>
+                                   <a href="index.php" class="text-red-600 text-2xl font-bold font-serif">MoviesVault</a>
                               </div>
 
                               <!-- Desktop Navigation -->

@@ -1,12 +1,12 @@
           <?php
             include("Nevigation.php")
             ?>
-          <section id="contact" class="py-20 bg-neutral-900">
+          <section id="contact" class="py-20 bg-gray-100 m-10 rounded-md shadow-md">
               <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                   <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                       <!-- Contact Information -->
                       <div class="space-y-8 animate__animated animate__fadeIn">
-                          <h2 class="text-3xl font-bold text-white mb-8">Get in Touch</h2>
+                          <h2 class="text-3xl font-bold text-black mb-8">Get in Touch</h2>
 
                           <div class="space-y-6">
                               <div class="flex items-start">
@@ -18,7 +18,7 @@
                                       </div>
                                   </div>
                                   <div class="ml-4">
-                                      <h3 class="text-xl font-semibold text-white">Email Us</h3>
+                                      <h3 class="text-xl font-semibold text-black">Email Us</h3>
                                       <p class="text-gray-400 mt-2">support@movietix.com</p>
                                   </div>
                               </div>
@@ -32,7 +32,7 @@
                                       </div>
                                   </div>
                                   <div class="ml-4">
-                                      <h3 class="text-xl font-semibold text-white">Call Us</h3>
+                                      <h3 class="text-xl font-semibold text-black">Call Us</h3>
                                       <p class="text-gray-400 mt-2">1-800-MOVIETIX</p>
                                   </div>
                               </div>
@@ -47,7 +47,7 @@
                                       </div>
                                   </div>
                                   <div class="ml-4">
-                                      <h3 class="text-xl font-semibold text-white">Location</h3>
+                                      <h3 class="text-xl font-semibold text-black">Location</h3>
                                       <p class="text-gray-400 mt-2">123 Movie Street, Cinema City, MC 12345</p>
                                   </div>
                               </div>
@@ -55,23 +55,23 @@
                       </div>
 
                       <!-- Contact Form -->
-                      <div class="bg-neutral-800 p-8 rounded-lg shadow-lg animate__animated animate__fadeIn animate__delay-1s">
+                      <div class=" p-8 rounded-lg shadow-lg animate__animated animate__fadeIn animate__delay-1s">
                           <form id="contactForm" class="space-y-6">
                               <div>
-                                  <label for="name" class="block text-sm font-medium text-gray-300">Name</label>
-                                  <input type="text" id="name" name="name" class="mt-1 block w-full px-4 py-3 bg-neutral-700 border border-neutral-600 rounded-md text-white focus:ring-[#FF4B2B] focus:border-[#FF4B2B]">
+                                  <label for="name" class="block text-sm font-medium text-black">Name</label>
+                                  <input type="text" id="name" name="name" class="mt-1 block w-full px-4 py-3 bg-gray-200 border border-gray-300 rounded-md text-white focus:ring-[#FF4B2B] focus:border-[#FF4B2B]">
                                   <span></span>
                               </div>
 
                               <div>
-                                  <label for="email" class="block text-sm font-medium text-gray-300">Email</label>
-                                  <input type="email" id="email" name="email" class="mt-1 block w-full px-4 py-3 bg-neutral-700 border border-neutral-600 rounded-md text-white focus:ring-[#FF4B2B] focus:border-[#FF4B2B]">
+                                  <label for="email" class="block text-sm font-medium text-black">Email</label>
+                                  <input type="email" id="email" name="email" class="mt-1 block w-full px-4 py-3 bg-gray-200 border border-gray-300 rounded-md text-white focus:ring-[#FF4B2B] focus:border-[#FF4B2B]">
                                   <span></span>
                               </div>
 
                               <div>
-                                  <label for="subject" class="block text-sm font-medium text-gray-300">Subject</label>
-                                  <select id="subject" name="subject" class="mt-1 block w-full px-4 py-3 bg-neutral-700 border border-neutral-600 rounded-md text-white focus:ring-[#FF4B2B] focus:border-[#FF4B2B]">
+                                  <label for="subject" class="block text-sm font-medium text-black">Subject</label>
+                                  <select id="subject" name="subject" class="mt-1 block w-full px-4 py-3 bg-gray-200 border border-gray-300 rounded-md text-black focus:ring-[#FF4B2B] focus:border-[#FF4B2B]">
                                       <option value="">Select a subject</option>
                                       <option value="booking">Booking Issue</option>
                                       <option value="payment">Payment Issue</option>
@@ -82,12 +82,12 @@
                               </div>
 
                               <div>
-                                  <label for="message" class="block text-sm font-medium text-gray-300">Message</label>
-                                  <textarea id="message" name="message" rows="4" class="mt-1 block w-full px-4 py-3 bg-neutral-700 border border-neutral-600 rounded-md text-white focus:ring-[#FF4B2B] focus:border-[#FF4B2B]"></textarea>
+                                  <label for="message" class="block text-sm font-medium text-black">Message</label>
+                                  <textarea id="message" name="message" rows="4" class="mt-1 block w-full px-4 py-3 bg-gray-200 border border-gray-300 rounded-md text-white focus:ring-[#FF4B2B] focus:border-[#FF4B2B]"></textarea>
                                   <span></span>
                               </div>
 
-                              <button type="submit" class="w-full bg-[#FF4B2B] text-white py-3 px-6 rounded-md hover:bg-[#ff3b16] transition-colors">
+                              <button type="submit" class="w-full border border-red-500 text-red-500 hover:text-white py-3 px-6 rounded-md hover:bg-[#ff3b16] transition-colors">
                                   Send Message
                               </button>
                           </form>
