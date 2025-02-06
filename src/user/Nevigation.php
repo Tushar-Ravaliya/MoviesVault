@@ -25,19 +25,36 @@ include("../../config/connection.php");
 
                               <!-- Desktop Navigation -->
                               <div class="hidden md:flex items-center space-x-8">
-                                   <a href="index.php"
-                                        class="text-black hover:text-red-600 transition-colors">Home</a>
-                                   <a href="Coming_soon.php"
-                                        class="text-black hover:text-red-600 transition-colors">Coming Soon</a>
-                                   <a href="#theaters"
-                                        class="text-black hover:text-red-600 transition-colors">Theaters</a>
+                                   <a href="index.php" class="text-black hover:text-red-600 transition-colors">Home</a>
                                    <a href="Movies.php"
                                         class="text-black hover:text-red-600 transition-colors">Movies</a>
+                                   <a href="Coming_soon.php"
+                                        class="text-black hover:text-red-600 transition-colors">Coming Soon</a>
+
 
                               </div>
 
                               <!-- CTA Buttons -->
+
                               <div class="hidden md:flex items-center space-x-4">
+                                   <?php
+                              if (isset($_COOKIE['name'])) {
+                              ?>
+                                   <a href="profile.php"
+                                        class="bg-transparent border border-red-600 text-red-600 px-4 py-2 rounded-lg hover:bg-red-600 hover:text-white transition-colors cursor-pointer"
+                                        type="button" value=""><?php echo $_COOKIE['name']; ?></a>
+                                   <div class="w-20">
+                                        <img src="../../public/profile/<?php echo $_COOKIE['pic']?>" alt="img"
+                                             class="rounded-full">
+                                   </div>
+                                   
+                                   <!-- --------------------------------------------------------------------- -->
+
+
+                                   <?php
+                              }
+                              else{
+                                   ?>
                                    <a href="login.php"
                                         class="bg-transparent border border-red-600 text-red-600 px-4 py-2 rounded-lg hover:bg-red-600 hover:text-white transition-colors cursor-pointer"
                                         type="button" value="">Sign In</a>
@@ -47,6 +64,14 @@ include("../../config/connection.php");
                                         class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
                                         Book Now
                                    </button>
+
+
+
+
+                                   <?php
+
+                              }
+                              ?>
                               </div>
 
                               <!-- Mobile Menu Button -->
@@ -67,13 +92,11 @@ include("../../config/connection.php");
                               <div class="px-2 pt-2 pb-3 space-y-1">
                                    <a href="index.php"
                                         class="block text-gray-300 hover:text-red-600 transition-colors py-2">Home</a>
+                                   <a href="Movies.php"
+                                        class="block text-gray-300 hover:text-red-600 transition-colors py-2">Movies</a>
                                    <a href="Coming_soon.php"
                                         class="block text-gray-300 hover:text-red-600 transition-colors py-2">Coming
                                         Soon</a>
-                                   <a href="#theaters"
-                                        class="block text-gray-300 hover:text-red-600 transition-colors py-2">Theaters</a>
-                                   <a href="Movies.php"
-                                        class="block text-gray-300 hover:text-red-600 transition-colors py-2">Movies</a>
                                    <div class="flex flex-col space-y-2 pt-2">
                                         <button
                                              class="bg-transparent border border-red-600 text-red-600 px-4 py-2 rounded-lg hover:bg-red-600 hover:text-white transition-colors w-full">
@@ -92,5 +115,6 @@ include("../../config/connection.php");
      </div>
      <!-- end Navigation -->
 </body>
+<script src="../../public/js/preline.js"></script>
 
 </html>
