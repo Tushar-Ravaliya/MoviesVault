@@ -61,8 +61,8 @@ include ("Nevigation.php");
                               </div>
                          </div>
                          <div class="flex justify-end space-x-3 pt-6">
-                              <button type="button"
-                                   class="px-4 py-2 border border-neutral-400 rounded text-gray-700 hover:bg-gray-50">Cancel</button>
+                              <a href="../../app/controller/signout.php" type="button"
+                                   class="px-4 py-2 border border-red-500 rounded text-red-500 hover:bg-red-500 hover:text-white">Logout</a>
                               <button type="submit"
                                    class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Save
                                    Changes</button>
