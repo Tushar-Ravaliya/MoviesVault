@@ -38,40 +38,39 @@ include("../../config/connection.php");
 
                               <div class="hidden md:flex items-center space-x-4">
                                    <?php
-                              if (isset($_COOKIE['name'])) {
-                              ?>
-                                   <a href="profile.php"
-                                        class="bg-transparent border border-red-600 text-red-600 px-4 py-2 rounded-lg hover:bg-red-600 hover:text-white transition-colors cursor-pointer"
-                                        type="button" value=""><?php echo $_COOKIE['name']; ?></a>
-                                   <div class="w-20">
-                                        <img src="../../public/profile/<?php echo $_COOKIE['pic']?>" alt="img"
-                                             class="rounded-full">
-                                   </div>
-                                   
-                                   <!-- --------------------------------------------------------------------- -->
-
-
-                                   <?php
-                              }
-                              else{
+                                   if (isset($_COOKIE['name'])) {
                                    ?>
-                                   <a href="login.php"
-                                        class="bg-transparent border border-red-600 text-red-600 px-4 py-2 rounded-lg hover:bg-red-600 hover:text-white transition-colors cursor-pointer"
-                                        type="button" value="">Sign In</a>
+                                        <a href="profile.php"
+                                             class="bg-transparent border border-red-600 text-red-600 px-4 py-2 rounded-lg hover:bg-red-600 hover:text-white transition-colors cursor-pointer"
+                                             type="button" value=""><?php echo $_COOKIE['name']; ?></a>
+                                        <div class="w-20">
+                                             <img src="../../public/profile/<?php echo $_COOKIE['pic'] ?>" alt="img"
+                                                  class="rounded-full">
+                                        </div>
+
+                                        <!-- --------------------------------------------------------------------- -->
 
 
-                                   <button
-                                        class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
-                                        Book Now
-                                   </button>
+                                   <?php
+                                   } else {
+                                   ?>
+                                        <a href="login.php"
+                                             class="bg-transparent border border-red-600 text-red-600 px-4 py-2 rounded-lg hover:bg-red-600 hover:text-white transition-colors cursor-pointer"
+                                             type="button" value="">Sign In</a>
+
+
+                                        <button
+                                             class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
+                                             Book Now
+                                        </button>
 
 
 
 
                                    <?php
 
-                              }
-                              ?>
+                                   }
+                                   ?>
                               </div>
 
                               <!-- Mobile Menu Button -->
