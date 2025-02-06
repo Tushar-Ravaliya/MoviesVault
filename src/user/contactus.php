@@ -59,28 +59,32 @@
                           <form id="contactForm" class="space-y-6">
                               <div>
                                   <label for="name" class="block text-sm font-medium text-gray-300">Name</label>
-                                  <input type="text" id="name" name="name" required class="mt-1 block w-full px-4 py-3 bg-neutral-700 border border-neutral-600 rounded-md text-white focus:ring-[#FF4B2B] focus:border-[#FF4B2B]">
+                                  <input type="text" id="name" name="name" class="mt-1 block w-full px-4 py-3 bg-neutral-700 border border-neutral-600 rounded-md text-white focus:ring-[#FF4B2B] focus:border-[#FF4B2B]">
+                                  <span></span>
                               </div>
 
                               <div>
                                   <label for="email" class="block text-sm font-medium text-gray-300">Email</label>
-                                  <input type="email" id="email" name="email" required class="mt-1 block w-full px-4 py-3 bg-neutral-700 border border-neutral-600 rounded-md text-white focus:ring-[#FF4B2B] focus:border-[#FF4B2B]">
+                                  <input type="email" id="email" name="email" class="mt-1 block w-full px-4 py-3 bg-neutral-700 border border-neutral-600 rounded-md text-white focus:ring-[#FF4B2B] focus:border-[#FF4B2B]">
+                                  <span></span>
                               </div>
 
                               <div>
                                   <label for="subject" class="block text-sm font-medium text-gray-300">Subject</label>
-                                  <select id="subject" name="subject" required class="mt-1 block w-full px-4 py-3 bg-neutral-700 border border-neutral-600 rounded-md text-white focus:ring-[#FF4B2B] focus:border-[#FF4B2B]">
+                                  <select id="subject" name="subject" class="mt-1 block w-full px-4 py-3 bg-neutral-700 border border-neutral-600 rounded-md text-white focus:ring-[#FF4B2B] focus:border-[#FF4B2B]">
                                       <option value="">Select a subject</option>
                                       <option value="booking">Booking Issue</option>
                                       <option value="payment">Payment Issue</option>
                                       <option value="technical">Technical Support</option>
                                       <option value="other">Other</option>
                                   </select>
+                                  <span></span>
                               </div>
 
                               <div>
                                   <label for="message" class="block text-sm font-medium text-gray-300">Message</label>
-                                  <textarea id="message" name="message" rows="4" required class="mt-1 block w-full px-4 py-3 bg-neutral-700 border border-neutral-600 rounded-md text-white focus:ring-[#FF4B2B] focus:border-[#FF4B2B]"></textarea>
+                                  <textarea id="message" name="message" rows="4" class="mt-1 block w-full px-4 py-3 bg-neutral-700 border border-neutral-600 rounded-md text-white focus:ring-[#FF4B2B] focus:border-[#FF4B2B]"></textarea>
+                                  <span></span>
                               </div>
 
                               <button type="submit" class="w-full bg-[#FF4B2B] text-white py-3 px-6 rounded-md hover:bg-[#ff3b16] transition-colors">
@@ -95,33 +99,52 @@
                   document.getElementById("contactForm").addEventListener("submit", function(event) {
                       let isValid = true;
 
+                      function showError(input, message) {
+                          const span = input.nextElementSibling;
+                          span.textContent = message;
+                          span.style.color = "#FF4B2B";
+                      }
+
+                      function clearError(input) {
+                          const span = input.nextElementSibling;
+                          span.textContent = "";
+                      }
+
                       // Name Validation
                       const name = document.getElementById("name");
                       if (name.value.trim() === "") {
-                          alert("Name is required");
+                          showError(name, "Name is required");
                           isValid = false;
+                      } else {
+                          clearError(name);
                       }
 
                       // Email Validation
                       const email = document.getElementById("email");
                       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                       if (!emailPattern.test(email.value)) {
-                          alert("Please enter a valid email address");
+                          showError(email, "Please enter a valid email address");
                           isValid = false;
+                      } else {
+                          clearError(email);
                       }
 
                       // Subject Validation
                       const subject = document.getElementById("subject");
                       if (subject.value === "") {
-                          alert("Please select a subject");
+                          showError(subject, "Please select a subject");
                           isValid = false;
+                      } else {
+                          clearError(subject);
                       }
 
                       // Message Validation
                       const message = document.getElementById("message");
                       if (message.value.trim() === "") {
-                          alert("Message cannot be empty");
+                          showError(message, "Message cannot be empty");
                           isValid = false;
+                      } else {
+                          clearError(message);
                       }
 
                       if (!isValid) {
