@@ -115,7 +115,7 @@ bg-white border-e border-gray-200 " role="dialog" tabindex="-1" aria-label="Side
                                             add genre
                                         </a>
                                     </li>
-                                    <!-- <li>
+                                    <li>
                                         <a class="flex items-center gap-x-3 py-2 px-2.5 text-sm text-gray-700 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100    " href="#">
                                             Link 2
                                         </a>
@@ -124,7 +124,7 @@ bg-white border-e border-gray-200 " role="dialog" tabindex="-1" aria-label="Side
                                         <a class="flex items-center gap-x-3 py-2 px-2.5 text-sm text-gray-700 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100    " href="#">
                                             Link 3
                                         </a>
-                                    </li> -->
+                                    </li>
                                 </ul>
                             </div>
                         </li>
@@ -160,11 +160,11 @@ bg-white border-e border-gray-200 " role="dialog" tabindex="-1" aria-label="Side
                                             Theater
                                         </a>
                                     </li>
-                                    <!-- <li>
+                                    <li>
                                         <a class="flex items-center gap-x-3 py-2 px-2.5 text-sm text-gray-700 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100    " href="#">
                                             Link 3
                                         </a>
-                                    </li> -->
+                                    </li>
                                 </ul>
                             </div>
                         </li>
@@ -199,11 +199,11 @@ bg-white border-e border-gray-200 " role="dialog" tabindex="-1" aria-label="Side
                                             Theater
                                         </a>
                                     </li>
-                                    <!-- <li>
+                                    <li>
                                         <a class="flex items-center gap-x-3 py-2 px-2.5 text-sm text-gray-700 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100    " href="#">
                                             Link 3
                                         </a>
-                                    </li> -->
+                                    </li>
                                 </ul>
                             </div>
                         </li>
@@ -245,7 +245,7 @@ bg-white border-e border-gray-200 " role="dialog" tabindex="-1" aria-label="Side
                                 </ul>
                             </div>
                         </li>
-                        <!-- <li class="hs-accordion" id="theater-accordion">
+                        <li class="hs-accordion" id="theater-accordion">
                             <button type="button" class="hs-accordion-toggle w-full text-start flex items-center gap-x-3 py-2 px-2.5 text-sm text-gray-700 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100    " aria-expanded="true" aria-controls="theater-accordion-sub-1-collapse-1">
                                 <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
@@ -282,7 +282,7 @@ bg-white border-e border-gray-200 " role="dialog" tabindex="-1" aria-label="Side
 
                                 </ul>
                             </div>
-                        </li> -->
+                        </li>
 
                     </ul>
                 </div>
@@ -294,7 +294,7 @@ bg-white border-e border-gray-200 " role="dialog" tabindex="-1" aria-label="Side
                 <!-- Account Dropdown -->
                 <div class="hs-dropdown [--strategy:absolute] [--auto-close:inside] relative w-full inline-flex">
                     <button id="hs-sidebar-footer-example-with-dropdown" type="button" class="w-full inline-flex shrink-0 items-center gap-x-2 p-2 text-start text-sm text-gray-800 rounded-md hover:bg-gray-100 focus:outline-none focus:bg-gray-100" aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
-                        <img class="shrink-0 size-5 rounded-full" src="../../public/profile/profile-pic.png" alt="Avatar">
+                        <img class="shrink-0 size-5 rounded-full" src="https://avatar.iran.liara.run/public" alt="Avatar">
                         <?php echo $_COOKIE['name']; ?>
                         <svg class="shrink-0 size-3.5 ms-auto" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="m7 15 5 5 5-5" />
@@ -308,7 +308,12 @@ bg-white border-e border-gray-200 " role="dialog" tabindex="-1" aria-label="Side
                             <a class="flex items-center gap-x-3 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-100" href="profile.php">
                                 My account
                             </a>
-
+                            <a class="flex items-center gap-x-3 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-100" href="#">
+                                Settings
+                            </a>
+                            <a class="flex items-center gap-x-3 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-100" href="#">
+                                Billing
+                            </a>
                             <a class="flex items-center gap-x-3 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-100" href="../../app/controller/signout.php">
                                 Sign out
                             </a>

@@ -6,7 +6,7 @@ ob_start();
     <!-- Header Actions -->
     <div class="flex justify-between items-center">
         <h2 class="text-xl font-semibold text-neutral-900">Showtime Management</h2>
-        <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center">
+        <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center" onclick="document.getElementById('addScreenModal').classList.remove('hidden')">
             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
             </svg>
@@ -156,6 +156,135 @@ ob_start();
         </div>
     </div>
 </div>
+<div id="addScreenModal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50">
+    <div class="relative top-20 mx-auto p-5 border w-96 lg:w-1/2 shadow-lg rounded-lg bg-white">
+        <div class="flex justify-between items-center mb-4">
+            <h3 class="text-lg font-semibold text-gray-900">Add New Screen</h3>
+            <button onclick="document.getElementById('addScreenModal').classList.add('hidden')" class="text-gray-400 hover:text-gray-500">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        <form class="space-y-4">
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Select Movie</label>
+                <select name="movie" class="w-full border border-gray-300 rounded-lg px-3 py-2">
+                    <option value="">Select type</option>
+                    <option value="premium">Interstellar</option>
+                    <option value="regular">Inception</option>
+                    <option value="vip">The Dark Knight</option>
+                </select>
+            </div>
+            <div class="flex">
+                <div class="w-full">
+                    <label class=" block text-sm font-medium text-gray-700 mb-1">Show Time</label>
+                    <input name="show_time" type="date" class="w-full h-11 border border-gray-300 rounded-lg px-3 py-2 ">
+                </div>
+                <div class="w-full ml-5">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Select Theater</label>
+                    <select name="theater" class="w-full h-11 border border-gray-300 rounded-lg px-3 py-2">
+                        <option value="">Select type</option>
+                        <option value="premium">Premium Theater</option>
+                        <option value="regular">Regular Theater</option>
+                        <option value="vip">VIP Theater</option>
+                    </select>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="w-full ">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Select screens</label>
+                    <select name="screen" class="w-full h-11 border border-gray-300 rounded-lg px-3 py-2">
+                        <option value="">Select type</option>
+                        <option value="screen 1">screen 1</option>
+                        <option value="screen 1">screen 2</option>
+                        <option value="screen 1">screen 3</option>
+                    </select>
+                </div>
+                <div class="w-full ml-5">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Price</label>
+                    <input name="price" type="number" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="Enter total seats">
+                </div>
+            </div>
+
+            <div class="flex justify-end space-x-3 pt-4">
+                <button type="button" onclick="document.getElementById('addScreenModal').classList.add('hidden')" class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200">Cancel</button>
+                <button type="submit" class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700">Add Screen</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="../../node_modules/toastify-js/src/toastify.js"></script>
+<script>
+    function tostifyCustomClose(el) {
+        const parent = el.closest('.toastify');
+        const close = parent.querySelector('.toast-close');
+        close.click();
+    }
+
+    window.addEventListener('load', () => {
+        const callToast = (message, type = "success") => {
+            const toastMarkup = `
+               <div class="flex p-4">
+                    <p class="text-sm ${type === "success" ? "text-green-700" : "text-red-700"}">${message}</p>
+                    <div class="ms-auto">
+                         <button onclick="tostifyCustomClose(this)" type="button" class="inline-flex shrink-0 justify-center items-center size-5 rounded-lg text-gray-800 opacity-50 hover:opacity-100 focus:outline-none focus:opacity-100 dark:text-white" aria-label="Close">
+                              <span class="sr-only">Close</span>
+                              <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+                         </button>
+                    </div>
+               </div>`;
+
+            Toastify({
+                text: toastMarkup,
+                className: "hs-toastify-on:opacity-100 opacity-0 fixed -top-[150px] right-[20px] z-[90] transition-all duration-300 w-[320px] bg-white text-sm border rounded-xl shadow-lg [&>.toast-close]:hidden",
+                duration: 3000,
+                close: true,
+                escapeMarkup: false
+            }).showToast();
+        };
+
+        const form = document.querySelector("form");
+        form.addEventListener("submit", (event) => {
+            event.preventDefault(); // Prevent form submission
+
+
+            const movie = form.movie.value.trim();
+            const show_time = form.show_time.value.trim();
+            const theater = form.theater.value.trim()
+            const screen = form.screen.value.trim()
+            const price = form.price.value.trim()
+
+            if (!movie) {
+                callToast("Please select a movie.", "error");
+                return;
+            }
+            if (!show_time) {
+                callToast("Please select a show time.", "error");
+                return;
+            }
+            if (!theater) {
+                callToast("Please select a theater.", "error");
+                return;
+            }
+            if (!screen) {
+                callToast("Please select a screen.", "error");
+                return;
+            }
+            if (!price) {
+                callToast("price is required.", "error");
+                return;
+            }
+
+
+            // If all validations pass
+            callToast("Form validated successfully. Submitting...");
+            setTimeout(() => {
+                form.submit(); // Call this after any animations
+            }, 100);
+        });
+    });
+</script>
 <?php
 $content = ob_get_clean();
 include 'admin_layout.php';
