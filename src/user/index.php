@@ -8,23 +8,23 @@
      <link href="../../output.css" rel="stylesheet">
 
      <style>
-     @keyframes appear {
-          form {
-               opacity: 0;
-               scale: 0.5;
+          @keyframes appear {
+               form {
+                    opacity: 0;
+                    scale: 0.5;
+               }
+
+               to {
+                    opacity: 1;
+                    scale: 1;
+               }
           }
 
-          to {
-               opacity: 1;
-               scale: 1;
+          .animates {
+               animation: appear linear;
+               animation-timeline: view();
+               animation-range: entry 0% cover 40%;
           }
-     }
-
-     .animates {
-          animation: appear linear;
-          animation-timeline: view();
-          animation-range: entry 0% cover 40%;
-     }
      </style>
 
 </head>
@@ -47,11 +47,7 @@
                          </div>
 
                          <div class="text-white text-center mt-10 text-lg">
-                              <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium cupiditate
-                                   animi
-                                   dolorem quas, ipsa repellendus obcaecati ab labore assumenda, rerum facilis vitae
-                                   fugit
-                                   commodi voluptatem porro recusandae quia eos ut.</span>
+                              <span>A movie, also known as a film or motion picture, is a visual art form that conveys stories, ideas, and emotions through moving images. Movies are made up of a series of still images that are projected onto a screen in rapid succession. </span>
                          </div>
                     </div>
                </div>

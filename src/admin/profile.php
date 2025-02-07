@@ -25,12 +25,12 @@ ob_start();
         <div class="bg-white rounded border border-neutral-200/20">
             <div class="p-4 space-y-6">
                 <form class="space-y-6" method="post" id="profileForm">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700">First Name</label>
-                            <input type="text" name="name" class="mt-1 block w-full border border-neutral-400 rounded py-2 px-3 text-gray-700">
-                        </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">First Name</label>
+                        <input type="text" name="name" class="mt-1 block w-full border border-neutral-400 rounded py-2 px-3 text-gray-700">
                     </div>
+
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Email</label>
                         <input type="email" name="email" class="mt-1 block w-full border border-neutral-400 rounded py-2 px-3 text-gray-700">

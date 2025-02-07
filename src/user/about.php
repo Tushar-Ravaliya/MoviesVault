@@ -9,9 +9,9 @@
                             <h2 class="text-gray-900 text-4xl font-bold font-manrope leading-normal lg:text-start text-center">Welcome to MoviesVault, your ultimate destination for hassle-free movie ticket booking!
 
                             </h2>
-                            <p class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">Through collaborationperse perspectives and strengths are leveraged to create inclusive environments where everyone has the opportunity to thrive. This approach not only fosters personal growth and achievement but also strengthens the fabric of society.</p>
+                            <p class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">At MoviesVault, we are passionate about bringing the magic of cinema closer to you. Whether you’re a die-hard movie buff or just looking for a fun night out, our platform makes booking tickets simple, fast, and convenient.</p>
                         </div>
-                        <a href="index.php" class="sm:w-fit w-full px-3.5 py-2 bg-indigo-600 hover:bg-indigo-800 transition-all duration-700 ease-in-out rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] justify-center items-center flex">
+                        <a href="index.php" class="sm:w-fit w-full px-3.5 py-2 bg-red-600 hover:bg-red-800 transition-all duration-700 ease-in-out rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] justify-center items-center flex">
                             <span class="px-1.5 text-white text-sm font-medium leading-6">Get Started</span>
                         </a>
                     </div>

@@ -1,7 +1,7 @@
 <?php
 $page_title = "Admin Dashboard";
 ob_start();
-
+// include '../../app/controller/auth.php';
 require_once '../../config/connection.php';
 require_once '../../app/model/Auth.php';
 
@@ -92,7 +92,7 @@ $users = $user->readAll();
                     </th>
                     <th scope="col" class="py-1 group text-start font-normal focus:outline-none">
                         <div class="py-1 px-2.5 inline-flex items-center border border-transparent text-sm text-gray-500 rounded-md hover:border-gray-200 dark:text-neutral-500 dark:hover:border-neutral-700">
-                            Name
+                            email
                             <svg class="size-3.5 ms-1 -me-0.5 text-gray-400 dark:text-neutral-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path class="hs-datatable-ordering-desc:text-blue-600 dark:hs-datatable-ordering-desc:text-blue-500" d="m7 15 5 5 5-5"></path>
                                 <path class="hs-datatable-ordering-asc:text-blue-600 dark:hs-datatable-ordering-asc:text-blue-500" d="m7 9 5-5 5 5"></path>
@@ -102,7 +102,7 @@ $users = $user->readAll();
 
                     <th scope="col" class="py-1 group text-start font-normal focus:outline-none">
                         <div class="py-1 px-2.5 inline-flex items-center border border-transparent text-sm text-gray-500 rounded-md hover:border-gray-200 dark:text-neutral-500 dark:hover:border-neutral-700">
-                            Name
+                            date
                             <svg class="size-3.5 ms-1 -me-0.5 text-gray-400 dark:text-neutral-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path class="hs-datatable-ordering-desc:text-blue-600 dark:hs-datatable-ordering-desc:text-blue-500" d="m7 15 5 5 5-5"></path>
                                 <path class="hs-datatable-ordering-asc:text-blue-600 dark:hs-datatable-ordering-asc:text-blue-500" d="m7 9 5-5 5 5"></path>
@@ -110,9 +110,10 @@ $users = $user->readAll();
                         </div>
                     </th>
 
+
                     <th scope="col" class="py-1 group text-start font-normal focus:outline-none">
                         <div class="py-1 px-2.5 inline-flex items-center border border-transparent text-sm text-gray-500 rounded-md hover:border-gray-200 dark:text-neutral-500 dark:hover:border-neutral-700">
-                            Name
+                            status
                             <svg class="size-3.5 ms-1 -me-0.5 text-gray-400 dark:text-neutral-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path class="hs-datatable-ordering-desc:text-blue-600 dark:hs-datatable-ordering-desc:text-blue-500" d="m7 15 5 5 5-5"></path>
                                 <path class="hs-datatable-ordering-asc:text-blue-600 dark:hs-datatable-ordering-asc:text-blue-500" d="m7 9 5-5 5 5"></path>
@@ -121,7 +122,7 @@ $users = $user->readAll();
                     </th>
                     <th scope="col" class="py-1 group text-start font-normal focus:outline-none">
                         <div class="py-1 px-2.5 inline-flex items-center border border-transparent text-sm text-gray-500 rounded-md hover:border-gray-200 dark:text-neutral-500 dark:hover:border-neutral-700">
-                            Name
+                            time
                             <svg class="size-3.5 ms-1 -me-0.5 text-gray-400 dark:text-neutral-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path class="hs-datatable-ordering-desc:text-blue-600 dark:hs-datatable-ordering-desc:text-blue-500" d="m7 15 5 5 5-5"></path>
                                 <path class="hs-datatable-ordering-asc:text-blue-600 dark:hs-datatable-ordering-asc:text-blue-500" d="m7 9 5-5 5 5"></path>
@@ -130,16 +131,7 @@ $users = $user->readAll();
                     </th>
                     <th scope="col" class="py-1 group text-start font-normal focus:outline-none">
                         <div class="py-1 px-2.5 inline-flex items-center border border-transparent text-sm text-gray-500 rounded-md hover:border-gray-200 dark:text-neutral-500 dark:hover:border-neutral-700">
-                            Name
-                            <svg class="size-3.5 ms-1 -me-0.5 text-gray-400 dark:text-neutral-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path class="hs-datatable-ordering-desc:text-blue-600 dark:hs-datatable-ordering-desc:text-blue-500" d="m7 15 5 5 5-5"></path>
-                                <path class="hs-datatable-ordering-asc:text-blue-600 dark:hs-datatable-ordering-asc:text-blue-500" d="m7 9 5-5 5 5"></path>
-                            </svg>
-                        </div>
-                    </th>
-                    <th scope="col" class="py-1 group text-start font-normal focus:outline-none">
-                        <div class="py-1 px-2.5 inline-flex items-center border border-transparent text-sm text-gray-500 rounded-md hover:border-gray-200 dark:text-neutral-500 dark:hover:border-neutral-700">
-                            Name
+                            Action
                             <svg class="size-3.5 ms-1 -me-0.5 text-gray-400 dark:text-neutral-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path class="hs-datatable-ordering-desc:text-blue-600 dark:hs-datatable-ordering-desc:text-blue-500" d="m7 15 5 5 5-5"></path>
                                 <path class="hs-datatable-ordering-asc:text-blue-600 dark:hs-datatable-ordering-asc:text-blue-500" d="m7 9 5-5 5 5"></path>
@@ -154,28 +146,54 @@ $users = $user->readAll();
                 <?php foreach ($users as $row) { ?>
 
                     <tr>
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <div class="flex items-center">
-                                <img class="h-10 w-10 rounded-full" src="../../public/profile/profile-pic.png" alt="">
-                                <div class="ml-4">
-                                    <div class="text-sm font-medium text-gray-900"><?php echo htmlspecialchars($row['name']); ?></div>
-                                    <div class="text-xs text-gray-500">Member since Jan 2023</div>
+                        <td class="size-px whitespace-nowrap">
+                            <div class="ps-6 lg:ps-3 xl:ps-0 pe-6 py-3">
+                                <div class="flex items-center gap-x-3">
+                                    <img class="inline-block size-[38px] rounded-full object-cover object-center" src="../../public/profile/<?php echo $row['pic']; ?>" alt="Avatar">
+                                    <div class="grow">
+                                        <span class="block text-sm font-semibold text-gray-800 dark:text-neutral-200"><?php echo $row['name']; ?></span>
+                                        <span class="block text-sm text-gray-500 dark:text-neutral-500"><?php echo $row['email']; ?></span>
+                                    </div>
                                 </div>
                             </div>
                         </td>
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <div class="text-sm text-gray-900"><?php echo $row['email']; ?></div>
-                            <div class="text-sm text-gray-500"><?php echo $row['number']; ?></div>
+                        <td class="h-px w-72 whitespace-nowrap">
+                            <div class="px-6 py-3">
+                                <span class="block text-sm font-semibold text-gray-800 dark:text-neutral-200">Designer</span>
+                                <span class="block text-sm text-gray-500 dark:text-neutral-500">IT department</span>
+                            </div>
                         </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">24</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">$648.00</td>
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <span class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Premium</span>
+                        <td class="size-px whitespace-nowrap">
+                            <div class="px-6 py-3">
+                                <span class="py-1 px-1.5 inline-flex items-center gap-x-1 text-xs font-medium bg-teal-100 text-teal-800 rounded-full dark:bg-teal-500/10 dark:text-teal-500">
+                                    <svg class="size-2.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                                    </svg>
+                                    Active
+                                </span>
+                            </div>
                         </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2 hours ago</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                            <button class="text-blue-600 hover:text-blue-900 mr-3">View Profile</button>
-                            <button class="text-blue-600 hover:text-blue-900">Support History</button>
+                        <td class="size-px whitespace-nowrap">
+                            <div class="px-6 py-3">
+                                <div class="flex items-center gap-x-3">
+                                    <span class="text-xs text-gray-500 dark:text-neutral-500">5/5</span>
+                                    <div class="flex w-full h-1.5 bg-gray-200 rounded-full overflow-hidden dark:bg-neutral-700">
+                                        <div class="flex flex-col justify-center overflow-hidden bg-gray-800 dark:bg-neutral-200" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="size-px whitespace-nowrap">
+                            <div class="px-6 py-3">
+                                <span class="text-sm text-gray-500 dark:text-neutral-500">18 Dec, 15:20</span>
+                            </div>
+                        </td>
+                        <td class="size-px whitespace-nowrap">
+                            <div class="px-6 py-1.5">
+                                <a class="inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium dark:text-blue-500" href="#">
+                                    Edit
+                                </a>
+                            </div>
                         </td>
                     </tr>
                 <?php } ?>
@@ -211,39 +229,22 @@ $users = $user->readAll();
         </div>
         <form class="space-y-4">
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Screen Name</label>
-                <input type="text" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="Enter screen name">
+                <label class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                <input type="text" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="Enter name">
             </div>
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Screen Type</label>
-                <select class="w-full border border-gray-300 rounded-lg px-3 py-2">
-                    <option value="">Select type</option>
-                    <option value="premium">Premium Theater</option>
-                    <option value="regular">Regular Theater</option>
-                    <option value="vip">VIP Theater</option>
-                </select>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                <input type="text" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="Enter Email">
             </div>
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Seating Capacity</label>
-                <input type="number" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="Enter total seats">
+                <label class="block text-sm font-medium text-gray-700 mb-1">Number</label>
+                <input type="number" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="Enter number">
             </div>
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Layout Type</label>
-                <select class="w-full border border-gray-300 rounded-lg px-3 py-2">
-                    <option value="">Select layout</option>
-                    <option value="stadium">Stadium</option>
-                    <option value="regular">Regular</option>
-                    <option value="sloped">Sloped</option>
-                </select>
+                <label class="block text-sm font-medium text-gray-700 mb-1">password</label>
+                <input type="text" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="Enter password">
             </div>
-            <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Status</label>
-                <select class="w-full border border-gray-300 rounded-lg px-3 py-2">
-                    <option value="active">Active</option>
-                    <option value="maintenance">Under Maintenance</option>
-                    <option value="inactive">Inactive</option>
-                </select>
-            </div>
+
             <div class="flex justify-end space-x-3 pt-4">
                 <button type="button" onclick="document.getElementById('addScreenModal').classList.add('hidden')" class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200">Cancel</button>
                 <button type="submit" class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700">Add Screen</button>

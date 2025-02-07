@@ -59,13 +59,13 @@
                           <form id="contactForm" class="space-y-6">
                               <div>
                                   <label for="name" class="block text-sm font-medium text-black">Name</label>
-                                  <input type="text" id="name" name="name" class="mt-1 block w-full px-4 py-3 bg-gray-200 border border-gray-300 rounded-md text-white focus:ring-[#FF4B2B] focus:border-[#FF4B2B]">
+                                  <input type="text" id="name" name="name" class="mt-1 block w-full px-4 py-3 bg-gray-200 border border-gray-300 rounded-md text-black  focus:ring-[#FF4B2B] focus:border-[#FF4B2B]">
                                   <span></span>
                               </div>
 
                               <div>
                                   <label for="email" class="block text-sm font-medium text-black">Email</label>
-                                  <input type="email" id="email" name="email" class="mt-1 block w-full px-4 py-3 bg-gray-200 border border-gray-300 rounded-md text-white focus:ring-[#FF4B2B] focus:border-[#FF4B2B]">
+                                  <input type="email" id="email" name="email" class="mt-1 block w-full px-4 py-3 bg-gray-200 border border-gray-300 rounded-md text-black focus:ring-[#FF4B2B] focus:border-[#FF4B2B]">
                                   <span></span>
                               </div>
 
@@ -83,7 +83,7 @@
 
                               <div>
                                   <label for="message" class="block text-sm font-medium text-black">Message</label>
-                                  <textarea id="message" name="message" rows="4" class="mt-1 block w-full px-4 py-3 bg-gray-200 border border-gray-300 rounded-md text-white focus:ring-[#FF4B2B] focus:border-[#FF4B2B]"></textarea>
+                                  <textarea id="message" name="message" rows="4" class="mt-1 block w-full px-4 py-3 bg-gray-200 border border-gray-300 rounded-md text- black focus:ring-[#FF4B2B] focus:border-[#FF4B2B]"></textarea>
                                   <span></span>
                               </div>
 

@@ -15,7 +15,7 @@ include("../../config/connection.php");
      <!-- navigation -->
      <div id="root">
           <section id="navbar" class="w-full top-0 z-50">
-               <nav class="backdrop-blur-sm border-b">
+               <nav class="backdrop-blur-sm border-b" id="hs-sidebar-footer">
                     <div class="container mx-auto px-4">
                          <div class="flex justify-between items-center h-20">
                               <!-- Logo -->
@@ -59,10 +59,7 @@ include("../../config/connection.php");
                                              type="button" value="">Sign In</a>
 
 
-                                        <button
-                                             class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
-                                             Book Now
-                                        </button>
+
 
 
 
@@ -76,7 +73,7 @@ include("../../config/connection.php");
                               <!-- Mobile Menu Button -->
                               <div class="md:hidden">
                                    <button class="text-gray-300 hover:text-red-600 transition-colors"
-                                        x-on:click="mobileMenu = !mobileMenu">
+                                        aria-haspopup="dialog" aria-expanded="false" aria-controls="hs-sidebar-footer" aria-label="Toggle navigation" data-hs-overlay="#hs-sidebar-footer">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                                              viewBox="0 0 24 24" stroke="currentColor">
                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -101,10 +98,7 @@ include("../../config/connection.php");
                                              class="bg-transparent border border-red-600 text-red-600 px-4 py-2 rounded-lg hover:bg-red-600 hover:text-white transition-colors w-full">
                                              Sign In
                                         </button>
-                                        <button
-                                             class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors w-full">
-                                             Book Now
-                                        </button>
+                                        >
                                    </div>
                               </div>
                          </div>
