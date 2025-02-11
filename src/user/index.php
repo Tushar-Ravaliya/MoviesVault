@@ -41,19 +41,9 @@
                     <div class="w-full flex justify-center items-center">
                          <img src="../../public/Images/logo-white.png" alt="" class="align-middle">
                     </div>
-
-<<<<<<< Updated upstream
                          <div class="text-white text-center mt-10 text-lg">
                               <span>A movie, also known as a film or motion picture, is a visual art form that conveys stories, ideas, and emotions through moving images. Movies are made up of a series of still images that are projected onto a screen in rapid succession. </span>
                          </div>
-=======
-                    <div class="text-white text-center mt-10 text-lg">
-                         <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium cupiditate
-                              animi
-                              dolorem quas, ipsa repellendus obcaecati ab labore assumenda, rerum facilis vitae
-                              fugit
-                              commodi voluptatem porro recusandae quia eos ut.</span>
->>>>>>> Stashed changes
                     </div>
                </div>
           </div>
