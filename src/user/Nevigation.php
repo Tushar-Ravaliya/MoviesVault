@@ -10,7 +10,6 @@ include("../../config/connection.php");
      <title>Document</title>
      <link href="../../public/output.css" rel="stylesheet">
 </head>
-
 <body>
      <!-- navigation -->
      <div id="root">
@@ -107,7 +106,5 @@ include("../../config/connection.php");
           </section>
      </div>
      <!-- end Navigation -->
-</body>
 <script src="../../public/js/preline.js"></script>
 
-</html>
