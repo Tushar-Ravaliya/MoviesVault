@@ -153,3 +153,4 @@
                   });
               </script>
           </section>
+          <?php include_once("Footer.php"); ?>

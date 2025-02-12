@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,6 +9,8 @@
 </head>
 
 <body>
+=======
+>>>>>>> Stashed changes
      <!-- footer start-->
      <div id="root">
           <footer id="footer" class="bg-zinc-100 text-black">
