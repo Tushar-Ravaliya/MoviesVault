@@ -30,10 +30,13 @@ if ($authUser) {
     setcookie('name', $authUser['name'], time() + (86400 * 30), '/');
     setcookie('pic', $authUser['pic'], time() + (86400 * 30), '/');
     // Redirect based on user role
-    $redirectUrl = $authUser['role'] === 'admin'
-        ? 'http://localhost/moviesvault/src/admin/index.php'
-        : 'http://localhost/moviesvault/src/user/index.php';
-
+    if ($authUser['role'] === 'admin') {
+        $redirectUrl = 'http://localhost/moviesvault/src/admin/index.php';
+    } elseif ($authUser['role'] === 'operator') {
+        $redirectUrl = 'http://localhost/moviesvault/src/operator/index.php';
+    } else {
+        $redirectUrl = 'http://localhost/moviesvault/src/user/index.php';
+    }
     header("Location: $redirectUrl");
     exit();
 } else {

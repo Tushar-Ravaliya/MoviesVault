@@ -39,10 +39,6 @@ ob_start();
                         <label class="block text-sm font-medium text-gray-700">Phone Number</label>
                         <input type="tel" name="mobile_no" class="mt-1 block w-full border border-neutral-400 rounded py-2 px-3 text-gray-700">
                     </div>
-                    <div class="flex justify-end space-x-3 pt-6">
-                        <button type="reset" class="px-4 py-2 border border-neutral-400 rounded text-gray-700 hover:bg-gray-50">Cancel</button>
-                        <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Save Changes</button>
-                    </div>
                     <div class="pt-6 border-t border-neutral-400">
                         <h3 class="text-lg font-medium text-gray-900 mb-4">Change Password</h3>
                         <div class="space-y-4">
@@ -57,7 +53,7 @@ ob_start();
                         </div>
                     </div>
                     <div class="flex justify-end space-x-3 pt-6">
-                        <button type="reset" class="px-4 py-2 border border-neutral-400 rounded text-gray-700 hover:bg-gray-50">Cancel</button>
+                        <button type="button" class="px-4 py-2 border border-neutral-400 rounded text-gray-700 hover:bg-gray-50">Cancel</button>
                         <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Save Changes</button>
                     </div>
                 </form>

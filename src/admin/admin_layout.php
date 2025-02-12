@@ -82,6 +82,19 @@ bg-white border-e border-gray-200 " role="dialog" tabindex="-1" aria-label="Side
                                 Showtime
                             </a>
                         </li>
+                        <li>
+                            <a class="flex items-center gap-x-3 py-2 px-2.5 text-sm text-gray-700 rounded-lg hover:bg-gray-100   " href="booking.php">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4">
+                                    <rect width="8" height="4" x="8" y="2" rx="1" ry="1" />
+                                    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+                                    <path d="M12 11h4" />
+                                    <path d="M12 16h4" />
+                                    <path d="M8 11h.01" />
+                                    <path d="M8 16h.01" />
+                                </svg>
+                                Booking
+                            </a>
+                        </li>
                         <li class="hs-accordion" id="account-accordion">
                             <button type="button" class="hs-accordion-toggle w-full text-start flex items-center gap-x-3 py-2 px-2.5 text-sm text-gray-700 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100    " aria-expanded="true" aria-controls="account-accordion-sub-1-collapse-1">
                                 <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -151,7 +164,7 @@ bg-white border-e border-gray-200 " role="dialog" tabindex="-1" aria-label="Side
                             <div id="projects-accordion-sub-1-collapse-1" class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300 hidden" role="region" aria-labelledby="projects-accordion">
                                 <ul class="pt-1 ps-7 space-y-1">
                                     <li>
-                                        <a class="flex items-center gap-x-3 py-2 px-2.5 text-sm text-gray-700 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100    " href="user_list.php">
+                                        <a class="flex items-center gap-x-3 py-2 px-2.5 text-sm text-gray-700 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100    " href="userList.php">
                                             User List
                                         </a>
                                     </li>
@@ -170,11 +183,11 @@ bg-white border-e border-gray-200 " role="dialog" tabindex="-1" aria-label="Side
                         </li>
                         <li class="hs-accordion" id="movie-accordion">
                             <button type="button" class="hs-accordion-toggle w-full text-start flex items-center gap-x-3 py-2 px-2.5 text-sm text-gray-700 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100    " aria-expanded="true" aria-controls="movie-accordion-sub-1-collapse-1">
-                                <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                                    <circle cx="9" cy="7" r="4" />
-                                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4">
+                                    <path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z" />
+                                    <path d="m6.2 5.3 3.1 3.9" />
+                                    <path d="m12.4 3.4 3.1 4" />
+                                    <path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z" />
                                 </svg>
                                 Movie
 
@@ -190,7 +203,7 @@ bg-white border-e border-gray-200 " role="dialog" tabindex="-1" aria-label="Side
                             <div id="movie-accordion-sub-1-collapse-1" class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300 hidden" role="region" aria-labelledby="movie-accordion">
                                 <ul class="pt-1 ps-7 space-y-1">
                                     <li>
-                                        <a class="flex items-center gap-x-3 py-2 px-2.5 text-sm text-gray-700 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100    " href="movie_management.php">
+                                        <a class="flex items-center gap-x-3 py-2 px-2.5 text-sm text-gray-700 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100    " href="movieManagement.php">
                                             Movie
                                         </a>
                                     </li>
