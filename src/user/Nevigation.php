@@ -10,6 +10,7 @@ include("../../config/connection.php");
      <title>Document</title>
      <link href="../../public/output.css" rel="stylesheet">
 </head>
+
 <body>
      <!-- navigation -->
      <div id="root">
@@ -19,7 +20,8 @@ include("../../config/connection.php");
                          <div class="flex justify-between items-center h-20">
                               <!-- Logo -->
                               <div class="flex items-center">
-                                   <a href="index.php" class="text-red-600 text-2xl font-bold font-serif">MoviesVault</a>
+                                   <a href="index.php"
+                                        class="text-red-600 text-2xl font-bold font-serif">MoviesVault</a>
                               </div>
 
                               <!-- Desktop Navigation -->
@@ -29,8 +31,14 @@ include("../../config/connection.php");
                                         class="text-black hover:text-red-600 transition-colors">Movies</a>
                                    <a href="Coming_soon.php"
                                         class="text-black hover:text-red-600 transition-colors">Coming Soon</a>
-
-
+                                   <?php
+                                        if(isset($_COOKIE['name'])){
+                                             ?>
+                                   <a href="MyBooking.php"
+                                        class="text-black hover:text-red-600 transition-colors">My Booking</a>
+                                   <?php
+                                        }
+                                   ?>
                               </div>
 
                               <!-- CTA Buttons -->
@@ -39,40 +47,29 @@ include("../../config/connection.php");
                                    <?php
                                    if (isset($_COOKIE['name'])) {
                                    ?>
-                                        <a href="profile.php"
-                                             class="bg-transparent border border-red-600 text-red-600 px-4 py-2 rounded-lg hover:bg-red-600 hover:text-white transition-colors cursor-pointer"
-                                             type="button" value=""><?php echo $_COOKIE['name']; ?></a>
-                                        <div class="w-20">
-                                             <img src="../../public/profile/<?php echo $_COOKIE['pic'] ?>" alt="img"
-                                                  class="rounded-full">
-                                        </div>
-
-                                        <!-- --------------------------------------------------------------------- -->
-
-
+                                   <a href="profile.php"
+                                        class="bg-transparent border border-red-600 text-red-600 px-4 py-2 rounded-lg hover:bg-red-600 hover:text-white transition-colors cursor-pointer"
+                                        type="button" value=""><?php echo $_COOKIE['name']; ?></a>
+                                   <div class="w-20">
+                                        <img src="../../public/profile/<?php echo $_COOKIE['pic'] ?>" alt="img"
+                                             class="rounded-full">
+                                   </div>
+                                   <!-- --------------------------------------------------------------------- -->
                                    <?php
                                    } else {
                                    ?>
-                                        <a href="login.php"
-                                             class="bg-transparent border border-red-600 text-red-600 px-4 py-2 rounded-lg hover:bg-red-600 hover:text-white transition-colors cursor-pointer"
-                                             type="button" value="">Sign In</a>
-
-
-
-
-
-
-
+                                   <a href="login.php"
+                                        class="bg-transparent border border-red-600 text-red-600 px-4 py-2 rounded-lg hover:bg-red-600 hover:text-white transition-colors cursor-pointer"
+                                        type="button" value="">Sign In</a>
                                    <?php
-
                                    }
                                    ?>
                               </div>
-
                               <!-- Mobile Menu Button -->
                               <div class="md:hidden">
                                    <button class="text-gray-300 hover:text-red-600 transition-colors"
-                                        aria-haspopup="dialog" aria-expanded="false" aria-controls="hs-sidebar-footer" aria-label="Toggle navigation" data-hs-overlay="#hs-sidebar-footer">
+                                        aria-haspopup="dialog" aria-expanded="false" aria-controls="hs-sidebar-footer"
+                                        aria-label="Toggle navigation" data-hs-overlay="#hs-sidebar-footer">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                                              viewBox="0 0 24 24" stroke="currentColor">
                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -106,5 +103,4 @@ include("../../config/connection.php");
           </section>
      </div>
      <!-- end Navigation -->
-<script src="../../public/js/preline.js"></script>
-
+     <script src="../../public/js/preline.js"></script>
