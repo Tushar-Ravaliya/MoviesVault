@@ -1,11 +1,5 @@
 <?php
 require_once '../../config/connection.php';
-require_once '../model/Auth.php';
-
-$database = new Database();
-$db = $database->getConnection();
-// $user = new User($db);
-// $users = $user->readAll();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
@@ -31,18 +25,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Hash password
     $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
-    // Database connection
-    $database = new Database();
-    $db = $database->getConnection();
-    $user = new User($db);
-
     // Insert user
-    if ($user->create($name, $email, $hashed_password, $mobile_no, $pic_name)) {
+    $query = "INSERT INTO users (name, email, password, status, role, pic, number) VALUES ('$name', '$email', '$hashed_password', 'active', 'user', '$pic_name', '$mobile_no')";
+
+    if (mysqli_query($conn, $query)) {
         header("Location: http://localhost/moviesvault/src/user/login.php");
         exit();
     } else {
-        echo "Error: Could not register user.";
+        echo "Error: Could not register user. " . mysqli_error($conn);
     }
 } else {
     echo 'Error: Invalid request method.';
 }
+
+mysqli_close($conn);

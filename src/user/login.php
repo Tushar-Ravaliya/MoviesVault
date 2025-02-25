@@ -30,7 +30,7 @@
                          <input type="password"
                               class="w-full h-10 text-gray-900 placeholder:text-gray-400 text-lg font-normal leading-7 rounded-full border-gray-300 border shadow-sm focus:outline-none px-4 mb-1"
                               placeholder="Password" name="password" id="password">
-                         <a href="javascript:;" class="flex justify-end mb-6">
+                         <a href="forget_password.php" class="flex justify-end mb-6">
                               <span class="text-blue-600 text-right text-base font-normal leading-6">Forgot
                                    Password?</span>
                          </a>

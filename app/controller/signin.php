@@ -10,35 +10,41 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
 $password = $_POST['password'];
 
-// Initialize database and user class
-$database = new Database();
-$db = $database->getConnection();
-$user = new User($db);
+// Query user
+$query = "SELECT * FROM users WHERE email = '$email' LIMIT 1";
+$result = mysqli_query($conn, $query);
 
-// Authenticate user
-$authUser = $user->signin($email, $password);
+if ($result && mysqli_num_rows($result) === 1) {
+    $user = mysqli_fetch_assoc($result);
 
-if ($authUser) {
-    if ($authUser['status'] !== 'active') {
-        die("Your account is inactive. Please contact support.");
-    }
-    // print_r($authUser);
+    // Verify password
+    if (password_verify($password, $user['password'])) {
+        if ($user['status'] !== 'active') {
+            die("Your account is inactive. Please contact support.");
+        }
 
-    // Set cookies for authentication (valid for 30 days)
-    setcookie('user_id', $authUser['id'], time() + (86400 * 30), '/');
-    setcookie('role', $authUser['role'], time() + (86400 * 30), '/');
-    setcookie('name', $authUser['name'], time() + (86400 * 30), '/');
-    setcookie('pic', $authUser['pic'], time() + (86400 * 30), '/');
-    // Redirect based on user role
-    if ($authUser['role'] === 'admin') {
-        $redirectUrl = 'http://localhost/moviesvault/src/admin/index.php';
-    } elseif ($authUser['role'] === 'operator') {
-        $redirectUrl = 'http://localhost/moviesvault/src/operator/index.php';
+        // Set cookies for authentication (valid for 30 days)
+        setcookie('user_id', $user['id'], time() + (86400 * 30), '/');
+        setcookie('role', $user['role'], time() + (86400 * 30), '/');
+        setcookie('name', $user['name'], time() + (86400 * 30), '/');
+        setcookie('pic', $user['pic'], time() + (86400 * 30), '/');
+
+        // Redirect based on user role
+        if ($user['role'] === 'admin') {
+            $redirectUrl = 'http://localhost/moviesvault/src/admin/index.php';
+        } elseif ($user['role'] === 'operator') {
+            $redirectUrl = 'http://localhost/moviesvault/src/operator/index.php';
+        } else {
+            $redirectUrl = 'http://localhost/moviesvault/src/user/index.php';
+        }
+
+        header("Location: $redirectUrl");
+        exit();
     } else {
-        $redirectUrl = 'http://localhost/moviesvault/src/user/index.php';
+        echo "Invalid email or password.";
     }
-    header("Location: $redirectUrl");
-    exit();
 } else {
     echo "Invalid email or password.";
 }
+
+mysqli_close($conn);
