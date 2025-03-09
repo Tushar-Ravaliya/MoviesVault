@@ -1,6 +1,5 @@
 <?php
 require_once '../../config/connection.php';
-require_once '../model/Auth.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     die("Error: Invalid request.");

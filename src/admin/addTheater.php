@@ -52,35 +52,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <form method="POST" enctype="multipart/form-data" id="movieForm" class="max-w-4xl">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2">Movie Title</label>
-                <input type="text" name="movie_title" id="movie_title" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Enter movie title">
+                <label class="block text-sm font-medium text-gray-700 mb-2">Theater Title</label>
+                <input type="text" name="theater_title" id="theater_title" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Enter theater title">
             </div>
 
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2">Release Date</label>
-                <input type="date" name="release_date" id="release_date" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                <label class="block text-sm font-medium text-gray-700 mb-2">Area</label>
+                <input type="area" name="area" id="area" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
             </div>
 
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2">Duration (minutes)</label>
-                <input type="number" name="duration" id="duration" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Enter duration in minutes">
+                <label class="block text-sm font-medium text-gray-700 mb-2">total Screens</label>
+                <input type="number" name="duration" id="duration" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Enter total screens">
             </div>
 
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2">Age Rating</label>
-                <select name="age_rating" id="age_rating" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                <label class="block text-sm font-medium text-gray-700 mb-2">Movie Rating</label>
+                <select name="movie_rating" id="movie_rating" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
                     <option value="">Select rating</option>
-                    <option value="U">U</option>
-                    <option value="G">G</option>
-                    <option value="PG">PG</option>
-                    <option value="PG-13">PG-13</option>
-                    <option value="R">R</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
                 </select>
             </div>
 
             <div class="md:col-span-2">
-                <label class="block text-sm font-medium text-gray-700 mb-2">Movie Description</label>
-                <textarea name="description" id="description" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Enter movie description"></textarea>
+                <label class="block text-sm font-medium text-gray-700 mb-2">total Sheets</label>
+                <textarea name="description" id="description" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Enter total sheets"></textarea>
             </div>
 
             <div>
