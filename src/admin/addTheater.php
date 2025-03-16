@@ -5,123 +5,112 @@ ob_start();
 <?php
 include("../../config/connection.php");
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Sanitize and validate input data
-    $movie_title = filter_var($_POST['movie_title'], FILTER_SANITIZE_STRING);
-    $release_date = $_POST['release_date'];
-    $duration = filter_var($_POST['duration'], FILTER_SANITIZE_NUMBER_INT);
-    $age_rating = $_POST['age_rating'];
-    $description = filter_var($_POST['description'], FILTER_SANITIZE_STRING);
-    $genres = isset($_POST['genres']) ? implode(", ", $_POST['genres']) : '';
-    $poster_name = '';
+// Process form submission
+session_start();
 
-    // Handle file upload
-    if (isset($_FILES['movie_poster']) && $_FILES['movie_poster']['error'] === UPLOAD_ERR_OK) {
-        $poster_name = time() . '_' . basename($_FILES['movie_poster']['name']);
-        $target_path = '../../public/posters/' . $poster_name;
-        move_uploaded_file($_FILES['movie_poster']['tmp_name'], $target_path);
-    }
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Collect and sanitize form data
+    $theater_title = htmlspecialchars(trim($_POST['theater_title'] ?? ''));
+    $area = htmlspecialchars(trim($_POST['area'] ?? ''));
+    $theater_rating = filter_var($_POST['theater_rating'] ?? 0, FILTER_VALIDATE_INT);
+    $owner_name = htmlspecialchars(trim($_POST['owner_name'] ?? ''));
+    $email = filter_var($_POST['email'] ?? '', FILTER_SANITIZE_EMAIL);
+    $password = $_POST['password'] ?? '';
+    $confirm_password = $_POST['confirm_password'] ?? '';
 
-    // Insert into the database
-    $stmt = $conn->prepare("INSERT INTO movies (title, release_date, duration, age_rating, description, genres, poster) VALUES (?, ?, ?, ?, ?, ?, ?)");
-
-    if (!$stmt) {
-        die("Prepared statement failed: " . $conn->error);
-    }
-
-    $stmt->bind_param('ssissss', $movie_title, $release_date, $duration, $age_rating, $description, $genres, $poster_name);
-
-    if ($stmt->execute()) {
-        echo "<script>alert('Movie added successfully!');</script>";
+    // Validate passwords match and hash password
+    if ($password === $confirm_password && !empty($password)) {
+        $password_hash = password_hash($password, PASSWORD_DEFAULT);
     } else {
-        echo "<script>alert('Failed to add movie: " . $stmt->error . "');</script>";
+        $_SESSION['error_message'] = "Passwords do not match or are empty.";
+        header("Location: http://localhost/moviesvault/src/admin/theaterManagement.php");
+        exit();
     }
 
-    $stmt->close();
+    // Insert theater data using MySQLi prepared statement
+    $sql = "INSERT INTO theaters (title, area, rating, owner_name, email, password_hash) 
+            VALUES (?, ?, ?, ?, ?, ?)";
+
+    $stmt = mysqli_prepare($conn, $sql);
+    if ($stmt) {
+        mysqli_stmt_bind_param($stmt, "ssisss", $theater_title, $area, $theater_rating, $owner_name, $email, $password_hash);
+
+        if (mysqli_stmt_execute($stmt)) {
+            $_SESSION['success_message'] = "Theater added successfully!";
+            header("Location: http://localhost/moviesvault/src/admin/theaterManagement.php");
+            exit();
+        } else {
+            $_SESSION['error_message'] = "Error adding theater: " . mysqli_stmt_error($stmt);
+        }
+
+        mysqli_stmt_close($stmt);
+    } else {
+        $_SESSION['error_message'] = "Database error: " . mysqli_error($conn);
+    }
+
+    mysqli_close($conn);
 }
 ?>
 
 <link rel="stylesheet" href="../../public/output.css">
 <script src="../../node_modules/toastify-js/src/toastify.js"></script>
-<section id="addmovie" class="p-6 bg-white">
+<section id="addtheater" class="p-6 bg-white">
     <div class="mb-6">
         <h1 class="text-2xl font-bold text-gray-800">Add New Theater</h1>
-        <p class="text-gray-600 mt-1">Enter the Theater details below</p>
+        <p class="text-gray-600 mt-1">Enter the theater details below</p>
     </div>
 
-    <form method="POST" enctype="multipart/form-data" id="movieForm" class="max-w-4xl">
+    <form method="POST" id="theaterForm" class="max-w-4xl">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Basic Theater Information -->
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2">Theater Title</label>
-                <input type="text" name="theater_title" id="theater_title" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Enter theater title">
+                <label class="block text-sm font-medium text-gray-700 mb-2" for="theater_title">Theater Name*</label>
+                <input type="text" name="theater_title" id="theater_title" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Enter theater name" required>
             </div>
 
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2">Area</label>
-                <input type="area" name="area" id="area" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                <label class="block text-sm font-medium text-gray-700 mb-2" for="area">Area/Location*</label>
+                <input type="text" name="area" id="area" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Enter theater location" required>
             </div>
 
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2">total Screens</label>
-                <input type="number" name="duration" id="duration" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Enter total screens">
-            </div>
-
-            <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2">Movie Rating</label>
-                <select name="movie_rating" id="movie_rating" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                <label class="block text-sm font-medium text-gray-700 mb-2" for="theater_rating">Theater Rating*</label>
+                <select name="theater_rating" id="theater_rating" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
                     <option value="">Select rating</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
+                    <option value="1">1 Star</option>
+                    <option value="2">2 Stars</option>
+                    <option value="3">3 Stars</option>
+                    <option value="4">4 Stars</option>
+                    <option value="5">5 Stars</option>
                 </select>
             </div>
 
-            <div class="md:col-span-2">
-                <label class="block text-sm font-medium text-gray-700 mb-2">total Sheets</label>
-                <textarea name="description" id="description" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Enter total sheets"></textarea>
+            <!-- Theater Owner Information -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2" for="owner_name">Owner Name*</label>
+                <input type="text" name="owner_name" id="owner_name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Enter owner's full name" required>
             </div>
 
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2">Genre</label>
-                <div class="grid grid-cols-2 gap-2">
-                    <label class="flex items-center">
-                        <input type="checkbox" name="genres[]" value="Action" class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
-                        <span class="ml-2 text-sm text-gray-600">Action</span>
-                    </label>
-                    <label class="flex items-center">
-                        <input type="checkbox" name="genres[]" value="Comedy" class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
-                        <span class="ml-2 text-sm text-gray-600">Comedy</span>
-                    </label>
-                    <label class="flex items-center">
-                        <input type="checkbox" name="genres[]" value="Drama" class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
-                        <span class="ml-2 text-sm text-gray-600">Drama</span>
-                    </label>
-                    <label class="flex items-center">
-                        <input type="checkbox" name="genres[]" value="Horror" class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
-                        <span class="ml-2 text-sm text-gray-600">Horror</span>
-                    </label>
-                </div>
+                <label class="block text-sm font-medium text-gray-700 mb-2" for="email">Email Address*</label>
+                <input type="email" name="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Enter contact email" required>
             </div>
 
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2">Movie Poster</label>
-                <div class="flex items-center justify-center w-full">
-                    <label class="w-full flex flex-col items-center px-4 py-6 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer hover:bg-gray-50">
-                        <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-                        </svg>
-                        <span class="mt-2 text-sm text-gray-500">Click to upload poster</span>
-                        <input type="file" name="movie_poster" id="movie_poster" class="hidden" accept="image/*">
-                    </label>
-                </div>
+                <label class="block text-sm font-medium text-gray-700 mb-2" for="password">Password*</label>
+                <input type="password" name="password" id="password" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Create password" minlength="8" required>
+                <p class="text-xs text-gray-500 mt-1">Minimum 8 characters with letters and numbers</p>
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2" for="confirm_password">Confirm Password*</label>
+                <input type="password" name="confirm_password" id="confirm_password" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Confirm password" minlength="8" required>
             </div>
         </div>
 
         <div class="mt-6 flex justify-end space-x-4">
-            <button type="button" class="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50">Cancel</button>
-            <button type="submit" class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Add Movie</button>
+            <button type="button" onclick="window.location.href='theaters.php'" class="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50">Cancel</button>
+            <button type="submit" class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Add Theater</button>
         </div>
     </form>
 </section>
@@ -156,61 +145,96 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }).showToast();
         };
 
-        const form = document.querySelector("#movieForm");
+        // Form validation
+        const form = document.getElementById("theaterForm");
         form.addEventListener("submit", (event) => {
             event.preventDefault(); // Prevent form submission
 
             // Retrieve form data
-            const movieTitle = form.querySelector("input[name='movie_title']").value.trim();
-            const releaseDate = form.querySelector("input[name='release_date']").value;
-            const duration = form.querySelector("input[name='duration']").value.trim();
-            const ageRating = form.querySelector("select[name='age_rating']").value;
-            const description = form.querySelector("textarea[name='description']").value.trim();
-            const genres = Array.from(form.querySelectorAll("input[name='genres[]']:checked"));
-            const poster = form.querySelector("input[name='movie_poster']").files[0];
+            const theaterTitle = form.querySelector("#theater_title").value.trim();
+            const area = form.querySelector("#area").value.trim();
+            const theaterRating = form.querySelector("#theater_rating").value;
+            const ownerName = form.querySelector("#owner_name").value.trim();
+            const email = form.querySelector("#email").value.trim();
+            const password = form.querySelector("#password").value;
+            const confirmPassword = form.querySelector("#confirm_password").value;
 
             // Validation
-            if (!movieTitle) {
-                callToast("Movie title is required.", "error");
+            if (!theaterTitle) {
+                callToast("Theater name is required.", "error");
                 return;
             }
 
-            if (!releaseDate) {
-                callToast("Release date is required.", "error");
+            if (!area) {
+                callToast("Area/Location is required.", "error");
                 return;
             }
 
-            if (!duration || isNaN(duration) || parseInt(duration) <= 0) {
-                callToast("Please provide a valid duration in minutes.", "error");
+            if (!theaterRating) {
+                callToast("Please select a theater rating.", "error");
                 return;
             }
 
-            if (!ageRating) {
-                callToast("Please select an age rating.", "error");
+            if (!ownerName) {
+                callToast("Owner name is required.", "error");
                 return;
             }
 
-            if (!description) {
-                callToast("Movie description is required.", "error");
+            if (!email) {
+                callToast("Email address is required.", "error");
                 return;
             }
 
-            if (genres.length === 0) {
-                callToast("Please select at least one genre.", "error");
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                callToast("Please enter a valid email address.", "error");
                 return;
             }
 
-            if (!poster) {
-                callToast("Please upload a movie poster.", "error");
+            if (!password) {
+                callToast("Password is required.", "error");
+                return;
+            }
+
+            // Password strength validation
+            if (password.length < 8) {
+                callToast("Password must be at least 8 characters long.", "error");
+                return;
+            }
+
+            // Check if password contains at least one letter and one number
+            const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d).+$/;
+            if (!passwordRegex.test(password)) {
+                callToast("Password must contain at least one letter and one number.", "error");
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                callToast("Passwords do not match.", "error");
                 return;
             }
 
             // If all validations pass
             callToast("Form validated successfully. Submitting...");
             setTimeout(() => {
-                form.submit(); // Call this after any animations
+                form.submit(); // Submit the form
             }, 100);
         });
+
+        // Show error messages from PHP if any
+        <?php if (isset($password_error)): ?>
+            callToast("<?php echo $password_error; ?>", "error");
+        <?php endif; ?>
+
+        <?php if (isset($submit_error)): ?>
+            callToast("<?php echo $submit_error; ?>", "error");
+        <?php endif; ?>
+
+        <?php if (isset($_SESSION['success_message'])): ?>
+            callToast("<?php echo $_SESSION['success_message']; ?>", "success");
+            <?php unset($_SESSION['success_message']); ?>
+        <?php endif; ?>
     });
 </script>
 

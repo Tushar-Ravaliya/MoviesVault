@@ -3,16 +3,15 @@ $page_title = "Admin Dashboard";
 ob_start();
 // include '../../app/controller/auth.php';
 require_once '../../config/connection.php';
-require_once '../../app/model/Auth.php';
 
-$database = new Database();
-$db = $database->getConnection();
-$user = new User($db);
-$users = $user->readAll();
+// $database = new Database();
+// $db = $database->getConnection();
+// $user = new User($db);
+// $users = $user->readAll();
 
 
-// $sql = "SELECT id, name, email, number FROM users";
-// $result = $conn->query($sql);
+$sql = "SELECT *  FROM users";
+$users = $conn->query($sql);
 ?>
 
 

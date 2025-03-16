@@ -245,12 +245,12 @@ ob_start();
 
 <!-- Delete Confirmation Modal -->
 <div id="deleteModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
-    <div class="bg-white rounded-lg p-6 max-w-md w-full">
+    <div class="bg-white rounded-lg p-6 max-w-md w-96">
         <h3 class="text-lg font-semibold mb-4">Confirm Deletion</h3>
         <p class="mb-6">Are you sure you want to delete "<span id="deleteMovieTitle"></span>"? This action cannot be undone.</p>
         <div class="flex justify-end space-x-3">
             <button onclick="closeDeleteModal()" class="px-4 py-2 bg-neutral-100 text-neutral-700 rounded-lg hover:bg-neutral-200 transition-colors">Cancel</button>
-            <form id="deleteForm" action="deleteMovie.php" method="POST">
+            <form id="deleteForm" action="../../app/controller/deleteMovie.php" method="POST">
                 <input type="hidden" id="deleteMovieId" name="movie_id">
                 <button type="submit" class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors">Delete</button>
             </form>

@@ -1,6 +1,34 @@
  <?php
-    include("Nevigation.php")
-    ?>
+     include("Nevigation.php");
+     include("../../config/connection.php");
+     if (!isset($_GET['id']) || empty($_GET['id'])) {
+          header("Location: manage_movies.php");
+          exit;
+     }
+
+     $movie_id = intval($_GET['id']);
+     $movie_query = "SELECT m.*,
+                GROUP_CONCAT(DISTINCT g.genre_name SEPARATOR ', ') as genres,
+                GROUP_CONCAT(DISTINCT CONCAT(c.actor_name, ' as ', c.character_name) SEPARATOR ', ') as cast,
+                CASE
+                    WHEN m.release_date > CURDATE() THEN 'Coming Soon'
+                    WHEN m.release_date <= CURDATE() AND DATE_ADD(m.release_date, INTERVAL 30 DAY) >= CURDATE() THEN 'Now Showing'
+                    ELSE 'Ended'
+                END as status
+                FROM movies m
+                LEFT JOIN movie_genres g ON m.movie_id = g.movie_id
+                LEFT JOIN movie_cast c ON m.movie_id = c.movie_id
+                WHERE m.movie_id = ? 
+                GROUP BY m.movie_id";
+
+     // Execute movie query
+     $movie_stmt = $conn->prepare($movie_query);
+     $movie_stmt->bind_param("i", $movie_id); // Assuming $movie_id contains the ID of the movie you want
+     $movie_stmt->execute();
+     $result = $movie_stmt->get_result();
+     $movie_data = $result->fetch_assoc(); // This will contain a single movie with genres and cast;
+
+     ?>
  <div id="root">
       <section id="movieDetails" class="py-16 bg-gray-50">
            <div class="container mx-auto px-4">
@@ -15,7 +43,7 @@
                      <!-- Movie Info -->
                      <div class="flex-1">
                           <div class="flex items-center gap-4 mb-4">
-                               <h1 class="text-3xl md:text-4xl font-bold">Movie Title</h1>
+                               <h1 class="text-3xl md:text-4xl font-bold"><?php echo htmlspecialchars($movie_data['title']); ?></h1>
                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Now
                                     Showing</span>
                           </div>
@@ -26,17 +54,17 @@
                                     <span>4.8/5</span>
                                </div>
                                <span>•</span>
-                               <span>2h 30min</span>
+                               <span><?php echo floor($movie_data['duration'] / 60) . 'h ' . ($movie_data['duration'] % 60) . 'm'; ?></span>
                                <span>•</span>
-                               <span>Action, Drama</span>
+                               <span><?php echo htmlspecialchars($movie_data['genres']); ?></span>
                                <span>•</span>
                                <span>PG-13</span>
+                               <span>•</span>
+                               <span><?php echo $movie_data['release_date']; ?></span>
                           </div>
 
                           <p class="text-gray-700 mb-8 leading-relaxed">
-                               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt
-                               ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                               ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                               <?php echo $movie_data['description']; ?>
                           </p>
 
                           <div class="flex flex-wrap gap-4 mb-8">
@@ -117,4 +145,4 @@
            </div>
       </section>
  </div>
-<?php include_once("Footer.php"); ?>
+ <?php include_once("Footer.php"); ?>
