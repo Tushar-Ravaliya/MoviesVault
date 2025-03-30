@@ -2,18 +2,11 @@
 $page_title = "Admin Dashboard";
 ob_start();
 require_once '../../config/connection.php';
-require_once '../../app/model/Auth.php';
-
-$database = new Database();
-$db = $database->getConnection();
-$user = new User($db);
-$users = $user->readAll();
+$sql = "SELECT *  FROM users";
+$users = $conn->query($sql);
 ?>
 
 <head>
-
-    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/2.2.1/css/dataTables.dataTables.min.css"> -->
-    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/2.2.1/js/dataTables.min.js"></script>
 
@@ -23,12 +16,12 @@ $users = $user->readAll();
     <div class="flex justify-between items-center mb-6">
         <h2 class="text-2xl font-bold text-gray-900">Booking History</h2>
         <div class="flex gap-2">
-            <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 flex items-center" onclick="document.getElementById('addScreenModal').classList.remove('hidden')">
+            <a href="book.php" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 flex items-center">
                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                 </svg>
-                Add User
-            </button>
+                Book movie
+            </a>
         </div>
     </div>
     <div class="overflow-x-auto" data-hs-datatable='{
@@ -157,119 +150,9 @@ $users = $user->readAll();
     </div>
 </div>
 
-<div id="addScreenModal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50">
-    <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-lg bg-white">
-        <div class="flex justify-between items-center mb-4">
-            <h3 class="text-lg font-semibold text-gray-900">Add New Screen</h3>
-            <button onclick="document.getElementById('addScreenModal').classList.add('hidden')" class="text-gray-400 hover:text-gray-500">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </button>
-        </div>
-        <form class="space-y-4">
-            <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Name</label>
-                <input type="text" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="Enter name">
-            </div>
-            <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                <input type="text" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="Enter Email">
-            </div>
-            <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Number</label>
-                <input type="number" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="Enter number">
-            </div>
-            <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">password</label>
-                <input type="text" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="Enter password">
-            </div>
 
-            <div class="flex justify-end space-x-3 pt-4">
-                <button type="button" onclick="document.getElementById('addScreenModal').classList.add('hidden')" class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200">Cancel</button>
-                <button type="submit" class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700">Add Screen</button>
-            </div>
-        </form>
-    </div>
-</div>
 
-<!-- <div class="bg-white border border-neutral-200 rounded-lg overflow-hidden">
-    <div class="overflow-x-auto">
-        <table class="min-w-full divide-y divide-neutral-200">
-            <thead class="bg-neutral-50">
-                <tr>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase tracking-wider">Booking ID</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase tracking-wider">Customer</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase tracking-wider">Movie & Show</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase tracking-wider">Theater</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase tracking-wider">Amount</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase tracking-wider">Status</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase tracking-wider">Actions</th>
-                </tr>
-            </thead>
-            <tbody class="bg-white divide-y divide-neutral-200">
 
-                <tr>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-neutral-900">#BK1234</td>
-                    <td class="px-6 py-4 whitespace-nowrap">
-                        <div class="flex items-center">
-                            <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=76&q=80" alt="">
-                            <div class="ml-4">
-                                <div class="text-sm font-medium text-neutral-900">John Doe</div>
-                                <div class="text-sm text-neutral-500">john@example.com</div>
-                            </div>
-                        </div>
-                    </td>
-                    <td class="px-6 py-4 whitespace-nowrap">
-                        <div class="text-sm text-neutral-900">Inception</div>
-                        <div class="text-sm text-neutral-500">Feb 20, 2024 - 7:00 PM</div>
-                    </td>
-                    <td class="px-6 py-4 whitespace-nowrap">
-                        <div class="text-sm text-neutral-900">Grand Cinema</div>
-                        <div class="text-sm text-neutral-500">Screen 1, Seats: A1, A2</div>
-                    </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-900">$45.00</td>
-                    <td class="px-6 py-4 whitespace-nowrap">
-                        <span class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Confirmed</span>
-                    </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium space-x-2">
-                        <button class="text-indigo-600 hover:text-indigo-900">View</button>
-                        <button class="text-red-600 hover:text-red-900">Cancel</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-neutral-900">#BK1235</td>
-                    <td class="px-6 py-4 whitespace-nowrap">
-                        <div class="flex items-center">
-                            <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=76&q=80" alt="">
-                            <div class="ml-4">
-                                <div class="text-sm font-medium text-neutral-900">Jane Smith</div>
-                                <div class="text-sm text-neutral-500">jane@example.com</div>
-                            </div>
-                        </div>
-                    </td>
-                    <td class="px-6 py-4 whitespace-nowrap">
-                        <div class="text-sm text-neutral-900">The Matrix</div>
-                        <div class="text-sm text-neutral-500">Feb 20, 2024 - 9:30 PM</div>
-                    </td>
-                    <td class="px-6 py-4 whitespace-nowrap">
-                        <div class="text-sm text-neutral-900">Starlight Multiplex</div>
-                        <div class="text-sm text-neutral-500">Screen 2, Seats: B3, B4</div>
-                    </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-900">$35.00</td>
-                    <td class="px-6 py-4 whitespace-nowrap">
-                        <span class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">Pending</span>
-                    </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium space-x-2">
-                        <button class="text-indigo-600 hover:text-indigo-900">View</button>
-                        <button class="text-red-600 hover:text-red-900">Cancel</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</div> -->
 <?php
 $content = ob_get_clean();
 include 'admin_layout.php';

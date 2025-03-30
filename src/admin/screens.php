@@ -3,6 +3,14 @@ $page_title = "Admin Dashboard";
 // Database connection
 require_once("../../config/connection.php");
 
+// Check if theater ID is provided
+if (!isset($_GET['theater_id']) || empty($_GET['theater_id'])) {
+    header("Location: manage_movies.php");
+    exit;
+}
+
+$theater_id = intval($_GET['theater_id']);
+
 // Initialize variables
 $error = '';
 $success = '';
@@ -22,17 +30,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $error = "Please fill in all required fields.";
         } else {
             // Insert new screen into database
-            $sql = "INSERT INTO screens (screen_name, screen_type, seating_capacity, layout_type, status) 
-                    VALUES (?, ?, ?, ?, ?)";
-            $stmt = $conn->prepare($sql);
-            $stmt->bind_param("ssiss", $screen_name, $screen_type, $seating_capacity, $layout_type, $status);
+            $sql = "INSERT INTO screens (theater_id, screen_name, screen_type, seating_capacity, layout_type, status) 
+                    VALUES ('$theater_id', '$screen_name', '$screen_type', '$seating_capacity', '$layout_type', '$status')";
 
-            if ($stmt->execute()) {
+            if (mysqli_query($conn, $sql)) {
                 $success = "Screen added successfully!";
             } else {
-                $error = "Error: " . $stmt->error;
+                $error = "Error: " . mysqli_error($conn);
             }
-            $stmt->close();
         }
     }
 
@@ -50,17 +55,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $error = "Please fill in all required fields.";
         } else {
             // Update screen in database
-            $sql = "UPDATE screens SET screen_name = ?, screen_type = ?, seating_capacity = ?, 
-                    layout_type = ?, status = ? WHERE id = ?";
-            $stmt = $conn->prepare($sql);
-            $stmt->bind_param("ssissi", $screen_name, $screen_type, $seating_capacity, $layout_type, $status, $screen_id);
+            $sql = "UPDATE screens SET screen_name = '$screen_name', screen_type = '$screen_type', seating_capacity = '$seating_capacity', 
+                    layout_type = '$layout_type', status = '$status' WHERE id = '$screen_id'";
 
-            if ($stmt->execute()) {
+            if (mysqli_query($conn, $sql)) {
                 $success = "Screen updated successfully!";
             } else {
-                $error = "Error: " . $stmt->error;
+                $error = "Error: " . mysqli_error($conn);
             }
-            $stmt->close();
         }
     }
 
@@ -69,44 +71,38 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $screen_id = (int)$_POST['screen_id'];
 
         // Check if the screen is being used in any scheduled movies
-        $check_sql = "SELECT COUNT(*) as count FROM movie_schedules WHERE screen_id = ?";
-        $check_stmt = $conn->prepare($check_sql);
-        $check_stmt->bind_param("i", $screen_id);
-        $check_stmt->execute();
-        $result = $check_stmt->get_result();
-        $row = $result->fetch_assoc();
+        $check_sql = "SELECT COUNT(*) as count FROM movie_schedules WHERE screen_id = '$screen_id'";
+        $check_result = mysqli_query($conn, $check_sql);
+        $row = mysqli_fetch_assoc($check_result);
 
         if ($row['count'] > 0) {
             $error = "Cannot delete screen as it is being used in scheduled movies.";
         } else {
             // Delete screen from database
-            $sql = "DELETE FROM screens WHERE id = ?";
-            $stmt = $conn->prepare($sql);
-            $stmt->bind_param("i", $screen_id);
+            $sql = "DELETE FROM screens WHERE id = '$screen_id'";
 
-            if ($stmt->execute()) {
+            if (mysqli_query($conn, $sql)) {
                 $success = "Screen deleted successfully!";
             } else {
-                $error = "Error: " . $stmt->error;
+                $error = "Error: " . mysqli_error($conn);
             }
-            $stmt->close();
         }
-        $check_stmt->close();
     }
 }
 
 // Fetch all screens
 $screens = [];
 $sql = "SELECT * FROM screens ORDER BY screen_name";
-$result = $conn->query($sql);
-if ($result && $result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
+$result = mysqli_query($conn, $sql);
+if ($result && mysqli_num_rows($result) > 0) {
+    while ($row = mysqli_fetch_assoc($result)) {
         $screens[] = $row;
     }
 }
 
 ob_start();
 ?>
+
 
 <div id="screens" class="p-6 space-y-6">
     <!-- Notifications -->

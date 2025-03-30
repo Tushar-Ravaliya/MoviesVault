@@ -5,6 +5,11 @@ ob_start();
 <?php
 include("../../config/connection.php");
 
+// Query to fetch all genres
+$sql = "SELECT * FROM genres";
+$fetched_genres = mysqli_query($conn, $sql);
+
+
 // Process form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Movie details processing (your existing validation would go here)
@@ -144,22 +149,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-2">Genre</label>
                 <div class="grid grid-cols-2 gap-2">
-                    <label class="flex items-center">
-                        <input type="checkbox" name="genres[]" value="Action" class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
-                        <span class="ml-2 text-sm text-gray-600">Action</span>
-                    </label>
-                    <label class="flex items-center">
-                        <input type="checkbox" name="genres[]" value="Comedy" class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
-                        <span class="ml-2 text-sm text-gray-600">Comedy</span>
-                    </label>
-                    <label class="flex items-center">
-                        <input type="checkbox" name="genres[]" value="Drama" class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
-                        <span class="ml-2 text-sm text-gray-600">Drama</span>
-                    </label>
-                    <label class="flex items-center">
-                        <input type="checkbox" name="genres[]" value="Horror" class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
-                        <span class="ml-2 text-sm text-gray-600">Horror</span>
-                    </label>
+
+                    <?php
+                    // Check if records exist
+                    if (mysqli_num_rows($fetched_genres) > 0) {
+                        while ($row = mysqli_fetch_assoc($fetched_genres)) {
+                    ?>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="genres[]" value="Action" class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                                <span class="ml-2 text-sm text-gray-600"><?php echo $row['genre_name']; ?></span>
+                            </label>
+                    <?php
+                        }
+                    } else {
+                        echo "No genres found.";
+                    }
+                    ?>
                 </div>
             </div>
 
