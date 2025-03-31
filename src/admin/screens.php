@@ -22,6 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $screen_name = trim($_POST['screen_name']);
         $screen_type = trim($_POST['screen_type']);
         $seating_capacity = (int)$_POST['seating_capacity'];
+        $seating_rows = (int)$_POST['seating_rows'];
+        $seating_columns = (int)$_POST['seating_columns'];
         $layout_type = trim($_POST['layout_type']);
         $status = isset($_POST['status']) ? 'active' : 'inactive';
 
@@ -29,15 +31,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (empty($screen_name) || empty($screen_type) || $seating_capacity <= 0) {
             $error = "Please fill in all required fields.";
         } else {
-            // Insert new screen into database
-            $sql = "INSERT INTO screens (theater_id, screen_name, screen_type, seating_capacity, layout_type, status) 
-                    VALUES ('$theater_id', '$screen_name', '$screen_type', '$seating_capacity', '$layout_type', '$status')";
+            // Using prepared statement
+            $stmt = $conn->prepare("INSERT INTO screens (theater_id, screen_name, screen_type, seating_capacity, `rows`, `cols`, layout_type, status) 
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
 
-            if (mysqli_query($conn, $sql)) {
+            $stmt->bind_param("issiisss", $theater_id, $screen_name, $screen_type, $seating_capacity, $seating_rows, $seating_columns, $layout_type, $status);
+
+            if ($stmt->execute()) {
                 $success = "Screen added successfully!";
             } else {
-                $error = "Error: " . mysqli_error($conn);
+                $error = "Error: " . $stmt->error;
             }
+
+            $stmt->close();
         }
     }
 
@@ -92,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 // Fetch all screens
 $screens = [];
-$sql = "SELECT * FROM screens ORDER BY screen_name";
+$sql = "SELECT * FROM screens where theater_id = '$theater_id' ORDER BY screen_name";
 $result = mysqli_query($conn, $sql);
 if ($result && mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
@@ -206,6 +212,14 @@ ob_start();
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1">Seating Capacity</label>
                     <input type="number" name="seating_capacity" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="Enter total seats" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Seating rows</label>
+                    <input type="number" name="seating_rows" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="Enter seats in rows" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Seating columns</label>
+                    <input type="number" name="seating_columns" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="Enter seats in columns" required>
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1">Layout Type</label>

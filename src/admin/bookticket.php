@@ -470,7 +470,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_booking'])) {
         document.getElementById('summary-amount').textContent = totalAmount;
     }
 </script>
-
 <?php
 $content = ob_get_clean();
 include 'admin_layout.php';
