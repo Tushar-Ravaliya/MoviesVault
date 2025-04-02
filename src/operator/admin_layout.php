@@ -307,8 +307,8 @@ bg-white border-e border-gray-200 " role="dialog" tabindex="-1" aria-label="Side
                 <!-- Account Dropdown -->
                 <div class="hs-dropdown [--strategy:absolute] [--auto-close:inside] relative w-full inline-flex">
                     <button id="hs-sidebar-footer-example-with-dropdown" type="button" class="w-full inline-flex shrink-0 items-center gap-x-2 p-2 text-start text-sm text-gray-800 rounded-md hover:bg-gray-100 focus:outline-none focus:bg-gray-100" aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
-                        <img class="shrink-0 size-8 rounded-full object-cover object-center" src="../../public/profile/<?php echo $_COOKIE['pic']; ?>" alt="Avatar">
-                        <?php echo $_COOKIE['name']; ?>
+                        <img class="shrink-0 size-8 rounded-full object-cover object-center" src="../../public/profile/<?php echo $_SESSION['pic']; ?>" alt="Avatar">
+                        <?php echo $_SESSION['name']; ?>
                         <svg class="shrink-0 size-3.5 ms-auto" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="m7 15 5 5 5-5" />
                             <path d="m7 9 5-5 5 5" />

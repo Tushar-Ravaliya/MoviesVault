@@ -3,7 +3,7 @@ $page_title = "Edit Theater";
 ob_start();
 ?>
 <?php
-include("../../config/connection.php");
+require_once("../../config/connection.php");
 
 // Process form submission
 session_start();

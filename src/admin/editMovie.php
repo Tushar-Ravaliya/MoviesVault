@@ -3,7 +3,7 @@ $page_title = "Edit Movie";
 ob_start();
 ?>
 <?php
-include("../../config/connection.php");
+require_once("../../config/connection.php");
 
 // Check if movie ID is provided
 if (!isset($_GET['id']) || empty($_GET['id'])) {

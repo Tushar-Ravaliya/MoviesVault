@@ -2,7 +2,7 @@
 $page_title = "Add Genre";
 ob_start();
 
-include("../../config/connection.php");
+require_once("../../config/connection.php");
 // Process form submission
 $success_message = "";
 $error_message = "";

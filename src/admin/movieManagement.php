@@ -1,6 +1,6 @@
 <?php
 // Config file with database connection
-include("../../config/connection.php");
+require_once("../../config/connection.php");
 
 $page_title = "Admin Dashboard";
 $movies_per_page = 8; // Number of movies per page
@@ -13,7 +13,7 @@ $genre_filter = isset($_GET['genre']) ? $_GET['genre'] : '';
 $status_filter = isset($_GET['status']) ? $_GET['status'] : '';
 
 // Get all available genres for the dropdown
-$genre_query = "SELECT DISTINCT genre_name FROM movie_genres ORDER BY genre_name";
+$genre_query = "SELECT DISTINCT genre_name FROM genres ORDER BY genre_name";
 $genre_result = $conn->query($genre_query);
 $genres = [];
 while ($genre_row = $genre_result->fetch_assoc()) {

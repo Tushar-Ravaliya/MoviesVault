@@ -1,5 +1,5 @@
      <?php
-     include("Nevigation.php")
+     include("Nevigation.php");
      ?>
      <div class="w-full flex-col justify-center relative z-20 items-center animates">
           <div class="p-10 font-serif font-semibold text-3xl text-red-500">

@@ -3,7 +3,7 @@ $page_title = "Add Movie";
 ob_start();
 ?>
 <?php
-include("../../config/connection.php");
+require_once("../../config/connection.php");
 
 // Query to fetch all genres
 $sql = "SELECT * FROM genres";
@@ -156,7 +156,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         while ($row = mysqli_fetch_assoc($fetched_genres)) {
                     ?>
                             <label class="flex items-center">
-                                <input type="checkbox" name="genres[]" value="Action" class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                                <input type="checkbox" name="genres[]" value="<?php echo $row['genre_name']; ?>" class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
                                 <span class="ml-2 text-sm text-gray-600"><?php echo $row['genre_name']; ?></span>
                             </label>
                     <?php

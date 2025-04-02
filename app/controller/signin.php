@@ -1,6 +1,6 @@
 <?php
 require_once '../../config/connection.php';
-
+session_start();
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     die("Error: Invalid request.");
 }
@@ -22,11 +22,11 @@ if ($result && mysqli_num_rows($result) === 1) {
             die("Your account is inactive. Please contact support.");
         }
 
-        // Set cookies for authentication (valid for 30 days)
-        setcookie('user_id', $user['id'], time() + (86400 * 30), '/');
-        setcookie('role', $user['role'], time() + (86400 * 30), '/');
-        setcookie('name', $user['name'], time() + (86400 * 30), '/');
-        setcookie('pic', $user['pic'], time() + (86400 * 30), '/');
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['name'] = $user['name'];
+        $_SESSION['email'] = $email;
+        $_SESSION['role'] = $user['role'];
+        $_SESSION['pic'] = $user['pic'];
 
         // Redirect based on user role
         if ($user['role'] === 'admin') {

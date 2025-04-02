@@ -36,7 +36,7 @@
                 <div class="flex flex-col md:flex-row gap-8 mb-12">
                      <!-- Movie Poster -->
                      <div class="w-full md:w-1/3 lg:w-1/4">
-                          <img src="../../public/Images/Marco.jpg"
+                          <img src="../../public/Images/<?php echo htmlspecialchars($movie_data['poster_path']); ?>"
                                class="aspect-[2/3] bg-gray-300 rounded-lg shadow-lg">
                      </div>
 
@@ -68,7 +68,7 @@
                           </p>
 
                           <div class="flex flex-wrap gap-4 mb-8">
-                               <a href="Select_Tickets.php"
+                               <a href="Select_Tickets.php?movie_id=<?php echo $movie_id; ?>"
                                     class="bg-red-600 text-white px-8 py-3 rounded-lg hover:bg-red-700 transition-colors flex items-center gap-2">
                                     <i class="fa-solid fa-ticket"></i>
                                     Book Tickets

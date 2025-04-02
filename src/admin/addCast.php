@@ -3,7 +3,7 @@ $page_title = "Add Cast Member";
 ob_start();
 ?>
 <?php
-include("../../config/connection.php");
+require_once("../../config/connection.php");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
