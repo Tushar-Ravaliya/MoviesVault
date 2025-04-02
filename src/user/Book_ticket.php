@@ -14,9 +14,10 @@
      <div class="flex flex-wrap justify-center mb-5">
 
           <?php 
-          for ($i=0; $i < 50; $i++) { 
+          for ($i=1; $i < 51; $i++) { 
                ?>
           <div class="bg-gray-200 h-54 w-52 m-2 p-2 text-center rounded-md hover:bg-slate-700 hover:text-white">
+               <input type="checkbox" name="" id="" >
                <?php
                     echo $i;
                ?>

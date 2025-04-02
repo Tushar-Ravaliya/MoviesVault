@@ -92,9 +92,9 @@ while ($movie = $movies_result->fetch_assoc()) {
                <?php foreach ($movies as $movie): ?>
                     <div class="h-1/4 w-auto my-5 mx-10  rounded-lg animate ">
                          <a href="../user/movieDetails.php?id=<?php echo $movie['movie_id']; ?>">
-                              <div class="h-1/4 w-auto bg-red-500 overflow-hidden">
+                              <div class="h-1/4 bg-red-500 overflow-hidden">
                                    <img src="<?php echo !empty($movie['poster_path']) ? '../../public/Images/' . htmlspecialchars($movie['poster_path']) : 'public/Images/default-poster.jpg'; ?>" alt="<?php echo htmlspecialchars($movie['title']); ?>"
-                                        class="h-96 min-h-80 hover:scale-110 hover:transition hover:ease-in-out hover:delay-150 transition">
+                                   class="h-96  min-h-80 hover:scale-110 hover:transition hover:ease-in-out hover:delay-150 transition object-cover object-center aspect-[2/3]">
                               </div>
                               <div class="font-medium">
                                    <span><?php echo htmlspecialchars($movie['title']); ?></span><br>
