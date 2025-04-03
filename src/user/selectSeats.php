@@ -12,13 +12,23 @@ $selected_movie = isset($_POST['movie_id']) ? $_POST['movie_id'] : '';
 $selected_theater = isset($_POST['theater_id']) ? $_POST['theater_id'] : '';
 $selected_date = isset($_POST['showtime_date']) ? $_POST['showtime_date'] : date('Y-m-d');
 $selected_showtime = isset($_POST['showtime_id']) ? $_POST['showtime_id'] : '';
-$selected_user = $_SESSION['email'];
+$selected_user = '';
+$user_email = $_SESSION['email'];
 $selected_seats = isset($_POST['selected_seats']) ? $_POST['selected_seats'] : [];
 $payment_method = isset($_POST['payment_method']) ? $_POST['payment_method'] : '';
 $booking_status = isset($_POST['booking_status']) ? $_POST['booking_status'] : 'pending';
 $error_message = '';
 $success_message = '';
 
+$sql = "SELECT id FROM users WHERE email = ? AND status = 'active'";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $user_email);
+$stmt->execute();
+$result = $stmt->get_result();
+if ($result->num_rows > 0) {
+    $user_row = $result->fetch_assoc();
+    $selected_user = $user_row['id'];
+}
 // Fetch all movies
 $sql = "SELECT * FROM movies ORDER BY title";
 $result = $conn->query($sql);
@@ -34,15 +44,6 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $theaters[] = $row;
-    }
-}
-
-// Fetch all users
-$sql = "SELECT * FROM users WHERE status = 'active' ORDER BY name";
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $users[] = $row;
     }
 }
 
@@ -191,17 +192,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_booking'])) {
 
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="bg-white shadow-md rounded-lg p-6">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="mb-4">
-                    <label for="user_id" class="block text-gray-700 font-medium mb-2">Select User</label>
-                    <select name="user_id" id="user_id" required class="w-full bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 p-2.5">
-                        <option value="">Select a user</option>
-                        <?php foreach ($users as $user): ?>
-                            <option value="<?php echo $user['id']; ?>" <?php echo ($selected_user == $user['id']) ? 'selected' : ''; ?>>
-                                <?php echo $user['name'] . ' (' . $user['email'] . ')'; ?>
-                            </option>
-                        <?php endforeach; ?>
-                    </select>
-                </div>
+                <input type="hidden" name="user_id" value="<?php echo $selected_user; ?>">
 
                 <div class="mb-4">
                     <label for="movie_id" class="block text-gray-700 font-medium mb-2">Select Movie</label>
@@ -375,12 +366,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_booking'])) {
                         }
 
                         $user_name = '';
-                        foreach ($users as $user) {
-                            if ($user['id'] == $selected_user) {
-                                $user_name = $user['name'];
-                                break;
-                            }
+                        $sql = "SELECT name FROM users WHERE id = ?";
+                        $stmt = $conn->prepare($sql);
+                        $stmt->bind_param("i", $selected_user);
+                        $stmt->execute();
+                        $result = $stmt->get_result();
+                        if ($result->num_rows > 0) {
+                            $user_row = $result->fetch_assoc();
+                            $user_name = $user_row['name'];
                         }
+
                         ?>
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
