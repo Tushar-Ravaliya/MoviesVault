@@ -6,7 +6,7 @@ ob_start();
 require_once("../../config/connection.php");
 
 // Process form submission
-session_start();
+// session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Collect and sanitize form data

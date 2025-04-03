@@ -192,16 +192,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_booking'])) {
 
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="bg-white shadow-md rounded-lg p-6">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
                 <div class="mb-4">
                     <label for="user_id" class="block text-gray-700 font-medium mb-2">Select User</label>
-                    <select name="user_id" id="user_id" required class="w-full bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 p-2.5">
-                        <option value="">Select a user</option>
-                        <?php foreach ($users as $user): ?>
-                            <option value="<?php echo $user['id']; ?>" <?php echo ($selected_user == $user['id']) ? 'selected' : ''; ?>>
-                                <?php echo $user['name'] . ' (' . $user['email'] . ')'; ?>
-                            </option>
-                        <?php endforeach; ?>
-                    </select>
+                    <div class="relative">
+                        <input type="text" id="user_search" placeholder="Search users..." class="w-full bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 p-2.5 mb-1">
+                        <select name="user_id" id="user_id" required class="w-full bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 p-2.5">
+                            <option value="">Select a user</option>
+                            <?php foreach ($users as $user): ?>
+                                <option value="<?php echo $user['id']; ?>" <?php echo ($selected_user == $user['id']) ? 'selected' : ''; ?> data-name="<?php echo strtolower($user['name']); ?>" data-email="<?php echo strtolower($user['email']); ?>">
+                                    <?php echo $user['name'] . ' (' . $user['email'] . ')'; ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
                 </div>
 
                 <div class="mb-4">
@@ -469,6 +473,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_booking'])) {
         document.getElementById('total-amount').textContent = totalAmount;
         document.getElementById('summary-amount').textContent = totalAmount;
     }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const userSearch = document.getElementById('user_search');
+        const userDropdown = document.getElementById('user_id');
+        const userOptions = Array.from(userDropdown.options);
+
+        userSearch.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase().trim();
+
+            // Reset dropdown to show all options if search is cleared
+            if (searchTerm === '') {
+                userDropdown.innerHTML = '';
+                userOptions.forEach(option => {
+                    userDropdown.appendChild(option);
+                });
+                return;
+            }
+
+            // Filter options based on search term
+            const filteredOptions = userOptions.filter(option => {
+                const name = option.getAttribute('data-name') || '';
+                const email = option.getAttribute('data-email') || '';
+                return name.includes(searchTerm) || email.includes(searchTerm) || option.value === '';
+            });
+
+            // Update dropdown with filtered options
+            userDropdown.innerHTML = '';
+            filteredOptions.forEach(option => {
+                userDropdown.appendChild(option);
+            });
+        });
+    });
 </script>
 <?php
 $content = ob_get_clean();

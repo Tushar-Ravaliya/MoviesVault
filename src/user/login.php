@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +26,12 @@
                               <p class="text-gray-200 text-center text-base font-medium leading-6">Unlock endless
                                    entertainment with MoviesVault</p>
                          </div>
-
+                         <?php if (isset($_SESSION['error'])) : ?>
+                              <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+                                   <?php echo $_SESSION['error'];
+                                   unset($_SESSION['error']); ?>
+                              </div>
+                         <?php endif; ?>
                          <input type="email"
                               class="w-full h-10 text-gray-900 placeholder:text-gray-400 text-lg font-normal leading-7 rounded-full border-gray-300 border shadow-sm focus:outline-none px-4 mb-6"
                               placeholder="Email" name="email" id="email">

@@ -53,7 +53,19 @@ $movies_result = $movie_stmt->get_result();
 while ($movie = $movies_result->fetch_assoc()) {
      $movies[] = $movie;
 }
+// Fetch homepage content
+$fetch_query = "SELECT * FROM homepage_content WHERE id = 1";
+$result = mysqli_query($conn, $fetch_query);
+$homepage_content = mysqli_fetch_assoc($result);
 
+// If no content exists, use default
+if (!$homepage_content) {
+     $homepage_content = [
+          'title' => 'Welcome to Our Site',
+          'content' => 'This is the default homepage content. Please set up your homepage content from the admin panel.',
+          'image_path' => 'default_image.jpg'
+     ];
+}
 ?>
 <div class="container">
      <?php
@@ -62,7 +74,7 @@ while ($movie = $movies_result->fetch_assoc()) {
      <!-- baground image start -->
      <div class="block justify-center items-center animates">
           <div class="bg-red-600 w-full bg-cover z-0 absolute min-h-1/3" style="height:80vh;">
-               <img src="../../public/Images/home_img_1.jpg" alt="imgae" style="height:100%; width: 100%;">
+               <img src="../../public/Images/<?php echo htmlspecialchars($homepage_content['image_path']); ?>" alt="imgae" style="height:100%; width: 100%;">
           </div>
           <div class="w-full bg-cover z-10 relative flex justify-center items-center bg-zinc-900/50"
                style="height:80vh;">
@@ -71,7 +83,7 @@ while ($movie = $movies_result->fetch_assoc()) {
                          <img src="../../public/Images/logo-white.png" alt="" class="align-middle">
                     </div>
                     <div class="text-white text-center mt-10 text-lg">
-                         <span>A movie, also known as a film or motion picture, is a visual art form that conveys stories, ideas, and emotions through moving images. Movies are made up of a series of still images that are projected onto a screen in rapid succession. </span>
+                         <span><?php echo nl2br(htmlspecialchars($homepage_content['content'])); ?></span>
                     </div>
                </div>
           </div>

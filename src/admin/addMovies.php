@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Process cast members
             if (isset($_POST['cast_name']) && is_array($_POST['cast_name'])) {
-                $cast_sql = "INSERT INTO movie_cast (movie_id, actor_name, role, character_name) VALUES (?, ?, ?, ?)";
+                $cast_sql = "INSERT INTO movie_cast (movie_id, actor_name, role, character_name, image_path) VALUES (?, ?, ?, ?, ?)";
                 $cast_stmt = $conn->prepare($cast_sql);
 
                 for ($i = 0; $i < count($_POST['cast_name']); $i++) {
@@ -68,8 +68,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $cast_name = $_POST['cast_name'][$i];
                         $cast_role = $_POST['cast_role'][$i];
                         $character_name = $_POST['character_name'][$i];
+                        $cast_image_path = null;
 
-                        $cast_stmt->bind_param("isss", $movie_id, $cast_name, $cast_role, $character_name);
+                        // Handle cast image upload if present
+                        if (isset($_FILES['cast_image']['name'][$i]) && !empty($_FILES['cast_image']['name'][$i])) {
+                            $cast_target_dir = "../../public/Images/cast/";
+
+                            // Create directory if it doesn't exist
+                            if (!file_exists($cast_target_dir)) {
+                                mkdir($cast_target_dir, 0755, true);
+                            }
+
+                            $cast_file_extension = pathinfo($_FILES["cast_image"]["name"][$i], PATHINFO_EXTENSION);
+                            $cast_new_filename = "cast_" . uniqid() . '.' . $cast_file_extension;
+                            $cast_target_file = $cast_target_dir . $cast_new_filename;
+
+                            if (
+                                $_FILES["cast_image"]["error"][$i] == 0 &&
+                                move_uploaded_file($_FILES["cast_image"]["tmp_name"][$i], $cast_target_file)
+                            ) {
+                                $cast_image_path = "cast/" . $cast_new_filename;
+                            }
+                        }
+
+                        $cast_stmt->bind_param("issss", $movie_id, $cast_name, $cast_role, $character_name, $cast_image_path);
                         $cast_stmt->execute();
                     }
                 }
@@ -179,6 +201,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <input type="file" name="movie_poster" id="movie_poster" class="hidden" accept="image/*">
                     </label>
                 </div>
+                <div id="poster-preview" class="mt-2 hidden">
+                    <img src="" alt="Poster Preview" class="h-48 object-cover rounded-lg">
+                </div>
             </div>
         </div>
 
@@ -186,7 +211,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="mt-8 md:col-span-2">
             <div class="flex justify-between items-center mb-4">
                 <h2 class="text-lg font-semibold text-gray-800">Cast Members</h2>
-                <button type="button" id="addCastBtn" class="px-4 py-1.5 bg-green-600  rounded-lg hover:bg-green-700 flex items-center">
+                <button type="button" id="addCastBtn" class="px-4 py-1.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 flex items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
                     </svg>
@@ -196,7 +221,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <div id="castContainer" class="border border-gray-200 rounded-lg p-4 bg-gray-50 space-y-4">
                 <div class="cast-entry bg-white p-4 rounded-lg shadow-sm">
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">Actor/Actress Name</label>
                             <input type="text" name="cast_name[]" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Enter name">
@@ -216,6 +241,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">Character Name</label>
                             <input type="text" name="character_name[]" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Enter character name">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Cast Image</label>
+                            <div class="flex items-center justify-center w-full">
+                                <label class="w-full flex flex-col items-center px-4 py-2 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer hover:bg-gray-50">
+                                    <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                                    </svg>
+                                    <span class="mt-1 text-xs text-gray-500">Upload photo</span>
+                                    <input type="file" name="cast_image[]" class="cast-image-input hidden" accept="image/*">
+                                </label>
+                            </div>
+                            <div class="cast-image-preview mt-2 hidden">
+                                <img src="" alt="Cast Preview" class="h-16 w-16 object-cover rounded-full">
+                            </div>
                         </div>
                     </div>
 
@@ -260,6 +300,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }).showToast();
         };
 
+        // Image preview functionality
+        function setupImagePreview(inputSelector, previewSelector) {
+            document.querySelectorAll(inputSelector).forEach(input => {
+                input.addEventListener('change', function(e) {
+                    const file = this.files[0];
+                    if (file) {
+                        const preview = this.closest('div').parentElement.querySelector(previewSelector);
+                        const reader = new FileReader();
+
+                        reader.onload = function(e) {
+                            preview.querySelector('img').src = e.target.result;
+                            preview.classList.remove('hidden');
+                        }
+
+                        reader.readAsDataURL(file);
+                    }
+                });
+            });
+        }
+
+        // Setup image previews for movie poster
+        setupImagePreview('#movie_poster', '#poster-preview');
+
+        // Setup image previews for cast images
+        setupImagePreview('.cast-image-input', '.cast-image-preview');
+
         // Cast member management
         const addCastBtn = document.getElementById("addCastBtn");
         const castContainer = document.getElementById("castContainer");
@@ -287,9 +353,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     const newEntry = castEntries[0].cloneNode(true);
 
                     // Clear input values
-                    newEntry.querySelectorAll("input").forEach(input => {
+                    newEntry.querySelectorAll("input[type='text']").forEach(input => {
                         input.value = "";
                     });
+
+                    // Clear file inputs
+                    newEntry.querySelectorAll("input[type='file']").forEach(input => {
+                        input.value = "";
+                    });
+
+                    // Reset image preview
+                    const imagePreview = newEntry.querySelector('.cast-image-preview');
+                    if (imagePreview) {
+                        imagePreview.classList.add('hidden');
+                        imagePreview.querySelector('img').src = '';
+                    }
 
                     // Reset select dropdown
                     newEntry.querySelector("select").selectedIndex = 0;
@@ -300,6 +378,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     // Add event listener for remove button
                     removeBtn.addEventListener("click", handleRemoveCast);
+
+                    // Setup image preview for new cast entry
+                    const newImageInput = newEntry.querySelector('.cast-image-input');
+                    if (newImageInput) {
+                        newImageInput.addEventListener('change', function(e) {
+                            const file = this.files[0];
+                            if (file) {
+                                const preview = this.closest('div').parentElement.querySelector('.cast-image-preview');
+                                const reader = new FileReader();
+
+                                reader.onload = function(e) {
+                                    preview.querySelector('img').src = e.target.result;
+                                    preview.classList.remove('hidden');
+                                }
+
+                                reader.readAsDataURL(file);
+                            }
+                        });
+                    }
 
                     castContainer.appendChild(newEntry);
                 } else {

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 02, 2025 at 04:32 AM
+-- Generation Time: Apr 03, 2025 at 03:23 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -20,6 +20,27 @@ SET time_zone = "+00:00";
 --
 -- Database: `moviesvault`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `aboutus_content`
+--
+
+CREATE TABLE `aboutus_content` (
+  `id` int NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `content` text NOT NULL,
+  `image_path` varchar(255) NOT NULL,
+  `last_updated` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `aboutus_content`
+--
+
+INSERT INTO `aboutus_content` (`id`, `title`, `content`, `image_path`, `last_updated`) VALUES
+(1, 'Welcome to MoviesVault, your ultimate destination for hassle-free movie ticket booking!', 'At MoviesVault, we are passionate about bringing the magic of cinema closer to you. Whether you’re a die-hard movie buff or just looking for a fun night out, our platform makes booking tickets simple, fast, and convenient.', 'about.jpg', '2025-04-02 17:17:04');
 
 -- --------------------------------------------------------
 
@@ -97,7 +118,7 @@ CREATE TABLE `genres` (
 --
 
 INSERT INTO `genres` (`id`, `genre_name`, `created_at`, `updated_at`) VALUES
-(2, 'Action', '2025-03-21 12:15:35', '2025-03-21 12:15:35'),
+(2, 'Action', '2025-03-21 12:15:35', '2025-04-02 17:22:19'),
 (13, 'Comedy', '2025-03-21 12:16:26', '2025-03-21 12:16:26'),
 (14, 'Drama', '2025-03-21 12:16:26', '2025-03-21 12:16:26'),
 (15, 'Horror', '2025-03-21 12:16:26', '2025-03-21 12:16:26'),
@@ -107,6 +128,26 @@ INSERT INTO `genres` (`id`, `genre_name`, `created_at`, `updated_at`) VALUES
 (19, 'Animation', '2025-03-21 12:16:26', '2025-03-21 12:16:26'),
 (20, 'Documentary', '2025-03-21 12:16:26', '2025-03-21 12:16:26'),
 (21, 'Fantasy', '2025-03-21 12:16:26', '2025-03-21 12:16:26');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `homepage_content`
+--
+
+CREATE TABLE `homepage_content` (
+  `id` int NOT NULL,
+  `content` text NOT NULL,
+  `image_path` varchar(255) NOT NULL,
+  `last_updated` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `homepage_content`
+--
+
+INSERT INTO `homepage_content` (`id`, `content`, `image_path`, `last_updated`) VALUES
+(1, 'A movie, also known as a film or motion picture, is a visual art form that conveys stories, ideas, and emotions through moving images. Movies are made up of a series of still images that are projected onto a screen in rapid succession.', 'home_img_1.jpg', '2025-04-02 06:04:40');
 
 -- --------------------------------------------------------
 
@@ -176,6 +217,51 @@ INSERT INTO `movie_genres` (`genre_id`, `movie_id`, `genre_name`) VALUES
 (17, 3, 'Horror'),
 (18, 1, 'Comedy'),
 (19, 1, 'Drama');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `password_reset_otps`
+--
+
+CREATE TABLE `password_reset_otps` (
+  `id` int NOT NULL,
+  `user_id` int NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `otp` varchar(6) NOT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `expires_at` timestamp NULL DEFAULT NULL,
+  `is_used` tinyint(1) DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `password_reset_otps`
+--
+
+INSERT INTO `password_reset_otps` (`id`, `user_id`, `email`, `otp`, `created_at`, `expires_at`, `is_used`) VALUES
+(25, 23, 'nisha12@gmail.com', '761251', '2025-04-03 03:08:13', '2025-04-03 03:18:13', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `password_reset_tokens`
+--
+
+CREATE TABLE `password_reset_tokens` (
+  `id` int NOT NULL,
+  `user_id` int NOT NULL,
+  `token` varchar(64) NOT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `expires_at` timestamp NULL DEFAULT NULL,
+  `is_used` tinyint(1) DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `password_reset_tokens`
+--
+
+INSERT INTO `password_reset_tokens` (`id`, `user_id`, `token`, `created_at`, `expires_at`, `is_used`) VALUES
+(1, 23, '39945a9788fff68e4752f2a3d8a94bc60b76ef4cdafb8c4ae0e4404b4301d0e1', '2025-04-03 03:08:51', '2025-04-03 04:08:51', 1);
 
 -- --------------------------------------------------------
 
@@ -312,12 +398,44 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `status`, `role`, `pic`,
 (20, 'nisha', 'nisha@gmail.com', '$2y$10$QDvCrwjmegc9c9d6hh5jk.8LIWwMVofOO0YlWpvSfMVeKKEbTrRPW', 'active', 'user', '', '6238186558', '2025-01-30 15:03:21'),
 (21, 'Wendy Sears', 'jexaw@mailinator.com', '$2y$10$RGeE5rUKyyVjyKD4C326U.5c/s9FdcZPcGXazFZmSAcZS/ISe9FG6', 'active', 'user', '', '1234567840', '2025-01-30 15:52:02'),
 (22, 'Tushar Ravaliya', 'admidn@gmail.com', '$2y$10$M7PF/Jktk0kHo3X6jhzypubgekkmqhhISitOJ8v3eEspoveXXaHyq', 'active', 'user', '1738657733_1279868.jpg', '8238186558', '2025-02-04 13:58:53'),
-(23, 'nisha', 'nisha12@gmail.com', '$2y$10$gyaIb2K61050JJX7LikOn.DPa/bwXmoCtFZ3xKX4R9zgf7.U0Q/vy', 'active', 'user', '1738835111_wallhaven-l3zmwy_1920x1080.png', '0987654322', '2025-02-06 15:15:11'),
+(23, 'nisha', 'nisha12@gmail.com', '$2y$10$RpSMxdTVEOprH.zyCOHdluSUs5BoSRmHwzB0RLcxnxbso3xP/6w5K', 'active', 'user', '1738835111_wallhaven-l3zmwy_1920x1080.png', '9874543240', '2025-02-06 15:15:11'),
 (24, 'Tushar Ravaliya', 'admisfsen@gmail.com', '$2y$10$4m3pfwSEmHUkWWCV2uHppeXpUTaamaBFM4Kgf5UesjbFZCOcmP5we', 'active', 'user', '', '8238186553', '2025-02-25 15:12:28');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `verification_codes`
+--
+
+CREATE TABLE `verification_codes` (
+  `id` int NOT NULL,
+  `user_id` int NOT NULL,
+  `code` varchar(64) NOT NULL,
+  `type` varchar(20) NOT NULL,
+  `expires_at` datetime NOT NULL,
+  `is_used` tinyint(1) DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `verification_codes`
+--
+
+INSERT INTO `verification_codes` (`id`, `user_id`, `code`, `type`, `expires_at`, `is_used`, `created_at`) VALUES
+(1, 23, '65e6894a18344a2bb01501a5b88060b3', 'phone_change', '2025-04-03 18:59:36', 1, '2025-04-02 18:59:36'),
+(2, 23, '19f3906735929cf2d41a4a57dfbe1c09', 'phone_change', '2025-04-04 08:48:38', 1, '2025-04-03 03:18:38'),
+(3, 23, '59e5d3721c499e06a1e9798a28c65e04', 'phone_change', '2025-04-04 08:50:22', 1, '2025-04-03 03:20:22'),
+(4, 23, '5230d5d6a8f439ab73f1550891a0da35', 'phone_change', '2025-04-04 08:50:50', 0, '2025-04-03 03:20:50');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `aboutus_content`
+--
+ALTER TABLE `aboutus_content`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `booked_seats`
@@ -343,6 +461,12 @@ ALTER TABLE `genres`
   ADD UNIQUE KEY `genre_name` (`genre_name`);
 
 --
+-- Indexes for table `homepage_content`
+--
+ALTER TABLE `homepage_content`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `movies`
 --
 ALTER TABLE `movies`
@@ -361,6 +485,20 @@ ALTER TABLE `movie_cast`
 ALTER TABLE `movie_genres`
   ADD PRIMARY KEY (`genre_id`),
   ADD KEY `movie_id` (`movie_id`);
+
+--
+-- Indexes for table `password_reset_otps`
+--
+ALTER TABLE `password_reset_otps`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
+-- Indexes for table `password_reset_tokens`
+--
+ALTER TABLE `password_reset_tokens`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `screens`
@@ -392,8 +530,20 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `email` (`email`);
 
 --
+-- Indexes for table `verification_codes`
+--
+ALTER TABLE `verification_codes`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `aboutus_content`
+--
+ALTER TABLE `aboutus_content`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `booked_seats`
@@ -414,6 +564,12 @@ ALTER TABLE `genres`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
+-- AUTO_INCREMENT for table `homepage_content`
+--
+ALTER TABLE `homepage_content`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `movies`
 --
 ALTER TABLE `movies`
@@ -430,6 +586,18 @@ ALTER TABLE `movie_cast`
 --
 ALTER TABLE `movie_genres`
   MODIFY `genre_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT for table `password_reset_otps`
+--
+ALTER TABLE `password_reset_otps`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
+-- AUTO_INCREMENT for table `password_reset_tokens`
+--
+ALTER TABLE `password_reset_tokens`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `screens`
@@ -454,6 +622,12 @@ ALTER TABLE `theaters`
 --
 ALTER TABLE `users`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
+--
+-- AUTO_INCREMENT for table `verification_codes`
+--
+ALTER TABLE `verification_codes`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
@@ -484,6 +658,18 @@ ALTER TABLE `movie_cast`
 --
 ALTER TABLE `movie_genres`
   ADD CONSTRAINT `movie_genres_ibfk_1` FOREIGN KEY (`movie_id`) REFERENCES `movies` (`movie_id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `password_reset_otps`
+--
+ALTER TABLE `password_reset_otps`
+  ADD CONSTRAINT `password_reset_otps_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+
+--
+-- Constraints for table `password_reset_tokens`
+--
+ALTER TABLE `password_reset_tokens`
+  ADD CONSTRAINT `password_reset_tokens_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 --
 -- Constraints for table `showtimes`

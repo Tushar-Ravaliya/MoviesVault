@@ -94,53 +94,41 @@
                      <div class="flex gap-8">
                           <button class="px-4 py-2 border-b-2 border-red-600 text-red-600">Cast & Crew</button>
                           <button class="px-4 py-2 text-gray-600 hover:text-red-600">Reviews</button>
-                          <button class="px-4 py-2 text-gray-600 hover:text-red-600">Show Times</button>
                      </div>
                 </div>
 
                 <!-- Cast & Crew Section -->
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
-                     <!-- Cast Member 1 -->
-                     <div class="text-center">
-                          <div class="w-24 h-24 mx-auto rounded-full bg-gray-300 mb-3"></div>
-                          <h3 class="font-medium">Actor Name</h3>
-                          <p class="text-sm text-gray-600">Character Name</p>
-                     </div>
+                     <?php
+                         // Get individual cast members
+                         $cast_query = "SELECT * FROM movie_cast WHERE movie_id = ?";
+                         $cast_stmt = $conn->prepare($cast_query);
+                         $cast_stmt->bind_param("i", $movie_id);
+                         $cast_stmt->execute();
+                         $cast_result = $cast_stmt->get_result();
 
-                     <!-- Cast Member 2 -->
-                     <div class="text-center">
-                          <div class="w-24 h-24 mx-auto rounded-full bg-gray-300 mb-3"></div>
-                          <h3 class="font-medium">Actor Name</h3>
-                          <p class="text-sm text-gray-600">Character Name</p>
-                     </div>
+                         // Display each cast member
+                         while ($cast_member = $cast_result->fetch_assoc()) {
+                              echo '<div class="text-center">';
+                         ?>
+                          <?php if (!empty($cast_member['image_path'])): ?>
+                               <img src="../../public/Images/<?php echo htmlspecialchars($cast_member['image_path']); ?>" class="w-24 h-24 mx-auto rounded-full object-cover mb-3">
+                          <?php else: ?>
+                               <div class="w-24 h-24 mx-auto rounded-full bg-gray-300 mb-3"></div>
+                          <?php endif; ?>
+                     <?php
 
-                     <!-- Cast Member 3 -->
-                     <div class="text-center">
-                          <div class="w-24 h-24 mx-auto rounded-full bg-gray-300 mb-3"></div>
-                          <h3 class="font-medium">Actor Name</h3>
-                          <p class="text-sm text-gray-600">Character Name</p>
-                     </div>
+                              echo '<h3 class="font-medium">' . htmlspecialchars($cast_member['actor_name']) . '</h3>';
+                              echo '<p class="text-sm text-gray-600">' . htmlspecialchars($cast_member['character_name']) . '</p>';
+                              echo '<p class="text-xs text-gray-500">' . htmlspecialchars($cast_member['role']) . '</p>';
+                              echo '</div>';
+                         }
 
-                     <!-- Cast Member 4 -->
-                     <div class="text-center">
-                          <div class="w-24 h-24 mx-auto rounded-full bg-gray-300 mb-3"></div>
-                          <h3 class="font-medium">Actor Name</h3>
-                          <p class="text-sm text-gray-600">Character Name</p>
-                     </div>
-
-                     <!-- Cast Member 5 -->
-                     <div class="text-center">
-                          <div class="w-24 h-24 mx-auto rounded-full bg-gray-300 mb-3"></div>
-                          <h3 class="font-medium">Actor Name</h3>
-                          <p class="text-sm text-gray-600">Character Name</p>
-                     </div>
-
-                     <!-- Cast Member 6 -->
-                     <div class="text-center">
-                          <div class="w-24 h-24 mx-auto rounded-full bg-gray-300 mb-3"></div>
-                          <h3 class="font-medium">Actor Name</h3>
-                          <p class="text-sm text-gray-600">Character Name</p>
-                     </div>
+                         // If no cast members found
+                         if ($cast_result->num_rows == 0) {
+                              echo '<div class="col-span-full text-center text-gray-500">No cast information available for this movie.</div>';
+                         }
+                         ?>
                 </div>
            </div>
       </section>

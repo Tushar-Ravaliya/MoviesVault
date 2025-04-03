@@ -4,7 +4,7 @@ $host = 'localhost';
 $username = 'root';
 $password = '';
 $database = 'moviesvault';
-
+date_default_timezone_set('Asia/Kolkata');
 // Create a connection
 $conn = new mysqli($host, $username, $password, $database);
 
@@ -12,24 +12,3 @@ $conn = new mysqli($host, $username, $password, $database);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
-// class Database
-// {
-//     private $host = "localhost";
-//     private $db_name = "moviesvault";
-//     private $username = "root"; // Change if needed
-//     private $password = ""; // Change if needed
-//     public $conn;
-
-//     public function getConnection()
-//     {
-//         $this->conn = null;
-//         try {
-//             $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
-//             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-//         } catch (PDOException $exception) {
-//             echo "Connection error: " . $exception->getMessage();
-//         }
-//         return $this->conn;
-//     }
-// }

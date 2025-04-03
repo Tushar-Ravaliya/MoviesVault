@@ -48,8 +48,7 @@ $showtimes_query = "
         AND s.status = 'active'
         AND t.status = 'Active'
         AND sc.status = 'active'
-        AND (s.showtime_date > CURDATE() 
-            OR (s.showtime_date = CURDATE() AND s.showtime_time > CURTIME()))
+        AND ((s.showtime_date = CURDATE() AND s.showtime_time > CURTIME()) OR (s.showtime_date > CURDATE()))
     ORDER BY 
         t.title, s.showtime_date, s.showtime_time
 ";

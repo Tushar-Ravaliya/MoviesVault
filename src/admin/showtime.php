@@ -242,10 +242,14 @@ if ($showtimes_result->num_rows > 0) {
                                                 <p class="text-sm text-neutral-600"><?php echo floor($movie_data['duration'] / 60) . 'h ' . ($movie_data['duration'] % 60) . 'm'; ?> • <?php echo htmlspecialchars($movie_data['age_rating']); ?></p>
                                             </div>
                                             <div class="flex space-x-2">
-                                                <button class="px-3 py-1 text-sm bg-blue-50 text-blue-600 rounded hover:bg-blue-100"
-                                                    onclick="editShowtime(<?php echo $movie_id; ?>, <?php echo $theater_id; ?>, <?php echo $screen_id; ?>)">Edit</button>
-                                                <button class="px-3 py-1 text-sm bg-red-50 text-red-600 rounded hover:bg-red-100"
-                                                    onclick="cancelShowtime(<?php echo $movie_id; ?>, <?php echo $theater_id; ?>, <?php echo $screen_id; ?>)">Cancel</button>
+                                                <?php foreach ($movie_data['showtimes'] as $showtime): ?>
+                                                    <button class="px-3 py-1 text-sm bg-blue-50 text-blue-600 rounded hover:bg-blue-100"
+                                                        onclick="editShowtime(<?php echo $showtime['id']; ?>)">Edit</button>
+                                                    <button class="px-3 py-1 text-sm bg-red-50 text-red-600 rounded hover:bg-red-100"
+                                                        onclick="cancelShowtime(<?php echo $showtime['id']; ?>)">Cancel</button>
+                                                    <?php break; // Only show buttons once per movie 
+                                                    ?>
+                                                <?php endforeach; ?>
                                             </div>
                                         </div>
                                         <div class="mt-3 flex flex-wrap gap-2">
@@ -257,7 +261,7 @@ if ($showtimes_result->num_rows > 0) {
                                                 }
                                                 ?>
                                                 <span class="px-3 py-1 <?php echo $status_class; ?> rounded-full text-sm">
-                                                    <?php echo $showtime['time']; ?> ($<?php echo number_format($showtime['price'], 2); ?>)
+                                                    <?php echo $showtime['time']; ?> (₹<?php echo number_format($showtime['price'], 2); ?>)
                                                 </span>
                                             <?php endforeach; ?>
                                         </div>
@@ -376,21 +380,7 @@ if ($showtimes_result->num_rows > 0) {
             });
     }
 
-    // Function to edit showtime
-    function editShowtime(movieId, theaterId, screenId) {
-        // Redirect to edit page or show edit modal
-        // This is a placeholder - implement as needed
-        alert(`Edit showtime for Movie ID: ${movieId}, Theater ID: ${theaterId}, Screen ID: ${screenId}`);
-    }
 
-    // Function to cancel showtime
-    function cancelShowtime(movieId, theaterId, screenId) {
-        if (confirm('Are you sure you want to cancel this showtime?')) {
-            // Send AJAX request to cancel showtime
-            // This is a placeholder - implement as needed
-            alert(`Showtime cancelled for Movie ID: ${movieId}, Theater ID: ${theaterId}, Screen ID: ${screenId}`);
-        }
-    }
 
     window.addEventListener('load', () => {
         const callToast = (message, type = "success") => {
@@ -416,6 +406,43 @@ if ($showtimes_result->num_rows > 0) {
 
         // Form validation now handled by server-side code
     });
+    // Function to edit showtime
+    function editShowtime(showtimeId) {
+        // Redirect to edit page with the showtime ID
+        window.location.href = `edit_showtime.php?id=${showtimeId}`;
+    }
+
+    // Function to cancel showtime
+    function cancelShowtime(showtimeId) {
+        if (confirm('Are you sure you want to cancel this showtime?')) {
+            // Send AJAX request to cancel showtime
+            fetch('cancel_showtime.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: `showtime_id=${showtimeId}`
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Show success message
+                        callToast(data.message, "success");
+                        // Reload page after a short delay
+                        setTimeout(() => {
+                            window.location.reload();
+                        }, 1500);
+                    } else {
+                        // Show error message
+                        callToast(data.message, "error");
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    callToast("An error occurred while cancelling the showtime.", "error");
+                });
+        }
+    }
 </script>
 
 <?php

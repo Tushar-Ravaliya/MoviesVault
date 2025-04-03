@@ -27,16 +27,23 @@ while ($movie = $movies_result->fetch_assoc()) {
 
 ?>
 <?php
-     include("Nevigation.php");
-     ?>
-     <div class="w-full flex-col justify-center relative z-20 items-center animates">
-          <div class="p-10 font-serif font-semibold text-3xl text-red-500">
-               <span>Coming Soon Movies</span>
-          </div>
-          <div class="flex bg-white px-10 flex-wrap justify-center">
+include("Nevigation.php");
+?>
+<div class="bg-gray-100 w-full flex-col justify-center relative z-20 items-center animates">
+     <div class="p-10 font-serif font-semibold text-3xl text-red-500">
+          <span>Coming Soon ...</span>
+     </div>
+     <div class="flex  px-10 flex-wrap justify-center">
           <?php if (empty($movies)): ?>
-               <div class="bg-white p-6 rounded-lg border border-neutral-200/30 text-center">
-                    <p class="text-neutral-600">No movies found matching your criteria.</p>
+               <div class="bg-white w-full p-8 rounded-lg shadow-md text-center mb-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-gray-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+                    </svg>
+                    <h3 class="text-xl font-medium text-gray-900 mb-2">No Movies Found</h3>
+                    <p class="text-gray-500 mb-6">No movies in coming soon</p>
+                    <a href="index.php" class="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-md transition">
+                         Runnig Movies
+                    </a>
                </div>
           <?php else: ?>
                <?php foreach ($movies as $movie): ?>
@@ -57,10 +64,10 @@ while ($movie = $movies_result->fetch_assoc()) {
 
 
 
-          </div>
-
      </div>
 
-     <?php
-     include("footer.php")
-     ?>
+</div>
+
+<?php
+include("footer.php")
+?>

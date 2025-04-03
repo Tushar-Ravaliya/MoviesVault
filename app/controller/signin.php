@@ -40,10 +40,14 @@ if ($result && mysqli_num_rows($result) === 1) {
         header("Location: $redirectUrl");
         exit();
     } else {
-        echo "Invalid email or password.";
+        $_SESSION['error'] = "Invalid email or password.";
+        header("Location: ../../src/user/login.php");
+        exit;
     }
 } else {
-    echo "Invalid email or password.";
+    $_SESSION['error'] = "Invalid email or password.";
+    header("Location: ../../src/user/login.php");
+    exit;
 }
 
 mysqli_close($conn);
