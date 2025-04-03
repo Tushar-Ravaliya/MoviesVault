@@ -6,7 +6,7 @@
 
      <style>
           @keyframes appear {
-               form {
+               from {
                     opacity: 0;
                     scale: 0.5;
                }
@@ -22,8 +22,61 @@
                animation-timeline: view();
                animation-range: entry 0% cover 40%;
           }
-     </style>
 
+          /* Responsive styles */
+          .container {
+               width: 100%;
+               max-width: 1440px;
+               margin: 0 auto;
+          }
+
+          .hero-content {
+               width: 90%;
+               max-width: 600px;
+               padding: 1rem;
+          }
+
+          .movie-grid {
+               display: grid;
+               grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+               gap: 1.5rem;
+               width: 100%;
+          }
+
+          .movie-card {
+               height: 100%;
+               transition: transform 0.3s ease;
+          }
+
+          .movie-card:hover {
+               transform: translateY(-5px);
+          }
+
+          .movie-image {
+               height: auto;
+               width: 100%;
+               aspect-ratio: 2/3;
+               object-fit: cover;
+               transition: transform 0.3s ease;
+          }
+
+          .movie-card:hover .movie-image {
+               transform: scale(1.05);
+          }
+
+          @media (max-width: 768px) {
+               .hero-content {
+                    width: 95%;
+               }
+          }
+
+          @media (max-width: 640px) {
+               .movie-grid {
+                    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                    gap: 1rem;
+               }
+          }
+     </style>
 </head>
 <?php
 include("../../config/connection.php");
@@ -71,57 +124,60 @@ if (!$homepage_content) {
      <?php
      include("Nevigation.php")
      ?>
-     <!-- baground image start -->
-     <div class="block justify-center items-center animates">
-          <div class="bg-red-600 w-full bg-cover z-0 absolute min-h-1/3" style="height:80vh;">
-               <img src="../../public/Images/<?php echo htmlspecialchars($homepage_content['image_path']); ?>" alt="imgae" style="height:100%; width: 100%;">
-          </div>
-          <div class="w-full bg-cover z-10 relative flex justify-center items-center bg-zinc-900/50"
-               style="height:80vh;">
-               <div class="flex-col justify-center items-center w-1/3">
-                    <div class="w-full flex justify-center items-center">
-                         <img src="../../public/Images/logo-white.png" alt="" class="align-middle">
-                    </div>
-                    <div class="text-white text-center mt-10 text-lg">
-                         <span><?php echo nl2br(htmlspecialchars($homepage_content['content'])); ?></span>
+     <!-- hero image start -->
+     <div class="block w-full animates">
+          <div class="relative w-full" style="height: 80vh; max-height: 700px; min-height: 300px;">
+               <img src="../../public/Images/<?php echo htmlspecialchars($homepage_content['image_path']); ?>" 
+                    alt="Hero Image" 
+                    class="absolute inset-0 w-full h-full object-cover">
+               
+               <div class="absolute inset-0 bg-zinc-900/60 flex justify-center items-center">
+                    <div class="hero-content flex flex-col items-center">
+                         <div class="w-full max-w-xs sm:max-w-sm md:max-w-md flex justify-center">
+                              <img src="../../public/Images/logo-white.png" alt="Logo" class="w-full max-w-full h-auto">
+                         </div>
+                         <div class="text-white text-center mt-6 text-base sm:text-lg">
+                              <span><?php echo nl2br(htmlspecialchars($homepage_content['content'])); ?></span>
+                         </div>
                     </div>
                </div>
           </div>
      </div>
-</div>
-<!-- baground image end -->
-<!-- Movie start-->
-<div class="w-full flex-col justify-center relative z-20 items-center animates">
-     <div class="p-10 text-3xl">
-          Recomment for You ♥
-     </div>
-     <div class="flex bg-white px-10 flex-wrap justify-center">
-          <?php if (empty($movies)): ?>
-               <div class="bg-white p-6 rounded-lg border border-neutral-200/30 text-center">
-                    <p class="text-neutral-600">No movies found matching your criteria.</p>
+     <!-- hero image end -->
+     
+     <!-- Movies section start -->
+     <div class="w-full ">
+          <div class="p-4 sm:p-6 md:p-10">
+               <h2 class="text-2xl sm:text-3xl font-medium mb-6">Recommended for You ♥</h2>
+               
+               <div class="px-2 sm:px-4 md:px-6">
+                    <?php if (empty($movies)): ?>
+                         <div class="bg-white p-6 rounded-lg border border-neutral-200/30 text-center">
+                              <p class="text-neutral-600">No movies found matching your criteria.</p>
+                         </div>
+                    <?php else: ?>
+                         <div class="movie-grid">
+                              <?php foreach ($movies as $movie): ?>
+                                   <div class="movie-card rounded-lg overflow-hidden">
+                                        <a href="../user/movieDetails.php?id=<?php echo $movie['movie_id']; ?>" class="block h-full">
+                                             <div class="overflow-hidden">
+                                                  <img src="<?php echo !empty($movie['poster_path']) ? '../../public/Images/' . htmlspecialchars($movie['poster_path']) : 'public/Images/default-poster.jpg'; ?>" 
+                                                       alt="<?php echo htmlspecialchars($movie['title']); ?>"
+                                                       class="movie-image">
+                                             </div>
+                                             <div class="p-2">
+                                                  <h3 class="font-medium truncate"><?php echo htmlspecialchars($movie['title']); ?></h3>
+                                                  <p class="text-gray-400 text-sm truncate"><?php echo htmlspecialchars($movie['genres']); ?></p>
+                                             </div>
+                                        </a>
+                                   </div>
+                              <?php endforeach; ?>
+                         </div>
+                    <?php endif; ?>
                </div>
-          <?php else: ?>
-               <?php foreach ($movies as $movie): ?>
-                    <div class="h-1/4 w-auto my-5 mx-10  rounded-lg animate ">
-                         <a href="../user/movieDetails.php?id=<?php echo $movie['movie_id']; ?>">
-                              <div class="h-1/4 bg-red-500 overflow-hidden">
-                                   <img src="<?php echo !empty($movie['poster_path']) ? '../../public/Images/' . htmlspecialchars($movie['poster_path']) : 'public/Images/default-poster.jpg'; ?>" alt="<?php echo htmlspecialchars($movie['title']); ?>"
-                                   class="h-96  min-h-80 hover:scale-110 hover:transition hover:ease-in-out hover:delay-150 transition object-cover object-center aspect-[2/3]">
-                              </div>
-                              <div class="font-medium">
-                                   <span><?php echo htmlspecialchars($movie['title']); ?></span><br>
-                                   <span class="text-gray-400"><?php echo htmlspecialchars($movie['genres']); ?></span>
-                              </div>
-                         </a>
-                    </div>
-               <?php endforeach; ?>
-          <?php endif; ?>
+          </div>
      </div>
-
-</div>
-<!-- movies end -->
-<!-- footer start-->
-<!-- footer end -->
+     <!-- movies end -->
 </div>
 <?php
 include("Footer.php");

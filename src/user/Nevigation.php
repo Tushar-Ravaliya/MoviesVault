@@ -19,7 +19,7 @@ if (session_status() == PHP_SESSION_NONE) {
 <body>
      <!-- navigation -->
      <div id="root">
-          <section id="navbar" class="w-full sticky top-0 z-50">
+          <section id="navbar" class="w-full sticky top-0 z-50 ">
                <nav class="backdrop-blur-sm bg-white/90 border-b shadow-sm" x-data="{ mobileMenuOpen: false }">
                     <div class="container mx-auto px-4">
                          <div class="flex justify-between items-center h-16 md:h-20">
