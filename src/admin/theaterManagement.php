@@ -138,7 +138,7 @@ if (isset($_GET['status_updated'])) {
                             <form method="POST" action="">
                                 <input type="hidden" name="theater_id" value="<?php echo $theater['id']; ?>">
                                 <input type="hidden" name="new_status" value="<?php echo $theater['status']; ?>">
-                                <button type="submit" name="toggle_status" class="px-3 py-1 text-sm font-semibold <?php echo $theater['status'] === 'active' ? 'text-green-800 bg-green-100' : 'text-red-800 bg-red-100'; ?> rounded-full">
+                                <button type="submit" name="toggle_status" class="px-3 py-1 text-sm font-semibold <?php echo $theater['status'] === 'Active' ? 'text-green-800 bg-green-100' : 'text-red-800 bg-red-100'; ?> rounded-full">
                                     <?php echo ucfirst($theater['status']); ?>
                                 </button>
                             </form>

@@ -127,7 +127,7 @@ $movie_data = $result->fetch_assoc(); // This will contain a single movie with g
                     <!-- Movie Poster -->
                     <div class="w-full md:w-1/3 lg:w-1/4">
                          <img src="../../public/Images/<?php echo htmlspecialchars($movie_data['poster_path']); ?>"
-                              class="aspect-[2/3] bg-gray-300 rounded-lg shadow-lg">
+                              class="aspect-[2/3] bg-gray-300 rounded-lg shadow-lg object-cover">
                     </div>
 
                     <!-- Movie Info -->

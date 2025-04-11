@@ -136,7 +136,7 @@ if ($result->num_rows > 0) {
 
                             <?php if ($booking['booking_status'] != 'cancelled'): ?>
                                 <div class="mt-4">
-                                    <a href="view-ticket.php?id=<?php echo $booking['booking_id']; ?>"
+                                    <a href="download_invoice.php?booking_id=<?php echo $booking['booking_id']; ?>"
                                         class="block w-full bg-gray-800 hover:bg-gray-900 text-white text-center py-2 rounded transition">
                                         Download Ticket
                                     </a>

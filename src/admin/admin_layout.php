@@ -1,5 +1,9 @@
 <?php
 session_start();
+if ($_SESSION['role'] !== 'admin') {
+    header("Location: ../user/login.php");
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -216,8 +220,8 @@ bg-white border-e border-gray-200 " role="dialog" tabindex="-1" aria-label="Side
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="flex items-center gap-x-3 py-2 px-2.5 text-sm text-gray-700 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100    " href="theaterManagement.php">
-                                            Theater
+                                        <a class="flex items-center gap-x-3 py-2 px-2.5 text-sm text-gray-700 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100    " href="addMovies.php">
+                                            Add Movie
                                         </a>
                                     </li>
                                     <!-- <li>

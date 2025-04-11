@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 06, 2025 at 12:21 PM
+-- Generation Time: Apr 11, 2025 at 01:13 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -97,7 +97,10 @@ INSERT INTO `booked_seats` (`id`, `booking_id`, `showtime_id`, `seat_number`) VA
 (37, 11, 16, 'J1'),
 (38, 11, 16, 'J2'),
 (39, 11, 16, 'J10'),
-(40, 11, 16, 'J9');
+(40, 11, 16, 'J9'),
+(41, 12, 19, 'C2'),
+(42, 12, 19, 'C3'),
+(43, 12, 19, 'C4');
 
 -- --------------------------------------------------------
 
@@ -130,7 +133,8 @@ INSERT INTO `bookings` (`booking_id`, `user_id`, `showtime_id`, `num_tickets`, `
 (7, 20, 12, 4, 'A1,A2,A5,A4', '40.00', 'cash', 'confirmed', '2025-04-03 05:54:56'),
 (8, 19, 14, 10, 'A6,B6,C4,D4,E5,F5,G6,H6,I7,J7', '5550.00', 'debit_card', 'confirmed', '2025-04-03 10:00:26'),
 (10, 19, 10, 10, 'A1,B2,C3,D4,E5,F6,G7,H8,I9,J10', '990.00', 'upi', 'confirmed', '2025-04-03 10:01:40'),
-(11, 23, 16, 4, 'J1,J2,J10,J9', '796.00', 'cash', 'confirmed', '2025-04-06 07:15:19');
+(11, 23, 16, 4, 'J1,J2,J10,J9', '796.00', 'cash', 'confirmed', '2025-04-06 07:15:19'),
+(12, 23, 19, 3, 'C2,C3,C4', '600.00', 'upi', 'confirmed', '2025-04-10 13:21:29');
 
 -- --------------------------------------------------------
 
@@ -205,7 +209,8 @@ INSERT INTO `movies` (`movie_id`, `title`, `release_date`, `duration`, `age_rati
 (1, 'pappu', '2025-03-01', 55, 'PG', 'pappi pandos', '67cd9a8f50fe7.jpg'),
 (3, 'AVATAR', '2025-03-06', 175, 'PG-13', 'Avatar (disambiguation).\r\nAvatar\r\n\r\nLogo used since 2022\r\nCreated by	James Cameron\r\nOriginal work	Avatar (2009)\r\nOwners	20th Century Studios\r\nLightstorm Entertainment\r\nYears	2009–present\r\nPrint publications\r\nGraphic novel(s)	Avatar: The High Ground (2022–2023)\r\nFilms and television\r\nFilm(s)	\r\nAvatar (2009)\r\nAvatar: The Way of Water (2022)\r\nAvatar: Fire and Ash (2025)\r\nAvatar 4 (2029)\r\nAvatar 5 (2031)\r\nGames\r\nVideo game(s)	\r\nAvatar: The Game (2009)\r\nAvatar: Pandora Rising (2020)\r\nAvatar: Frontiers of Pandora (2023)\r\nAudio\r\nSoundtrack(s)	\r\nAvatar (2009)\r\nAvatar: The Way of Water (2022)\r\nAvatar: Frontiers of Pandora (2023)\r\nOriginal music	\r\nI See You\r\nNothing Is Lost\r\nMiscellaneous\r\nToy(s)	Lego Avatar\r\nTheme park attraction(s)	\r\nAvatar Flight of Passage (2017)\r\nNa\'vi River Journey (2017)\r\nOfficial website\r\nwww.avatar.com Edit this at Wikidata\r\nAvatar is an American epic science fiction media franchise created by James Cameron, which began with the eponymous 2009 film. Produced by 20th Century Studios and distributed by Lightstorm Entertainment, it consists of associated merchandise, video games, and theme park attractions.[1]', '67ea92e39ce13.jpg'),
 (4, 'marco', '2025-04-03', 155, 'PG-13', 'Adattu is one of the most renowned gold-trading families in Kerala. Unexpectedly, an incident shakes the Adattu family. George, the head of the family, sets out to uncover the truth and find those responsible. At the same time, his younger brother, Marco, embarks on the same quest but through a different Path.', '67ee02ae30841.jpg'),
-(5, 'Mufasa : The Lion King', '2025-04-07', 165, 'PG-13', 'Lost and alone, orphaned cub Mufasa meets a sympathetic lion named Taka, the heir to a royal bloodline. The chance meeting sets in motion an expansive journey of an extraordinary group of misfits searching for their destinies.', '67ee537837532.jpg');
+(5, 'Mufasa : The Lion King', '2025-04-07', 165, 'PG-13', 'Lost and alone, orphaned cub Mufasa meets a sympathetic lion named Taka, the heir to a royal bloodline. The chance meeting sets in motion an expansive journey of an extraordinary group of misfits searching for their destinies.', '67ee537837532.jpg'),
+(6, 'Dragon Ball ', '2025-04-09', 155, 'PG-13', 'Goku is a strange, bushy-tailed boy who spends his days hunting and eating—until he meets Bulma, a bossy beauty with boys on the brain. Together, they set out to find the seven magic Dragon Balls and make the wish that will change their lives forever.', '67f66bef0703f.png');
 
 -- --------------------------------------------------------
 
@@ -232,7 +237,9 @@ INSERT INTO `movie_cast` (`cast_id`, `movie_id`, `actor_name`, `role`, `characte
 (16, 1, 'tito', 'Lead Actor', 'titumamu', NULL),
 (17, 4, 'Unni Mukundan', 'Lead Actor', 'Unni Mukundan', 'cast/cast_67ee02ae3126b.jpg'),
 (18, 5, 'Aaron Pierre', 'Lead Actor', 'as Mufasa (English)', 'cast/cast_67ee53783810f.avif'),
-(19, 5, 'Shah Rukh Khan', 'Lead Actor', 'as Mufasa (Hindi)', 'cast/cast_67ee5378383d0.avif');
+(19, 5, 'Shah Rukh Khan', 'Lead Actor', 'as Mufasa (Hindi)', 'cast/cast_67ee5378383d0.avif'),
+(20, 6, 'GOKU', 'Lead Actor', 'GOKU', 'cast/cast_67f66bef09894.jpg'),
+(21, 6, 'VEGETA', 'Lead Actor', 'VEGETA', 'cast/cast_67f66bef09f5d.jpg');
 
 -- --------------------------------------------------------
 
@@ -258,7 +265,10 @@ INSERT INTO `movie_genres` (`genre_id`, `movie_id`, `genre_name`) VALUES
 (20, 4, 'Action'),
 (21, 4, 'Thriller'),
 (22, 5, 'Action'),
-(23, 5, 'Fantasy');
+(23, 5, 'Fantasy'),
+(24, 6, 'Action'),
+(25, 6, 'Comedy'),
+(26, 6, 'Animation');
 
 -- --------------------------------------------------------
 
@@ -280,7 +290,8 @@ CREATE TABLE `movie_reviews` (
 --
 
 INSERT INTO `movie_reviews` (`review_id`, `movie_id`, `user_id`, `rating`, `review_text`, `review_date`) VALUES
-(1, 5, 23, '4.0', 'nise', '2025-04-06 07:29:22');
+(2, 5, 23, '4.0', 'thik thik', '2025-04-06 12:30:20'),
+(3, 4, 19, '4.0', 'r', '2025-04-07 13:03:14');
 
 -- --------------------------------------------------------
 
@@ -354,7 +365,8 @@ CREATE TABLE `screens` (
 
 INSERT INTO `screens` (`id`, `theater_id`, `screen_name`, `screen_type`, `seating_capacity`, `rows`, `cols`, `layout_type`, `status`, `created_at`, `updated_at`) VALUES
 (4, 2, '1', 'Regular Theater', 55, 10, 10, 'Stadium', 'active', '2025-03-18 13:35:53', '2025-03-30 12:17:15'),
-(6, 1, '2', 'Premium Theater', 55, 5, 5, 'Recliner', 'active', '2025-03-31 13:19:23', '2025-03-31 13:19:23');
+(6, 1, '2', 'Premium Theater', 55, 5, 5, 'Recliner', 'active', '2025-03-31 13:19:23', '2025-03-31 13:19:23'),
+(7, 8, '1', 'Premium Theater', 150, 10, 10, 'Stadium', 'active', '2025-04-07 13:58:01', '2025-04-07 13:58:01');
 
 -- --------------------------------------------------------
 
@@ -395,7 +407,10 @@ INSERT INTO `showtimes` (`id`, `movie_id`, `theater_id`, `screen_id`, `showtime_
 (13, 4, 2, 4, '2025-04-03', '17:30:00', '199.00', 'active', '2025-04-03 09:00:55', '2025-04-03 09:00:55'),
 (14, 3, 2, 4, '2025-04-03', '18:54:00', '555.00', 'active', '2025-04-03 09:24:18', '2025-04-03 09:24:18'),
 (15, 3, 1, 6, '2025-04-05', '17:46:00', '199.00', 'active', '2025-04-03 10:17:53', '2025-04-03 10:17:53'),
-(16, 5, 2, 4, '2025-04-06', '18:30:00', '199.00', 'active', '2025-04-06 07:14:53', '2025-04-06 07:14:53');
+(16, 5, 2, 4, '2025-04-06', '18:30:00', '199.00', 'active', '2025-04-06 07:14:53', '2025-04-06 07:14:53'),
+(17, 3, 1, 6, '2025-04-07', '17:30:00', '199.00', 'active', '2025-04-07 04:01:31', '2025-04-07 04:01:31'),
+(18, 4, 8, 7, '2025-04-07', '22:28:00', '249.00', 'active', '2025-04-07 13:58:38', '2025-04-07 13:58:38'),
+(19, 6, 8, 7, '2025-04-10', '21:30:00', '200.00', 'active', '2025-04-10 11:54:17', '2025-04-10 11:54:17');
 
 -- --------------------------------------------------------
 
@@ -423,10 +438,7 @@ CREATE TABLE `theaters` (
 INSERT INTO `theaters` (`id`, `title`, `area`, `rating`, `status`, `owner_name`, `email`, `password_hash`, `created_at`, `updated_at`) VALUES
 (1, 'cosmoplex', 'rajkot', 4, 'Active', 'admin', 'admin@gmail.com', '$2y$10$/QXxZq9XRKOerzJrkFolWOJ.bv/I/L.WYWVk8LXUUc5J7/9axgEyi', '2025-03-16 13:29:40', '2025-03-18 13:53:21'),
 (2, 'imax', 'rajkot', 2, 'Active', 'admin', 'admin1@gmail.com', '$2y$10$snMYfgNLDMZpm.TKGVsx5.UE2ef5ynMKUvSkxXx5OqbsZgOYIomHa', '2025-03-16 13:32:54', '2025-03-18 13:53:51'),
-(3, 'pandu', 'rajkot', 4, 'Inactive', 'admin', 'admisdfesfn@gmail.com', '$2y$10$9foyHru01Hf8cOmfjThfC.j8/EOQQwxFZLNRSDjBQrFNvvawjyOeW', '2025-03-30 15:45:17', '2025-03-30 15:45:17'),
-(4, 'cosmoplex', 'rajkot', 2, 'Inactive', 'admin', 'admisdfsn@gmail.com', '$2y$10$aE5qwEIxDfIqVDO8lXD14.4pl0RA/CM.EeqVqUldUJo1jz4.hBDni', '2025-03-30 15:45:52', '2025-03-30 15:45:52'),
-(6, 'gdgdr', 'rajkot', 1, 'Inactive', 'admin', 'awefedmin@gmail.com', '$2y$10$dB8xYNWImDwmBxVDue9wpOkFdT6Bg6vqAcqh5ixk45wXgYOirtha.', '2025-03-30 15:47:02', '2025-03-30 15:47:02'),
-(7, 'pandudg', 'rajkot', 5, 'Inactive', 'admin', 'adminfdf@gmail.com', '$2y$10$eQI/0AEWPFGvPQuqUmBeJuT25MA5iwQyqNWEaVXbnx62o/vmncB5q', '2025-03-30 15:47:27', '2025-03-30 15:47:27');
+(8, 'Movie Time', 'rajkot', 4, 'Active', 'operator', 'operator@gmail.com', '$2y$10$jOa/pI4Rf3tEEHyl9B5J.u3aERRRHJ3eTc282WRWzMeYvok7CzW5C', '2025-04-07 13:47:58', '2025-04-07 13:57:23');
 
 -- --------------------------------------------------------
 
@@ -456,7 +468,6 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `status`, `role`, `pic`,
 (2, 'harshit nananiya', 'nananiyaharshit@gmail.com', '$2y$10$a8cMAQpFoi6yf0z05fosmOBluvN5DXBJRR8gnFAYS16ca1IJaPcqy', 'active', 'user', '1736098166_wallhaven-l86opp_1920x1080.png', '8238184558', '2025-01-29 14:40:01', NULL),
 (3, 'John Doe', 'john.doe@example.com', 'password123', 'active', 'user', 'john.jpg', '1234567890', '2025-01-29 14:40:01', NULL),
 (4, 'Jane Smith', 'jane.smith@example.com', 'securepass', 'active', 'user', 'jane.png', '0987654321', '2025-01-29 14:40:01', NULL),
-(5, 'Alice Johnson', 'alice.johnson@example.com', 'alicepass', 'inactive', 'admin', NULL, '1122334455', '2025-01-29 14:40:01', NULL),
 (6, 'Bob Brown', 'bob.brown@example.com', 'bobsecure', 'active', 'user', 'bob.jpg', '6677889900', '2025-01-29 14:40:01', NULL),
 (7, 'Charlie Davis', 'charlie.davis@example.com', 'charlie123', 'active', 'user', NULL, '7788990011', '2025-01-29 14:40:01', NULL),
 (8, 'Emily Wilson', 'emily.wilson@example.com', 'emilypass', 'inactive', 'user', 'emily.png', '4455667788', '2025-01-29 14:40:01', NULL),
@@ -472,7 +483,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `status`, `role`, `pic`,
 (18, 'Tushar Ravaliya', 'ahirt889@gmail.com', '$2y$10$zWfXjXwwyzC0AYnRm7UTOexhzGWxMOuy6KRZqwrOWo.DnZ3/ryVqW', 'active', 'user', '', '0823186558', '2025-01-29 14:40:01', NULL),
 (19, 'admin', 'admin@gmail.com', '$2y$10$SyDlRS.ZoYTFPua1TmLxsOrznt44o7iZoXlousNj4jEL5Thg//0LK', 'active', 'admin', '19_1743673644.jpg', '8238186558', '2025-01-29 14:40:01', NULL),
 (20, 'nisha', 'nisha@gmail.com', '$2y$10$QDvCrwjmegc9c9d6hh5jk.8LIWwMVofOO0YlWpvSfMVeKKEbTrRPW', 'active', 'user', '', '6238186558', '2025-01-30 15:03:21', NULL),
-(21, 'Wendy Sears', 'jexaw@mailinator.com', '$2y$10$RGeE5rUKyyVjyKD4C326U.5c/s9FdcZPcGXazFZmSAcZS/ISe9FG6', 'active', 'user', '', '1234567840', '2025-01-30 15:52:02', NULL),
+(21, 'tito', 'jexaw@mailinator.com', '$2y$10$RGeE5rUKyyVjyKD4C326U.5c/s9FdcZPcGXazFZmSAcZS/ISe9FG6', 'active', 'user', '', '1234567840', '2025-01-30 15:52:02', NULL),
 (22, 'Tushar Ravaliya', 'admidn@gmail.com', '$2y$10$M7PF/Jktk0kHo3X6jhzypubgekkmqhhISitOJ8v3eEspoveXXaHyq', 'active', 'user', '1738657733_1279868.jpg', '8238186558', '2025-02-04 13:58:53', NULL),
 (23, 'nisha', 'nisha12@gmail.com', '$2y$10$RpSMxdTVEOprH.zyCOHdluSUs5BoSRmHwzB0RLcxnxbso3xP/6w5K', 'active', 'user', '23_1743675323.jpg', '9874543240', '2025-02-06 15:15:11', NULL),
 (24, 'Tushar Ravaliya', 'admisfsen@gmail.com', '$2y$10$4m3pfwSEmHUkWWCV2uHppeXpUTaamaBFM4Kgf5UesjbFZCOcmP5we', 'active', 'user', '', '8238186553', '2025-02-25 15:12:28', NULL);
@@ -633,13 +644,13 @@ ALTER TABLE `aboutus_content`
 -- AUTO_INCREMENT for table `booked_seats`
 --
 ALTER TABLE `booked_seats`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `booking_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `booking_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `genres`
@@ -657,19 +668,19 @@ ALTER TABLE `homepage_content`
 -- AUTO_INCREMENT for table `movies`
 --
 ALTER TABLE `movies`
-  MODIFY `movie_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `movie_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `movie_cast`
 --
 ALTER TABLE `movie_cast`
-  MODIFY `cast_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `cast_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `movie_genres`
 --
 ALTER TABLE `movie_genres`
-  MODIFY `genre_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `genre_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `movie_reviews`
@@ -693,19 +704,19 @@ ALTER TABLE `password_reset_tokens`
 -- AUTO_INCREMENT for table `screens`
 --
 ALTER TABLE `screens`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `showtimes`
 --
 ALTER TABLE `showtimes`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `theaters`
 --
 ALTER TABLE `theaters`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`

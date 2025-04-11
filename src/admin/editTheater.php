@@ -1,12 +1,10 @@
 <?php
 $page_title = "Edit Theater";
 ob_start();
-?>
-<?php
 require_once("../../config/connection.php");
 
 // Process form submission
-session_start();
+// session_start();
 
 // Check if theater ID is provided
 if (!isset($_GET['id']) || empty($_GET['id'])) {
@@ -42,6 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $area = htmlspecialchars(trim($_POST['area'] ?? ''));
     $theater_rating = filter_var($_POST['theater_rating'] ?? 0, FILTER_VALIDATE_INT);
     $owner_name = htmlspecialchars(trim($_POST['owner_name'] ?? ''));
+    $theater_status = htmlspecialchars(trim($_POST['theater_status'] ?? 'Inactive'));
     $email = filter_var($_POST['email'] ?? '', FILTER_SANITIZE_EMAIL);
     $password = $_POST['password'] ?? '';
     $confirm_password = $_POST['confirm_password'] ?? '';
@@ -62,13 +61,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Update theater data using MySQLi prepared statement
     if ($update_password) {
-        $sql = "UPDATE theaters SET title = ?, area = ?, rating = ?, owner_name = ?, email = ?, password_hash = ? WHERE id = ?";
+        $sql = "UPDATE theaters SET title = ?, area = ?, rating = ?, owner_name = ?, email = ?, password_hash = ?, status = ? WHERE id = ?";
         $stmt = mysqli_prepare($conn, $sql);
-        mysqli_stmt_bind_param($stmt, "ssisssi", $theater_title, $area, $theater_rating, $owner_name, $email, $password_hash, $theater_id);
+        mysqli_stmt_bind_param($stmt, "ssissssi", $theater_title, $area, $theater_rating, $owner_name, $email, $password_hash, $theater_status, $theater_id);
     } else {
-        $sql = "UPDATE theaters SET title = ?, area = ?, rating = ?, owner_name = ?, email = ? WHERE id = ?";
+        $sql = "UPDATE theaters SET title = ?, area = ?, rating = ?, owner_name = ?, email = ?, status = ? WHERE id = ?";
         $stmt = mysqli_prepare($conn, $sql);
-        mysqli_stmt_bind_param($stmt, "ssissi", $theater_title, $area, $theater_rating, $owner_name, $email, $theater_id);
+        mysqli_stmt_bind_param($stmt, "ssisssi", $theater_title, $area, $theater_rating, $owner_name, $email, $theater_status, $theater_id);
     }
 
     if ($stmt) {
@@ -119,6 +118,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <option value="3" <?= ($theater['rating'] ?? '') == 3 ? 'selected' : '' ?>>3 Stars</option>
                     <option value="4" <?= ($theater['rating'] ?? '') == 4 ? 'selected' : '' ?>>4 Stars</option>
                     <option value="5" <?= ($theater['rating'] ?? '') == 5 ? 'selected' : '' ?>>5 Stars</option>
+                </select>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2" for="theater_status">Theater Status*</label>
+                <select name="theater_status" id="theater_status" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
+                    <option value="Active" <?= ($theater['status'] ?? '') == 'Active' ? 'selected' : '' ?>>Active</option>
+                    <option value="Inactive" <?= ($theater['status'] ?? '') == 'Inactive' ? 'selected' : '' ?>>Inactive</option>
+
                 </select>
             </div>
 
