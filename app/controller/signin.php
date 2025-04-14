@@ -1,6 +1,6 @@
 <?php
-require_once '../../config/connection.php';
 session_start();
+require_once '../../config/connection.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     die("Error: Invalid request.");
@@ -74,11 +74,12 @@ elseif ($theaterResult && mysqli_num_rows($theaterResult) === 1) {
         $_SESSION['theater_id'] = $theater['id'];
         $_SESSION['theater_name'] = $theater['title'];
         $_SESSION['email'] = $email;
-        $_SESSION['role'] = 'theater';
+        $_SESSION['role'] = 'operator';
+        $_SESSION['pic'] = $theater['pic'];
         $_SESSION['owner_name'] = $theater['owner_name'];
 
         // Redirect to theater dashboard
-        header("Location:http://localhost/moviesvault/src/operator/index.php");
+        header("Location: ../../src/operator/index.php");
         exit();
     } else {
         $_SESSION['error'] = "Invalid email or password.";
